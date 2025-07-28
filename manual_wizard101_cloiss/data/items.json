@@ -1,0 +1,536 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.items.schema.json",
+    "data": [
+        {
+            "name": "Area-Unicorn Way",
+            "category": ["01 Area"],
+            "early": true,
+            "progression": true
+        },
+        {
+            "name": "Area-The Commons",
+            "category": ["01 Area"],
+            "early": true,
+            "progression": true
+        },
+        {
+            "name": "Area-Ravenwood",
+            "category": ["01 Area"],
+            "early": true,
+            "progression": true
+        },
+        {
+            "name": "Area-Shopping District",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Olde Town",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Golem Court",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Pet Pavillion",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Cyclops Lane",
+            "category": ["01 Area"],
+            "progression": true,
+            "useful": true
+        },
+        {
+            "name": "Area-Triton Avenue",
+            "category": ["01 Area"],
+            "progression": true,
+            "useful": true
+        },
+        {
+            "name": "Area-Firecat Alley",
+            "category": ["01 Area"],
+            "progression": true,
+            "useful": true
+        },
+        {
+            "name": "Area-Dark Cave",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Haunted Cave",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Area-Northguard",
+            "category": ["01 Area"],
+            "progression": true
+        },
+        {
+            "name": "Building-Rattlebones",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Judd",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Akilles",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Harvest Lord",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Bastilla",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Alicane",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Foulgaze",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Nightshade",
+            "category": ["02 Building"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Building-Blackhope",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Eyus",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Kraken",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Skullsplitter",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Roberto",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Larry",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Wormguts",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Building-Melweena",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
+            "name": "Slot-Hat",
+            "category": ["03 Slot"]
+        },
+        {
+            "name": "Slot-Robe",
+            "category": ["03 Slot"]
+        },
+        {
+            "name": "Slot-Boots",
+            "category": ["03 Slot"]
+        },
+        {
+            "name": "Slot-Wand",
+            "category": ["03 Slot"],
+            "useful": true
+        },
+        {
+            "name": "Slot-Athame",
+            "category": ["03 Slot"],
+            "filler": true
+        },
+        {
+            "name": "Slot-Amulet",
+            "category": ["03 Slot"]
+        },
+        {
+            "name": "Slot-Ring",
+            "category": ["03 Slot"],
+            "filler": true
+        },
+        {
+            "name": "Slot-Pet",
+            "category": ["03 Slot"],
+            "progression": true
+        },
+        {
+            "name": "Slot-Mount",
+            "category": ["03 Slot"],
+            "early": true,
+            "progression": true
+        },
+        {
+            "name": "Slot-Deck",
+            "category": ["03 Slot"],
+            "early": true
+        },
+        {
+            "name": "Teleport-Commons",
+            "category": ["04 Teleport"]
+        },
+        {
+            "name": "Teleport-Home",
+            "category": ["04 Teleport"],
+            "progression": true
+        },
+        {
+            "name": "Teleport-Mark",
+            "category": ["04 Teleport"],
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "Teleport-Dungeon",
+            "category": ["04 Teleport"]
+        },
+        {
+            "name": "Teleport-World",
+            "category": ["04 Teleport"]
+        },
+        {
+            "name": "Teleport-Majid",
+            "category": ["04 Teleport"],
+            "progression": true
+        },
+        {
+            "name": "Teleport-Friendly",
+            "category": ["04 Teleport","Friendly Teleport"],
+            "progression": true
+        },
+        {
+            "name": "SpellCard-Primary L1",
+            "category": ["05 SpellCard"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "SpellCard-Primary L5",
+            "category": ["05 SpellCard"],
+            "value": {"damage": 46},
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "SpellCard-Primary L8",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },
+        {
+            "name": "SpellCard-Primary L10",
+            "category": ["05 SpellCard"]
+        },          
+        {
+            "name": "SpellCard-Secondary L1",
+            "category": ["05 SpellCard"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "SpellCard-Secondary L5",
+            "category": ["05 SpellCard"],
+            "value": {"damage": 46},
+            "useful": true,
+            "progression": true
+        },
+        {
+            "name": "SpellCard-Secondary L8",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },
+        {
+            "name": "SpellCard-Secondary L10",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },
+        {
+            "name": "SpellCard-Pixie or Fairy",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },      
+        {
+            "name": "SpellCard-Enrollment Spell",
+            "category": ["05 SpellCard"]
+        },          
+        {
+            "name": "SpellCard-Level 7 Spell",
+            "category": ["05 SpellCard"]
+        },
+        {
+            "name": "SpellCard-Single Shields",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },
+        {
+            "name": "SpellCard-School Weaknesses",
+            "category": ["05 SpellCard"],
+            "filler": true
+        },    
+        {
+            "name": "ItemCard-Thunder Snake",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 9},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Fire Cat",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 7},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Ice Beetle",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 5},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Scarab",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 5},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Blood Bat",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 6},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Imp",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 5},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Dark Sprite",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 5},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Lightning Bats",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Fire/Ice/Storm Elf",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Snow Serpent",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Scorpion",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Troll",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Leprechaun",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },        
+        {
+            "name": "ItemCard-Ghoul",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true
+        },           
+        {
+            "name": "ItemCard-Charms/Wards",
+            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "filler": true,
+            "_comment": "Misc item cards from Bazaar amulets (shields, traps, wekaness)"
+        }, 
+        {
+            "name": "ItemCard-Heartbeat",
+            "category": ["06 ItemCard"]
+        },   
+        {
+            "name": "ItemCard-Wand Hits",
+            "category": ["06 ItemCard"]
+        },
+        {
+            "name": "ItemCard-Pet Assist",
+            "category": ["06 ItemCard"],
+            "value": {"damage": 13},
+            "progression": true
+        },
+        {
+            "name": "TreasureCard-Rank 1",
+            "category": ["07 TreasureCard"],
+            "value": {"damage": 9},
+            "progression": true
+        },
+        {
+            "name": "TreasureCard-Rank 2",
+            "category": ["07 TreasureCard"],
+            "value": {"damage": 28},
+            "progression": true
+        },
+        {
+            "name": "TreasureCard-Rank 3",
+            "category": ["07 TreasureCard"],
+            "value": {"damage": 34},
+            "progression": true
+        },
+        {
+            "name": "TreasureCard-Rank 4+",
+            "category": ["07 TreasureCard"]
+        },
+        {
+            "name": "TreasureCard-Shields",
+            "category": ["07 TreasureCard"]
+        },
+        {
+            "name": "TreasureCard-Traps",
+            "category": ["07 TreasureCard"]
+        },
+        {
+            "name": "TreasureCard-Blades",
+            "category": ["07 TreasureCard"]
+        },
+        {
+            "name": "TreasureCard-Heals",
+            "category": ["07 TreasureCard"]
+        },
+        {
+            "name": "TreasureCard-Other",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "_comment": "Weakness, Tempest, Reshuffle, and Sun spells come to mind."
+        },
+        {
+            "name": "Vendor-Unicorn Way",
+            "category": ["08 Vendor"]
+        },
+        {
+            "name": "Vendor-Hat Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Robe Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Boots Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Wand Shop",
+            "category": ["08 Vendor"]
+        },
+        {
+            "name": "Vendor-Athame Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Amulet Shop",
+            "category": ["08 Vendor"],
+            "useful": true
+        },
+        {
+            "name": "Vendor-Ring Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Pet Shops",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Mount Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Deck Shop",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Housing Shops",
+            "category": ["08 Vendor"],
+            "filler": true
+        },
+        {
+            "name": "Vendor-Potions",
+            "category": ["08 Vendor"]
+        },
+        {
+            "name": "Vendor-Recipes/Reagents",
+            "category": ["08 Vendor"],
+            "progression": true
+        },
+        {
+            "name": "Vendor-Library",
+            "category": ["08 Vendor"],
+            "useful": true
+        },
+        {
+            "name": "Vendor-Bazaar Amulets",
+            "category": ["08 Vendor"],
+            "useful": true
+        },
+        {
+            "name": "Vendor-Sell Fish",
+            "category": ["08 Vendor"]
+        }
+    ]
+}

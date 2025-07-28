@@ -1,0 +1,73 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
+    "Start":{
+        "starting": true,
+        "connects_to": ["UW","GC","Kraken","Larry"]
+    },
+    "UW":{
+        "requires": "|Area-Unicorn Way|",
+        "connects_to": ["PostUW","EarlyOT"],
+        "_comment": "Access to Unicorn Way guarantees the Level 5 requirement for doing certain quests in Olde Town and Golem Court early. Do the Combat Tutorial for extra XP."
+    },
+    "GC":{
+        "requires": "|Area-Golem Court| and ({canReachLocation(UW to Merle)} or |Teleport-Friendly|)",
+        "_comment": "Friendly Teleport to Kane ShadowBane in The Drains to access this area before finishing Unicorn Way."
+    },
+    "EarlyOT":{
+        "requires": "|Area-Olde Town| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly| or (|Area-Shopping District| and |Teleport-Majid|))",
+        "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
+    },
+    "Kraken":{
+        "requires": "|Area-Triton Avenue| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|) and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)})",
+        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
+    },
+    "Larry":{
+        "requires": "|Area-Firecat Alley| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|) and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)})",
+        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
+    },
+    "PostUW":{
+        "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and |Area-The Commons|",
+        "connects_to": ["Judd"]
+    },
+    "Judd":{
+        "requires": "|Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|) and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
+        "connects_to": ["TA","CL","FA","Level7"]
+    },
+    "Level7":{
+        "requires": "|Area-Cyclops Lane| or |Area-Triton Avenue| or |Area-Firecat Alley|",
+        "_comment": "Access to any street post-Judd should be significant enough to consistently reach Level 7, I think. Cyclops might be an issue here due to getting walled at Laundry without Shopping District."
+    },
+    "TA":{
+        "requires": "|Area-Triton Avenue|",
+        "connects_to": ["HL"]
+    },
+    "HL":{
+        "requires": "{ItemValue(damage:51)} and |Building-Harvest Lord| and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "connects_to": ["AkillesSkip"]
+    },
+    "CL":{
+        "requires": "|Area-Cyclops Lane|",
+        "connects_to": ["CL Dark Cave"]
+    },
+    "CL Dark Cave":{
+        "requires": "|Area-Dark Cave| and |Area-Shopping District| and (|Teleport-Mark| or {YamlDisabled(early_mark)})"
+    },
+    "FA":{
+        "requires": "|Area-Firecat Alley|",
+        "connects_to": ["Bastilla"]
+    },
+    "Bastilla":{
+        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue|) and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "connects_to": ["AS"]
+    },
+    "AS":{
+        "requires": "{ItemValue(damage:72)} and |Building-Alicane|"
+    },
+    "AkillesSkip":{
+        "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and (|Building-Akilles| or {YamlEnabled(akilles_skip)})",
+        "connects_to": ["PostStreets"]
+    },
+    "PostStreets":{
+        "requires": "|Building-Akilles|"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.categories.schema.json",
+    "ItemCard-Rank 1": {
+        "hidden": true
+    },
+    "ItemCard-Rank 2": {
+        "hidden": true
+    },
+    "Friendly Teleport": {
+        "hidden": true,
+        "yaml_option": ["friendly_teleport"]
+    }
+}

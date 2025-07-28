@@ -1,0 +1,126 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ManualForArchipelago/Manual/main/schemas/Manual.options.schema.json",
+    "_comment": "Add a _ before an option name to comment it out and it wont be added to the apworld",
+    "core": {
+        "goal":{
+            "_comment": [
+                "Using 'goal' as the name of an option let you override some of the generated goal parameters"
+            ],
+            "display_name": "The End Objective",
+            "description": "How to End your Randomized playthrough.",
+            "aliases": {"easiest": 0},
+            "hidden": false
+        },
+        "death_link": {
+            "default": false
+        },
+        "filler_traps": {
+            "_comment": "Using values here let you set a 'recommended' filler_trap percentage or even a default percentage",
+            "values": {
+                "recommended": 20
+            }
+        }
+    },
+    "user": {
+        "start_mark":{
+            "description": [
+                "Start with the ability to set a mark (Teleport-Mark). Recommended for a faster game."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_wand":{
+            "description": [
+                "Start with your wand slot (Slot-Wand). Turning this off is not recommended as it may make Rattlebones difficult or impossible on some schools."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_mount":{
+            "description": [
+                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time. Turning this off will still require the mount slot be given before Judd."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "early_mark":{
+            "description": [
+                "Ensures the Teleport-Mark ability is given prior to CL Fodder, Harvest Lord, and Bastilla quests."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Check Locations"
+        },
+        "friendly_teleport":{
+            "description": [
+                "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Default false, but recommended for more a more varied earlygame (pre-Rattlebones)."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Logic"
+        },
+        "akilles_skip":{
+            "description": [
+                "Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Logic"
+        },
+        "gate_skip":{
+            "description": [
+                "Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Logic"
+        },
+
+
+
+
+        "_Example_Toggle":{
+            "description": [
+                "This is a Toggle",
+                "A simple boolean, aka True or False set the initial value with \"default\""
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Example Options"
+        },
+        "_Example_Choice":{
+            "type": "Choice",
+            "description": [
+                "This is a Choice",
+                "Let the user pick from a list of values",
+                "allow_custom_value let a player define their own text value",
+                "Currently the only use for Choice in Manual outside of hooks is the goal"
+            ],
+            "values": {
+                "start":0,
+                "test":1
+             },
+            "default": 0,
+            "allow_custom_value": false,
+            "group": "Example Options"
+        },
+        "_Example_Range":{
+            "type": "Range",
+            "description": [
+                "This is a Range",
+                "Allow the player to specify a value between 'start' and 'end'",
+                "if you include a \"values\" you can define the label for certain values",
+                "Currently the only use for Range in Manual outside of hooks is 'filler_trap'"
+            ],
+            "range_start": 0,
+            "default": 1,
+            "range_end": 10,
+            "values": {"example": 2},
+            "group": "Example Options"
+        }
+    }
+
+}
