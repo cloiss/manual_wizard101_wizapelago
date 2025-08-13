@@ -228,12 +228,12 @@
             "_comment": "Quest ends at the entrance to Haunted Cave."
         },
         {
-            "name": "Crafting: Mist Wood",
+            "name": "Crafting-Mist Wood",
             "category": ["05 Olde Town"],
             "region": "EarlyOT"
         },
         {
-            "name": "Crafting: Daggers",
+            "name": "Crafting-Daggers",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
@@ -533,10 +533,10 @@
         {
             "name": "Ore",
             "category": ["09 Reagents"],
-            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|)) or (|Area-Dark Cave| and |Area-Cyclops Lane| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|)) or (|Area-Firecat Alley| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|))"
+            "requires": "(({canReachLocation(To Muldoon)} and {YamlEnabled(gate_skip)}) or |Teleport-Friendly|) and ((|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|)"
         },
         {
-            "name": "Rare Reagent",
+            "name": "Any Rare Reagent",
             "category": ["09 Reagents"],
             "region": "UW",
             "dont_place_item_category": ["Area","Building"],
