@@ -518,7 +518,7 @@
         {
             "name": "Cat Tail",
             "category": ["09 Reagents"],
-            "region": "Commons"
+            "region": "UW"
         },
         {
             "name": "Deep Mushroom",
@@ -533,7 +533,7 @@
         {
             "name": "Ore",
             "category": ["09 Reagents"],
-            "requires": "|Area-Haunted Cave| or |Area-Dark Cave| or |Area-Firecat Alley|"
+            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|)) or (|Area-Dark Cave| and |Area-Cyclops Lane| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|)) or (|Area-Firecat Alley| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|))"
         },
         {
             "name": "Rare Reagent",

@@ -78,6 +78,19 @@
             "default": false,
             "group": "Logic"
         },
+        "reagents": {
+            "description": [
+                "Allows the player to choose which reagents to add as check locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "all": 1,
+                "ore": 2
+            },
+            "default": 0,
+            "group": "Check Locations"
+        },
 
 
 

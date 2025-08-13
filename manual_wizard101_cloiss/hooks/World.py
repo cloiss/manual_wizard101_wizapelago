@@ -45,7 +45,18 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
     locationNamesToRemove: list[str] = [] # List of location names
 
-    # Add your code here to calculate which locations to remove
+    # 0 = none, 1 = all, 2 = ore
+    reagents_option = get_option_value(multiworld, player, "reagents")
+
+    # If option is none or ore, remove all items but ore
+    if reagents_option % 2 == 0:
+        locationNamesToRemove.append("Mist Wood")
+        locationNamesToRemove.append("Cat Tail")
+        locationNamesToRemove.append("Deep Mushroom")
+        locationNamesToRemove.append("Flax")
+        locationNamesToRemove.append("Rare Reagent")
+    if reagents_option == 0:
+        locationNamesToRemove.append("Ore")
 
     for region in multiworld.regions:
         if region.player == player:
