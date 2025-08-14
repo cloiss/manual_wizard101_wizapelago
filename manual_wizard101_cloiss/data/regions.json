@@ -18,7 +18,7 @@
         "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
     },
     "EarlyStreets": {
-        "requires": "|Teleport-Friendly| or ({canReachLocation(To Muldoon) and {YamlEnabled(gate_skip)}} and ({canReachLocation(Judd)})",
+        "requires": "|Teleport-Friendly| or ({canReachLocation(To Muldoon) and {YamlEnabled(gate_skip)}) or {canReachLocation(Judd)}",
         "connects_to": ["Kraken", "Larry"]
     },
     "Kraken":{

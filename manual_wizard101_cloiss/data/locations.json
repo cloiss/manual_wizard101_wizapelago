@@ -533,7 +533,7 @@
         {
             "name": "Ore",
             "category": ["09 Reagents"],
-            "requires": "((|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|)",
+            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
             "region": "EarlyStreets"
         },
         {
