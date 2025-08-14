@@ -533,7 +533,8 @@
         {
             "name": "Ore",
             "category": ["09 Reagents"],
-            "requires": "(({canReachLocation(To Muldoon)} and {YamlEnabled(gate_skip)}) or |Teleport-Friendly|) and ((|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|)"
+            "requires": "((|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|)",
+            "region": "EarlyStreets"
         },
         {
             "name": "Any Rare Reagent",
