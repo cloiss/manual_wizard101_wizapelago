@@ -34,7 +34,7 @@
         "connects_to": ["Judd"]
     },
     "Judd":{
-        "requires": "|Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|) and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
+        "requires": "{canReachLocation(To Muldoon)} and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
         "connects_to": ["TA","CL","FA","Level7"]
     },
     "Level7":{
