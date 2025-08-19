@@ -228,12 +228,12 @@
             "_comment": "Quest ends at the entrance to Haunted Cave."
         },
         {
-            "name": "Mist Wood",
+            "name": "Crafting-Mist Wood",
             "category": ["05 Olde Town"],
             "region": "EarlyOT"
         },
         {
-            "name": "Crafting",
+            "name": "Crafting-Daggers",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
@@ -506,9 +506,43 @@
         {
             "name": "Nightshade",
             "victory": true,
-            "category": ["Nightshade"],
+            "category": ["10 Nightshade"],
             "region": "AkillesSkip",
             "requires": "{ItemValue(damage:109)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+        },
+        {
+            "name": "Mist Wood",
+            "category": ["09 Reagents"],
+            "region": "UW"
+        },
+        {
+            "name": "Cat Tail",
+            "category": ["09 Reagents"],
+            "region": "UW"
+        },
+        {
+            "name": "Deep Mushroom",
+            "category": ["09 Reagents"],
+            "region": "Commons"
+        },
+        {
+            "name": "Flax",
+            "category": ["09 Reagents"],
+            "region": "UW"
+        },
+        {
+            "name": "Ore",
+            "category": ["09 Reagents"],
+            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
+            "region": "EarlyStreets"
+        },
+        {
+            "name": "Any Rare Reagent",
+            "category": ["09 Reagents"],
+            "region": "UW",
+            "dont_place_item_category": ["Area","Building"],
+            "dont_place_item": ["Vendor-Recipes/Reagents"],
+            "_comment": "This is a hack to avoid placing the rare reagent in logic as it is a random drop."
         }
     ]
 }

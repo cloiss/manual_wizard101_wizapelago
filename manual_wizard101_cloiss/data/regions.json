@@ -2,11 +2,11 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
     "Start":{
         "starting": true,
-        "connects_to": ["UW","GC","Kraken","Larry"]
+        "connects_to": ["UW","GC","EarlyStreets"]
     },
     "UW":{
         "requires": "|Area-Unicorn Way|",
-        "connects_to": ["PostUW","EarlyOT"],
+        "connects_to": ["PostUW","EarlyOT", "Commons"],
         "_comment": "Access to Unicorn Way guarantees the Level 5 requirement for doing certain quests in Olde Town and Golem Court early. Do the Combat Tutorial for extra XP."
     },
     "GC":{
@@ -17,12 +17,16 @@
         "requires": "|Area-Olde Town| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly| or (|Area-Shopping District| and |Teleport-Majid|))",
         "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
     },
+    "EarlyStreets": {
+        "requires": "|Teleport-Friendly| or ({canReachLocation(To Muldoon)} and {YamlEnabled(gate_skip)}) or {canReachLocation(Judd)}",
+        "connects_to": ["Kraken", "Larry"]
+    },
     "Kraken":{
-        "requires": "|Area-Triton Avenue| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|) and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)})",
+        "requires": "|Area-Triton Avenue|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "Larry":{
-        "requires": "|Area-Firecat Alley| and ({canReachLocation(To Muldoon)} or |Teleport-Friendly|) and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)})",
+        "requires": "|Area-Firecat Alley|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{
@@ -69,5 +73,8 @@
     },
     "PostStreets":{
         "requires": "|Building-Akilles|"
+    },
+    "Commons": {
+        "requires": "|Area-The Commons|"
     }
 }
