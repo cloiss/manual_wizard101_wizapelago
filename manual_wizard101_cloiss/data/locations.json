@@ -99,7 +99,7 @@
             "name": "Merle to Diego",
             "category": ["02 The Commons"],
             "region": "PostUW",
-            "requires": "{canReachLocation(To Muldoon)"
+            "requires": "{canReachLocation(To Muldoon)}"
         },
         {
             "name": "Pet Sounds (Merle)",
