@@ -84,7 +84,7 @@
             "region": "PostUW"
         },
         {
-            "name": "Enrollment",
+            "name": "*To Ravenwood*",
             "category": ["02 The Commons"],
             "region": "PostUW",
             "requires": "|Area-Ravenwood|"
@@ -98,7 +98,8 @@
         {
             "name": "Merle to Diego",
             "category": ["02 The Commons"],
-            "region": "Judd"
+            "region": "PostUW",
+            "requires": "{canReachLocation(To Muldoon)}"
         },
         {
             "name": "Pet Sounds (Merle)",
@@ -146,8 +147,8 @@
         {
             "name": "9/10 Smiths",
             "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "|Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Photomancy 1)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "5/7 Books",
@@ -213,7 +214,7 @@
             "name": "To Muldoon",
             "category": ["05 Olde Town"],
             "region": "PostUW",
-            "requires": "|Area-Ravenwood| and |Area-Olde Town|"
+            "requires": "|Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)"
         },
         {
             "name": "Judd",
@@ -228,12 +229,12 @@
             "_comment": "Quest ends at the entrance to Haunted Cave."
         },
         {
-            "name": "Crafting-Mist Wood",
+            "name": "Crafting: Mist Wood",
             "category": ["05 Olde Town"],
             "region": "EarlyOT"
         },
         {
-            "name": "Crafting-Daggers",
+            "name": "Crafting: Daggers",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
@@ -250,7 +251,7 @@
             "name": "Gloria",
             "category": ["05 Olde Town"],
             "region": "PostUW",
-            "requires": "{ItemValue(damage:24)} and {canReachLocation(To Muldoon)} and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane|"
+            "requires": "{ItemValue(damage:24)} and {canReachLocation(To Muldoon)} and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
         },
         {
             "name": "Bear Market",
@@ -394,19 +395,19 @@
             "region": "HL"
         },
         {
-            "name": "Kraken Eels",
+            "name": "Kraken: Eels",
             "category": ["07 Triton Avenue"],
             "region": "Kraken",
             "requires": "{ItemValue(damage:15)}"
         },
         {
-            "name": "Kraken Barrels",
+            "name": "Kraken: Barrels",
             "category": ["07 Triton Avenue"],
             "region": "Kraken",
             "requires": "{ItemValue(damage:15)}"
         },
         {
-            "name": "Kraken Fodder",
+            "name": "Kraken: Fodder",
             "category": ["07 Triton Avenue"],
             "region": "Kraken",
             "requires": "{ItemValue(damage:15)}"
@@ -482,12 +483,12 @@
             "requires": "{ItemValue(damage:43)} and |Building-Larry|"
         },
         {
-            "name": "Wormguts Minion",
+            "name": "Wormguts: Minion",
             "category": ["08 Firecat Alley"],
             "region": "FA"
         },
         {
-            "name": "Wormguts Warrior",
+            "name": "Wormguts: Warrior",
             "category": ["08 Firecat Alley"],
             "region": "FA"
         },
