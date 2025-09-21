@@ -244,7 +244,7 @@
             "name": "Walkabout",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
-            "requires": "{|Area-The Commons| and |Area-Golem Court|",
+            "requires": "{|Area-The Commons| and (|Area-Golem Court| and ({canReachLocation(UW to Merle)} or |Teleport-Friendly|))",
             "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones"
         },
         {

@@ -54,7 +54,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         locationNamesToRemove.append("Cat Tail")
         locationNamesToRemove.append("Deep Mushroom")
         locationNamesToRemove.append("Flax")
-        locationNamesToRemove.append("Rare Reagent")
+        locationNamesToRemove.append("Any Rare Reagent")
     if reagents_option == 0:
         locationNamesToRemove.append("Ore")
 
