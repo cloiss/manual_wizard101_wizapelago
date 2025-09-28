@@ -46,7 +46,7 @@
         "connects_to": ["HL"]
     },
     "HL":{
-        "requires": "{ItemValue(damage:51)} and |Building-Harvest Lord| and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
         "connects_to": ["AkillesSkip"]
     },
     "CL":{
