@@ -319,7 +319,7 @@
             "name": "Eyus",
             "category": ["06 Cyclops Lane"],
             "region": "CL Dark Cave",
-            "requires": "|Area-Dark Cave|"
+            "requires": "|Building-Eyus|"
         },
         {
             "name": "Maze Books",
