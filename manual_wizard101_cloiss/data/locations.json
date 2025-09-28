@@ -154,13 +154,13 @@
             "name": "5/7 Books",
             "category": ["02 The Commons"],
             "region": "PostStreets",
-            "requires": "|Building-Akilles| and |Building-Blackhope| and |Building-Foulgaze|"
+            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or canReachLocation{Nightshade})"
         },
         {
             "name": "Pre-Colossus",
             "category": ["02 The Commons"],
             "region": "PostStreets",
-            "requires": "|Building-Akilles| and |Area-Shopping District|"
+            "requires": "|Area-Shopping District|"
         },
         {
             "name": "Photomancy 1",
