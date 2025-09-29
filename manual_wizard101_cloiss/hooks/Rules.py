@@ -1,9 +1,47 @@
-from typing import Optional
 from worlds.AutoWorld import World
-from ..Helpers import clamp, get_items_with_value
-from BaseClasses import MultiWorld, CollectionState
+from BaseClasses import CollectionState
 
-import re
+# Dict of every item and there damage value
+dmgDict: dict[str, int] = {
+    "SpellCard-Primary L1": 195,
+    "SpellCard-Primary L5": 465,
+    "SpellCard-Secondary L1": 240,
+    "SpellCard-Secondary L5": 735,
+    "ItemCard-Thunder Snake": 95,
+    "ItemCard-Fire Cat": 70,
+    "ItemCard-Ice Beetle": 55,
+    "ItemCard-Scarab": 55,
+    "ItemCard-Blood Bat": 60,
+    "ItemCard-Imp": 55,
+    "ItemCard-Dark Sprite": 55,
+    "ItemCard-Pet Assist": 130, #? Why is this not 45
+    "TreasureCard-Rank 1": 90,
+    "TreasureCard-Rank 2": 280,
+    "TreasureCard-Rank 3": 340
+}
+
+# Custom function to do a more advanced damage check to properly screen how much damage a player has
+def damageCheck(state: CollectionState, player: int, requiredDmg: str) -> bool:
+    # Convert damage to int
+    dmg = int(requiredDmg)
+    
+    # Calculate how much damage a player has at this point
+    playerDmg = 0
+    for item, itemDmg in dmgDict.items():
+        # If player has this item, add the value to player
+        if state.count(item, player) > 0:
+            match item:
+                # Handle special cases
+                # Secondary Level 5 cannot be trained until after rattlebones
+                case "SpellCard-Secondary L5":
+                    rattleLoc = state.multiworld.regions.location_cache[player]["Rattlebones"]
+                    if rattleLoc in state.locations_checked: # This might not work and need to use can_reach instead
+                        playerDmg += itemDmg
+                # If there are no rules, just add the item value to the total damage
+                case _:
+                    playerDmg += itemDmg
+
+    return playerDmg >= dmg
 
 # Sometimes you have a requirement that is just too messy or repetitive to write out with boolean logic.
 # Define a function here, and you can use it in a requires string with {function_name()}.
