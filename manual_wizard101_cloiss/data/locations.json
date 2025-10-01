@@ -154,13 +154,12 @@
             "name": "5/7 Books",
             "category": ["02 The Commons"],
             "region": "PostStreets",
-            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or canReachLocation{Nightshade})"
+            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or {canReachLocation(Nightshade)})"
         },
         {
             "name": "Pre-Colossus",
             "category": ["02 The Commons"],
-            "region": "PostStreets",
-            "requires": "|Area-Shopping District|"
+            "region": "PostStreets"
         },
         {
             "name": "Photomancy 1",
@@ -319,7 +318,7 @@
             "name": "Eyus",
             "category": ["06 Cyclops Lane"],
             "region": "CL Dark Cave",
-            "requires": "|Building-Eyus|"
+            "requires": "{ItemValue(damage:64)} and |Building-Eyus|"
         },
         {
             "name": "Maze Books",
