@@ -155,6 +155,7 @@
             "category": ["02 The Commons"],
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and (|Building-Blackhope| or {canReachLocation(Nightshade)})"
+
         },
         {
             "name": "Pre-Colossus",
