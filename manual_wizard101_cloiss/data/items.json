@@ -161,6 +161,25 @@
             "progression": true
         },
         {
+            "name": "Building-Mordecai",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Apprentice Tower",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Adept Tower",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Master Tower",
+            "category": ["02 Building","Halloween"]
+        },
+        {
             "name": "Slot-Hat",
             "category": ["03 Slot"]
         },
@@ -450,6 +469,13 @@
             "category": ["07 TreasureCard"],
             "filler": true,
             "_comment": "Weakness, Tempest, Reshuffle, and Sun spells come to mind."
+        },
+        {
+            "name": "TreasureCard-Black Cat",
+            "category": ["07 TreasureCard","Halloween"],
+            "filler": true,
+            "count": 9,
+            "_comment": "To help ease the unbalanced amount of locations when Halloween is enabled. These enable you to use the 9 Black Cat TCs which are quest rewards from Halloween quests."
         },
         {
             "name": "Vendor-Unicorn Way",

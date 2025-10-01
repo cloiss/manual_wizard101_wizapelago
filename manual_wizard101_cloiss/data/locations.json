@@ -313,7 +313,7 @@
             "name": "Armorless",
             "category": ["06 Cyclops Lane"],
             "region": "CL",
-            "requires": "|Area-Dark Cave| or (|Area-Triton Avenue| and |Area-Firecat Alley|)"
+            "requires": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and |Area-Firecat Alley|)"
         },
         {
             "name": "Eyus",
@@ -546,121 +546,119 @@
             "_comment": "This is a hack to avoid placing the rare reagent in logic as it is a random drop."
         },
         {
-            "name": "Hallowe'en: Tricks and Treats",
-            "category": ["02 The Commons"],
-            "region": "PostUW"
+            "name": "Pumpkins: Commons",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons",
+            "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
         },
         {
-            "name": "Hallowe'en: Inky Blues",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "|Area-Shopping District|"
-        },
-        {
-            "name": "Hallowe'en: Apple In Yer Eye",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "|Area-Golem Court|"
-        },
-        {
-            "name": "Hallowe'en: Blink and Yer Red",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Apple In Yer Eye)"
-        },
-        {
-            "name": "Hallowe'en: Dunking Do-Nots",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Blink and Yer Red) and |Area-Shopping District|"
-        },
-        {
-            "name": "Hallowe'en: Orange Ye Scared?",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Dunking Do-Nots) and |Area-Cyclops Lane|"
-        },
-        {
-            "name": "Hallowe'en: Barreling Along",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Orange Ye Scared?) and |Area-Ravenwood|"
-        },
-        {
-            "name": "Hallowe'en: Pinky Swear",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Barreling Along) and |Area-Firecat Alley|"
-        },
-        {
-            "name": "Hallowe'en: A Sight for Core Eyes",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Pinky Swear) and |Area-Haunted Cave|"
-        },
-        {
-            "name": "Hallowe'en: Baron of Nightmares",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Dunking Do-Nots) and |Area-Triton Avenue| and ItemValue(damage:230)"
-        },
-        {
-            "name": "Hallowe'en: Ghostly Spires",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
+            "name": "Ghostly Spires",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons",
             "requires": "|Area-Ravenwood|"
         },
         {
-            "name": "Hallowe'en: Apprentice Tower",
-            "category": ["02 The Commons"],
-            "region": "PostUW",
-            "requires": "|Area-Ravenwood| and ItemValue(damage:65)"
+            "name": "Jack: Unicorn Way",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons"
         },
         {
-            "name": "Hallowe'en: Straw Man",
-            "category": ["01 Unicorn Way"],
-            "region": "PostUW"
+            "name": "Pumpkins: Unicorn Way",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons"
         },
         {
-            "name": "Hallowe'en: Unicorn Delight",
-            "category": ["01 Unicorn Way"],
-            "region": "PostUW"
-        },
-        {
-            "name": "Hallowe'en: Orange Lantern",
-            "category": ["07 Triton Avenue"],
-            "region": "PostUW",
+            "name": "Jack: Triton Avenue",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
             "requires": "|Area-Triton Avenue|"
         },
         {
-            "name": "Hallowe'en: Tricks and Sticks",
-            "category": ["07 Triton Avenue"],
-            "region": "PostUW",
+            "name": "Pumpkins: Triton Avenue",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
             "requires": "|Area-Triton Avenue|"
         },
         {
-            "name": "Hallowe'en: Pumpkin Head",
-            "category": ["06 Cyclops Lane"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Orange Lantern) and |Area-Cyclops Lane|"
+            "name": "Jack: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
-            "name": "Hallowe'en: One-Eyed Snacks",
-            "category": ["06 Cyclops Lane"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Orange Lantern) and |Area-Cyclops Lane|"
+            "name": "Pumpkins: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
-            "name": "Hallowe'en: Meeting Crow",
-            "category": ["08 Firecat Alley"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Pumpkin Head) and |Area-Firecat Alley|"
+            "name": "Jack: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
-            "name": "Hallowe'en: Firecat Strike",
-            "category": ["08 Firecat Alley"],
-            "region": "PostUW",
-            "requires": "canReachLocation(Hallowe'en: Pumpkin Head) and |Area-Firecat Alley|"
+            "name": "Pumpkins: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+        },
+        {
+            "name": "Ghosts: Shopping District",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons",
+            "requires": "|Area-Shopping District|"
+        },
+        {
+            "name": "Apple: Golem Court",
+            "category": ["31 Halloween","Halloween"],
+            "region": "GC",
+            "requires": "|Area-Shopping District|"
+        },
+        {
+            "name": "Ghosts: Commons",
+            "category": ["31 Halloween","Halloween"],
+            "region": "GC",
+            "requires": "|Area-Shopping District|"
+        },
+        {
+            "name": "Apple: Shopping District",
+            "category": ["31 Halloween","Halloween"],
+            "region": "GC",
+            "requires": "|Area-Shopping District|"
+        },
+        {
+            "name": "Baron Mordecai",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Apple: Shopping District)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:230)}",
+            "dont_place_item_category": ["Area","Building"],
+            "dont_place_item": ["Vendor-Recipes/Reagents"],
+            "_comment": "This is a hack to avoid placing Baron Mordecai in logic as he is extremely difficult."
+        },
+        {
+            "name": "Ghosts: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Apple: Shopping District)} and |Area-Cyclops Lane|"
+        },
+        {
+            "name": "Apple: Ravenwood",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Ghosts: Cyclops Lane)} and |Area-Ravenwood|"
+        },
+        {
+            "name": "Ghosts: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Apple: Ravenwood)} and |Area-Firecat Alley|"
+        },
+        {
+            "name": "Apple: Haunted Cave",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{canReachLocation(Ghosts: Firecat Alley)} and |Area-Haunted Cave|"
         }
     ]
 }

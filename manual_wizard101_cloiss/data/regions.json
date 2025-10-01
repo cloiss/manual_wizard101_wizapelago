@@ -61,7 +61,7 @@
         "connects_to": ["Bastilla"]
     },
     "Bastilla":{
-        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue|) and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue| or |Building-Apprentice Tower|) and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
         "connects_to": ["AS"]
     },
     "AS":{

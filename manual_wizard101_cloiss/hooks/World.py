@@ -62,34 +62,6 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     if reagents_option == 0:
         locationNamesToRemove.append("Ore")
 
-    # Disable by default Halloween quests
-    halloween_option = get_option_value(multiworld, player, "halloween")
-    if not halloween_option:
-        # Remove all Halloween locations when halloween option is disabled
-        halloween_locations = [
-            "Hallowe'en: Tricks and Treats",
-            "Hallowe'en: Inky Blues", 
-            "Hallowe'en: Apple In Yer Eye",
-            "Hallowe'en: Blink and Yer Red",
-            "Hallowe'en: Dunking Do-Nots",
-            "Hallowe'en: Orange Ye Scared?",
-            "Hallowe'en: Barreling Along",
-            "Hallowe'en: Pinky Swear",
-            "Hallowe'en: A Sight for Core Eyes",
-            "Hallowe'en: Baron of Nightmares",
-            "Hallowe'en: Ghostly Spires",
-            "Hallowe'en: Apprentice Tower",
-            "Hallowe'en: Straw Man",
-            "Hallowe'en: Unicorn Delight",
-            "Hallowe'en: Orange Lantern",
-            "Hallowe'en: Tricks and Sticks",
-            "Hallowe'en: Pumpkin Head",
-            "Hallowe'en: One-Eyed Snacks",
-            "Hallowe'en: Meeting Crow",
-            "Hallowe'en: Firecat Strike"
-        ]
-        locationNamesToRemove.extend(halloween_locations)
-
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
