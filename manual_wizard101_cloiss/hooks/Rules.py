@@ -19,7 +19,7 @@ def wizReachLocation(state: CollectionState, player: int, location: str) -> bool
         "UW to Merle": ["Building-Rattlebones"],
         "Judd": ["table$To Muldoon", "Building-Judd", "Slot-Pet"],
         "Apple: Shopping District": ["Area-Shopping District", "Area-Golem Court"],
-        "Ghosts: Cyclops Lane": ["Area-Cyclops Lane", "table$Apple: Shopping District", "table$To Muldoon OR Teleport-Friendly"],
+        "Ghosts: Cyclops Lane": ["Area-Cyclops Lane", "table$Apple: Shopping District", "table$UW to Merle OR Teleport-Friendly"],
         "Apple: Ravenwood": ["Area-Ravenwood", "table$Ghosts: Cyclops Lane"],
         "Ghosts: Firecat Alley": ["Area-Firecat Alley", "table$Apple: Ravenwood"]
     }
