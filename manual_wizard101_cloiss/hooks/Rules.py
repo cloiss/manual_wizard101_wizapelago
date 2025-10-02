@@ -14,12 +14,12 @@ def wizReachLocation(state: CollectionState, player: int, location: str) -> bool
         # "x OR y" means what you think it means
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
         "To Muldoon": ["Area-Olde Town", "Building-Rattlebones", "Area-Shopping District OR Teleport-Friendly"],
-        "Photomancy 1": ["Area-Golem Court", "table$To Muldoon OR Teleport-Friendly"],
+        "Photomancy 1": ["Area-Golem Court", "table$UW to Merle OR Teleport-Friendly"],
         "Nightshade": ["Area-Haunted Cave", "Building-Nightshade", "Area-Olde Town", "Building-Foulgaze", "Area-Cyclops Lane", "Area-Shopping District", "Area-Dark Cave", "akilles_skip~Building-Akilles", "Area-Triton Avenue", "Building-Harvest Lord", "Area-Firecat Alley", "Building-Bastilla", "Building-Alicane"],
         "UW to Merle": ["Building-Rattlebones"],
         "Judd": ["table$To Muldoon", "Building-Judd", "Slot-Pet"],
         "Apple: Shopping District": ["Area-Shopping District", "Area-Golem Court"],
-        "Ghosts: Cyclops Lane": ["Area-Cyclops Lane", "table$Apple: Shopping District", "table$UW to Merle OR Teleport-Friendly"],
+        "Ghosts: Cyclops Lane": ["Area-Cyclops Lane", "table$Apple: Shopping District", "table$To Muldoon OR Teleport-Friendly"],
         "Apple: Ravenwood": ["Area-Ravenwood", "table$Ghosts: Cyclops Lane"],
         "Ghosts: Firecat Alley": ["Area-Firecat Alley", "table$Apple: Ravenwood"]
     }
