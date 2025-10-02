@@ -99,7 +99,7 @@
             "name": "Merle to Diego",
             "category": ["02 The Commons"],
             "region": "PostUW",
-            "requires": "{canReachLocation(To Muldoon)}"
+            "requires": "{wizReachLocation(To Muldoon)}"
         },
         {
             "name": "Pet Sounds (Merle)",
@@ -148,13 +148,13 @@
             "name": "9/10 Smiths",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Photomancy 1)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "{wizReachLocation(Photomancy 1)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "5/7 Books",
             "category": ["02 The Commons"],
             "region": "PostStreets",
-            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or {canReachLocation(Nightshade)})"
+            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or {wizReachLocation(Nightshade)})"
 
         },
         {
@@ -244,14 +244,14 @@
             "name": "Walkabout",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
-            "requires": "{|Area-The Commons| and (|Area-Golem Court| and ({canReachLocation(UW to Merle)} or |Teleport-Friendly|))",
+            "requires": "{|Area-The Commons| and (|Area-Golem Court| and ({wizReachLocation(UW to Merle)} or |Teleport-Friendly|))",
             "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones"
         },
         {
             "name": "Gloria",
             "category": ["05 Olde Town"],
             "region": "PostUW",
-            "requires": "{ItemValue(damage:24)} and {canReachLocation(To Muldoon)} and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
+            "requires": "{ItemValue(damage:24)} and {wizReachLocation(To Muldoon)} and ({wizReachLocation(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
         },
         {
             "name": "Bear Market",
@@ -631,7 +631,7 @@
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Apple: Shopping District)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:230)}",
+            "requires": "{wizReachLocation(Apple: Shopping District)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:230)}",
             "dont_place_item_category": ["Area","Building"],
             "dont_place_item": ["Vendor-Recipes/Reagents"],
             "_comment": "This is a hack to avoid placing Baron Mordecai in logic as he is extremely difficult."
@@ -640,26 +640,25 @@
             "name": "Ghosts: Cyclops Lane",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Apple: Shopping District)} and |Area-Cyclops Lane|"
+            "requires": "{wizReachLocation(Apple: Shopping District)} and |Area-Cyclops Lane|"
         },
         {
             "name": "Apple: Ravenwood",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Ghosts: Cyclops Lane)} and |Area-Ravenwood|"
+            "requires": "{wizReachLocation(Ghosts: Cyclops Lane)} and |Area-Ravenwood|"
         },
         {
             "name": "Ghosts: Firecat Alley",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Apple: Ravenwood)} and |Area-Firecat Alley|"
+            "requires": "{wizReachLocation(Apple: Ravenwood)} and |Area-Firecat Alley|"
         },
         {
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Ghosts: Firecat Alley)} and |Area-Haunted Cave|"
+            "requires": "{wizReachLocation(Ghosts: Firecat Alley)} and |Area-Haunted Cave|"
         }
     ]
 }
-
