@@ -9,5 +9,9 @@
     "Friendly Teleport": {
         "hidden": true,
         "yaml_option": ["friendly_teleport"]
+    },
+    "Halloween": {
+        "hidden": true,
+        "yaml_option": ["halloween"]
     }
 }

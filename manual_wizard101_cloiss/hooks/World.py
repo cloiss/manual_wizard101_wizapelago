@@ -47,14 +47,18 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # 0 = none, 1 = all, 2 = ore
     reagents_option = get_option_value(multiworld, player, "reagents")
+    
 
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
-        locationNamesToRemove.append("Mist Wood")
-        locationNamesToRemove.append("Cat Tail")
-        locationNamesToRemove.append("Deep Mushroom")
-        locationNamesToRemove.append("Flax")
-        locationNamesToRemove.append("Any Rare Reagent")
+        reagent_locations = [
+            "Mist Wood",
+            "Cat Tail",
+            "Deep Mushroom",
+            "Flax",
+            "Any Rare Reagent" 
+        ]
+        locationNamesToRemove.extend(reagent_locations)
     if reagents_option == 0:
         locationNamesToRemove.append("Ore")
 
