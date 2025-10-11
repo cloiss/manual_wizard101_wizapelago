@@ -6,22 +6,19 @@ from BaseClasses import MultiWorld, CollectionState
 import re
 
 # Custom function for determining if the player can reach a specific location.
-def wizReachLocation(state: CollectionState, player: int, location: str) -> bool:
+def wizReach(state: CollectionState, player: int, location: str) -> bool:
     location = state.multiworld.get_location(location, player)
     items_table = {
-        # "x~y" means "x" yaml option is required for "y" to be factored in
-        # "table$y" is a way to reference the table for "y" in this list
-        # "x OR y" means what you think it means
+        # "$y" references the logic for "y" elsewhere in this table using recursion
+        # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
-        "To Muldoon": ["Area-Olde Town", "Building-Rattlebones", "Area-Shopping District OR Teleport-Friendly"],
-        "Photomancy 1": ["Area-Golem Court", "table$UW to Merle OR Teleport-Friendly"],
-        "Nightshade": ["Area-Haunted Cave", "Building-Nightshade", "Area-Olde Town", "Building-Foulgaze", "Area-Cyclops Lane", "Area-Shopping District", "Area-Dark Cave", "akilles_skip~Building-Akilles", "Area-Triton Avenue", "Building-Harvest Lord", "Area-Firecat Alley", "Building-Bastilla", "Building-Alicane"],
-        "UW to Merle": ["Building-Rattlebones"],
-        "Judd": ["table$To Muldoon", "Building-Judd", "Slot-Pet"],
-        "Apple: Shopping District": ["Area-Shopping District", "Area-Golem Court"],
-        "Ghosts: Cyclops Lane": ["Area-Cyclops Lane", "table$Apple: Shopping District", "table$To Muldoon OR Teleport-Friendly"],
-        "Apple: Ravenwood": ["Area-Ravenwood", "table$Ghosts: Cyclops Lane"],
-        "Ghosts: Firecat Alley": ["Area-Firecat Alley", "table$Apple: Ravenwood"]
+        "PostUW": ["Area-Unicorn Way","Building-Rattlebones","Area-The Commons"], # TODO missing damage check
+        "To Muldoon": ["$PostUW","Area-Ravenwood","Area-Olde Town","Area-Shopping District OR Teleport-Friendly"],
+        "Judd": ["$To Muldoon", "Building-Judd", "Slot-Pet", "Slot-Mount"],
+        "Golem Court": ["Area-Golem Court", "$PostUW OR Teleport-Friendly"],
+        "Shopping District": ["Area-Shopping District", "$PostUW OR Teleport-Majid OR $SD Friendly"],
+        "SD Friendly": ["Area-Olde Town","Teleport-Friendly"], #dummy conditional to support the compound logic for Shopping District
+        "Apples": ["Area-The Commons", "$Golem Court", "$Shopping District"] # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
     }
     ret_vals = []
     # Get items
@@ -32,14 +29,9 @@ def wizReachLocation(state: CollectionState, player: int, location: str) -> bool
             ret_val = []
             # For loop to support OR conditional
             for item_name_name in item_name.split(" OR "):
-                # "~" signifies yaml option, so check for that
-                if "~" in item_name_name:
-                    req = item_name_name.split("~")[0]
-                    if not get_option_value(state.multiworld, player, req):
-                        continue
                 # "$" signifies table reference, so check for that
                 if "$" in item_name_name:
-                    ret_val.append(wizReachLocation(state, player, item_name_name.split("$")[1]))
+                    ret_val.append(wizReach(state, player, item_name_name.split("$")[1]))
                 else:
                     # Iterate through items list until it finds a match
                     for item in items:
