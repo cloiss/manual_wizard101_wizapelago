@@ -13,5 +13,8 @@
     "Halloween": {
         "hidden": true,
         "yaml_option": ["halloween"]
+    },
+    "07 TreasureCard":{
+        "yaml_option": ["old_tc"]
     }
 }

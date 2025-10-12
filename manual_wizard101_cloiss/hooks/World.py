@@ -116,7 +116,7 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
     for item in item_pool:
         if item.name == filler_item_name:
             to_remove.append(item)
-            item_pool.append(world.create_item("TreasureCard-Rank 1"))
+            item_pool.append(world.create_item("TreasureCard-Other"))
 
     # removing items while iterating through the item pool causes index problems
     for item in to_remove:
