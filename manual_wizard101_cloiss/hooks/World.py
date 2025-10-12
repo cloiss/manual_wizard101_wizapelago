@@ -109,6 +109,19 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
+    # we do this here to let the generator's existing code figure out how many filler items to add, then we just replace them
+    filler_item_name = world.filler_item_name
+    
+    to_remove = [] # items to remove from pool (populate with all default filler items)
+    for item in item_pool:
+        if item.name == filler_item_name:
+            to_remove.append(item)
+            item_pool.append(world.create_item("TreasureCard-Rank 1"))
+
+    # removing items while iterating through the item pool causes index problems
+    for item in to_remove:
+        item_pool.remove(item)
+
     return item_pool
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
