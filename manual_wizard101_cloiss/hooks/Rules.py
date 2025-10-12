@@ -5,48 +5,20 @@ from BaseClasses import MultiWorld, CollectionState
 
 import re
 
-# Custom function for determining if the player can reach a specific location.
-def wizReach(state: CollectionState, player: int, location: str) -> bool:
-    location = state.multiworld.get_location(location, player)
-    items_table = {
+def wizReach(location: str) -> bool:
+    locations_dict = {
         # "$y" references the logic for "y" elsewhere in this table using recursion
         # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
-        "PostUW": ["Area-Unicorn Way","Building-Rattlebones","Area-The Commons"], # TODO missing damage check
-        "To Muldoon": ["$PostUW","Area-Ravenwood","Area-Olde Town","Area-Shopping District OR Teleport-Friendly"],
-        "Judd": ["$To Muldoon", "Building-Judd", "Slot-Pet", "Slot-Mount"],
-        "Golem Court": ["Area-Golem Court", "$PostUW OR Teleport-Friendly"],
-        "Shopping District": ["Area-Shopping District", "$PostUW OR Teleport-Majid OR $SD Friendly"],
-        "SD Friendly": ["Area-Olde Town","Teleport-Friendly"], #dummy conditional to support the compound logic for Shopping District
-        "Apples": ["Area-The Commons", "$Golem Court", "$Shopping District"] # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
+        "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {ItemValue(damage:26)}",
+        "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
+        "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
+        "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
+        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or |Teleport-Majid| or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Apples": "|Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}" # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
     }
-    ret_vals = []
-    # Get items
-    items = state.multiworld.get_items()
-    if location.name in items_table:
-        # Loop through the list depending on which location's table you wish to grab
-        for item_name in items_table[location.name]:
-            ret_val = []
-            # For loop to support OR conditional
-            for item_name_name in item_name.split(" OR "):
-                # "$" signifies table reference, so check for that
-                if "$" in item_name_name:
-                    ret_val.append(wizReach(state, player, item_name_name.split("$")[1]))
-                else:
-                    # Iterate through items list until it finds a match
-                    for item in items:
-                        if item.name == item_name_name and item.player == player:
-                            player_item = item.name
-                            break
-                    # More OR conditional stuff baked in here
-                    if state.has(player_item, player):
-                        ret_val.append(True)
-                    else:
-                        ret_val.append(False)
-            ret_vals.append(any(ret_val))
-             
-    return all(ret_vals)
-
+    return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
+    
 # Sometimes you have a requirement that is just too messy or repetitive to write out with boolean logic.
 # Define a function here, and you can use it in a requires string with {function_name()}.
 def overfishedAnywhere(world: World, state: CollectionState, player: int):

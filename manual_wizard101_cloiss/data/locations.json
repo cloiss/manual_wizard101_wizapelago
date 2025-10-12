@@ -171,8 +171,8 @@
         {
             "name": "Photomancy 2",
             "category": ["03 Golem Court"],
-            "region": "GC",
-            "requires": "|Area-Ravenwood| and |Area-Olde Town| and |Area-The Commons|"
+            "region": "EarlyOT",
+            "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|"
         },
         {
             "name": "Construct",
@@ -659,7 +659,7 @@
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         }
     ]
 }
