@@ -145,6 +145,40 @@ def before_create_items_all(item_config: dict[str, int|dict], world: World, mult
 
 # The item pool before starting items are processed, in case you want to see the raw item pool at that stage
 def before_create_items_starting(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
+    item_names_to_add: list[str] = []
+
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+
+    valid_schools = schools.copy()
+    valid_schools.remove("Any")
+    valid_schools.remove("Random")
+    # roll a random school if Random was chosen
+    if primary_school == "Random":
+        primary_school = random.choice(valid_schools)
+    if secondary_school == "Random":
+        secondary_school = random.choice(valid_schools)
+
+    # choose a random secondary school if primary and secondary are the same
+    if primary_school == secondary_school:
+        valid_schools.remove(primary_school)
+        secondary_school = random.choice(valid_schools)
+
+    primary_school_spells = list(world.item_name_groups["School-" + primary_school])
+    secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
+    primary_only_spells = world.item_name_groups["School-PrimaryOnly"]
+
+    for spell in primary_only_spells:
+        if spell in secondary_school_spells:
+            secondary_school_spells.remove(spell)
+
+    item_names_to_add.extend(primary_school_spells)
+    item_names_to_add.extend(secondary_school_spells)
+
+    for item_name in item_names_to_add:
+        item_pool.append(world.create_item(item_name))
+    
     return item_pool
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
@@ -161,38 +195,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item = next(i for i in item_pool if i.name == itemName)
         item_pool.remove(item)
 
-    item_names_to_add: list[str] = []
-
-    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
-
-    # roll a random school if Random was chosen
-    if primary_school == "Random":
-        valid_primary_schools = schools.copy()
-        valid_primary_schools.remove("Any")
-        valid_primary_schools.remove("Random")
-        primary_school = random.choice(valid_primary_schools)
-    if secondary_school == "Random":
-        valid_secondary_schools = schools.copy()
-        valid_secondary_schools.remove("Random")
-        secondary_school = random.choice(valid_secondary_schools)
-
-    # choose a random secondary school if primary and secondary are the same
-    if primary_school == secondary_school:
-        non_primary_schools = schools.copy()
-        non_primary_schools.remove(primary_school)
-        non_primary_schools.remove("Any")
-        secondary_school = random.choice(non_primary_schools)
-
-    primary_school_spells = world.item_name_groups["School-" + primary_school]
-    secondary_school_spells = world.item_name_groups["School-" + secondary_school]
-
-    item_names_to_add.extend(primary_school_spells)
-    item_names_to_add.extend(secondary_school_spells)
-
-    for item_name in item_names_to_add:
-        item_pool.append(world.create_item(item_name))
+    
 
     return item_pool
 

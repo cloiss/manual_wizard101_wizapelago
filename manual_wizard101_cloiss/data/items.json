@@ -2,6 +2,48 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.items.schema.json",
     "data": [
         {
+            "name": "School-Balance",
+            "category": ["00 School","School-Balance","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Storm",
+            "category": ["00 School","School-Storm","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Ice",
+            "category": ["00 School","School-Ice","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Fire",
+            "category": ["00 School","School-Fire","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Death",
+            "category": ["00 School","School-Death","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Myth",
+            "category": ["00 School","School-Myth","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
+            "name": "School-Life",
+            "category": ["00 School","School-Life","School-PrimaryOnly"],
+            "progression": true,
+            "count": 0
+        },
+        {
             "name": "Area-Unicorn Way",
             "category": ["01 Area"],
             "early": true,
@@ -260,13 +302,6 @@
             "progression": true
         },
         {
-            "name": "SpellCard-Primary L1",
-            "category": ["05 SpellCard"],
-            "value": {"damage": 19},
-            "useful": true,
-            "progression": true
-        },
-        {
             "name": "SpellCard-Primary L5",
             "category": ["05 SpellCard"],
             "value": {"damage": 46},
@@ -284,7 +319,7 @@
         },          
         {
             "name": "SpellCard-Scarab",
-            "category": ["05 SpellCard","School-Balance"],
+            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -292,7 +327,7 @@
         },          
         {
             "name": "SpellCard-Thunder Snake",
-            "category": ["05 SpellCard","School-Storm"],
+            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1"],
             "value": {"damage": 31},
             "useful": true,
             "progression": true,
@@ -300,7 +335,7 @@
         },          
         {
             "name": "SpellCard-Ice Beetle",
-            "category": ["05 SpellCard","School-Ice"],
+            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -308,7 +343,7 @@
         },          
         {
             "name": "SpellCard-Fire Cat",
-            "category": ["05 SpellCard","School-Fire"],
+            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1"],
             "value": {"damage": 24},
             "useful": true,
             "progression": true,
@@ -316,7 +351,7 @@
         },          
         {
             "name": "SpellCard-Dark Sprite",
-            "category": ["05 SpellCard","School-Death"],
+            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -324,7 +359,7 @@
         },          
         {
             "name": "SpellCard-Blood Bat",
-            "category": ["05 SpellCard","School-Myth"],
+            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1"],
             "value": {"damage": 21},
             "useful": true,
             "progression": true,
@@ -332,7 +367,7 @@
         },          
         {
             "name": "SpellCard-Imp",
-            "category": ["05 SpellCard","School-Life"],
+            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -340,7 +375,7 @@
         },          
         {
             "name": "SpellCard-Secondary L1",
-            "category": ["05 SpellCard","School-Any"],
+            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,

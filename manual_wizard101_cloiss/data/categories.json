@@ -6,6 +6,9 @@
     "ItemCard-Rank 2": {
         "hidden": true
     },
+    "SpellCard-Rank 1": {
+        "hidden": true
+    },
     "Friendly Teleport": {
         "hidden": true,
         "yaml_option": ["friendly_teleport"]
