@@ -195,7 +195,51 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item = next(i for i in item_pool if i.name == itemName)
         item_pool.remove(item)
 
+    item_names_to_add: list[str] = []
+
+    # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
+
+    rank_2_to_rank_1 = { # TODO there must be a better way...
+        "SpellCard-Scorpion": "SpellCard-Scarab",
+        "SpellCard-Lightning Bats": "SpellCard-Thunder Snake",
+        "SpellCard-Snow Serpent": "SpellCard-Ice Beetle",
+        "SpellCard-Fire Elf": "SpellCard-Fire Cat",
+        "SpellCard-Ghoul": "SpellCard-Dark Sprite",
+        "SpellCard-Troll": "SpellCard-Blood Bat",
+        "SpellCard-Leprechaun": "SpellCard-Imp",
+        "SpellCard-Secondary L5": "SpellCard-Secondary L1"
+    }
+    enrollment_to_school = { # TODO there must be a better way...
+        "SpellCard-Elemental Shield": "School-Balance",
+        "SpellCard-Lightning Strike": "School-Storm",
+        "SpellCard-Freeze": "School-Ice",
+        "SpellCard-Fireblade": "School-Fire",
+        "SpellCard-Death Trap": "School-Death",
+        "SpellCard-Golem Minion": "School-Myth",
+        "SpellCard-Minor Blessing": "School-Life"
+    }
+    enrollment_spells = list(world.item_name_groups["SpellCard-Enrollment"])
+    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
+    rank_2_spells_enabled: list[str] = []
+
+    # find the rank 2 spells and the primary school
+    for item in item_pool:
+        if item.name in rank_2_spells:
+            rank_2_spells_enabled.append(item.name)
+        if item.name in enrollment_spells:
+            primary_school = enrollment_to_school[item.name]
     
+    # find the rank 2 spell that isn't primary and note the associated rank 1 spell
+    primary_school_spells = list(world.item_name_groups[primary_school])
+    for spell in rank_2_spells_enabled:
+        if spell not in primary_school_spells:
+            secondary_rank_1 = rank_2_to_rank_1[spell]
+
+    # add the associated rank 1 spell to the item pool
+    item_names_to_add.append(secondary_rank_1)
+
+    for item_name in item_names_to_add:
+        item_pool.append(world.create_item(item_name))
 
     return item_pool
 

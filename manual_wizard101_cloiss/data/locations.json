@@ -128,7 +128,7 @@
             "name": "Level 7 Quest",
             "category": ["02 The Commons"],
             "region": "Level7",
-            "requires": "|Area-Golem Court| and |Area-Shopping District| and |Area-Haunted Cave|"
+            "requires": "(|School-Balance| and |Area-Golem Court|) or |School-Storm| or (|School-Ice| and |Area-Shopping District|) or (|School-Fire| and |Area-Golem Court|) or (|School-Death| and |Area-Triton Avenue| and |Area-Haunted Cave|) or |School-Myth| or |School-Life|"
         },
         {
             "name": "Fishing 1",
