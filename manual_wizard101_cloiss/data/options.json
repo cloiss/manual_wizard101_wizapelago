@@ -99,14 +99,6 @@
             "default": false,
             "group": "Check Locations"
         },
-        "old_tc": {
-            "description": [
-                "Default false. Temporary option for testing."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Check Locations"
-        },
 
 
 
