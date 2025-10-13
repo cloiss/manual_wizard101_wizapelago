@@ -21,7 +21,44 @@
             }
         }
     },
-    "user": {
+    "user": {       
+        "primary_school": {
+            "description": [
+                "Select your wizard's primary school. Choose 'random' to select a school at random with equal odds."
+            ],
+            "type": "Choice",
+            "values": {
+                "balance": 0,
+                "storm": 1,
+                "fire": 2,
+                "ice": 3,
+                "death": 4,
+                "myth": 5,
+                "life": 6,
+                "random": -1
+            },
+            "default": -1,
+            "group": "School"
+        },
+        "secondary_school": {
+            "description": [
+                "Select your wizard's secondary school. If you choose the same school as the primary, it will be chosen at random. Choose 'any' to allow yourself to pick a secondary school during the game. This will cause secondary spell items to appear as e.g. 'Secondary L1'."
+            ],
+            "type": "Choice",
+            "values": {
+                "balance": 0,
+                "storm": 1,
+                "fire": 2,
+                "ice": 3,
+                "death": 4,
+                "myth": 5,
+                "life": 6,
+                "random": -1,
+                "any": -2
+            },
+            "default": 1,
+            "group": "School"
+        },
         "start_mark":{
             "description": [
                 "Start with the ability to set a mark (Teleport-Mark). Recommended for a faster game."
@@ -48,7 +85,7 @@
         },
         "early_mark":{
             "description": [
-                "Ensures the Teleport-Mark ability is given prior to CL Fodder, Harvest Lord, and Bastilla quests."
+                "Ensures the Teleport-Mark ability is given prior to Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
             "type": "Toggle",
             "default": true,

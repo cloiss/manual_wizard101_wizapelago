@@ -408,7 +408,7 @@
         },           
         {
             "name": "ItemCard-Charms/Wards",
-            "category": ["06 ItemCard","ItemCard-Rank 2"],
+            "category": ["06 ItemCard"],
             "filler": true,
             "_comment": "Misc item cards from Bazaar amulets (shields, traps, wekaness)"
         }, 

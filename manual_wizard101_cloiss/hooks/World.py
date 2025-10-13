@@ -167,6 +167,11 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item = next(i for i in item_pool if i.name == itemName)
         item_pool.remove(item)
 
+    item_names_to_add = list[str] = []
+
+    for item_name in item_names_to_add:
+        item_pool.append(world.create_item(item_name))
+
     return item_pool
 
     # Some other useful hook options:
