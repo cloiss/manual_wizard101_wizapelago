@@ -13,5 +13,32 @@
     "Halloween": {
         "hidden": true,
         "yaml_option": ["halloween"]
+    },
+    "School-Balance": {
+        "hidden": true
+    },
+    "School-Storm": {
+        "hidden": true
+    },
+    "School-Ice": {
+        "hidden": true
+    },
+    "School-Fire": {
+        "hidden": true
+    },
+    "School-Death": {
+        "hidden": true
+    },
+    "School-Myth": {
+        "hidden": true
+    },
+    "School-Life": {
+        "hidden": true
+    },
+    "School-Any": {
+        "hidden": true
+    },
+    "School-PrimaryOnly": {
+        "hidden": true
     }
 }

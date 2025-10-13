@@ -283,11 +283,68 @@
             "category": ["05 SpellCard"]
         },          
         {
-            "name": "SpellCard-Secondary L1",
-            "category": ["05 SpellCard"],
+            "name": "SpellCard-Scarab",
+            "category": ["05 SpellCard","School-Balance"],
             "value": {"damage": 19},
             "useful": true,
-            "progression": true
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Thunder Snake",
+            "category": ["05 SpellCard","School-Storm"],
+            "value": {"damage": 31},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Ice Beetle",
+            "category": ["05 SpellCard","School-Ice"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Fire Cat",
+            "category": ["05 SpellCard","School-Fire"],
+            "value": {"damage": 24},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Dark Sprite",
+            "category": ["05 SpellCard","School-Death"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Blood Bat",
+            "category": ["05 SpellCard","School-Myth"],
+            "value": {"damage": 21},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Imp",
+            "category": ["05 SpellCard","School-Life"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true,
+            "count": 0
+        },          
+        {
+            "name": "SpellCard-Secondary L1",
+            "category": ["05 SpellCard","School-Any"],
+            "value": {"damage": 19},
+            "useful": true,
+            "progression": true,
+            "count": 0
         },
         {
             "name": "SpellCard-Secondary L5",

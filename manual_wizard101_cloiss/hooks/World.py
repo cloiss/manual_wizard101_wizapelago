@@ -17,7 +17,7 @@ from ..Helpers import is_option_enabled, get_option_value, format_state_prog_ite
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
-# used by generate_tc_pool
+# used by generate_tc_pool and random school choice
 import random, math
 
 ########################################################################################
@@ -162,6 +162,34 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item_pool.remove(item)
 
     item_names_to_add: list[str] = []
+
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+
+    # roll a random school if Random was chosen
+    if primary_school == "Random":
+        valid_primary_schools = schools.copy()
+        valid_primary_schools.remove("Any")
+        valid_primary_schools.remove("Random")
+        primary_school = random.choice(valid_primary_schools)
+    if secondary_school == "Random":
+        valid_secondary_schools = schools.copy()
+        valid_secondary_schools.remove("Random")
+        secondary_school = random.choice(valid_secondary_schools)
+
+    # choose a random secondary school if primary and secondary are the same
+    if primary_school == secondary_school:
+        non_primary_schools = schools.copy()
+        non_primary_schools.remove(primary_school)
+        non_primary_schools.remove("Any")
+        secondary_school = random.choice(non_primary_schools)
+
+    primary_school_spells = world.item_name_groups["School-" + primary_school]
+    secondary_school_spells = world.item_name_groups["School-" + secondary_school]
+
+    item_names_to_add.extend(primary_school_spells)
+    item_names_to_add.extend(secondary_school_spells)
 
     for item_name in item_names_to_add:
         item_pool.append(world.create_item(item_name))

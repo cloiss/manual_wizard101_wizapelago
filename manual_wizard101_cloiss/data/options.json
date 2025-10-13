@@ -35,14 +35,14 @@
                 "death": 4,
                 "myth": 5,
                 "life": 6,
-                "random": -1
+                "random-school": -1
             },
             "default": -1,
             "group": "School"
         },
         "secondary_school": {
             "description": [
-                "Select your wizard's secondary school. If you choose the same school as the primary, it will be chosen at random. Choose 'any' to allow yourself to pick a secondary school during the game. This will cause secondary spell items to appear as e.g. 'Secondary L1'."
+                "Select your wizard's secondary school. If you choose the same school as the primary, a different school will be chosen at random. Choose 'any' to allow yourself to pick a secondary school during the game. This will cause secondary spell items to appear as e.g. 'Secondary L1'."
             ],
             "type": "Choice",
             "values": {
@@ -53,7 +53,7 @@
                 "death": 4,
                 "myth": 5,
                 "life": 6,
-                "random": -1,
+                "random-school": -1,
                 "any": -2
             },
             "default": 1,
