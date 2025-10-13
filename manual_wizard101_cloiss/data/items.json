@@ -441,18 +441,21 @@
         },
         {
             "name": "SpellCard-Secondary L8",
-            "category": ["05 SpellCard"],
-            "filler": true
+            "category": ["05 SpellCard"]
         },
         {
             "name": "SpellCard-Secondary L10",
-            "category": ["05 SpellCard"],
-            "filler": true
+            "category": ["05 SpellCard"]
         },
         {
-            "name": "SpellCard-Pixie or Fairy",
-            "category": ["05 SpellCard"],
-            "filler": true
+            "name": "SpellCard-Pixie",
+            "category": ["05 SpellCard","School-Balance","School-Storm","School-Ice","School-Fire","School-Death","School-Myth","School-PrimaryOnly"],
+            "count": 0
+        },
+        {
+            "name": "SpellCard-Fairy",
+            "category": ["05 SpellCard","School-Life","School-PrimaryOnly"],
+            "count": 0
         },
         {
             "name": "SpellCard-Elemental Shield",
