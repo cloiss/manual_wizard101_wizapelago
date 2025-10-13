@@ -118,19 +118,13 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # 0 = none, 1 = all, 2 = ore
     reagents_option = get_option_value(multiworld, player, "reagents")
     
-
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
-        reagent_locations = [
-            "Mist Wood",
-            "Cat Tail",
-            "Deep Mushroom",
-            "Flax",
-            "Any Rare Reagent" 
-        ]
+        reagent_locations = world.location_name_groups["09 Reagents"]
         locationNamesToRemove.extend(reagent_locations)
-    if reagents_option == 0:
-        locationNamesToRemove.append("Ore")
+    # add back ore for ore option
+    if reagents_option == 2:
+        locationNamesToRemove.remove("Ore")
 
     for region in multiworld.regions:
         if region.player == player:
@@ -167,7 +161,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         item = next(i for i in item_pool if i.name == itemName)
         item_pool.remove(item)
 
-    item_names_to_add = list[str] = []
+    item_names_to_add: list[str] = []
 
     for item_name in item_names_to_add:
         item_pool.append(world.create_item(item_name))
