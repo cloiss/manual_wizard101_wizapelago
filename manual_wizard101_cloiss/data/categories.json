@@ -12,6 +12,9 @@
     "SpellCard-Rank 2": {
         "hidden": true
     },
+    "SpellCard-Enrollment": {
+        "hidden": true
+    },
     "SpellCard-Shields/Weaknesses": {
         "hidden": true
     },
