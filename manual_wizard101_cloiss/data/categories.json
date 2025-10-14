@@ -12,6 +12,9 @@
     "SpellCard-Rank 2": {
         "hidden": true
     },
+    "SpellCard-Shields/Weaknesses": {
+        "hidden": true
+    },
     "Friendly Teleport": {
         "hidden": true,
         "yaml_option": ["friendly_teleport"]
