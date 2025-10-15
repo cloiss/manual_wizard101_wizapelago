@@ -17,6 +17,9 @@ from ..Helpers import is_option_enabled, get_option_value, format_state_prog_ite
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
+# used by generate_tc_pool
+import random, math
+
 ########################################################################################
 ## Order of method calls when the world generates:
 ##    1. create_regions - Creates regions and locations
@@ -29,7 +32,74 @@ import logging
 ## The fill_slot_data method will be used to send data to the Manual client for later use, like deathlink.
 ########################################################################################
 
+def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
+    # order is counterclockwise based on school position in Ravenwood
+    school_names = ["Storm","Ice","Fire","Death","Life","Myth"] # balance not included because no Balance Shield or Balance Trap
+    halloween_option = get_option_value(multiworld, player, "halloween")
 
+    # hits
+    subpool_rank1 = ["Scarab","Thunder Snake","Ice Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
+    subpool_rank2 = ["Scorpion","Lightning Bats","Snow Serpent","Fire Elf","Ghoul","Troll","Leprechaun"]
+    subpool_rank3 = ["Locust Swarm","Storm Shark","Evil Snowman","Sunbird","Banshee","Cyclops","Nature's Wrath"]
+    subpool_rank4 = ["Sandstorm","Kraken","Ice Wyvern","Meteor Strike","Vampire","Humongofrog","Seraph"]
+    subpool_misc_hits = ["Spectral Blast","Stormzilla","Phoenix","Skeletal Pirate","Minotaur"]
+    pool_hits = subpool_rank1 * 3 + subpool_rank2 * 5 + subpool_rank3 * 3 + subpool_rank4 + subpool_misc_hits
+
+    # defense
+    subpool_single_shields = [s + " Shield" for s in school_names] + ["Snow Shield"]
+    subpool_single_shields.remove("Ice Shield") # why are you like this KI
+    subpool_set_shields = [s + " Shield" for s in ["Thermic","Volcanic","Glacial","Ether","Legend","Dream"]]
+    subpool_misc_defense = ["Stun Block","Tower Shield","Weakness","Sprite","Fairy","Spirit Armor"]
+    pool_defense = subpool_single_shields * 5 + subpool_set_shields * 2 + subpool_misc_defense
+
+    # buffs
+    subpool_single_blades = [s + "blade" for s in school_names]
+    subpool_single_traps = [s + " Trap" for s in school_names]
+    subpool_set_blades = [s + " Blade" for s in ["Elemental","Spirit"]]
+    subpool_set_traps = [s + " Trap" for s in ["Elemental","Spirit"]]
+    subpool_misc_buffs = ["Balanceblade","Hex"] # not included in the other pool due to how expensive they are
+    pool_buffs = subpool_single_blades + subpool_single_traps * 3 + subpool_set_blades * 3 + subpool_set_traps * 3 + subpool_misc_buffs
+
+    # other pools -- drawing without replacement from these tripled pools creates a slight bias against repeat values
+    pool_drops = ["Ghost Touch","Fire Elf","Troll","Ghoul","Evil Snowman","Banshee"] * 3
+    pool_useful = ["Lightning Bats","Storm Shark","Sunbird","Kraken","Storm Trap","Meteor Strike"] * 3
+    pool_exotic = ["Harvest Lord","Tough","Tempest","Keen Eyes","Reshuffle"] # not tripled, max 1 copy of these
+    pool_any = ["Any Rank 1","Any Rank 2","Any Rank 3","Any Rank 4+","Any Trap","Any Blade","Any Shield","Any TC"] * 3
+
+    # in the spirit of the randomizer, any TCs you can get from a quest will always be there
+    pool_quest_rewards = ["Kraken","Ghoul","Blood Bat","Sprite"]
+    # add black cats for halloween
+    if halloween_option:
+        pool_quest_rewards += ["Black Cat"] * 9
+
+    random.shuffle(pool_hits)
+    random.shuffle(pool_defense)
+    random.shuffle(pool_buffs)
+    random.shuffle(pool_drops)
+    random.shuffle(pool_useful)
+    random.shuffle(pool_exotic)
+    random.shuffle(pool_any)
+    random.shuffle(pool_quest_rewards)
+
+    random_pool_size = pool_size - len(pool_quest_rewards) # size of the random section of the pool, to determine the appropriate amount of each category to include
+
+    # the divisors are all coprime so that no two amounts ever go up at the same time until n = 30
+    defense_amount = math.ceil(random_pool_size / 19)
+    buffs_amount = math.ceil(random_pool_size / 17)
+    drops_amount = math.ceil(random_pool_size / 11)
+    useful_amount = math.ceil(random_pool_size / 6)
+    exotic_amount = math.ceil(random_pool_size / 23)
+    any_amount = math.ceil(random_pool_size / 5)
+
+    # frontloads the most important stuff (including all quest rewards), then adds plenty of extra random hits to the end
+    pool = pool_quest_rewards + pool_useful[:useful_amount] + pool_any[:any_amount] + pool_drops[:drops_amount] + pool_buffs[:buffs_amount] + pool_defense[:defense_amount] + pool_exotic[:exotic_amount] + pool_hits[:pool_size]
+    
+    # failsafe for extremely large pools (n > 150), this code should never run in practice
+    while len(pool) < pool_size:
+        pool += pool
+
+    # returns the first n entries in the pool, meaning small pools always go [useful, any, drop, buff, ...] instead of potentially having filler hits
+    return pool[:pool_size]
 
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
@@ -109,6 +179,25 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
+    # we do this here to let the generator's existing code figure out how many filler items to add, then we just replace them
+    filler_item_name = world.filler_item_name
+    
+    to_remove = [] # items to remove from pool
+    # populate to_remove with all default filler items
+    for item in item_pool:
+        if item.name == filler_item_name:
+            to_remove.append(item)
+
+    tc_pool = generate_tc_pool(len(to_remove),world,multiworld,player)
+
+    # remove the specified items. doing this at the end prevents index errors when iterating
+    for item in to_remove:
+        item_pool.remove(item)
+    
+    # finally, add the specified items (currently just treasure cards)
+    for tc_name in tc_pool:
+        item_pool.append(world.create_item("TreasureCard-" + tc_name))
+
     return item_pool
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
