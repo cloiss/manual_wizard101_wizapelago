@@ -256,21 +256,53 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
     # we do this here to let the generator's existing code figure out how many filler items to add, then we just replace them
     filler_item_name = world.filler_item_name
     
+    to_add = [] # items to add to pool
     to_remove = [] # items to remove from pool
     # populate to_remove with all default filler items
     for item in item_pool:
         if item.name == filler_item_name:
             to_remove.append(item)
 
-    tc_pool = generate_tc_pool(len(to_remove),world,multiworld,player)
+    # determine needed items, and amount of non-tc filler
+    items_needed = len(to_remove)
+    filler_needed = math.floor(items_needed / 5) - 2 # add a non-tc filler every 5 items starting at 11 items
+    items_needed -= filler_needed
+
+    useful_filler = list(world.item_name_groups["UsefulFiller"]) # useful filler (rank 2 item cards) is prioritized
+    filler_items = list(world.item_name_groups["FillerItem"])
+
+    # remove anything that's already in the pool to avoid duplicate items
+    for item in item_pool:
+        if item.name in useful_filler:
+            useful_filler.remove(item.name)
+        if item.name in filler_items:
+            filler_items.remove(item.name)
+
+    # populate to_add with enough filler items, prioritizing useful filler
+    while filler_needed > 0:
+        if useful_filler and random.random() < 0.8: # 80% chance for filler item to be useful, while useful items are available in the pool
+            item = random.choice(useful_filler)
+            useful_filler.remove(item)
+        else:
+            item = random.choice(filler_items)
+            filler_items.remove(item)
+        to_add.append(item)
+        filler_needed -= 1
+
+        # break out of the loop if we run out of filler to add (only happens with tons of extra locations)
+        if len(useful_filler) + len(filler_items) == 0:
+            break
+
+    tc_pool = generate_tc_pool(items_needed,world,multiworld,player)
+    for tc_name in tc_pool:
+        to_add.append("TreasureCard-" + tc_name)
 
     # remove the specified items. doing this at the end prevents index errors when iterating
     for item in to_remove:
         item_pool.remove(item)
-    
-    # finally, add the specified items (currently just treasure cards)
-    for tc_name in tc_pool:
-        item_pool.append(world.create_item("TreasureCard-" + tc_name))
+    # finally, add the specified items
+    for item in to_add:
+        item_pool.append(world.create_item(item))
 
     return item_pool
 

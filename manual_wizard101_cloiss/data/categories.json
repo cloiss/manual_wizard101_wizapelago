@@ -15,7 +15,10 @@
     "SpellCard-Enrollment": {
         "hidden": true
     },
-    "SpellCard-Shields/Weaknesses": {
+    "UsefulFiller": {
+        "hidden": true
+    },
+    "FillerItem": {
         "hidden": true
     },
     "Friendly Teleport": {
