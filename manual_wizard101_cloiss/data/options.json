@@ -30,8 +30,8 @@
             "values": {
                 "balance": 0,
                 "storm": 1,
-                "fire": 2,
-                "ice": 3,
+                "ice": 2,
+                "fire": 3,
                 "death": 4,
                 "myth": 5,
                 "life": 6,
@@ -48,8 +48,8 @@
             "values": {
                 "balance": 0,
                 "storm": 1,
-                "fire": 2,
-                "ice": 3,
+                "ice": 2,
+                "fire": 3,
                 "death": 4,
                 "myth": 5,
                 "life": 6,
