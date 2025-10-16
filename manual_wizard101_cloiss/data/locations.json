@@ -251,8 +251,8 @@
         {
             "name": "Gloria",
             "category": ["05 Olde Town"],
-            "region": "PostUW",
-            "requires": "{ItemValue(damage:24)} and {wizReach(To Muldoon)} and ({wizReach(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
+            "region": "EarlyStreets",
+            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
         },
         {
             "name": "Bear Market",

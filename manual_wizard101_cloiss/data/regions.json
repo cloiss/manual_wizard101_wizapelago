@@ -37,7 +37,7 @@
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{
-        "requires": "{ItemValue(damage:26)} and {wizReach(PostUW)}",
+        "requires": "{wizReach(PostUW)}",
         "connects_to": ["Judd"]
     },
     "Judd":{
