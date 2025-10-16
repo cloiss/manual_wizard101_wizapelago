@@ -343,7 +343,7 @@
             "name": "Fears",
             "category": ["06 Cyclops Lane"],
             "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue|"
+            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue| and |Building-Fears|"
         },
         {
             "name": "Pre-Triton",

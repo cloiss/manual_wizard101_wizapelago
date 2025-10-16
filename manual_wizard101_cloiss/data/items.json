@@ -173,6 +173,11 @@
             "progression": true
         },
         {
+            "name": "Building-Fears",
+            "category": ["02 Building"],
+            "progression": true
+        },
+        {
             "name": "Building-Kraken",
             "category": ["02 Building"],
             "progression": true
