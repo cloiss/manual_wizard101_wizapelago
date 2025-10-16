@@ -668,6 +668,18 @@
             "count": 0
         },
         {
+            "name": "SpellCard-Stun Block",
+            "category": ["05 SpellCard","FillerItem"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "SpellCard-Conviction",
+            "category": ["05 SpellCard","FillerItem"],
+            "filler": true,
+            "count": 0
+        },
+        {
             "name": "ItemCard-Thunder Snake",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
             "value": {"damage": 9},
@@ -796,6 +808,12 @@
         {
             "name": "ItemCard-Myth Trap",
             "category": ["06 ItemCard","School-Myth","FillerItem"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "ItemCard-Guiding Light",
+            "category": ["06 ItemCard","FillerItem"],
             "filler": true,
             "count": 0
         },
