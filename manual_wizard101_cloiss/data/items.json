@@ -3,43 +3,43 @@
     "data": [
         {
             "name": "School-Balance",
-            "category": ["00 School","School-Balance","School-PrimaryOnly"],
+            "category": ["00 School","School-Balance","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Storm",
-            "category": ["00 School","School-Storm","School-PrimaryOnly"],
+            "category": ["00 School","School-Storm","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Ice",
-            "category": ["00 School","School-Ice","School-PrimaryOnly"],
+            "category": ["00 School","School-Ice","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Fire",
-            "category": ["00 School","School-Fire","School-PrimaryOnly"],
+            "category": ["00 School","School-Fire","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Death",
-            "category": ["00 School","School-Death","School-PrimaryOnly"],
+            "category": ["00 School","School-Death","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Myth",
-            "category": ["00 School","School-Myth","School-PrimaryOnly"],
+            "category": ["00 School","School-Myth","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
         {
             "name": "School-Life",
-            "category": ["00 School","School-Life","School-PrimaryOnly"],
+            "category": ["00 School","School-Life","PrimaryOnly"],
             "progression": true,
             "count": 0
         },
@@ -308,7 +308,7 @@
         },
         {
             "name": "SpellCard-Scarab",
-            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -317,7 +317,7 @@
         },          
         {
             "name": "SpellCard-Thunder Snake",
-            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 31},
             "useful": true,
             "progression": true,
@@ -325,7 +325,7 @@
         },          
         {
             "name": "SpellCard-Ice Beetle",
-            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -333,7 +333,7 @@
         },          
         {
             "name": "SpellCard-Fire Cat",
-            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 24},
             "useful": true,
             "progression": true,
@@ -341,7 +341,7 @@
         },          
         {
             "name": "SpellCard-Dark Sprite",
-            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -349,7 +349,7 @@
         },          
         {
             "name": "SpellCard-Blood Bat",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 21},
             "useful": true,
             "progression": true,
@@ -357,7 +357,7 @@
         },          
         {
             "name": "SpellCard-Imp",
-            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -365,7 +365,7 @@
         },          
         {
             "name": "SpellCard-Secondary L1",
-            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1","PrimaryOnly"],
             "value": {"damage": 19},
             "useful": true,
             "progression": true,
@@ -517,158 +517,158 @@
         },
         {
             "name": "SpellCard-Pixie",
-            "category": ["05 SpellCard","School-Balance","School-Storm","School-Ice","School-Fire","School-Death","School-Myth","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Balance","School-Storm","School-Ice","School-Fire","School-Death","School-Myth","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Fairy",
-            "category": ["05 SpellCard","School-Life","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Life","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Elemental Shield",
-            "category": ["05 SpellCard","School-Balance","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Balance","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Spirit Shield",
-            "category": ["05 SpellCard","School-Balance","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Lightning Strike",
-            "category": ["05 SpellCard","School-Storm","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Storm","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Freeze",
-            "category": ["05 SpellCard","School-Ice","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Ice","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Fireblade",
-            "category": ["05 SpellCard","School-Fire","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Fire","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Death Trap",
-            "category": ["05 SpellCard","School-Death","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Death","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Golem Minion",
-            "category": ["05 SpellCard","School-Myth","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Myth","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Minor Blessing",
-            "category": ["05 SpellCard","School-Life","School-PrimaryOnly","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Life","PrimaryOnly","SpellCard-Enrollment"],
             "count": 0
         },
         {
             "name": "SpellCard-Precision",
-            "category": ["05 SpellCard","School-Balance","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Storm Prism",
-            "category": ["05 SpellCard","School-Storm","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Storm","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Ice Trap",
-            "category": ["05 SpellCard","School-Ice","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Ice","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Fire Prism",
-            "category": ["05 SpellCard","School-Fire","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Fire","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Deathblade",
-            "category": ["05 SpellCard","School-Death","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Death","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Troll Minion",
-            "category": ["05 SpellCard","School-Myth","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Myth","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Unicorn",
-            "category": ["05 SpellCard","School-Life","School-PrimaryOnly"],
+            "category": ["05 SpellCard","School-Life","PrimaryOnly"],
             "count": 0
         },
         {
             "name": "SpellCard-Storm Shield",
-            "category": ["05 SpellCard","School-Storm","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Snow Shield",
-            "category": ["05 SpellCard","School-Ice","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Fire Shield",
-            "category": ["05 SpellCard","School-Fire","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Death Shield",
-            "category": ["05 SpellCard","School-Death","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Myth Shield",
-            "category": ["05 SpellCard","School-Myth","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Life Shield",
-            "category": ["05 SpellCard","School-Life","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Storm Weakness",
-            "category": ["05 SpellCard","School-Storm","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Ice Weakness",
-            "category": ["05 SpellCard","School-Ice","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Fire Weakness",
-            "category": ["05 SpellCard","School-Fire","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Death Weakness",
-            "category": ["05 SpellCard","School-Death","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Myth Weakness",
-            "category": ["05 SpellCard","School-Myth","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Life Weakness",
-            "category": ["05 SpellCard","School-Life","School-PrimaryOnly","FillerItem"],
+            "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
@@ -728,7 +728,7 @@
         },
         {
             "name": "ItemCard-Lightning Bats",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Storm","School-PrimaryOnly","UsefulFiller"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Storm","PrimaryOnly","UsefulFiller"],
             "useful": true,
             "filler": true,
             "count": 0,
@@ -736,7 +736,7 @@
         },
         {
             "name": "ItemCard-Fire Elf",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Fire","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Fire","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
@@ -754,13 +754,13 @@
         },
         {
             "name": "ItemCard-Snow Serpent",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Ice","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Ice","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },        
         {
             "name": "ItemCard-Scorpion",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Balance","School-PrimaryOnly","UsefulFiller"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Balance","PrimaryOnly","UsefulFiller"],
             "useful": true,
             "filler": true,
             "count": 0,
@@ -768,7 +768,7 @@
         },        
         {
             "name": "ItemCard-Troll",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Myth","School-PrimaryOnly","UsefulFiller"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Myth","PrimaryOnly","UsefulFiller"],
             "useful": true,
             "filler": true,
             "count": 0,
@@ -776,13 +776,13 @@
         },        
         {
             "name": "ItemCard-Leprechaun",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Life","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },        
         {
             "name": "ItemCard-Ghoul",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Death","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
@@ -834,133 +834,133 @@
         },
         {
             "name": "ItemCard-Minor Flash",
-            "category": ["06 ItemCard","School-Balance","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Balance","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Spark",
-            "category": ["06 ItemCard","School-Storm","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Storm","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Ice Shard",
-            "category": ["06 ItemCard","School-Ice","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Ice","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Fire Flare",
-            "category": ["06 ItemCard","School-Fire","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Fire","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Death Tap",
-            "category": ["06 ItemCard","School-Death","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Strike",
-            "category": ["06 ItemCard","School-Myth","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Myth","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Minor Life Ire",
-            "category": ["06 ItemCard","School-Life","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Flash",
-            "category": ["06 ItemCard","School-Balance","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Balance","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Spark",
-            "category": ["06 ItemCard","School-Storm","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Storm","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Ice Shard",
-            "category": ["06 ItemCard","School-Ice","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Ice","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Flare",
-            "category": ["06 ItemCard","School-Fire","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Fire","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Death Touch",
-            "category": ["06 ItemCard","School-Death","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Strike",
-            "category": ["06 ItemCard","School-Myth","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Myth","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Life Ire",
-            "category": ["06 ItemCard","School-Life","School-PrimaryOnly","FillerItem"],
+            "category": ["06 ItemCard","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
         },
         {
             "name": "ItemCard-Balance Assist",
-            "category": ["06 ItemCard","School-Balance","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Storm Assist",
-            "category": ["06 ItemCard","School-Storm","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Ice Assist",
-            "category": ["06 ItemCard","School-Ice","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Fire Assist",
-            "category": ["06 ItemCard","School-Fire","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Death Assist",
-            "category": ["06 ItemCard","School-Death","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Death","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Myth Assist",
-            "category": ["06 ItemCard","School-Myth","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Life Assist",
-            "category": ["06 ItemCard","School-Life","School-PrimaryOnly"],
+            "category": ["06 ItemCard","School-Life","PrimaryOnly"],
             "value": {"damage": 13},
             "progression": true,
             "count": 0

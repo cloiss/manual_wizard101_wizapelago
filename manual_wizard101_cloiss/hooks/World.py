@@ -101,6 +101,15 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     # returns the first n entries in the pool, meaning small pools always go [useful, any, drop, buff, ...] instead of potentially having filler hits
     return pool[:pool_size]
 
+# returns the first "School" category of an item (most have just one, except Pixie)
+def get_item_school(item_name: str, world: World):
+    item_categories = world.item_name_to_item[item_name].get("category",[])
+    for category in item_categories:
+        if category.startswith("School"):
+            return category
+    logging.error(f"Item {item_name} does not have a valid school.")
+    return None
+
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
@@ -167,7 +176,7 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 
     primary_school_spells = list(world.item_name_groups["School-" + primary_school])
     secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
-    primary_only_spells = world.item_name_groups["School-PrimaryOnly"]
+    primary_only_spells = world.item_name_groups["PrimaryOnly"]
 
     for spell in primary_only_spells:
         if spell in secondary_school_spells:
@@ -199,26 +208,8 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
 
-    rank_2_to_rank_1 = { # TODO there must be a better way...
-        "SpellCard-Scorpion": "SpellCard-Scarab",
-        "SpellCard-Lightning Bats": "SpellCard-Thunder Snake",
-        "SpellCard-Snow Serpent": "SpellCard-Ice Beetle",
-        "SpellCard-Fire Elf": "SpellCard-Fire Cat",
-        "SpellCard-Ghoul": "SpellCard-Dark Sprite",
-        "SpellCard-Troll": "SpellCard-Blood Bat",
-        "SpellCard-Leprechaun": "SpellCard-Imp",
-        "SpellCard-Secondary L5": "SpellCard-Secondary L1"
-    }
-    enrollment_to_school = { # TODO there must be a better way...
-        "SpellCard-Elemental Shield": "School-Balance",
-        "SpellCard-Lightning Strike": "School-Storm",
-        "SpellCard-Freeze": "School-Ice",
-        "SpellCard-Fireblade": "School-Fire",
-        "SpellCard-Death Trap": "School-Death",
-        "SpellCard-Golem Minion": "School-Myth",
-        "SpellCard-Minor Blessing": "School-Life"
-    }
     enrollment_spells = list(world.item_name_groups["SpellCard-Enrollment"])
+    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
     rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
     rank_2_spells_enabled: list[str] = []
 
@@ -227,16 +218,18 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         if item.name in rank_2_spells:
             rank_2_spells_enabled.append(item.name)
         if item.name in enrollment_spells:
-            primary_school = enrollment_to_school[item.name]
+            primary_school = get_item_school(item.name,world)
     
-    # find the rank 2 spell that isn't primary and note the associated rank 1 spell
-    primary_school_spells = list(world.item_name_groups[primary_school])
-    for spell in rank_2_spells_enabled:
-        if spell not in primary_school_spells:
-            secondary_rank_1 = rank_2_to_rank_1[spell]
+    # find the secondary school by examining the non-primary rank 2 spell
+    for spell_name in rank_2_spells_enabled:
+        this_school = get_item_school(spell_name,world)
+        if this_school != primary_school:
+            secondary_school = this_school
 
-    # add the associated rank 1 spell to the item pool
-    item_names_to_add.append(secondary_rank_1)
+    # find the secondary rank 1 spell and add it to the pool
+    for spell_name in rank_1_spells:
+        if get_item_school(spell_name,world) == secondary_school:
+            item_names_to_add.append(spell_name)
 
     for item_name in item_names_to_add:
         item_pool.append(world.create_item(item_name))

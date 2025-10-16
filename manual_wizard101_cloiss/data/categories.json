@@ -53,7 +53,7 @@
     "School-Any": {
         "hidden": true
     },
-    "School-PrimaryOnly": {
+    "PrimaryOnly": {
         "hidden": true
     }
 }
