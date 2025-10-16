@@ -91,6 +91,14 @@
             "default": 0,
             "group": "Check Locations"
         },
+        "halloween": {
+            "description": [
+                "Allows the player to choose which Halloween quests to add as check locations."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Check Locations"
+        },
 
 
 

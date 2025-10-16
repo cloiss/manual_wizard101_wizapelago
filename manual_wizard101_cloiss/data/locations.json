@@ -99,7 +99,7 @@
             "name": "Merle to Diego",
             "category": ["02 The Commons"],
             "region": "PostUW",
-            "requires": "{canReachLocation(To Muldoon)}"
+            "requires": "{wizReach(To Muldoon)}"
         },
         {
             "name": "Pet Sounds (Merle)",
@@ -148,19 +148,20 @@
             "name": "9/10 Smiths",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
-            "requires": "{canReachLocation(Photomancy 1)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "|Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
+            "_comment": "Access to Golem Court guaranteed by EarlyStreets region, so no complex logic is needed here."
         },
         {
             "name": "5/7 Books",
             "category": ["02 The Commons"],
             "region": "PostStreets",
-            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or canReachLocation{Nightshade})"
+            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or (|Building-Nightshade| and |Area-Haunted Cave|))",
+            "_comment": "The fifth book can be from either Blackhope or Nightshade"
         },
         {
             "name": "Pre-Colossus",
             "category": ["02 The Commons"],
-            "region": "PostStreets",
-            "requires": "|Area-Shopping District|"
+            "region": "PostStreets"
         },
         {
             "name": "Photomancy 1",
@@ -170,8 +171,8 @@
         {
             "name": "Photomancy 2",
             "category": ["03 Golem Court"],
-            "region": "GC",
-            "requires": "|Area-Ravenwood| and |Area-Olde Town| and |Area-The Commons|"
+            "region": "EarlyOT",
+            "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|"
         },
         {
             "name": "Construct",
@@ -214,7 +215,7 @@
             "name": "To Muldoon",
             "category": ["05 Olde Town"],
             "region": "PostUW",
-            "requires": "|Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)"
+            "requires": "{wizReach(To Muldoon)}"
         },
         {
             "name": "Judd",
@@ -244,14 +245,14 @@
             "name": "Walkabout",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
-            "requires": "{|Area-The Commons| and (|Area-Golem Court| and ({canReachLocation(UW to Merle)} or |Teleport-Friendly|))",
+            "requires": "{|Area-The Commons| and {wizReach(Golem Court)}",
             "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones"
         },
         {
             "name": "Gloria",
             "category": ["05 Olde Town"],
             "region": "PostUW",
-            "requires": "{ItemValue(damage:24)} and {canReachLocation(To Muldoon)} and ({canReachLocation(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
+            "requires": "{ItemValue(damage:24)} and {wizReach(To Muldoon)} and ({wizReach(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
         },
         {
             "name": "Bear Market",
@@ -313,13 +314,13 @@
             "name": "Armorless",
             "category": ["06 Cyclops Lane"],
             "region": "CL",
-            "requires": "|Area-Dark Cave| or (|Area-Triton Avenue| and |Area-Firecat Alley|)"
+            "requires": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and |Area-Firecat Alley|)"
         },
         {
             "name": "Eyus",
             "category": ["06 Cyclops Lane"],
             "region": "CL Dark Cave",
-            "requires": "|Building-Eyus|"
+            "requires": "{ItemValue(damage:64)} and |Building-Eyus|"
         },
         {
             "name": "Maze Books",
@@ -544,7 +545,121 @@
             "dont_place_item_category": ["Area","Building"],
             "dont_place_item": ["Vendor-Recipes/Reagents"],
             "_comment": "This is a hack to avoid placing the rare reagent in logic as it is a random drop."
+        },
+        {
+            "name": "Pumpkins: Commons",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons",
+            "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
+        },
+        {
+            "name": "Ghostly Spires",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons",
+            "requires": "|Area-Ravenwood|"
+        },
+        {
+            "name": "Jack: Unicorn Way",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons"
+        },
+        {
+            "name": "Pumpkins: Unicorn Way",
+            "category": ["31 Halloween","Halloween"],
+            "region": "Commons"
+        },
+        {
+            "name": "Jack: Triton Avenue",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue|"
+        },
+        {
+            "name": "Pumpkins: Triton Avenue",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue|"
+        },
+        {
+            "name": "Jack: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+        },
+        {
+            "name": "Pumpkins: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+        },
+        {
+            "name": "Jack: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+        },
+        {
+            "name": "Pumpkins: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+        },
+        {
+            "name": "Ghosts: Shopping District",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ShoppingDistrict",
+            "requires": "|Area-The Commons|"
+        },
+        {
+            "name": "Apple: Golem Court",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ShoppingDistrict",
+            "requires": "{wizReach(Apples)}"
+        },
+        {
+            "name": "Ghosts: Commons",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ShoppingDistrict",
+            "requires": "{wizReach(Apples)}"
+        },
+        {
+            "name": "Apple: Shopping District",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ShoppingDistrict",
+            "requires": "{wizReach(Apples)}"
+        },
+        {
+            "name": "Baron Mordecai",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
+            "dont_place_item_category": ["Area","Building"],
+            "dont_place_item": ["Vendor-Recipes/Reagents"],
+            "_comment": "This is a hack to avoid placing Baron Mordecai in logic as he is extremely difficult. Damage value should be 230 but this fails to generate currently."
+        },
+        {
+            "name": "Ghosts: Cyclops Lane",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
+        },
+        {
+            "name": "Apple: Ravenwood",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
+        },
+        {
+            "name": "Ghosts: Firecat Alley",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
+        },
+        {
+            "name": "Apple: Haunted Cave",
+            "category": ["31 Halloween","Halloween"],
+            "region": "EarlyStreets",
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         }
     ]
 }
-

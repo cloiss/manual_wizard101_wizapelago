@@ -2,7 +2,7 @@
   "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.game.schema.json",
   "game": "Wizard101",
   "creator": "Cloiss",
-  "filler_item_name": "1 Bazaar TC",
+  "filler_item_name": "Filler TC",
   "starting_items": [
     {
       "items": ["Slot-Deck","Area-Unicorn Way","Area-The Commons","SpellCard-Primary L1","Teleport-Dungeon","Vendor-Library"],

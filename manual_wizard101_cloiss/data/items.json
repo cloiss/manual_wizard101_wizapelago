@@ -161,6 +161,25 @@
             "progression": true
         },
         {
+            "name": "Building-Mordecai",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Apprentice Tower",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Adept Tower",
+            "category": ["02 Building","Halloween"],
+            "progression": true
+        },
+        {
+            "name": "Building-Master Tower",
+            "category": ["02 Building","Halloween"]
+        },
+        {
             "name": "Slot-Hat",
             "category": ["03 Slot"]
         },
@@ -408,48 +427,508 @@
             "progression": true
         },
         {
-            "name": "TreasureCard-Rank 1",
-            "category": ["07 TreasureCard"],
-            "value": {"damage": 9},
-            "progression": true
+        "name": "TreasureCard-Scarab",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Rank 2",
-            "category": ["07 TreasureCard"],
-            "value": {"damage": 28},
-            "progression": true
+        "name": "TreasureCard-Thunder Snake",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Rank 3",
-            "category": ["07 TreasureCard"],
-            "value": {"damage": 34},
-            "progression": true
+        "name": "TreasureCard-Ice Beetle",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Rank 4+",
-            "category": ["07 TreasureCard"]
+        "name": "TreasureCard-Fire Cat",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Shields",
-            "category": ["07 TreasureCard"]
+        "name": "TreasureCard-Dark Sprite",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Traps",
-            "category": ["07 TreasureCard"]
+        "name": "TreasureCard-Blood Bat",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Blades",
-            "category": ["07 TreasureCard"]
+        "name": "TreasureCard-Imp",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Heals",
-            "category": ["07 TreasureCard"]
+        "name": "TreasureCard-Scorpion",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
         },
         {
-            "name": "TreasureCard-Other",
+        "name": "TreasureCard-Lightning Bats",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Snow Serpent",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Fire Elf",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Ghoul",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Troll",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Leprechaun",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Locust Swarm",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Storm Shark",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Evil Snowman",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Sunbird",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Banshee",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Cyclops",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Nature's Wrath",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Sandstorm",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Kraken",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Ice Wyvern",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Meteor Strike",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Vampire",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Humongofrog",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Seraph",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Spectral Blast",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Stormzilla",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Phoenix",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Skeletal Pirate",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Minotaur",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Storm Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Fire Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Death Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Life Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Myth Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Snow Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Thermic Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Volcanic Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Glacial Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Ether Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Legend Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Dream Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Stun Block",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Tower Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Weakness",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Sprite",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Fairy",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Spirit Armor",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Stormblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Iceblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Fireblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Deathblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Lifeblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Mythblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Storm Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Ice Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Fire Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Death Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Life Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Myth Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Elemental Blade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Spirit Blade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Elemental Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Spirit Trap",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Balanceblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Hex",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Ghost Touch",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Black Cat",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Harvest Lord",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Tough",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Tempest",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Keen Eyes",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Reshuffle",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Rank 1",
             "category": ["07 TreasureCard"],
             "filler": true,
-            "_comment": "Weakness, Tempest, Reshuffle, and Sun spells come to mind."
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Rank 2",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Rank 3",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Rank 4+",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Shield",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Trap",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any Blade",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
+        },
+        {
+            "name": "TreasureCard-Any TC",
+            "category": ["07 TreasureCard"],
+            "filler": true,
+            "count": 0
         },
         {
             "name": "Vendor-Unicorn Way",
