@@ -65,7 +65,7 @@
             ],
             "type": "Toggle",
             "default": true,
-            "group": "Important Item Locations"
+            "group": "Special Item Locations"
         },
         "start_mount":{
             "description": [
@@ -73,15 +73,21 @@
             ],
             "type": "Toggle",
             "default": true,
-            "group": "Important Item Locations"
+            "group": "Special Item Locations"
         },
-        "early_mark":{
+        "mark_location":{
             "description": [
-                "Ensures the Teleport-Mark ability is given prior to Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Only applicable if start_mark is false."
+                "Relevant only with start_mark disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Important Item Locations"
+            "type": "Choice",
+            "values": {
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 2,
+            "group": "Special Item Locations"
         },
         "friendly_teleport":{
             "description": [
