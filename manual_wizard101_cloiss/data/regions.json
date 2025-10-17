@@ -53,7 +53,7 @@
         "connects_to": ["HL"]
     },
     "HL":{
-        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["AkillesSkip"]
     },
     "CL":{
@@ -61,14 +61,14 @@
         "connects_to": ["CL Dark Cave"]
     },
     "CL Dark Cave":{
-        "requires": "|Area-Dark Cave| and |Area-Shopping District| and (|Teleport-Mark| or {YamlDisabled(early_mark)})"
+        "requires": "|Area-Dark Cave| and |Area-Shopping District| and {specialItemCheck(Mid-Streets)}"
     },
     "FA":{
         "requires": "|Area-Firecat Alley|",
         "connects_to": ["Bastilla"]
     },
     "Bastilla":{
-        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue| or |Building-Apprentice Tower|) and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue| or |Building-Apprentice Tower|) and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["AS"]
     },
     "AS":{

@@ -40,7 +40,7 @@
             "name": "*Rattlebones*",
             "category": ["01 Unicorn Way"],
             "region": "UW",
-            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones|"
+            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}"
         },
         {
             "name": "Olivia",

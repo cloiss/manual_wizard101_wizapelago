@@ -12,7 +12,7 @@ def wizReach(location: str):
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
         "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {ItemValue(damage:26)} and {specialItemCheck(Rattlebones)}",
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
-        "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet|",
+        "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
         "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or |Teleport-Majid| or (|Area-Olde Town| and |Teleport-Friendly|))",
         "Apples": "|Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}" # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
@@ -34,9 +34,6 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     # pair option values with items
     option_item_pairs = [(mark_location_option,"|Teleport-Mark|")]
 
-    logging.info(f"option item pairs: {option_item_pairs}")
-    logging.info(f"locations dict location: {locations_dict[location]}")
-
     # compare the option values to determine which items are needed at this specific checkpoint
     special_items_needed = []
     for option, item in option_item_pairs:
@@ -49,8 +46,6 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
         ret += item_name
         ret += " and "
     ret = ret[:-5] # remove final 'and'
-
-    logging.info(f"value to be returned:{ret}")
 
     if ret:
         return "(" + ret + ")" # not wrapping these strings in parentheses can break logic in subtle ways
