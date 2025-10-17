@@ -34,7 +34,7 @@ import random, math
 
 def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
     # order is counterclockwise based on school position in Ravenwood
-    school_names = ["Storm","Ice","Fire","Death","Life","Myth"] # balance not included because no Balance Shield or Balance Trap
+    school_names = ["Storm","Ice","Fire","Death","Myth","Life"] # balance not included because no Balance Shield or Balance Trap
     halloween_option = get_option_value(multiworld, player, "halloween")
 
     # hits
@@ -48,7 +48,7 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     # defense
     subpool_single_shields = [s + " Shield" for s in school_names] + ["Snow Shield"]
     subpool_single_shields.remove("Ice Shield") # why are you like this KI
-    subpool_set_shields = [s + " Shield" for s in ["Thermic","Volcanic","Glacial","Ether","Legend","Dream"]]
+    subpool_set_shields = [s + " Shield" for s in ["Thermic","Volcanic","Glacial","Legend","Ether","Dream"]]
     subpool_misc_defense = ["Stun Block","Tower Shield","Weakness","Sprite","Fairy","Spirit Armor"]
     pool_defense = subpool_single_shields * 5 + subpool_set_shields * 2 + subpool_misc_defense
 
@@ -61,10 +61,10 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     pool_buffs = subpool_single_blades + subpool_single_traps * 3 + subpool_set_blades * 3 + subpool_set_traps * 3 + subpool_misc_buffs
 
     # other pools -- drawing without replacement from these tripled pools creates a slight bias against repeat values
-    pool_drops = ["Ghost Touch","Fire Elf","Troll","Ghoul","Evil Snowman","Banshee"] * 3
+    pool_drops = ["Ghost Touch","Fire Elf","Troll","Ghoul","Evil Snowman","Banshee","Cyclops"] * 3
     pool_useful = ["Lightning Bats","Storm Shark","Sunbird","Kraken","Storm Trap","Meteor Strike"] * 3
     pool_exotic = ["Harvest Lord","Tough","Tempest","Keen Eyes","Reshuffle"] # not tripled, max 1 copy of these
-    pool_any = ["Any Rank 1","Any Rank 2","Any Rank 3","Any Rank 4+","Any Trap","Any Blade","Any Shield","Any TC"] * 3
+    pool_any = ["Any Rank 1","Any Rank 2","Any Rank 3","Any Rank 4+","Any Shield","Any Blade","Any Trap","Any TC"] * 3
 
     # in the spirit of the randomizer, any TCs you can get from a quest will always be there
     pool_quest_rewards = ["Kraken","Ghoul","Blood Bat","Sprite"]
@@ -72,7 +72,7 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 9
 
-    random.shuffle(pool_hits)
+    world.random.shuffle(pool_hits)
     random.shuffle(pool_defense)
     random.shuffle(pool_buffs)
     random.shuffle(pool_drops)

@@ -685,15 +685,15 @@
             "count": 0
         },
         {
-            "name": "ItemCard-Thunder Snake",
+            "name": "ItemCard-Scarab",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 9},
+            "value": {"damage": 5},
             "progression": true
         },
         {
-            "name": "ItemCard-Fire Cat",
+            "name": "ItemCard-Thunder Snake",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 7},
+            "value": {"damage": 9},
             "progression": true
         },
         {
@@ -703,7 +703,13 @@
             "progression": true
         },
         {
-            "name": "ItemCard-Scarab",
+            "name": "ItemCard-Fire Cat",
+            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "value": {"damage": 7},
+            "progression": true
+        },
+        {
+            "name": "ItemCard-Dark Sprite",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
             "value": {"damage": 5},
             "progression": true
@@ -721,10 +727,16 @@
             "progression": true
         },
         {
-            "name": "ItemCard-Dark Sprite",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 5},
-            "progression": true
+            "name": "ItemCard-Heartbeat",
+            "category": ["06 ItemCard"]
+        },
+        {
+            "name": "ItemCard-Scorpion",
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Balance","PrimaryOnly","UsefulFiller"],
+            "useful": true,
+            "filler": true,
+            "count": 0,
+            "_comment": "Tagged useful due to dropping from Bastilla"
         },
         {
             "name": "ItemCard-Lightning Bats",
@@ -733,6 +745,12 @@
             "filler": true,
             "count": 0,
             "_comment": "Guarantee access to your powered-up primary rank 2 spell in the item pool"
+        },
+        {
+            "name": "ItemCard-Snow Serpent",
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Ice","PrimaryOnly","FillerItem"],
+            "filler": true,
+            "count": 0
         },
         {
             "name": "ItemCard-Fire Elf",
@@ -753,19 +771,11 @@
             "count": 0
         },
         {
-            "name": "ItemCard-Snow Serpent",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Ice","PrimaryOnly","FillerItem"],
+            "name": "ItemCard-Ghoul",
+            "category": ["06 ItemCard","ItemCard-Rank 2","School-Death","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
-        },        
-        {
-            "name": "ItemCard-Scorpion",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Balance","PrimaryOnly","UsefulFiller"],
-            "useful": true,
-            "filler": true,
-            "count": 0,
-            "_comment": "Tagged useful due to dropping from Bastilla"
-        },        
+        },
         {
             "name": "ItemCard-Troll",
             "category": ["06 ItemCard","ItemCard-Rank 2","School-Myth","PrimaryOnly","UsefulFiller"],
@@ -779,10 +789,10 @@
             "category": ["06 ItemCard","ItemCard-Rank 2","School-Life","PrimaryOnly","FillerItem"],
             "filler": true,
             "count": 0
-        },        
+        },
         {
-            "name": "ItemCard-Ghoul",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Death","PrimaryOnly","FillerItem"],
+            "name": "ItemCard-Weakness",
+            "category": ["06 ItemCard","FillerItem"],
             "filler": true,
             "count": 0
         },
@@ -821,16 +831,6 @@
             "category": ["06 ItemCard","FillerItem"],
             "filler": true,
             "count": 0
-        },
-        {
-            "name": "ItemCard-Weakness",
-            "category": ["06 ItemCard","FillerItem"],
-            "filler": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Heartbeat",
-            "category": ["06 ItemCard"]
         },
         {
             "name": "ItemCard-Minor Flash",
@@ -1170,6 +1170,12 @@
         "count": 0
         },
         {
+        "name": "TreasureCard-Snow Shield",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
         "name": "TreasureCard-Fire Shield",
         "category": ["07 TreasureCard"],
         "filler": true,
@@ -1182,19 +1188,13 @@
         "count": 0
         },
         {
-        "name": "TreasureCard-Life Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
         "name": "TreasureCard-Myth Shield",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
         },
         {
-        "name": "TreasureCard-Snow Shield",
+        "name": "TreasureCard-Life Shield",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1218,13 +1218,13 @@
         "count": 0
         },
         {
-        "name": "TreasureCard-Ether Shield",
+        "name": "TreasureCard-Legend Shield",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
         },
         {
-        "name": "TreasureCard-Legend Shield",
+        "name": "TreasureCard-Ether Shield",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1296,13 +1296,31 @@
         "count": 0
         },
         {
+        "name": "TreasureCard-Mythblade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
         "name": "TreasureCard-Lifeblade",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
         },
         {
-        "name": "TreasureCard-Mythblade",
+        "name": "TreasureCard-Elemental Blade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Spirit Blade",
+        "category": ["07 TreasureCard"],
+        "filler": true,
+        "count": 0
+        },
+        {
+        "name": "TreasureCard-Balanceblade",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1332,25 +1350,13 @@
         "count": 0
         },
         {
-        "name": "TreasureCard-Life Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
         "name": "TreasureCard-Myth Trap",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
         },
         {
-        "name": "TreasureCard-Elemental Blade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Spirit Blade",
+        "name": "TreasureCard-Life Trap",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1363,12 +1369,6 @@
         },
         {
         "name": "TreasureCard-Spirit Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Balanceblade",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1398,13 +1398,13 @@
         "count": 0
         },
         {
-        "name": "TreasureCard-Tough",
+        "name": "TreasureCard-Tempest",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
         },
         {
-        "name": "TreasureCard-Tempest",
+        "name": "TreasureCard-Tough",
         "category": ["07 TreasureCard"],
         "filler": true,
         "count": 0
@@ -1452,13 +1452,13 @@
             "count": 0
         },
         {
-            "name": "TreasureCard-Any Trap",
+            "name": "TreasureCard-Any Blade",
             "category": ["07 TreasureCard"],
             "filler": true,
             "count": 0
         },
         {
-            "name": "TreasureCard-Any Blade",
+            "name": "TreasureCard-Any Trap",
             "category": ["07 TreasureCard"],
             "filler": true,
             "count": 0
