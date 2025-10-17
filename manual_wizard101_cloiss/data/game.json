@@ -5,14 +5,16 @@
   "filler_item_name": "Filler TC",
   "starting_items": [
     {
-      "items": ["Slot-Deck","Area-Unicorn Way","Area-The Commons","Teleport-Dungeon","Vendor-Library"],
+      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Teleport-Dungeon","Vendor-Library"],
       "_comment": "Starting with dungeon recall allows Flee strats, preventing certain fights from being impossible. (Especially early Golem Tower)"
     },
     {
-      "item_categories": ["00 School"]
+      "item_categories": ["00 School"],
+      "_comment": "The wizard's primary school"
     },
     {
-      "item_categories": ["SpellCard-Rank 1"]
+      "item_categories": ["SpellCard-Rank 1"],
+      "_comment": "Primary level 1 spell"
     },
     {
       "item_categories": ["ItemCard-Rank 1"],
@@ -21,10 +23,6 @@
     {
       "items": ["Teleport-Friendly"],
       "yaml_option": ["friendly_teleport"]
-    },
-    {
-      "items": ["Slot-Wand"],
-      "yaml_option": ["start_wand"]
     },
     {
       "items": ["Teleport-Mark"],

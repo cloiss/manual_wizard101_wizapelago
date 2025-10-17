@@ -24,7 +24,7 @@
     "user": {       
         "primary_school": {
             "description": [
-                "Select your wizard's primary school. Choose 'random' to select a school at random with equal odds."
+                "Select your wizard's primary school. Choose 'random-school' to select a school at random with equal odds."
             ],
             "type": "Choice",
             "values": {
@@ -65,31 +65,23 @@
             ],
             "type": "Toggle",
             "default": true,
-            "group": "Starting Inventory"
-        },
-        "start_wand":{
-            "description": [
-                "Start with your wand slot (Slot-Wand). Turning this off is not recommended as it may make Rattlebones difficult or impossible on some schools."
-            ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Starting Inventory"
+            "group": "Important Item Locations"
         },
         "start_mount":{
             "description": [
-                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time. Turning this off will still require the mount slot be given before Judd."
+                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time. Turning this off will still place it in sphere 1."
             ],
             "type": "Toggle",
             "default": true,
-            "group": "Starting Inventory"
+            "group": "Important Item Locations"
         },
         "early_mark":{
             "description": [
-                "Ensures the Teleport-Mark ability is given prior to Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
+                "Ensures the Teleport-Mark ability is given prior to Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Only applicable if start_mark is false."
             ],
             "type": "Toggle",
             "default": true,
-            "group": "Check Locations"
+            "group": "Important Item Locations"
         },
         "friendly_teleport":{
             "description": [
@@ -117,7 +109,7 @@
         },
         "reagents": {
             "description": [
-                "Allows the player to choose which reagents to add as check locations."
+                "Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic."
             ],
             "type": "Choice",
             "values": {
@@ -130,7 +122,7 @@
         },
         "halloween": {
             "description": [
-                "Allows the player to choose which Halloween quests to add as check locations."
+                "Adds a location for each Halloween-exclusive quest, adding 19 locations and 13 items."
             ],
             "type": "Toggle",
             "default": false,
