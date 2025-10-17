@@ -1,10 +1,11 @@
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+from manual_wizard101_cloiss import ManualWorld
 from worlds.AutoWorld import World
-from BaseClasses import MultiWorld, CollectionState, Item
+from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
-from ..Locations import ManualLocation
+from ..Locations import ManualLocation, location_name_to_location
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -138,6 +139,16 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                 if location.name in locationNamesToRemove:
                     region.locations.remove(location)
 
+    # Get list of current regions
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in list(region.locations):
+                e_item = ManualItem("[QI]" + location.name, ItemClassification.progression, None, player=player) # Create the event item
+                e_loc = ManualLocation(player, "[QL]" + location.name, None, region) # create the event location
+                region.locations.append(e_loc) # put the event location in the region
+                e_loc.place_locked_item(e_item) # place the event item at the event location
+
+
 # This hook allows you to access the item names & counts before the items are created. Use this to increase/decrease the amount of a specific item in the pool
 # Valid item_config key/values:
 # {"Item Name": 5} <- This will create qty 5 items using all the default settings
@@ -213,6 +224,14 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         # True if the player can access the location
         # CollectionState is defined in BaseClasses
         return True
+    
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in list(region.locations):
+                if location.name.startswith("[QL]"):
+                    m_loc = multiworld.get_location(location.name[4:])
+                    location.access_rule = m_loc.access_rule
+
 
     ## Common functions:
     # location = world.get_location(location_name, player)
@@ -242,10 +261,15 @@ def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
 
 # This method is run every time an item is added to the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be cancelled/undone in after_remove_item
-def after_collect_item(world: World, state: CollectionState, Changed: bool, item: Item):
+def after_collect_item(world: ManualWorld, state: CollectionState, Changed: bool, item: Item):
     # the following let you add to the Potato Item Value count
     # if item.name == "Cooked Potato":
     #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] += 1
+
+    xp = world.location_name_to_location[item.location.name[4:]]["xp"]
+
+    state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] += xp
+
     pass
 
 # This method is run every time an item is removed from the state, can be used to modify the value of an item.
@@ -254,6 +278,11 @@ def after_remove_item(world: World, state: CollectionState, Changed: bool, item:
     # the following let you undo the addition to the Potato Item Value count
     # if item.name == "Cooked Potato":
     #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] -= 1
+
+    xp = world.location_name_to_location[item.location.name[4:]]["xp"]
+
+    state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] -= xp
+
     pass
 
 
