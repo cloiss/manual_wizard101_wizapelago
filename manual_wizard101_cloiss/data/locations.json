@@ -139,10 +139,7 @@
             "name": "Fishing 2",
             "category": ["02 The Commons"],
             "region": "Level7",
-            "requires": "|Area-Cyclops Lane|",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "Band-aid fix to avoid placing progression checks here, as this quest takes 15+ minutes. Also excluded in my provided yaml but default yamls won't exclude it."
+            "requires": "|Area-Cyclops Lane|"
         },
         {
             "name": "9/10 Smiths",
@@ -541,10 +538,7 @@
         {
             "name": "Any Rare Reagent",
             "category": ["09 Reagents"],
-            "region": "UW",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "This is a hack to avoid placing the rare reagent in logic as it is a random drop."
+            "region": "UW"
         },
         {
             "name": "Pumpkins: Commons",
@@ -633,9 +627,7 @@
             "category": ["31 Halloween","Halloween"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "This is a hack to avoid placing Baron Mordecai in logic as he is extremely difficult. Damage value should be 230 but this fails to generate currently."
+            "_comment": "Damage value should be 230 but this fails to generate currently."
         },
         {
             "name": "Ghosts: Cyclops Lane",
