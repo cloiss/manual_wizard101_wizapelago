@@ -28,11 +28,12 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
         "Mid-Streets": 3
     }
 
-    # get option values for each special item
-    mark_location_option = get_option_value(multiworld, player, "mark_location")
-
     # pair option values with items
-    option_item_pairs = [(mark_location_option,"|Teleport-Mark|")]
+    option_item_pairs = [
+        (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
+        (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
+        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+    ]
 
     # compare the option values to determine which items are needed at this specific checkpoint
     special_items_needed = []

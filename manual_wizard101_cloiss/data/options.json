@@ -67,14 +67,6 @@
             "default": true,
             "group": "Special Item Locations"
         },
-        "start_mount":{
-            "description": [
-                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time. Turning this off will still place it in sphere 1."
-            ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Special Item Locations"
-        },
         "mark_location":{
             "description": [
                 "Relevant only with start_mark disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
@@ -87,6 +79,42 @@
                 "anywhere": 4
             },
             "default": 2,
+            "group": "Special Item Locations"
+        },
+        "start_mount":{
+            "description": [
+                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Special Item Locations"
+        },
+        "mount_location":{
+            "description": [
+                "Relevant only with start_mount disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
+            ],
+            "type": "Choice",
+            "values": {
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 1,
+            "group": "Special Item Locations"
+        },
+        "rank_2_spell_location":{
+            "description": [
+                "Guarantee at least one rank 2 spell prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
+            ],
+            "type": "Choice",
+            "values": {
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 4,
             "group": "Special Item Locations"
         },
         "friendly_teleport":{
