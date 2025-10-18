@@ -231,23 +231,6 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
                     m_loc = multiworld.get_location(location.name[4:], player)
                     location.access_rule = m_loc.access_rule
 
-
-    ## Common functions:
-    # location = world.get_location(location_name, player)
-    # location.access_rule = Example_Rule
-
-    ## Combine rules:
-    # old_rule = location.access_rule
-    # location.access_rule = lambda state: old_rule(state) and Example_Rule(state)
-    # OR
-    # location.access_rule = lambda state: old_rule(state) or Example_Rule(state)
-
-    def Example_Rule(state: CollectionState) -> bool:
-        # Calculated rules take a CollectionState object and return a boolean
-        # True if the player can access the location
-        # CollectionState is defined in BaseClasses
-        return True
-
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
     return item_name
