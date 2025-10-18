@@ -4,8 +4,7 @@
         {
             "name": "Pre-UW",
             "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "xp": 65
+            "region": "UW"
         },
         {
             "name": "Souls",

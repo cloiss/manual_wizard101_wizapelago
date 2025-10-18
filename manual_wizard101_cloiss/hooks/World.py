@@ -1,11 +1,15 @@
+from typing import TYPE_CHECKING
+
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
-from manual_wizard101_cloiss import ManualWorld
 from worlds.AutoWorld import World
 from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
-from ..Locations import ManualLocation, location_name_to_location
+from ..Locations import ManualLocation
+
+if TYPE_CHECKING:
+    from .. import ManualWorld
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -139,7 +143,8 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                 if location.name in locationNamesToRemove:
                     region.locations.remove(location)
 
-    # Get list of current regions
+    # Fake Events system
+    # Add Quest Mirror for each location
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
@@ -218,18 +223,12 @@ def before_set_rules(world: World, multiworld: MultiWorld, player: int):
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to modify the access rules for a given location
-
-    def Example_Rule(state: CollectionState) -> bool:
-        # Calculated rules take a CollectionState object and return a boolean
-        # True if the player can access the location
-        # CollectionState is defined in BaseClasses
-        return True
     
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
                 if location.name.startswith("[QL]"):
-                    m_loc = multiworld.get_location(location.name[4:])
+                    m_loc = multiworld.get_location(location.name[4:], player)
                     location.access_rule = m_loc.access_rule
 
 
@@ -242,6 +241,12 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # location.access_rule = lambda state: old_rule(state) and Example_Rule(state)
     # OR
     # location.access_rule = lambda state: old_rule(state) or Example_Rule(state)
+
+    def Example_Rule(state: CollectionState) -> bool:
+        # Calculated rules take a CollectionState object and return a boolean
+        # True if the player can access the location
+        # CollectionState is defined in BaseClasses
+        return True
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
@@ -261,16 +266,23 @@ def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
 
 # This method is run every time an item is added to the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be cancelled/undone in after_remove_item
-def after_collect_item(world: ManualWorld, state: CollectionState, Changed: bool, item: Item):
+def after_collect_item(world: "ManualWorld", state: CollectionState, Changed: bool, item: Item):
     # the following let you add to the Potato Item Value count
     # if item.name == "Cooked Potato":
     #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] += 1
+    logging.info(str(state.prog_items[item.player]))
 
-    xp = world.location_name_to_location[item.location.name[4:]]["xp"]
+    if item.name.startswith("[QI]"):
+        loc_name = item.location.name[4:]
+        location_dict = world.location_name_to_location[loc_name]
+        xp = 0
+        try:
+            xp = int(location_dict["xp"])
+        except KeyError:
+            xp = 0 
 
-    state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] += xp
-
-    pass
+        if xp > 0:
+            state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] += xp
 
 # This method is run every time an item is removed from the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be first done in after_collect_item
@@ -278,12 +290,17 @@ def after_remove_item(world: World, state: CollectionState, Changed: bool, item:
     # the following let you undo the addition to the Potato Item Value count
     # if item.name == "Cooked Potato":
     #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] -= 1
+    if item.name.startswith("[QI]"):
+        loc_name = item.location.name[4:]
+        location_dict = world.location_name_to_location[loc_name]
+        xp = 0
+        try:
+            xp = int(location_dict["xp"])
+        except KeyError:
+            xp = 0 
 
-    xp = world.location_name_to_location[item.location.name[4:]]["xp"]
-
-    state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] -= xp
-
-    pass
+        if xp > 0:
+            state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] -= xp
 
 
 # This is called before slot data is set and provides an empty dict ({}), in case you want to modify it before Manual does

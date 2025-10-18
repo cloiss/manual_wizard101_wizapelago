@@ -419,7 +419,7 @@ class ManualContext(SuperContext):
                 super().update_hints()
                 rebuild = False
                 for hint in self.ctx.stored_data.get(f"_read_hints_{self.ctx.team}_{self.ctx.slot}", []):
-                    if hint["finding_player"] == self.ctx.Slot-
+                    if hint["finding_player"] == self.ctx.Slot:
                         if hint["location"] in self.ctx.missing_locations:
                             location = self.ctx.get_location_by_id(hint["location"])
                             location["category"] = location.get("category", [])
