@@ -73,13 +73,13 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
         pool_quest_rewards += ["Black Cat"] * 9
 
     world.random.shuffle(pool_hits)
-    random.shuffle(pool_defense)
-    random.shuffle(pool_buffs)
-    random.shuffle(pool_drops)
-    random.shuffle(pool_useful)
-    random.shuffle(pool_exotic)
-    random.shuffle(pool_any)
-    random.shuffle(pool_quest_rewards)
+    world.random.shuffle(pool_defense)
+    world.random.shuffle(pool_buffs)
+    world.random.shuffle(pool_drops)
+    world.random.shuffle(pool_useful)
+    world.random.shuffle(pool_exotic)
+    world.random.shuffle(pool_any)
+    world.random.shuffle(pool_quest_rewards)
 
     random_pool_size = pool_size - len(pool_quest_rewards) # size of the random section of the pool, to determine the appropriate amount of each category to include
 
@@ -165,14 +165,14 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     valid_schools.remove("Random")
     # roll a random school if Random was chosen
     if primary_school == "Random":
-        primary_school = random.choice(valid_schools)
+        primary_school = world.random.choice(valid_schools)
     if secondary_school == "Random":
-        secondary_school = random.choice(valid_schools)
+        secondary_school = world.random.choice(valid_schools)
 
     # choose a random secondary school if primary and secondary are the same
     if primary_school == secondary_school:
         valid_schools.remove(primary_school)
-        secondary_school = random.choice(valid_schools)
+        secondary_school = world.random.choice(valid_schools)
 
     primary_school_spells = list(world.item_name_groups["School-" + primary_school])
     secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
@@ -273,11 +273,11 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
     # populate to_add with enough filler items, prioritizing useful filler
     while filler_needed > 0:
-        if useful_filler and random.random() < 0.8: # 80% chance for filler item to be useful, while useful items are available in the pool
-            item = random.choice(useful_filler)
+        if useful_filler and world.random.random() < 0.7: # 70% chance for filler item to be useful, while useful items are available in the pool
+            item = world.random.choice(useful_filler)
             useful_filler.remove(item)
         else:
-            item = random.choice(filler_items)
+            item = world.random.choice(filler_items)
             filler_items.remove(item)
         to_add.append(item)
         filler_needed -= 1
