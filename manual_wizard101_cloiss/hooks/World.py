@@ -1,10 +1,15 @@
+from typing import TYPE_CHECKING
+
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
 from worlds.AutoWorld import World
-from BaseClasses import MultiWorld, CollectionState, Item
+from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
+
+if TYPE_CHECKING:
+    from .. import ManualWorld
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -140,6 +145,23 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
             for location in list(region.locations):
                 if location.name in locationNamesToRemove:
                     region.locations.remove(location)
+
+    # Fake Events system
+    # Add Quest Mirror for each location
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in list(region.locations):
+                location_dict = world.location_name_to_location[location.name]
+                try:
+                    categories: list[str] = location_dict["category"]
+                    if "Quest" in categories:
+                        e_item = ManualItem("[QI]" + location.name, ItemClassification.progression, None, player=player) # Create the event item
+                        e_loc = ManualLocation(player, "[QL]" + location.name, None, region) # create the event location
+                        region.locations.append(e_loc) # put the event location in the region
+                        e_loc.place_locked_item(e_item) # place the event item at the event location
+                except:
+                    pass
+
 
 # This hook allows you to access the item names & counts before the items are created. Use this to increase/decrease the amount of a specific item in the pool
 # Valid item_config key/values:
@@ -306,22 +328,13 @@ def before_set_rules(world: World, multiworld: MultiWorld, player: int):
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to modify the access rules for a given location
-
-    def Example_Rule(state: CollectionState) -> bool:
-        # Calculated rules take a CollectionState object and return a boolean
-        # True if the player can access the location
-        # CollectionState is defined in BaseClasses
-        return True
-
-    ## Common functions:
-    # location = world.get_location(location_name, player)
-    # location.access_rule = Example_Rule
-
-    ## Combine rules:
-    # old_rule = location.access_rule
-    # location.access_rule = lambda state: old_rule(state) and Example_Rule(state)
-    # OR
-    # location.access_rule = lambda state: old_rule(state) or Example_Rule(state)
+    
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in list(region.locations):
+                if location.name.startswith("[QL]"):
+                    m_loc = multiworld.get_location(location.name[4:], player)
+                    location.access_rule = m_loc.access_rule
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
@@ -341,19 +354,37 @@ def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
 
 # This method is run every time an item is added to the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be cancelled/undone in after_remove_item
-def after_collect_item(world: World, state: CollectionState, Changed: bool, item: Item):
-    # the following let you add to the Potato Item Value count
-    # if item.name == "Cooked Potato":
-    #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] += 1
-    pass
+def after_collect_item(world: "ManualWorld", state: CollectionState, Changed: bool, item: Item):
+    # Handle Quest Items
+    if item.name.startswith("[QI]"):
+        # Remove '[QI]' from the item name so item name = location name
+        loc_name = item.location.name[4:]
+        location_dict = world.location_name_to_location[loc_name]
+
+        try:
+            xp = int(location_dict["xp"])
+        except KeyError:
+            xp = 0 
+
+        if xp > 0:
+            state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] += xp
 
 # This method is run every time an item is removed from the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be first done in after_collect_item
-def after_remove_item(world: World, state: CollectionState, Changed: bool, item: Item):
-    # the following let you undo the addition to the Potato Item Value count
-    # if item.name == "Cooked Potato":
-    #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] -= 1
-    pass
+def after_remove_item(world: "ManualWorld", state: CollectionState, Changed: bool, item: Item):
+    # Handle Quest Items
+    if item.name.startswith("[QI]"):
+        # Remove '[QI]' from the item name so item name = location name
+        loc_name = item.location.name[4:]
+        location_dict = world.location_name_to_location[loc_name]
+
+        try:
+            xp = int(location_dict["xp"])
+        except KeyError:
+            xp = 0 
+
+        if xp > 0:
+            state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")] -= xp
 
 
 # This is called before slot data is set and provides an empty dict ({}), in case you want to modify it before Manual does
