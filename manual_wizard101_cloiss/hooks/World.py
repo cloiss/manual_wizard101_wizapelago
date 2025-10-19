@@ -148,10 +148,16 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                e_item = ManualItem("[QI]" + location.name, ItemClassification.progression, None, player=player) # Create the event item
-                e_loc = ManualLocation(player, "[QL]" + location.name, None, region) # create the event location
-                region.locations.append(e_loc) # put the event location in the region
-                e_loc.place_locked_item(e_item) # place the event item at the event location
+                location_dict = world.location_name_to_location[location.name]
+                try:
+                    categories: list[str] = location_dict["category"]
+                    if "Quest" in categories:
+                        e_item = ManualItem("[QI]" + location.name, ItemClassification.progression, None, player=player) # Create the event item
+                        e_loc = ManualLocation(player, "[QL]" + location.name, None, region) # create the event location
+                        region.locations.append(e_loc) # put the event location in the region
+                        e_loc.place_locked_item(e_item) # place the event item at the event location
+                except:
+                    pass
 
 
 # This hook allows you to access the item names & counts before the items are created. Use this to increase/decrease the amount of a specific item in the pool
@@ -250,15 +256,12 @@ def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
 # This method is run every time an item is added to the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be cancelled/undone in after_remove_item
 def after_collect_item(world: "ManualWorld", state: CollectionState, Changed: bool, item: Item):
-    # the following let you add to the Potato Item Value count
-    # if item.name == "Cooked Potato":
-    #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] += 1
-    logging.info(str(state.prog_items[item.player]))
-
+    # Handle Quest Items
     if item.name.startswith("[QI]"):
+        # Remove '[QI]' from the item name so item name = location name
         loc_name = item.location.name[4:]
         location_dict = world.location_name_to_location[loc_name]
-        xp = 0
+
         try:
             xp = int(location_dict["xp"])
         except KeyError:
@@ -270,10 +273,9 @@ def after_collect_item(world: "ManualWorld", state: CollectionState, Changed: bo
 # This method is run every time an item is removed from the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be first done in after_collect_item
 def after_remove_item(world: World, state: CollectionState, Changed: bool, item: Item):
-    # the following let you undo the addition to the Potato Item Value count
-    # if item.name == "Cooked Potato":
-    #     state.prog_items[item.player][format_state_prog_items_key(ProgItemsCat.VALUE, "Potato")] -= 1
+    # Handle Quest Items
     if item.name.startswith("[QI]"):
+        # Remove '[QI]' from the item name so item name = location name
         loc_name = item.location.name[4:]
         location_dict = world.location_name_to_location[loc_name]
         xp = 0

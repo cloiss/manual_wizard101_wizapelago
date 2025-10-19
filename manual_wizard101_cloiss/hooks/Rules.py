@@ -18,8 +18,9 @@ def wizReach(location: str) -> bool:
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
     
-def hasXP(state: CollectionState, player: int, xp:str):
-    xp: int = int(xp)
+def hasXP(state: CollectionState, player: int, xp: str | int):
+    if not isinstance(xp, int):
+        xp: int = int(xp)
 
     player_xp = state.prog_items[player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")]
 
@@ -46,6 +47,6 @@ def hasLevel(state: CollectionState, player: int, level: str):
     }
     
     target_level = int(level)
-    required_xp = level_xp_requirements.get(target_level, 0)
+    required_xp = level_xp_requirements.get(target_level, 999999999)
     
     return hasXP(state, player, str(required_xp))
