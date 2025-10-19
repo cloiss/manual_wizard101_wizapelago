@@ -272,13 +272,13 @@ def after_collect_item(world: "ManualWorld", state: CollectionState, Changed: bo
 
 # This method is run every time an item is removed from the state, can be used to modify the value of an item.
 # IMPORTANT! Any changes made in this hook must be first done in after_collect_item
-def after_remove_item(world: World, state: CollectionState, Changed: bool, item: Item):
+def after_remove_item(world: "ManualWorld", state: CollectionState, Changed: bool, item: Item):
     # Handle Quest Items
     if item.name.startswith("[QI]"):
         # Remove '[QI]' from the item name so item name = location name
         loc_name = item.location.name[4:]
         location_dict = world.location_name_to_location[loc_name]
-        xp = 0
+
         try:
             xp = int(location_dict["xp"])
         except KeyError:
