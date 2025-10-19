@@ -108,18 +108,18 @@
             "requires": "|Area-Pet Pavillion|"
         },
         {
-            "name": "Penny Commons",
+            "name": "Penny: Commons",
             "category": ["02 The Commons"],
             "region": "Judd"
         },
         {
-            "name": "Penny Defeats",
+            "name": "Penny: Defeats",
             "category": ["02 The Commons"],
             "region": "Judd",
             "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave|"
         },
         {
-            "name": "Penny Dark Cave",
+            "name": "Penny: Dark Cave",
             "category": ["02 The Commons"],
             "region": "Judd",
             "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)"
@@ -128,7 +128,7 @@
             "name": "Level 7 Quest",
             "category": ["02 The Commons"],
             "region": "Level7",
-            "requires": "|Area-Golem Court| and |Area-Shopping District| and |Area-Haunted Cave|"
+            "requires": "(|School-Balance| and |Area-Golem Court|) or |School-Storm| or (|School-Ice| and |Area-Shopping District|) or (|School-Fire| and |Area-Golem Court|) or (|School-Death| and |Area-Triton Avenue| and |Area-Haunted Cave|) or |School-Myth| or |School-Life|"
         },
         {
             "name": "Fishing 1",
@@ -154,9 +154,9 @@
         {
             "name": "5/7 Books",
             "category": ["02 The Commons"],
-            "region": "PostStreets",
-            "requires": "|Building-Foulgaze| and (|Building-Blackhope| or (|Building-Nightshade| and |Area-Haunted Cave|))",
-            "_comment": "The fifth book can be from either Blackhope or Nightshade"
+            "region": "AkillesSkip",
+            "requires": "|Building-Foulgaze| and (((|Building-Nightshade| and |Area-Haunted Cave|) and (|Building-Akilles| or |Building-Blackhope|)) or (|Building-Akilles| and |Building-Blackhope|))",
+            "_comment": "Need 2/3 of Blackhope, Akilles, Nightshade"
         },
         {
             "name": "Pre-Colossus",
@@ -245,14 +245,14 @@
             "name": "Walkabout",
             "category": ["05 Olde Town"],
             "region": "EarlyOT",
-            "requires": "{|Area-The Commons| and {wizReach(Golem Court)}",
+            "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones"
         },
         {
             "name": "Gloria",
             "category": ["05 Olde Town"],
-            "region": "PostUW",
-            "requires": "{ItemValue(damage:24)} and {wizReach(To Muldoon)} and ({wizReach(Judd)} or {YamlEnabled(gate_skip)}) and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
+            "region": "EarlyStreets",
+            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|"
         },
         {
             "name": "Bear Market",
@@ -343,7 +343,7 @@
             "name": "Fears",
             "category": ["06 Cyclops Lane"],
             "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue|"
+            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue| and |Building-Fears|"
         },
         {
             "name": "Pre-Triton",
