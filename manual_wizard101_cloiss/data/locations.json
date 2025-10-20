@@ -127,19 +127,19 @@
         },
         {
             "name": "Penny: Commons",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd"
         },
         {
             "name": "Penny: Defeats",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd",
             "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
 			"xp": 35
         },
         {
             "name": "Penny: Dark Cave",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd",
             "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
 			"xp": 5
@@ -286,7 +286,7 @@
         },
         {
             "name": "Gloria",
-            "category": ["05 Olde Town"],
+            "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
             "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|",
           "xp": 55
