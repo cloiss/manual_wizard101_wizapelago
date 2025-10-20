@@ -6,6 +6,21 @@
     "ItemCard-Rank 2": {
         "hidden": true
     },
+    "SpellCard-Rank 1": {
+        "hidden": true
+    },
+    "SpellCard-Rank 2": {
+        "hidden": true
+    },
+    "SpellCard-Enrollment": {
+        "hidden": true
+    },
+    "UsefulFiller": {
+        "hidden": true
+    },
+    "FillerItem": {
+        "hidden": true
+    },
     "Friendly Teleport": {
         "hidden": true,
         "yaml_option": ["friendly_teleport"]
@@ -13,5 +28,32 @@
     "Halloween": {
         "hidden": true,
         "yaml_option": ["halloween"]
+    },
+    "School-Balance": {
+        "hidden": true
+    },
+    "School-Storm": {
+        "hidden": true
+    },
+    "School-Ice": {
+        "hidden": true
+    },
+    "School-Fire": {
+        "hidden": true
+    },
+    "School-Death": {
+        "hidden": true
+    },
+    "School-Myth": {
+        "hidden": true
+    },
+    "School-Life": {
+        "hidden": true
+    },
+    "School-Any": {
+        "hidden": true
+    },
+    "PrimaryOnly": {
+        "hidden": true
     }
 }

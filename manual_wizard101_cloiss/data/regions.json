@@ -10,7 +10,7 @@
         "_comment": "Access to Unicorn Way guarantees the Level 5 requirement for doing certain quests in Olde Town and Golem Court early and using Majid teleport. Do the Combat Tutorial for extra XP."
     },
     "EarlyOT":{
-        "requires": "|Area-Olde Town| and ({wizReach(To Muldoon)} or |Teleport-Friendly| or (|Area-Shopping District| and |Teleport-Majid|))",
+        "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)})))",
         "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
     },
     "Commons": {
@@ -37,7 +37,7 @@
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{
-        "requires": "{ItemValue(damage:26)} and {wizReach(PostUW)}",
+        "requires": "{wizReach(PostUW)}",
         "connects_to": ["Judd"]
     },
     "Judd":{
