@@ -1,6 +1,10 @@
-from worlds.AutoWorld import World
-from ..Helpers import format_state_prog_items_key, ProgItemsCat
-from BaseClasses import CollectionState
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .. import ManualWorld
+
+from ..Helpers import format_state_prog_items_key, ProgItemsCat, get_items_with_value
+from BaseClasses import CollectionState, MultiWorld
 
 
 def wizReach(location: str) -> bool:
@@ -12,11 +16,11 @@ def wizReach(location: str) -> bool:
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
         "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
-        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or |Teleport-Majid| or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
         "Apples": "|Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}" # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
-    
+
 def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
         xp: int = int(xp)
