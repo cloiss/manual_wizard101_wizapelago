@@ -643,7 +643,7 @@
             "name": "Apprentice Tower",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Halloween",
-            "requires": "|Area-Ravenwood| and hasLevel(7)"
+            "requires": "|Area-Ravenwood| and {hasLevel(7)}"
         },
         {
             "name": "Jack: Unicorn Way",
