@@ -5,21 +5,24 @@
             "name": "Pre-UW",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UW",
-			"xp": 38
+			"xp": 55,
+            "_comment": "Tutorial: 33 xp, Quest: 5"
         },
         {
             "name": "Souls",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UW",
             "requires": "{ItemValue(damage:6)}",
-			"xp": 45
+			"xp": 51,
+            "_comment": "Quest: 45, Additional Battle XP: 6"
         },
         {
             "name": "Pirates",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UW",
             "requires": "{ItemValue(damage:9)}",
-			"xp": 95
+			"xp": 101,
+            "_comment": "Quest: 95, Additional Battle XP: 6"
         },
         {
             "name": "Ceren to Oriel",
@@ -33,7 +36,8 @@
             "category": ["01 Unicorn Way","Quest"],
             "region": "UW",
             "requires": "{ItemValue(damage:12)}",
-			"xp": 120
+			"xp": 126,
+            "_comment": "Quest: 120, Additional Battle XP: 6"
         },
         {
             "name": "Oriel to Ceren",
@@ -202,23 +206,23 @@
         {
             "name": "Construct",
             "category": ["03 Golem Court","Quest"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:10)} and |Area-Unicorn Way|",
+            "region": "GT",
+            "requires": "{ItemValue(damage:10)}",
             "_comment": "Unlocks pre-Rattlebones but not unlocked at the start. Probably a Level 5 unlock?",
 			"xp": 20
         },
         {
             "name": "Clockwork",
             "category": ["03 Golem Court","Quest"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:26)} and |Area-Unicorn Way|",
+            "region": "GT",
+            "requires": "{ItemValue(damage:26)}",
 			"xp": 45
         },
         {
             "name": "Iron Golem",
             "category": ["03 Golem Court","Quest"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:29)} and |Area-Unicorn Way| and {hasLevel(7)}",
+            "region": "GT",
+            "requires": "{ItemValue(damage:29)} and {hasLevel(7)}",
 			"xp": 100
         },
         {
