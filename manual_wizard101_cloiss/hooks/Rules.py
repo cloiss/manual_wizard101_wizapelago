@@ -2,7 +2,6 @@ from worlds.AutoWorld import World
 from ..Helpers import format_state_prog_items_key, ProgItemsCat
 from BaseClasses import CollectionState
 
-import re
 
 def wizReach(location: str) -> bool:
     locations_dict = {
@@ -18,15 +17,18 @@ def wizReach(location: str) -> bool:
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
     
-def hasXP(state: CollectionState, player: int, xp: str | int):
+def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
         xp: int = int(xp)
 
-    player_xp = state.prog_items[player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")]
+    player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
 
     return player_xp >= xp
 
-def hasLevel(state: CollectionState, player: int, level: str):
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+    if not isinstance(level, int):
+        level: int = int(level)
+
     """Check if player has reached the specified level based on total XP."""
     level_xp_requirements = {
         1: 0,
@@ -46,7 +48,6 @@ def hasLevel(state: CollectionState, player: int, level: str):
         15: 16680
     }
     
-    target_level = int(level)
-    required_xp = level_xp_requirements.get(target_level, 999999999)
+    required_xp = level_xp_requirements.get(level, 999999999)
     
     return hasXP(state, player, str(required_xp))
