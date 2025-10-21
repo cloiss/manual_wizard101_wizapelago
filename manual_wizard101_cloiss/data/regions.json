@@ -15,7 +15,7 @@
     },
     "Commons": {
         "requires": "|Area-The Commons|",
-        "connects_to": ["Halloween"]
+        "connects_to": ["Commons-Halloween"]
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
@@ -46,8 +46,7 @@
         "connects_to": ["TA","CL","FA","Level7"]
     },
     "Level7":{
-        "requires": "{hasLevel(7)}",
-        "_comment": "Access to any street post-Judd should be significant enough to consistently reach Level 7, I think. Cyclops might be an issue here due to getting walled at Laundry without Shopping District."
+        "requires": "{hasLevel(7)}"
     },
     "TA":{
         "requires": "|Area-Triton Avenue|",
