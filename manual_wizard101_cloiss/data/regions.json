@@ -2,7 +2,7 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
     "Start":{
         "starting": true,
-        "connects_to": ["UW","GC","EarlyStreets"]
+        "connects_to": ["UW","GC","EarlyStreets", "Level7"]
     },
     "UW":{
         "requires": "|Area-Unicorn Way|",
@@ -43,7 +43,7 @@
     },
     "Judd":{
         "requires": "{wizReach(Judd)}",
-        "connects_to": ["TA","CL","FA","Level7"]
+        "connects_to": ["TA","CL","FA"]
     },
     "Level7":{
         "requires": "{hasLevel(7)}"

@@ -55,5 +55,8 @@
     },
     "PrimaryOnly": {
         "hidden": true
+    },
+    "Quest": {
+        "hidden": true
     }
 }
