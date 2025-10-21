@@ -218,7 +218,7 @@
             "name": "Iron Golem",
             "category": ["03 Golem Court","Quest"],
             "region": "GC",
-            "requires": "{ItemValue(damage:29)} and |Area-Unicorn Way|",
+            "requires": "{ItemValue(damage:29)} and |Area-Unicorn Way| and {hasLevel(7)}",
 			"xp": 100
         },
         {
@@ -630,89 +630,91 @@
         {
             "name": "Pumpkins: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons",
+            "region": "Commons-Halloween",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
         },
         {
             "name": "Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons",
+            "region": "Commons-Halloween",
             "requires": "|Area-Ravenwood|"
+        },
+        {
+            "name": "Apprentice Tower",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "Commons-Halloween",
+            "requires": "|Area-Ravenwood| and hasLevel(7)"
         },
         {
             "name": "Jack: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons"
+            "region": "Commons-Halloween"
         },
         {
             "name": "Pumpkins: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons"
+            "region": "Commons-Halloween"
         },
         {
             "name": "Jack: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue|"
         },
         {
             "name": "Pumpkins: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue|"
         },
         {
             "name": "Jack: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Pumpkins: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Jack: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Pumpkins: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Ghosts: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "ShoppingDistrict",
-            "requires": "|Area-The Commons|"
+            "region": "ShoppingDistrict-Halloween"
         },
         {
             "name": "Apple: Golem Court",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "ShoppingDistrict",
-            "requires": "{wizReach(Apples)}"
+            "region": "GolemCourt-Halloween"
         },
         {
             "name": "Ghosts: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "ShoppingDistrict",
-            "requires": "{wizReach(Apples)}"
+            "region": "GolemCourt-Halloween"
         },
         {
             "name": "Apple: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "ShoppingDistrict",
-            "requires": "{wizReach(Apples)}"
+            "region": "GolemCourt-Halloween"
         },
         {
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
             "dont_place_item_category": ["Area","Building"],
             "dont_place_item": ["Vendor-Recipes/Reagents"],
@@ -721,25 +723,25 @@
         {
             "name": "Ghosts: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
         },
         {
             "name": "Apple: Ravenwood",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
         },
         {
             "name": "Ghosts: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
         },
         {
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets",
+            "region": "EarlyStreets-Halloween",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         }
     ]

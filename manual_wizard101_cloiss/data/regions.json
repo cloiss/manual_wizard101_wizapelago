@@ -10,11 +10,12 @@
         "_comment": "Access to Unicorn Way guarantees the Level 5 requirement for doing certain quests in Olde Town and Golem Court early and using Majid teleport. Do the Combat Tutorial for extra XP."
     },
     "EarlyOT":{
-        "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)})))",
+        "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)}))) and {hasLevel(5)}",
         "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
     },
     "Commons": {
-        "requires": "|Area-The Commons|"
+        "requires": "|Area-The Commons|",
+        "connects_to": ["Halloween"]
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
@@ -45,7 +46,7 @@
         "connects_to": ["TA","CL","FA","Level7"]
     },
     "Level7":{
-        "requires": "|Area-Cyclops Lane| or |Area-Triton Avenue| or |Area-Firecat Alley|",
+        "requires": "{hasLevel(7)}",
         "_comment": "Access to any street post-Judd should be significant enough to consistently reach Level 7, I think. Cyclops might be an issue here due to getting walled at Laundry without Shopping District."
     },
     "TA":{
@@ -80,5 +81,19 @@
     },
     "PostStreets":{
         "requires": "|Building-Akilles|"
+    },
+    "Commons-Halloween":{
+        "requires": "{hasLevel(5)}",
+        "connects_to": ["ShoppingDistrict-Halloween", "EarlyStreets-Halloween"]
+    },
+    "ShoppingDistrict-Halloween":{
+        "requires": "{wizReach(Shopping District)}",
+        "connects_to": ["GolemCourt-Halloween"]
+    },
+    "EarlyStreets-Halloween":{
+        "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}"
+    },
+    "GolemCourt-Halloween": {
+        "requires": "{wizReach(Golem Court)}"
     }
 }
