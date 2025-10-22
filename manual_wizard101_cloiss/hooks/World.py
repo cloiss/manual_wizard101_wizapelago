@@ -110,6 +110,9 @@ def get_item_school(item_name: str, world: World):
     logging.error(f"Item {item_name} does not have a valid school.")
     return None
 
+def format_starting_item(item_name: str):
+    return {"items": [item_name]}
+
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
@@ -117,6 +120,11 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
+    # Handle starting items -- Doing this here for clarity before anything else happens
+    beginner_option = get_option_value(multiworld, player, "beginner")
+
+    if beginner_option:
+        world.starting_items.append(format_starting_item("ItemCard-Thunder Snake"))
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.

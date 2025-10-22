@@ -141,6 +141,11 @@ Manual_Wizard101_Cloiss:
     'false': 50
     'true': 0
 
+  beginner:
+    # Enable this setting to disable unintuitive logic and be guaranteed a Thunder Snake as one of the starting item cards.
+    'false': 0
+    'true': 50
+
   ###################
   # Check Locations #
   ###################

@@ -141,6 +141,14 @@
             "default": false,
             "group": "Logic"
         },
+        "beginner": {
+            "description": [
+                "Enable this setting to disable unintuitive logic and be guaranteed a Thunder Snake as one of the starting item cards."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Logic"
+        },
         "reagents": {
             "description": [
                 "Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic."
