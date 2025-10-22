@@ -59,34 +59,19 @@
             "default": 1,
             "group": "School"
         },
-        "start_mark":{
-            "description": [
-                "Start with the ability to set a mark (Teleport-Mark). Recommended for a faster game."
-            ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Special Item Locations"
-        },
         "mark_location":{
             "description": [
                 "Relevant only with start_mark disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
             "type": "Choice",
             "values": {
+                "start": 0,
                 "rattlebones": 1,
                 "judd": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
-            "default": 2,
-            "group": "Special Item Locations"
-        },
-        "start_mount":{
-            "description": [
-                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time."
-            ],
-            "type": "Toggle",
-            "default": true,
+            "default": 0,
             "group": "Special Item Locations"
         },
         "mount_location":{
@@ -95,12 +80,13 @@
             ],
             "type": "Choice",
             "values": {
+                "start": 0,
                 "rattlebones": 1,
                 "judd": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
-            "default": 1,
+            "default": 0,
             "group": "Special Item Locations"
         },
         "rank_2_spell_location":{

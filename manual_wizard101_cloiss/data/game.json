@@ -23,14 +23,6 @@
     {
       "items": ["Teleport-Friendly"],
       "yaml_option": ["friendly_teleport"]
-    },
-    {
-      "items": ["Teleport-Mark"],
-      "yaml_option": ["start_mark"]
-    },
-    {
-      "items": ["Slot-Mount"],
-      "yaml_option": ["start_mount"]
     }
   ],
   "death_link": false,

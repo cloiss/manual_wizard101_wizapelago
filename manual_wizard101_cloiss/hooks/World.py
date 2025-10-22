@@ -121,10 +121,16 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Handle starting items -- Doing this here for clarity before anything else happens
-    beginner_option = get_option_value(multiworld, player, "beginner")
+    # for x_location, a value of 0 means starting inventory, hence the "not"
+    option_item_pairs = [
+        (get_option_value(multiworld, player, "beginner"),"ItemCard-Thunder Snake"),
+        (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
+        (not(get_option_value(multiworld, player, "mount_location")),"Slot-Mount")
+    ]
 
-    if beginner_option:
-        world.starting_items.append(format_starting_item("ItemCard-Thunder Snake"))
+    for option, item in option_item_pairs:
+        if option:
+            world.starting_items.append(format_starting_item(item))
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
