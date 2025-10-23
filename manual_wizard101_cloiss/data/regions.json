@@ -88,14 +88,11 @@
     },
     "Commons-Halloween":{
         "requires": "{hasLevel(5)}",
-        "connects_to": ["ShoppingDistrict-Halloween", "EarlyStreets-Halloween"]
+        "connects_to": ["ShoppingDistrict-Halloween"]
     },
     "ShoppingDistrict-Halloween":{
         "requires": "{wizReach(Shopping District)}",
         "connects_to": ["GolemCourt-Halloween"]
-    },
-    "EarlyStreets-Halloween":{
-        "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}"
     },
     "GolemCourt-Halloween": {
         "requires": "{wizReach(Golem Court)}"

@@ -5,7 +5,7 @@
             "name": "Pre-UW",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UW",
-			"xp": 55,
+			"xp": 38,
             "_comment": "Tutorial: 33 xp, Quest: 5"
         },
         {
@@ -718,7 +718,7 @@
         {
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
+            "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
             "dont_place_item_category": ["Area","Building"],
             "dont_place_item": ["Vendor-Recipes/Reagents"],
@@ -727,25 +727,25 @@
         {
             "name": "Ghosts: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
+            "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
         },
         {
             "name": "Apple: Ravenwood",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
+            "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
         },
         {
             "name": "Ghosts: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
+            "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
         },
         {
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
+            "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         }
     ]
