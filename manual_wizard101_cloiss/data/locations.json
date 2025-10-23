@@ -650,13 +650,13 @@
             "name": "Apprentice Tower - Second Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:29)} and |Teleport-Dungeon|"
+            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
         },
         {
             "name": "Apprentice Tower - Third Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:29)} and |Teleport-Dungeon|"
+            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
         },
         {
             "name": "Apprentice Tower - Fourth Floor",
