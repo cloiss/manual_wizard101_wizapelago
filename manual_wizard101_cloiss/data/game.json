@@ -5,8 +5,11 @@
   "filler_item_name": "Filler TC",
   "starting_items": [
     {
-      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Teleport-Dungeon","Vendor-Library"],
-      "_comment": "Starting with dungeon recall allows Flee strats, preventing certain fights from being impossible. (Especially early Golem Tower)"
+      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Vendor-Library"]
+    },
+    {
+      "items": ["ItemCard-Thunder Snake","Teleport-Dungeon","Vendor-Potions"],
+      "yaml_option": ["beginner"]
     },
     {
       "item_categories": ["00 School"],

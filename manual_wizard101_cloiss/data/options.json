@@ -61,7 +61,7 @@
         },
         "mark_location":{
             "description": [
-                "Relevant only with start_mark disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
+                "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
             "type": "Choice",
             "values": {
@@ -76,7 +76,7 @@
         },
         "mount_location":{
             "description": [
-                "Relevant only with start_mount disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended."
+                "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended."
             ],
             "type": "Choice",
             "values": {
@@ -105,7 +105,7 @@
         },
         "friendly_teleport":{
             "description": [
-                "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Default false, but recommended for more a more varied earlygame (pre-Rattlebones)."
+                "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
             ],
             "type": "Toggle",
             "default": false,
@@ -129,7 +129,7 @@
         },
         "beginner": {
             "description": [
-                "Enable this setting to disable unintuitive logic and be guaranteed a Thunder Snake as one of the starting item cards."
+                "Enable this setting to disable unintuitive logic and improve the starting inventory."
             ],
             "type": "Toggle",
             "default": false,
@@ -150,7 +150,7 @@
         },
         "halloween": {
             "description": [
-                "Adds a location for each Halloween-exclusive quest, adding 19 locations and 13 items."
+                "Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items."
             ],
             "type": "Toggle",
             "default": false,

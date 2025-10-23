@@ -123,7 +123,6 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Handle starting items -- Doing this here for clarity before anything else happens
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
-        (get_option_value(multiworld, player, "beginner"),"ItemCard-Thunder Snake"),
         (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
         (not(get_option_value(multiworld, player, "mount_location")),"Slot-Mount")
     ]
