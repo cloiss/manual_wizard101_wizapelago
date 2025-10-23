@@ -57,7 +57,7 @@ class ManualWorld(World):
     item_name_groups = item_name_groups
 
     filler_item_name = filler_item_name
-    starting_items = starting_items.copy() # not found in manual source -- added to allow hooks to modify starting items. copy method prevents starting items from different worlds affecting each other
+    starting_items = starting_items # not found in manual source -- added to allow hooks to modify starting items
 
     item_counts: dict[int, Counter[str]] = {}
     item_counts_progression: dict[int, Counter[str]] = {}

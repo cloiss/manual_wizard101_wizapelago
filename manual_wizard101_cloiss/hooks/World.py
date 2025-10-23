@@ -110,7 +110,7 @@ def get_item_school(item_name: str, world: World):
     logging.error(f"Item {item_name} does not have a valid school.")
     return None
 
-def format_starting_item(item_name: str):
+def format_starting_item_block(item_name: str):
     return {"items": [item_name]}
 
 # Use this function to change the valid filler items to be created to replace item links or starting items.
@@ -120,16 +120,6 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
-    # Handle starting items -- Doing this here for clarity before anything else happens
-    # for x_location, a value of 0 means starting inventory, hence the "not"
-    option_item_pairs = [
-        (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
-        (not(get_option_value(multiworld, player, "mount_location")),"Slot-Mount")
-    ]
-
-    for option, item in option_item_pairs:
-        if option:
-            world.starting_items.append(format_starting_item(item))
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
@@ -200,6 +190,20 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 
     for item_name in item_names_to_add:
         item_pool.append(world.create_item(item_name))
+
+    ### Handle Modifications to the Starting Inventory
+    # for x_location, a value of 0 means starting inventory, hence the "not"
+    option_item_pairs = [
+        (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
+        (not(get_option_value(multiworld, player, "mount_location")),"Slot-Mount")
+    ]
+
+    for option, item in option_item_pairs:
+        starting_item_block = format_starting_item_block(item)
+        if option: # add to starting item if option enabled
+            world.starting_items.append(starting_item_block)
+        elif starting_item_block in world.starting_items: # remove if option not enabled (prevents issues with multiple worlds overlapping)
+            world.starting_items.remove(starting_item_block)
     
     return item_pool
 
