@@ -5,10 +5,10 @@
   "filler_item_name": "Filler TC",
   "starting_items": [
     {
-      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Vendor-Library"]
+      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Vendor-Library","Teleport-Dungeon"]
     },
     {
-      "items": ["ItemCard-Thunder Snake","Teleport-Dungeon","Vendor-Potions"],
+      "items": ["ItemCard-Thunder Snake","Vendor-Potions"],
       "yaml_option": ["beginner"]
     },
     {
