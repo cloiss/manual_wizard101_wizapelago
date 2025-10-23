@@ -208,7 +208,6 @@
             "category": ["03 Golem Court","Quest"],
             "region": "GT",
             "requires": "{ItemValue(damage:10)}",
-            "_comment": "Unlocks pre-Rattlebones but not unlocked at the start. Probably a Level 5 unlock?",
 			"xp": 20
         },
         {
@@ -277,23 +276,21 @@
             "name": "Crafting: Daggers",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOT",
-            "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
-            "_comment": "Unlocks at Level 5, which can be obtained with UW side quests. Need to access home to actually place the crafting station."
+            "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)"
         },
         {
             "name": "Walkabout",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOT",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
-            "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones",
-          "xp": 25
+            "xp": 25
         },
         {
             "name": "Gloria",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
             "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|",
-          "xp": 55
+            "xp": 55
         },
         {
             "name": "Bear Market",
@@ -634,86 +631,91 @@
         {
             "name": "Pumpkins: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Halloween",
+            "region": "Commons-Level5",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
         },
         {
             "name": "Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Halloween",
+            "region": "Commons-Level5",
             "requires": "|Area-Ravenwood|"
         },
         {
             "name": "Apprentice Tower",
             "category": ["31 Halloween","Halloween"],
-            "region": "Commons-Halloween",
+            "region": "Commons-Level5",
             "requires": "|Area-Ravenwood| and {hasLevel(7)} and {ItemValue(damage:65)}"
         },
         {
             "name": "Jack: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Halloween"
+            "region": "Commons-Level5"
         },
         {
             "name": "Pumpkins: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Halloween"
+            "region": "Commons-Level5"
         },
         {
             "name": "Jack: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Pumpkins: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Jack: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Pumpkins: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Jack: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Pumpkins: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "EarlyStreets-Halloween",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "region": "EarlyStreets",
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Ghosts: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "ShoppingDistrict-Halloween"
+            "region": "ShoppingDistrict",
+            "requires": "{hasLevel(5)}"
         },
         {
             "name": "Apple: Golem Court",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "GolemCourt-Halloween"
+            "region": "GC",
+            "requires": "{wizReach(Apples)}",
+            "_comment": "wizReach Apples covers all of the logic here, the region is for clarity"
         },
         {
             "name": "Ghosts: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "GolemCourt-Halloween"
+            "region": "GC",
+            "requires": "{wizReach(Apples)}"
         },
         {
             "name": "Apple: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "GolemCourt-Halloween"
+            "region": "GC",
+            "requires": "{wizReach(Apples)}"
         },
         {
             "name": "Baron Mordecai",

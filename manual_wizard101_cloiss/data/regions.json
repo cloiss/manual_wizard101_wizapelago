@@ -11,11 +11,14 @@
     },
     "EarlyOT":{
         "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)}))) and {hasLevel(5)}",
-        "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
+        "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests become available at Level 5."
     },
     "Commons": {
         "requires": "|Area-The Commons|",
-        "connects_to": ["Commons-Halloween"]
+        "connects_to": ["Commons-Level5"]
+    },
+    "Commons-Level5":{
+        "requires": "{hasLevel(5)}"
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
@@ -85,16 +88,5 @@
     },
     "PostStreets":{
         "requires": "|Building-Akilles|"
-    },
-    "Commons-Halloween":{
-        "requires": "{hasLevel(5)}",
-        "connects_to": ["ShoppingDistrict-Halloween"]
-    },
-    "ShoppingDistrict-Halloween":{
-        "requires": "{wizReach(Shopping District)}",
-        "connects_to": ["GolemCourt-Halloween"]
-    },
-    "GolemCourt-Halloween": {
-        "requires": "{wizReach(Golem Court)}"
     }
 }
