@@ -22,7 +22,7 @@ Three yamls are provided in the repo to be downloaded as follows:
 ## Locations
 Every default location (except `Talk to Nick Jonas`) is a Wizard City quest which is accessible on a free-to-play account prior to reaching Level 12. This includes, for example, the first two Photomancy quests, but excludes Gardening and all of Colossus Boulevard. Quests with ** around them represent the final main quest in that area, and all quests below that are side quests.
 
-With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. (Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave.)
+With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave. Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, or utilities like Dungeon Recall.**
 
 ### Reagents
 The `reagents` option enables checks for collecting one of each specific reagent that can be found in Wizard City, as well as an additional check for getting any rare reagent. This refers to any reagent found in the "Rare Harvest" category of the reagent menu in-game.

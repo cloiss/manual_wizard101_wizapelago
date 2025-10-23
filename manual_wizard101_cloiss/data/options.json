@@ -76,7 +76,7 @@
         },
         "mount_location":{
             "description": [
-                "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended."
+                "Ensures the Slot-Mount ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended."
             ],
             "type": "Choice",
             "values": {

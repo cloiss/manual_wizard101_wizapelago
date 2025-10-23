@@ -92,26 +92,18 @@ Manual_Wizard101_Cloiss:
   ##########################
   # Special Item Locations #
   ##########################
-  start_mark:
-    # Start with the ability to set a mark (Teleport-Mark). Recommended for a faster game.
-    'false': 0
-    'true': 50
-
   mark_location:
-    # Relevant only with start_mark disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests.
+    # Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests.
+    start: 50
     rattlebones: 0
-    judd: 50
+    judd: 0
     mid-streets: 0
     anywhere: 0
 
-  start_mount:
-    # Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time.
-    'false': 0
-    'true': 50
-
   mount_location:
-    # Relevant only with start_mount disabled. Ensures the Teleport-Mark ability is given prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended.
-    rattlebones: 50
+    # Ensures the Slot-Mount ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended.
+    start: 50
+    rattlebones: 0
     judd: 0
     mid-streets: 0
     anywhere: 0
@@ -127,7 +119,7 @@ Manual_Wizard101_Cloiss:
   # Logic #
   #########
   friendly_teleport:
-    # Enables Friendly Teleports in logic and grants access to them in the starting inventory. Default false, but recommended for more a more varied earlygame (pre-Rattlebones).
+    # Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones).
     'false': 0
     'true': 50
 
@@ -141,17 +133,22 @@ Manual_Wizard101_Cloiss:
     'false': 0
     'true': 50
 
+  beginner:
+    # Enable this setting to disable unintuitive logic and improve the starting inventory.
+    'false': 50
+    'true': 0
+
   ###################
   # Check Locations #
   ###################
   reagents:
     # Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic.
-    none: 0
+    none: 50
     all: 0
-    ore: 50
+    ore: 0
 
   halloween:
-    # Adds a location for each Halloween-exclusive quest, adding 19 locations and 13 items.
+    # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
     'false': 50
     'true': 0
 
@@ -182,16 +179,15 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Advanced Combat","Iron Golem","Hoard of the Rings","Fears","Fishing 2","Baron Mordecai"]
+    ["Advanced Combat","Fears","Fishing 2","Baron Mordecai"]
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Iron Golem","Any Rare Reagent","Fishing 2","Baron Mordecai"]
+    ["Any Rare Reagent","Fishing 2","Baron Mordecai"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
     []
-
   item_links:
     # Share part of your item pool with other players.
     []
