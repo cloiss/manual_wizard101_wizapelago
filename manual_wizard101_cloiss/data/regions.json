@@ -18,7 +18,8 @@
         "connects_to": ["Commons-Level5"]
     },
     "Commons-Level5":{
-        "requires": "{hasLevel(5)}"
+        "requires": "{hasLevel(5)}",
+        "connects_to": ["ApprenticeTower"]
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
@@ -84,5 +85,8 @@
     },
     "PostStreets":{
         "requires": "|Building-Akilles|"
+    },
+    "ApprenticeTower":{
+        "requires": "|Area-Ravenwood| and |Building-Apprentice Tower| and {hasLevel(7)} and |@SpellCard-Rank 2|"
     }
 }
