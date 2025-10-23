@@ -249,7 +249,7 @@
             "name": "Gloria",
             "category": ["05 Olde Town"],
             "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or (|Building-Melweena| and {YamlDisabled(beginner)})",
+            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or (|[QI]Melweena| and {YamlDisabled(beginner)})",
             "_comment": "Melweena's minion counts is the Triton Avenue version that drops the shroud"
         },
         {
