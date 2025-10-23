@@ -68,7 +68,7 @@
         "connects_to": ["Bastilla"]
     },
     "Bastilla":{
-        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue| or |Building-Apprentice Tower|) and {specialItemCheck(Mid-Streets)}",
+        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and {wizReach(Fodder)} and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["AS"]
     },
     "AS":{
