@@ -12,10 +12,10 @@ You will need the following software:
 Follow the getting started instructions for Archipelago and Manual to learn how to generate, host, and use the Manual client. Universal Tracker is an apworld that you can install to improve the Manual client's functionality.
 
 ### Yaml
-Three yamls are provided in the repo to be downloaded as follows:
-    - Beginner: Good for first-time players, avoids skips and is generous with useful items
-    - Recommneded: Default settings optimized for a good experience
-    - Evil: Especially annoying and difficult settings for those who want to suffer
+Three yamls are provided in the repo in the `yamls` folder:
+    - **Beginner:** Good for first-time players, avoids skips and is generous with useful items
+    - **Recommneded:** Default settings optimized for a good experience
+    - **Evil:** Especially annoying and difficult settings for those who want to suffer
 
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
