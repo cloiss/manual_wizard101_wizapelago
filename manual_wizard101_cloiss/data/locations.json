@@ -358,7 +358,7 @@
         },
         {
             "name": "Armorless",
-            "category": ["06 Cyclops Lane"],
+            "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
             "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}"
         },
