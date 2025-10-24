@@ -265,7 +265,6 @@
         {
             "name": "Slot-Mount",
             "category": ["03 Slot"],
-            "early": true,
             "progression": true
         },
         {

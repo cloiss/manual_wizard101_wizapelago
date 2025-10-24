@@ -50,7 +50,7 @@
             "name": "*Rattlebones*",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones|",
+            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}",
 			"xp": 110
         },
         {
@@ -165,10 +165,8 @@
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
             "requires": "|Area-Cyclops Lane|",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "Band-aid fix to avoid placing progression checks here, as this quest takes 15+ minutes. Also excluded in my provided yaml but default yamls won't exclude it.",
-			"xp": 375
+			"xp": 0,
+          "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375."
         },
         {
             "name": "9/10 Smiths",
@@ -214,15 +212,17 @@
             "name": "Clockwork",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
-            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon|",
-			"xp": 45
+            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
+			"xp": 45,
+            "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise."
         },
         {
             "name": "Iron Golem",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
             "requires": "{ItemValue(damage:29)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
-			"xp": 100
+			"xp": 100,
+            "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment."
         },
         {
             "name": "Best Friend",
@@ -289,7 +289,8 @@
             "name": "Gloria",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and |Area-Triton Avenue|",
+            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Melweena)} and {YamlDisabled(beginner)}))",
+            "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55
         },
         {
@@ -361,7 +362,7 @@
             "name": "Armorless",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
-            "requires": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and |Area-Firecat Alley|)"
+            "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}"
         },
         {
             "name": "Eyus",
@@ -623,10 +624,7 @@
         {
             "name": "Any Rare Reagent",
             "category": ["09 Reagents"],
-            "region": "UnicornWay",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "This is a hack to avoid placing the rare reagent in logic as it is a random drop."
+            "region": "UnicornWay"
         },
         {
             "name": "Pumpkins: Commons",
@@ -740,9 +738,7 @@
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
-            "dont_place_item_category": ["Area","Building"],
-            "dont_place_item": ["Vendor-Recipes/Reagents"],
-            "_comment": "This is a hack to avoid placing Baron Mordecai in logic as he is extremely difficult. Damage value should be 230 but this fails to generate currently."
+            "_comment": "Damage value should be 230 but this fails to generate currently."
         },
         {
             "name": "Ghosts: Cyclops Lane",

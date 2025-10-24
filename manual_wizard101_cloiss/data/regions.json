@@ -58,7 +58,7 @@
         "connects_to": ["Triton-HarvestLord"]
     },
     "Triton-HarvestLord":{
-        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["PostStreets-AkillesSkip"]
     },
     "Cyclops":{
@@ -66,14 +66,14 @@
         "connects_to": ["Cyclops-DarkCave"]
     },
     "Cyclops-DarkCave":{
-        "requires": "|Area-Dark Cave| and |Area-Shopping District| and (|Teleport-Mark| or {YamlDisabled(early_mark)})"
+        "requires": "|Area-Dark Cave| and |Area-Shopping District| and {specialItemCheck(Mid-Streets)}"
     },
     "Firecat":{
         "requires": "|Area-Firecat Alley|",
         "connects_to": ["Firecat-Bastilla"]
     },
     "Firecat-Bastilla":{
-        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and (|Area-Dark Cave| or |Area-Triton Avenue| or |Building-Apprentice Tower|) and (|Teleport-Mark| or {YamlDisabled(early_mark)})",
+        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and {wizReach(Fodder)} and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["Firecat-Alicane"]
     },
     "Firecat-Alicane":{

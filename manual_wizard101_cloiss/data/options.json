@@ -24,7 +24,7 @@
     "user": {       
         "primary_school": {
             "description": [
-                "Select your wizard's primary school. Choose 'random' to select a school at random with equal odds."
+                "Select your wizard's primary school. Choose 'random-school' to select a school at random with equal odds."
             ],
             "type": "Choice",
             "values": {
@@ -59,41 +59,53 @@
             "default": 1,
             "group": "School"
         },
-        "start_mark":{
+        "mark_location":{
             "description": [
-                "Start with the ability to set a mark (Teleport-Mark). Recommended for a faster game."
+                "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Starting Inventory"
+            "type": "Choice",
+            "values": {
+                "start": 0,
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 0,
+            "group": "Special Item Locations"
         },
-        "start_wand":{
+        "mount_location":{
             "description": [
-                "Start with your wand slot (Slot-Wand). Turning this off is not recommended as it may make Rattlebones difficult or impossible on some schools."
+                "Ensures the Slot-Mount ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended."
             ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Starting Inventory"
+            "type": "Choice",
+            "values": {
+                "start": 0,
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 0,
+            "group": "Special Item Locations"
         },
-        "start_mount":{
+        "rank_2_spell_location":{
             "description": [
-                "Start with your mount slot (Slot-Mount). Highly recommended to reduce walking time. Turning this off will still require the mount slot be given before Judd."
+                "Guarantee at least one rank 2 spell prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
             ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Starting Inventory"
-        },
-        "early_mark":{
-            "description": [
-                "Ensures the Teleport-Mark ability is given prior to Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
-            ],
-            "type": "Toggle",
-            "default": true,
-            "group": "Check Locations"
+            "type": "Choice",
+            "values": {
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 4,
+            "group": "Special Item Locations"
         },
         "friendly_teleport":{
             "description": [
-                "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Default false, but recommended for more a more varied earlygame (pre-Rattlebones)."
+                "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
             ],
             "type": "Toggle",
             "default": false,
@@ -115,9 +127,17 @@
             "default": false,
             "group": "Logic"
         },
+        "beginner": {
+            "description": [
+                "Enable this setting to disable unintuitive logic and improve the starting inventory."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Logic"
+        },
         "reagents": {
             "description": [
-                "Allows the player to choose which reagents to add as check locations."
+                "Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic."
             ],
             "type": "Choice",
             "values": {
@@ -130,7 +150,7 @@
         },
         "halloween": {
             "description": [
-                "Allows the player to choose which Halloween quests to add as check locations."
+                "Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items."
             ],
             "type": "Toggle",
             "default": false,
