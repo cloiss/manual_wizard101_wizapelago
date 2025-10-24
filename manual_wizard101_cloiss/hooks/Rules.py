@@ -1,8 +1,11 @@
-from worlds.AutoWorld import World
-from ..Helpers import format_state_prog_items_key, ProgItemsCat
-from BaseClasses import CollectionState
+from typing import TYPE_CHECKING
 
-import re
+if TYPE_CHECKING:
+    from .. import ManualWorld
+
+from ..Helpers import format_state_prog_items_key, ProgItemsCat, get_items_with_value
+from BaseClasses import CollectionState, MultiWorld
+
 
 def wizReach(location: str) -> bool:
     locations_dict = {
@@ -13,20 +16,23 @@ def wizReach(location: str) -> bool:
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
         "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and |Slot-Mount|",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
-        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or |Teleport-Majid| or (|Area-Olde Town| and |Teleport-Friendly|))",
-        "Apples": "|Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}" # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
+        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}" # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
-    
-def hasXP(state: CollectionState, player: int, xp: str | int):
+
+def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
         xp: int = int(xp)
 
-    player_xp = state.prog_items[player][format_state_prog_items_key(ProgItemsCat.VALUE, "xp")]
+    player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
 
     return player_xp >= xp
 
-def hasLevel(state: CollectionState, player: int, level: str):
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+    if not isinstance(level, int):
+        level: int = int(level)
+
     """Check if player has reached the specified level based on total XP."""
     level_xp_requirements = {
         1: 0,
@@ -46,7 +52,6 @@ def hasLevel(state: CollectionState, player: int, level: str):
         15: 16680
     }
     
-    target_level = int(level)
-    required_xp = level_xp_requirements.get(target_level, 999999999)
+    required_xp = level_xp_requirements.get(level, 999999999)
     
-    return hasXP(state, player, str(required_xp))
+    return hasXP(state, player, required_xp)
