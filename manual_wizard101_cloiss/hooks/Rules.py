@@ -1,9 +1,13 @@
 from typing import Optional
 from worlds.AutoWorld import World
-from ..Helpers import clamp, get_items_with_value, get_option_value
+from ..Helpers import clamp, get_items_with_value, get_option_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
 import logging
 import re
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .. import ManualWorld
 
 def wizReach(location: str):
     locations_dict = {
@@ -14,8 +18,8 @@ def wizReach(location: str):
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
         "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
-        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or |Teleport-Majid| or (|Area-Olde Town| and |Teleport-Friendly|))",
-        "Apples": "|Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
+        "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
         "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})" # used for armorless and bastilla
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
@@ -54,25 +58,37 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     else:
         return True # no requirements here, return true
 
-# Sometimes you have a requirement that is just too messy or repetitive to write out with boolean logic.
-# Define a function here, and you can use it in a requires string with {function_name()}.
-def overfishedAnywhere(world: World, state: CollectionState, player: int):
-    """Has the player collected all fish from any fishing log?"""
-    for cat, items in world.item_name_groups:
-        if cat.endswith("Fishing Log") and state.has_all(items, player):
-            return True
-    return False
+def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
+    if not isinstance(xp, int):
+        xp: int = int(xp)
 
-# You can also pass an argument to your function, like {function_name(15)}
-# Note that all arguments are strings, so you'll need to convert them to ints if you want to do math.
-def anyClassLevel(state: CollectionState, player: int, level: str):
-    """Has the player reached the given level in any class?"""
-    for item in ["Figher Level", "Black Belt Level", "Thief Level", "Red Mage Level", "White Mage Level", "Black Mage Level"]:
-        if state.count(item, player) >= int(level):
-            return True
-    return False
+    player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
 
-# You can also return a string from your function, and it will be evaluated as a requires string.
-def requiresMelee():
-    """Returns a requires string that checks if the player has unlocked the tank."""
-    return "|Figher Level:15| or |Black Belt Level:15| or |Thief Level:15|"
+    return player_xp >= xp
+
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+    if not isinstance(level, int):
+        level: int = int(level)
+
+    """Check if player has reached the specified level based on total XP."""
+    level_xp_requirements = {
+        1: 0,
+        2: 45,
+        3: 160,
+        4: 365,
+        5: 705,
+        6: 1200,
+        7: 1870,
+        8: 2745,
+        9: 3905,
+        10: 5305,
+        11: 6970,
+        12: 8920,
+        13: 11175,
+        14: 13755,
+        15: 16680
+    }
+    
+    required_xp = level_xp_requirements.get(level, 999999999)
+    
+    return hasXP(state, player, required_xp)

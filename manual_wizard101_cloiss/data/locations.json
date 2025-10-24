@@ -3,143 +3,170 @@
     "data": [
         {
             "name": "Pre-UW",
-            "category": ["01 Unicorn Way"],
-            "region": "UW"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+			"xp": 38,
+            "_comment": "Tutorial: 33 xp, Quest: 5"
         },
         {
             "name": "Souls",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:6)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:6)}",
+			"xp": 51,
+            "_comment": "Quest: 45, Additional Battle XP: 6"
         },
         {
             "name": "Pirates",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:9)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:9)}",
+			"xp": 101,
+            "_comment": "Quest: 95, Additional Battle XP: 6"
         },
         {
             "name": "Ceren to Oriel",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:9)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:9)}",
+			"xp": 110
         },
         {
             "name": "Fairies",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:12)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:12)}",
+			"xp": 126,
+            "_comment": "Quest: 120, Additional Battle XP: 6"
         },
         {
             "name": "Oriel to Ceren",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:12)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:12)}",
+			"xp": 45
         },
         {
             "name": "*Rattlebones*",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}",
+			"xp": 110
         },
         {
             "name": "Olivia",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:9)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:9)}",
+			"xp": 35
         },
         {
             "name": "Dorothy 1",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:12)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:12)}",
+			"xp": 5
         },
         {
             "name": "Dorothy 2",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:12)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:12)}",
+			"xp": 45
         },
         {
             "name": "Blackhope",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:34)} and |Building-Blackhope|"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:34)} and |Building-Blackhope|",
+			"xp": 60
         },
         {
             "name": "Advanced Combat",
-            "category": ["01 Unicorn Way"],
-            "region": "UW",
-            "requires": "{ItemValue(damage:12)}"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "UnicornWay",
+            "requires": "{ItemValue(damage:12)}",
+			"xp": 150
         },
         {
             "name": "Roberto",
-            "category": ["01 Unicorn Way"],
-            "region": "HL",
-            "requires": "|Building-Roberto|"
+            "category": ["01 Unicorn Way","Quest"],
+            "region": "Triton-HarvestLord",
+            "requires": "|Building-Roberto|",
+			"xp": 100
         },
         {
             "name": "UW to Merle",
-            "category": ["02 The Commons"],
-            "region": "PostUW"
+            "category": ["02 The Commons","Quest"],
+            "region": "PostUW",
+			"xp": 150
         },
         {
             "name": "*To Ravenwood*",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "PostUW",
-            "requires": "|Area-Ravenwood|"
+            "requires": "|Area-Ravenwood|",
+			"xp": 20
         },
         {
             "name": "City Tour (Abby)",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "PostUW",
-            "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|"
+            "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|",
+			"xp": 20
         },
         {
             "name": "Merle to Diego",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "PostUW",
-            "requires": "{wizReach(To Muldoon)}"
+            "requires": "{wizReach(To Muldoon)}",
+			"xp": 15
         },
         {
             "name": "Pet Sounds (Merle)",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd",
-            "requires": "|Area-Pet Pavillion|"
+            "requires": "|Area-Pet Pavillion|",
+			"xp": 25
         },
         {
             "name": "Penny: Commons",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd"
         },
         {
             "name": "Penny: Defeats",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd",
-            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave|"
+            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
+			"xp": 35
         },
         {
             "name": "Penny: Dark Cave",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Judd",
-            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)"
+            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
+			"xp": 5
         },
         {
             "name": "Level 7 Quest",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Level7",
             "requires": "(|School-Balance| and |Area-Golem Court|) or |School-Storm| or (|School-Ice| and |Area-Shopping District|) or (|School-Fire| and |Area-Golem Court|) or (|School-Death| and |Area-Triton Avenue| and |Area-Haunted Cave|) or |School-Myth| or |School-Life|"
         },
         {
             "name": "Fishing 1",
-            "category": ["02 The Commons"],
-            "region": "Level7"
+            "category": ["02 The Commons","Quest"],
+            "region": "Level7",
+			"xp": 125
         },
         {
             "name": "Fishing 2",
-            "category": ["02 The Commons"],
+            "category": ["02 The Commons","Quest"],
             "region": "Level7",
-            "requires": "|Area-Cyclops Lane|"
+            "requires": "|Area-Cyclops Lane|",
+			"xp": 0,
+          "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375."
         },
         {
             "name": "9/10 Smiths",
@@ -151,117 +178,131 @@
         {
             "name": "5/7 Books",
             "category": ["02 The Commons"],
-            "region": "AkillesSkip",
+            "region": "PostStreets-AkillesSkip",
             "requires": "|Building-Foulgaze| and (((|Building-Nightshade| and |Area-Haunted Cave|) and (|Building-Akilles| or |Building-Blackhope|)) or (|Building-Akilles| and |Building-Blackhope|))",
             "_comment": "Need 2/3 of Blackhope, Akilles, Nightshade"
         },
         {
             "name": "Pre-Colossus",
-            "category": ["02 The Commons"],
-            "region": "PostStreets"
+            "category": ["02 The Commons","Quest"],
+            "region": "PostStreets",
+			"xp": 35
         },
         {
             "name": "Photomancy 1",
-            "category": ["03 Golem Court"],
-            "region": "GC"
+            "category": ["03 Golem Court","Quest"],
+            "region": "GolemCourt",
+			"xp": 30
         },
         {
             "name": "Photomancy 2",
-            "category": ["03 Golem Court"],
-            "region": "EarlyOT",
-            "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|"
+            "category": ["03 Golem Court","Quest"],
+            "region": "EarlyOldeTown",
+            "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
+			"xp": 35
         },
         {
             "name": "Construct",
-            "category": ["03 Golem Court"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:10)} and |Area-Unicorn Way|",
-            "_comment": "Unlocks pre-Rattlebones but not unlocked at the start. Probably a Level 5 unlock?"
+            "category": ["03 Golem Court","Quest"],
+            "region": "GolemCourt-Level5",
+            "requires": "{ItemValue(damage:10)}",
+			"xp": 20
         },
         {
             "name": "Clockwork",
-            "category": ["03 Golem Court"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:26)} and |Area-Unicorn Way|"
+            "category": ["03 Golem Court","Quest"],
+            "region": "GolemCourt-Level5",
+            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon|",
+			"xp": 45
         },
         {
             "name": "Iron Golem",
-            "category": ["03 Golem Court"],
-            "region": "GC",
-            "requires": "{ItemValue(damage:29)} and |Area-Unicorn Way|"
+            "category": ["03 Golem Court","Quest"],
+            "region": "GolemCourt-Level5",
+            "requires": "{ItemValue(damage:29)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
+			"xp": 100
         },
         {
             "name": "Best Friend",
-            "category": ["04 Pet Pavillion"],
+            "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
-            "requires": "|Area-Pet Pavillion|"
+            "requires": "|Area-Pet Pavillion|",
+			"xp": 25
         },
         {
             "name": "Wizzy 500",
-            "category": ["04 Pet Pavillion"],
+            "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
-            "requires": "|Area-Pet Pavillion|"
+            "requires": "|Area-Pet Pavillion|",
+			"xp": 25
         },
         {
             "name": "Hoard of the Rings",
-            "category": ["04 Pet Pavillion"],
+            "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
-            "requires": "|Area-Pet Pavillion| and |Area-The Commons| and |Area-Shopping District|"
+            "requires": "|Area-Pet Pavillion| and |Area-The Commons| and |Area-Shopping District|",
+			"xp": 35
         },
         {
             "name": "To Muldoon",
-            "category": ["05 Olde Town"],
+            "category": ["05 Olde Town","Quest"],
             "region": "PostUW",
-            "requires": "{wizReach(To Muldoon)}"
+            "requires": "{wizReach(To Muldoon)}",
+			"xp": 10
         },
         {
             "name": "Judd",
-            "category": ["05 Olde Town"],
-            "region": "Judd"
+            "category": ["05 Olde Town","Quest"],
+            "region": "Judd",
+			"xp": 8
         },
         {
             "name": "*Foulgaze*",
-            "category": ["05 Olde Town"],
-            "region": "AkillesSkip",
+            "category": ["05 Olde Town","Quest"],
+            "region": "PostStreets-AkillesSkip",
             "requires": "{ItemValue(damage:68)} and |Building-Foulgaze| and |Area-Haunted Cave|",
-            "_comment": "Quest ends at the entrance to Haunted Cave."
+            "_comment": "Quest ends at the entrance to Haunted Cave.",
+			"xp": 250
         },
         {
             "name": "Crafting: Mist Wood",
-            "category": ["05 Olde Town"],
-            "region": "EarlyOT"
+            "category": ["05 Olde Town","Quest"],
+            "region": "EarlyOldeTown",
+			"xp": 30
         },
         {
             "name": "Crafting: Daggers",
-            "category": ["05 Olde Town"],
-            "region": "EarlyOT",
-            "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
-            "_comment": "Unlocks at Level 5, which can be obtained with UW side quests. Need to access home to actually place the crafting station."
+            "category": ["05 Olde Town","Quest"],
+            "region": "EarlyOldeTown",
+            "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)"
         },
         {
             "name": "Walkabout",
-            "category": ["05 Olde Town"],
-            "region": "EarlyOT",
+            "category": ["05 Olde Town","Quest"],
+            "region": "EarlyOldeTown",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
-            "_comment": "I don't know the unlock condition for this but I was able to do it pre-Rattlebones"
+            "xp": 25
         },
         {
             "name": "Gloria",
-            "category": ["05 Olde Town"],
+            "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
             "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Melweena)} and {YamlDisabled(beginner)}))",
-            "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud"
+            "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
+            "xp": 55
         },
         {
             "name": "Bear Market",
-            "category": ["05 Olde Town"],
-            "region": "PostStreets"
+            "category": ["05 Olde Town","Quest"],
+            "region": "PostStreets",
+			"xp": 15
         },
         {
             "name": "Trade Voyage",
-            "category": ["05 Olde Town"],
+            "category": ["05 Olde Town","Quest"],
             "region": "PostStreets",
-            "requires": "|Area-Northguard|"
+            "requires": "|Area-Northguard|",
+			"xp": 15
         },
         {
             "name": "Talk to Nick Jonas",
@@ -272,253 +313,295 @@
         },
         {
             "name": "Pre-Cyclops",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops",
+			"xp": 15
         },
         {
             "name": "Trolls Main",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops",
+			"xp": 155
         },
         {
             "name": "Laundry",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL",
-            "requires": "|Area-Shopping District|"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops",
+            "requires": "|Area-Shopping District|",
+			"xp": 130
         },
         {
             "name": "Cyclops/Fodder/Bubbles",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+			"xp": 210
         },
         {
             "name": "Warhorns",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)}"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:29)}",
+			"xp": 155
         },
         {
             "name": "*Akilles/Muldoon*",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:70)} and |Building-Akilles|"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:70)} and |Building-Akilles|",
+			"xp": 220
         },
         {
             "name": "Trolls Side",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops",
+			"xp": 95
         },
         {
             "name": "Armorless",
             "category": ["06 Cyclops Lane"],
-            "region": "CL",
+            "region": "Cyclops",
             "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}"
         },
         {
             "name": "Eyus",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:64)} and |Building-Eyus|"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:64)} and |Building-Eyus|",
+			"xp": 225
         },
         {
             "name": "Maze Books",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)}"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:29)}",
+			"xp": 110
         },
         {
             "name": "CL Pet Dig",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+			"xp": 110
         },
         {
             "name": "Pre-Fears (Electra)",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)}"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:29)}",
+			"xp": 80
         },
         {
             "name": "Fears",
-            "category": ["06 Cyclops Lane"],
-            "region": "CL Dark Cave",
-            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue| and |Building-Fears|"
+            "category": ["06 Cyclops Lane","Quest"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue| and |Building-Fears|",
+          "xp": 345
         },
         {
             "name": "Pre-Triton",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 15
         },
         {
             "name": "TA Minions",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 235
         },
         {
             "name": "Eel Main",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 240
         },
         {
             "name": "Fodders Main",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 230
         },
         {
             "name": "Duncan to Blad",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 55
         },
         {
             "name": "Screamers",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 190
         },
         {
             "name": "Blad to Duncan",
-            "category": ["07 Triton Avenue"],
-            "region": "TA"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 55
         },
         {
             "name": "Harvest Lord/Nexus",
-            "category": ["07 Triton Avenue"],
-            "region": "HL"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+			"xp": 195
         },
         {
             "name": "Return to Artur",
-            "category": ["07 Triton Avenue"],
-            "region": "HL"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+			"xp": 85
         },
         {
             "name": "*TA Muldoon*",
-            "category": ["07 Triton Avenue"],
-            "region": "HL"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+			"xp": 55
         },
         {
             "name": "Kraken: Eels",
-            "category": ["07 Triton Avenue"],
-            "region": "Kraken",
-            "requires": "{ItemValue(damage:15)}"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "EarlyStreets-Triton",
+            "requires": "{ItemValue(damage:15)}",
+			"xp": 75
         },
         {
             "name": "Kraken: Barrels",
-            "category": ["07 Triton Avenue"],
-            "region": "Kraken",
-            "requires": "{ItemValue(damage:15)}"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "EarlyStreets-Triton",
+            "requires": "{ItemValue(damage:15)}",
+			"xp": 50
         },
         {
             "name": "Kraken: Fodder",
-            "category": ["07 Triton Avenue"],
-            "region": "Kraken",
-            "requires": "{ItemValue(damage:15)}"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "EarlyStreets-Triton",
+            "requires": "{ItemValue(damage:15)}",
+			"xp": 95
         },
         {
             "name": "Kraken",
-            "category": ["07 Triton Avenue"],
-            "region": "Kraken",
-            "requires": "{ItemValue(damage:51)} and |Building-Kraken|"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "EarlyStreets-Triton",
+            "requires": "{ItemValue(damage:51)} and |Building-Kraken|",
+			"xp": 205
         },
         {
             "name": "Skullsplitter",
-            "category": ["07 Triton Avenue"],
-            "region": "TA",
-            "requires": "{ItemValue(damage:70)} and |Building-Skullsplitter|"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+            "requires": "{ItemValue(damage:70)} and |Building-Skullsplitter|",
+			"xp": 130
         },
         {
             "name": "TA Pet Dig",
-            "category": ["07 Triton Avenue"],
-            "region": "HL"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+			"xp": 60
         },
         {
             "name": "Duncan 1",
-            "category": ["07 Triton Avenue"],
-            "region": "HL",
-            "requires": "|Area-Haunted Cave|"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+            "requires": "|Area-Haunted Cave|",
+			"xp": 55
         },
         {
             "name": "Duncan 2",
-            "category": ["07 Triton Avenue"],
-            "region": "HL",
-            "requires": "|Area-Haunted Cave|"
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton-HarvestLord",
+            "requires": "|Area-Haunted Cave|",
+			"xp": 105
         },
         {
             "name": "FA Minions",
-            "category": ["08 Firecat Alley"],
-            "region": "FA"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+			"xp": 15
         },
         {
             "name": "Hunters",
-            "category": ["08 Firecat Alley"],
-            "region": "FA"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+			"xp": 105
         },
         {
             "name": "Pathfinders/Magma Men",
-            "category": ["08 Firecat Alley"],
-            "region": "FA"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+			"xp": 150
         },
         {
             "name": "Fodder/Bastilla",
-            "category": ["08 Firecat Alley"],
-            "region": "Bastilla"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat-Bastilla",
+			"xp": 230
         },
         {
             "name": "To Gloria",
-            "category": ["08 Firecat Alley"],
-            "region": "Bastilla"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat-Bastilla",
+			"xp": 250
         },
         {
             "name": "Alicane",
-            "category": ["08 Firecat Alley"],
-            "region": "AS"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat-Alicane",
+			"xp": 250
         },
         {
             "name": "*FA Muldoon*",
-            "category": ["08 Firecat Alley"],
-            "region": "AS"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat-Alicane",
+			"xp": 25
         },
         {
             "name": "Larry",
-            "category": ["08 Firecat Alley"],
-            "region": "Larry",
-            "requires": "{ItemValue(damage:43)} and |Building-Larry|"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "EarlyStreets",
+            "requires": "{ItemValue(damage:43)} and |Area-Firecat Alley| and |Building-Larry|",
+			"xp": 95
         },
         {
             "name": "Wormguts: Minion",
-            "category": ["08 Firecat Alley"],
-            "region": "FA"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+			"xp": 195
         },
         {
             "name": "Wormguts: Warrior",
-            "category": ["08 Firecat Alley"],
-            "region": "FA"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+			"xp": 195
         },
         {
             "name": "Wormguts",
-            "category": ["08 Firecat Alley"],
-            "region": "FA",
-            "requires": "{ItemValue(damage:56)} and |Building-Wormguts|"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat",
+            "requires": "{ItemValue(damage:56)} and |Building-Wormguts|",
+			"xp": 295
         },
         {
             "name": "Melweena",
-            "category": ["08 Firecat Alley"],
-            "region": "AS",
-            "requires": "|Building-Melweena|"
+            "category": ["08 Firecat Alley","Quest"],
+            "region": "Firecat-Alicane",
+            "requires": "|Building-Melweena|",
+			"xp": 195
         },
         {
             "name": "Nightshade",
             "victory": true,
             "category": ["10 Nightshade"],
-            "region": "AkillesSkip",
+            "region": "PostStreets-AkillesSkip",
             "requires": "{ItemValue(damage:109)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
             "name": "Mist Wood",
             "category": ["09 Reagents"],
-            "region": "UW"
+            "region": "UnicornWay"
         },
         {
             "name": "Cat Tail",
             "category": ["09 Reagents"],
-            "region": "UW"
+            "region": "UnicornWay"
         },
         {
             "name": "Deep Mushroom",
@@ -528,7 +611,7 @@
         {
             "name": "Flax",
             "category": ["09 Reagents"],
-            "region": "UW"
+            "region": "UnicornWay"
         },
         {
             "name": "Ore",
@@ -539,118 +622,143 @@
         {
             "name": "Any Rare Reagent",
             "category": ["09 Reagents"],
-            "region": "UW"
+            "region": "UnicornWay"
         },
         {
             "name": "Pumpkins: Commons",
-            "category": ["31 Halloween","Halloween"],
-            "region": "Commons",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "Commons-Level5",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
         },
         {
             "name": "Ghostly Spires",
-            "category": ["31 Halloween","Halloween"],
-            "region": "Commons",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "Commons-Level5",
             "requires": "|Area-Ravenwood|"
         },
         {
-            "name": "Jack: Unicorn Way",
+            "name": "Apprentice Tower - First Floor",
             "category": ["31 Halloween","Halloween"],
-            "region": "Commons"
+            "region": "ApprenticeTower",
+            "requires": "{ItemValue(damage:30)}"
+        },
+        {
+            "name": "Apprentice Tower - Second Floor",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ApprenticeTower",
+            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
+        },
+        {
+            "name": "Apprentice Tower - Third Floor",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ApprenticeTower",
+            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
+        },
+        {
+            "name": "Apprentice Tower - Fourth Floor",
+            "category": ["31 Halloween","Halloween"],
+            "region": "ApprenticeTower",
+            "requires": "{ItemValue(damage:65)} and |Teleport-Dungeon|"
+        },
+        {
+            "name": "Jack: Unicorn Way",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "Commons-Level5"
         },
         {
             "name": "Pumpkins: Unicorn Way",
-            "category": ["31 Halloween","Halloween"],
-            "region": "Commons"
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "Commons-Level5"
         },
         {
             "name": "Jack: Triton Avenue",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Pumpkins: Triton Avenue",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Jack: Cyclops Lane",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Pumpkins: Cyclops Lane",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Jack: Firecat Alley",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Pumpkins: Firecat Alley",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "|Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Ghosts: Shopping District",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "ShoppingDistrict",
-            "requires": "|Area-The Commons|"
+            "requires": "|Area-The Commons| and {hasLevel(5)}"
         },
         {
             "name": "Apple: Golem Court",
-            "category": ["31 Halloween","Halloween"],
-            "region": "ShoppingDistrict",
-            "requires": "{wizReach(Apples)}"
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "GolemCourt",
+            "requires": "{wizReach(Apples)}",
+            "_comment": "wizReach Apples covers all of the logic here, the region is for clarity"
         },
         {
             "name": "Ghosts: Commons",
-            "category": ["31 Halloween","Halloween"],
-            "region": "ShoppingDistrict",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "GolemCourt",
             "requires": "{wizReach(Apples)}"
         },
         {
             "name": "Apple: Shopping District",
-            "category": ["31 Halloween","Halloween"],
-            "region": "ShoppingDistrict",
+            "category": ["31 Halloween","Halloween","Quest"],
+            "region": "GolemCourt",
             "requires": "{wizReach(Apples)}"
         },
         {
             "name": "Baron Mordecai",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
             "_comment": "Damage value should be 230 but this fails to generate currently."
         },
         {
             "name": "Ghosts: Cyclops Lane",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
         },
         {
             "name": "Apple: Ravenwood",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
         },
         {
             "name": "Ghosts: Firecat Alley",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
         },
         {
             "name": "Apple: Haunted Cave",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         }

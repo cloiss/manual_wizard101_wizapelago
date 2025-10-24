@@ -2,38 +2,44 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
     "Start":{
         "starting": true,
-        "connects_to": ["UW","GC","EarlyStreets"]
+        "connects_to": ["UnicornWay","GolemCourt","EarlyStreets","Level7"]
     },
-    "UW":{
+    "UnicornWay":{
         "requires": "|Area-Unicorn Way|",
-        "connects_to": ["PostUW","EarlyOT","Commons","ShoppingDistrict"],
+        "connects_to": ["PostUW","EarlyOldeTown","Commons","ShoppingDistrict"],
         "_comment": "Access to Unicorn Way guarantees the Level 5 requirement for doing certain quests in Olde Town and Golem Court early and using Majid teleport. Do the Combat Tutorial for extra XP."
     },
-    "EarlyOT":{
-        "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)})))",
-        "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests seem to become available at Level 5."
+    "EarlyOldeTown":{
+        "requires": "|Area-Olde Town| and (|Teleport-Friendly| or (|Area-Shopping District| and (|Teleport-Majid| or {wizReach(PostUW)}))) and {hasLevel(5)}",
+        "_comment": "Friendly teleport to the Bazaar or teleport to Majid to access early. These quests become available at Level 5."
     },
     "Commons": {
-        "requires": "|Area-The Commons|"
+        "requires": "|Area-The Commons|",
+        "connects_to": ["Commons-Level5"]
+    },
+    "Commons-Level5":{
+        "requires": "{hasLevel(5)}",
+        "connects_to": ["ApprenticeTower"]
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
         "_comment": "Majid TP available at level 5 via UW quests. No assumed direct friendly TP to shopping district: instead go to Bazaar."
     },
-    "GC":{
+    "GolemCourt":{
         "requires": "{wizReach(Golem Court)}",
-        "_comment": "Friendly Teleport to Kane ShadowBane in The Drains to access this area before finishing Unicorn Way."
+        "_comment": "Friendly Teleport to Kane ShadowBane in The Drains to access this area before finishing Unicorn Way.",
+        "connects_to": ["GolemCourt-Level5"]
+    },
+    "GolemCourt-Level5":{
+        "requires": "{hasLevel(5)}",
+        "_comment": "Quests for Golem Tower fights require Level 5"
     },
     "EarlyStreets": {
         "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["Kraken", "Larry"]
+        "connects_to": ["EarlyStreets-Triton"]
     },
-    "Kraken":{
+    "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",
-        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
-    },
-    "Larry":{
-        "requires": "|Area-Firecat Alley|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{
@@ -42,43 +48,45 @@
     },
     "Judd":{
         "requires": "{wizReach(Judd)}",
-        "connects_to": ["TA","CL","FA","Level7"]
+        "connects_to": ["Triton","Cyclops","Firecat"]
     },
     "Level7":{
-        "requires": "|Area-Cyclops Lane| or |Area-Triton Avenue| or |Area-Firecat Alley|",
-        "_comment": "Access to any street post-Judd should be significant enough to consistently reach Level 7, I think. Cyclops might be an issue here due to getting walled at Laundry without Shopping District."
+        "requires": "{hasLevel(7)}"
     },
-    "TA":{
+    "Triton":{
         "requires": "|Area-Triton Avenue|",
-        "connects_to": ["HL"]
+        "connects_to": ["Triton-HarvestLord"]
     },
-    "HL":{
+    "Triton-HarvestLord":{
         "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
-        "connects_to": ["AkillesSkip"]
+        "connects_to": ["PostStreets-AkillesSkip"]
     },
-    "CL":{
+    "Cyclops":{
         "requires": "|Area-Cyclops Lane|",
-        "connects_to": ["CL Dark Cave"]
+        "connects_to": ["Cyclops-DarkCave"]
     },
-    "CL Dark Cave":{
+    "Cyclops-DarkCave":{
         "requires": "|Area-Dark Cave| and |Area-Shopping District| and {specialItemCheck(Mid-Streets)}"
     },
-    "FA":{
+    "Firecat":{
         "requires": "|Area-Firecat Alley|",
-        "connects_to": ["Bastilla"]
+        "connects_to": ["Firecat-Bastilla"]
     },
-    "Bastilla":{
+    "Firecat-Bastilla":{
         "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and {wizReach(Fodder)} and {specialItemCheck(Mid-Streets)}",
-        "connects_to": ["AS"]
+        "connects_to": ["Firecat-Alicane"]
     },
-    "AS":{
+    "Firecat-Alicane":{
         "requires": "{ItemValue(damage:72)} and |Building-Alicane|"
     },
-    "AkillesSkip":{
+    "PostStreets-AkillesSkip":{
         "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and (|Building-Akilles| or {YamlEnabled(akilles_skip)})",
         "connects_to": ["PostStreets"]
     },
     "PostStreets":{
         "requires": "|Building-Akilles|"
+    },
+    "ApprenticeTower":{
+        "requires": "|Area-Ravenwood| and |Building-Apprentice Tower| and {hasLevel(7)} and |@SpellCard-Rank 2|"
     }
 }
