@@ -212,15 +212,17 @@
             "name": "Clockwork",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
-            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon|",
-			"xp": 45
+            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon| and (|@SpellCard-Rank 2| or {YamlDisabled(beginner)})",
+			"xp": 45,
+            "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise."
         },
         {
             "name": "Iron Golem",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
             "requires": "{ItemValue(damage:29)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
-			"xp": 100
+			"xp": 100,
+            "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment."
         },
         {
             "name": "Best Friend",
