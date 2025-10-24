@@ -54,4 +54,4 @@ def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
     
     required_xp = level_xp_requirements.get(level, 999999999)
     
-    return hasXP(state, player, str(required_xp))
+    return hasXP(state, player, required_xp)
