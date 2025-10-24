@@ -714,7 +714,7 @@
             "name": "Ghosts: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "ShoppingDistrict",
-            "requires": "|Area-Commons| and {hasLevel(5)}"
+            "requires": "|Area-The Commons| and {hasLevel(5)}"
         },
         {
             "name": "Apple: Golem Court",

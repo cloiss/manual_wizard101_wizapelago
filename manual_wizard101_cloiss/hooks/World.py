@@ -75,7 +75,7 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     pool_quest_rewards = ["Kraken","Ghoul","Blood Bat","Sprite"]
     # add black cats for halloween
     if halloween_option:
-        pool_quest_rewards += ["Black Cat"] * 9
+        pool_quest_rewards += ["Black Cat"] * 10
 
     world.random.shuffle(pool_hits)
     world.random.shuffle(pool_defense)
