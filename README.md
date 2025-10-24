@@ -37,7 +37,7 @@ Currently the goal location is to defeat Lord Nightshade. Unlike other locations
 Access to various abilities within the game is restricted via items. Below is a description of each item category and what you are and aren't allowed to do:
 
 ### School
-You will receive a School item in the starting inventory. This tells you what school to play as.
+You will receive a School item in the starting inventory. This tells you what school to play as. You can configure your primary and secondary school options in the yaml, which will impact which spell cards are available in the pool. If you select Random secondary school, you will not know your secondary school until you receive non-primary spell card from Ravenwood, such as Thunder Snake, Lightning Bats, Thermic Shield, or Storm Shark for Storm secondary.
 
 ### Area
 At the beginning of the game, you may only enter Unicorn Way and The Commons. You need access to each other area in the game in order to enter them. This includes side areas such as Golem Court, Pet Pavillion, and Northguard. Note that areas not listed here, such as Colossus Boulevard and The Arcanum, cannot be entered. (except the Drains, see Friendly Teleports)
@@ -60,7 +60,7 @@ All forms of teleportation (except fleeing) are treated as a separate item. Thes
 - **Teleport-Friendly**: Use the Social button to teleport to any friendly player. Expected uses are to reach Golem Court via the Drains, Olde Town via the Bazaar, and any of the Three Streets via teleporting to a random person. This is given as a starting item if `friendly_teleports` is enabled, and otherwise is not an option.
 
 ### SpellCard
-Every trainable spell card in the accessible areas is an item. You begin with your primary rank 1 spell and must unlock access to use all other spells.
+Every trainable spell card for your primary and secondary school in the accessible areas is an item. You begin with your primary rank 1 spell and must unlock access to use all other spells.
 
 **You may still train spells that you do not have as long as you do not use them.** For example, if you have Lightning Bats but no Thunder Snake, you can still train Thunder Snake in order to train and use Lightning Bats.
 
