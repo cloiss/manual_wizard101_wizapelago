@@ -133,16 +133,19 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     valid_schools = schools.copy()
     valid_schools.remove("Any")
     valid_schools.remove("Random")
+
     # roll a random school if Random was chosen
     if primary_school == "Random":
         primary_school = world.random.choice(valid_schools)
     if secondary_school == "Random":
         secondary_school = world.random.choice(valid_schools)
+
     # choose a random secondary school if primary and secondary are the same
     if primary_school == secondary_school:
         valid_schools.remove(primary_school)
         secondary_school = world.random.choice(valid_schools)
 
+    # modify the world options directly
     world.options.primary_school.value = schools.index(primary_school)
     world.options.secondary_school.value = schools.index(secondary_school)
     pass
@@ -205,20 +208,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
     secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
 
-    valid_schools = schools.copy()
-    valid_schools.remove("Any")
-    valid_schools.remove("Random")
-    # roll a random school if Random was chosen
-    if primary_school == "Random":
-        primary_school = world.random.choice(valid_schools)
-    if secondary_school == "Random":
-        secondary_school = world.random.choice(valid_schools)
-
-    # choose a random secondary school if primary and secondary are the same
-    if primary_school == secondary_school:
-        valid_schools.remove(primary_school)
-        secondary_school = world.random.choice(valid_schools)
-
     primary_school_spells = list(world.item_name_groups["School-" + primary_school])
     secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
     primary_only_spells = world.item_name_groups["PrimaryOnly"]
@@ -266,25 +255,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     item_names_to_add: list[str] = []
 
     # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
-
-    enrollment_spells = list(world.item_name_groups["SpellCard-Enrollment"])
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
-    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
-    rank_2_spells_enabled: list[str] = []
-
-    # find the rank 2 spells and the primary school
-    for item in item_pool:
-        if item.name in rank_2_spells:
-            rank_2_spells_enabled.append(item.name)
-        if item.name in enrollment_spells:
-            primary_school = get_item_school(item.name,world)
     
-    # find the secondary school by examining the non-primary rank 2 spell
-    for spell_name in rank_2_spells_enabled:
-        this_school = get_item_school(spell_name,world)
-        if this_school != primary_school:
-            secondary_school = this_school
-
     # find the secondary rank 1 spell and add it to the pool
     for spell_name in rank_1_spells:
         if get_item_school(spell_name,world) == secondary_school:
