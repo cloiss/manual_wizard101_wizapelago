@@ -125,28 +125,61 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
+    # Before anything happens, edit the options for primary and secondary school
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+
+    valid_schools = schools.copy()
+    valid_schools.remove("Any")
+    valid_schools.remove("Random")
+
+    # roll a random school if Random was chosen
+    if primary_school == "Random":
+        primary_school = world.random.choice(valid_schools)
+    if secondary_school == "Random":
+        secondary_school = world.random.choice(valid_schools)
+
+    # choose a random secondary school if primary and secondary are the same
+    if primary_school == secondary_school:
+        valid_schools.remove(primary_school)
+        secondary_school = world.random.choice(valid_schools)
+
+    # modify the world options directly
+    world.options.primary_school.value = schools.index(primary_school)
+    world.options.secondary_school.value = schools.index(secondary_school)
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
-    locationNamesToRemove: list[str] = [] # List of location names
+    location_names_to_remove: list[str] = [] # List of location names
 
+    # Handle Optional Locations from Yaml Options
     # 0 = none, 1 = all, 2 = ore
     reagents_option = get_option_value(multiworld, player, "reagents")
     
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
         reagent_locations = world.location_name_groups["09 Reagents"]
-        locationNamesToRemove.extend(reagent_locations)
+        location_names_to_remove.extend(reagent_locations)
     # add back ore for ore option
     if reagents_option == 2:
-        locationNamesToRemove.remove("Ore")
+        location_names_to_remove.remove("Ore")
+
+    # Handle School-Based Locations
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    
+    for school in schools:
+        if school != primary_school:
+            school_locations = list(world.location_name_groups["School-" + school])
+            location_names_to_remove.extend(school_locations)
 
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                if location.name in locationNamesToRemove:
+                if location.name in location_names_to_remove:
                     region.locations.remove(location)
 
     # Fake Events system
@@ -184,20 +217,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
     secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
-
-    valid_schools = schools.copy()
-    valid_schools.remove("Any")
-    valid_schools.remove("Random")
-    # roll a random school if Random was chosen
-    if primary_school == "Random":
-        primary_school = world.random.choice(valid_schools)
-    if secondary_school == "Random":
-        secondary_school = world.random.choice(valid_schools)
-
-    # choose a random secondary school if primary and secondary are the same
-    if primary_school == secondary_school:
-        valid_schools.remove(primary_school)
-        secondary_school = world.random.choice(valid_schools)
 
     primary_school_spells = list(world.item_name_groups["School-" + primary_school])
     secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
@@ -246,25 +265,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     item_names_to_add: list[str] = []
 
     # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
-
-    enrollment_spells = list(world.item_name_groups["SpellCard-Enrollment"])
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
-    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
-    rank_2_spells_enabled: list[str] = []
-
-    # find the rank 2 spells and the primary school
-    for item in item_pool:
-        if item.name in rank_2_spells:
-            rank_2_spells_enabled.append(item.name)
-        if item.name in enrollment_spells:
-            primary_school = get_item_school(item.name,world)
     
-    # find the secondary school by examining the non-primary rank 2 spell
-    for spell_name in rank_2_spells_enabled:
-        this_school = get_item_school(spell_name,world)
-        if this_school != primary_school:
-            secondary_school = this_school
-
     # find the secondary rank 1 spell and add it to the pool
     for spell_name in rank_1_spells:
         if get_item_school(spell_name,world) == secondary_school:

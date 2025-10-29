@@ -149,10 +149,62 @@
 			"xp": 5
         },
         {
-            "name": "Level 7 Quest",
-            "category": ["02 The Commons","Quest"],
+            "name": "Balance Level 7 Quest",
+            "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
-            "requires": "(|School-Balance| and |Area-Golem Court|) or |School-Storm| or (|School-Ice| and |Area-Shopping District|) or (|School-Fire| and |Area-Golem Court|) or (|School-Death| and |Area-Triton Avenue| and |Area-Haunted Cave|) or |School-Myth| or |School-Life|"
+            "requires": "|Area-Golem Court|",
+            "xp": 190
+        },
+        {
+            "name": "Storm Level 7 Quest 1",
+            "category": ["02 The Commons","Quest","School-Storm"],
+            "region": "Level7",
+            "xp": 30
+        },
+        {
+            "name": "Storm Level 7 Quest 2",
+            "category": ["02 The Commons","Quest","School-Storm"],
+            "region": "Level7",
+            "xp": 190
+        },
+        {
+            "name": "Ice Level 7 Quest",
+            "category": ["02 The Commons","Quest","School-Ice"],
+            "region": "Level7",
+            "requires": "|Area-Shopping District|",
+            "xp": 190
+        },
+        {
+            "name": "Fire Level 7 Quest",
+            "category": ["02 The Commons","Quest","School-Fire"],
+            "region": "Level7",
+            "requires": "|Area-Golem Court|",
+            "xp": 190
+        },
+        {
+            "name": "Death Level 7 Quest",
+            "category": ["02 The Commons","Quest","School-Death"],
+            "region": "Level7",
+            "requires": "|Area-Triton Avenue| and |Area-Haunted Cave|",
+            "xp": 190
+        },
+        {
+            "name": "Myth Level 7 Quest 1",
+            "category": ["02 The Commons","Quest","School-Myth"],
+            "region": "Level7",
+            "xp": 30
+        },
+        {
+            "name": "Myth Level 7 Quest 2",
+            "category": ["02 The Commons","Quest","School-Myth"],
+            "region": "Level7",
+            "xp": 190
+        },
+        {
+            "name": "Life Level 7 Quest",
+            "category": ["02 The Commons","Quest","School-Life"],
+            "region": "Level7",
+            "xp": 190
         },
         {
             "name": "Fishing 1",
