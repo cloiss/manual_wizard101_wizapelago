@@ -54,7 +54,7 @@
                 "myth": 5,
                 "life": 6,
                 "random-school": -1,
-                "any": -2
+                "any": 7
             },
             "default": 1,
             "group": "School"

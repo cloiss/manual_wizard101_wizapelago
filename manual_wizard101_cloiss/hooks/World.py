@@ -125,6 +125,26 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
+    # Before anything happens, edit the options for primary and secondary school
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+
+    valid_schools = schools.copy()
+    valid_schools.remove("Any")
+    valid_schools.remove("Random")
+    # roll a random school if Random was chosen
+    if primary_school == "Random":
+        primary_school = world.random.choice(valid_schools)
+    if secondary_school == "Random":
+        secondary_school = world.random.choice(valid_schools)
+    # choose a random secondary school if primary and secondary are the same
+    if primary_school == secondary_school:
+        valid_schools.remove(primary_school)
+        secondary_school = world.random.choice(valid_schools)
+
+    world.options.primary_school.value = schools.index(primary_school)
+    world.options.secondary_school.value = schools.index(secondary_school)
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
