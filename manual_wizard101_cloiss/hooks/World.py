@@ -153,23 +153,33 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
-    locationNamesToRemove: list[str] = [] # List of location names
+    location_names_to_remove: list[str] = [] # List of location names
 
+    # Handle Optional Locations from Yaml Options
     # 0 = none, 1 = all, 2 = ore
     reagents_option = get_option_value(multiworld, player, "reagents")
     
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
         reagent_locations = world.location_name_groups["09 Reagents"]
-        locationNamesToRemove.extend(reagent_locations)
+        location_names_to_remove.extend(reagent_locations)
     # add back ore for ore option
     if reagents_option == 2:
-        locationNamesToRemove.remove("Ore")
+        location_names_to_remove.remove("Ore")
+
+    # Handle School-Based Locations
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    
+    for school in schools:
+        if school != primary_school:
+            school_locations = list(world.location_name_groups["School-" + school])
+            location_names_to_remove.extend(school_locations)
 
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                if location.name in locationNamesToRemove:
+                if location.name in location_names_to_remove:
                     region.locations.remove(location)
 
     # Fake Events system
