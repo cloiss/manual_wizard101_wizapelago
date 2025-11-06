@@ -224,8 +224,8 @@
             "name": "9/10 Smiths",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
-            "requires": "|Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
-            "_comment": "Access to Golem Court guaranteed by EarlyStreets region, so no complex logic is needed here."
+            "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
+            "_comment": "Must be PostUW to get the quest which guarantees access to everything barring gate skip"
         },
         {
             "name": "5/7 Books",
@@ -341,7 +341,7 @@
             "name": "Gloria",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Melweena)} and {YamlDisabled(beginner)}))",
+            "requires": "{ItemValue(damage:24)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Melweena)} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55
         },
@@ -709,7 +709,7 @@
             "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
         },
         {
-            "name": "Apprentice Tower - Fourth Floor",
+            "name": "Apprentice Tower - Final Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
             "requires": "{ItemValue(damage:65)} and |Teleport-Dungeon|"
