@@ -156,6 +156,18 @@
             "default": false,
             "group": "Check Locations"
         },
+        "module_petpavillion": {
+            "description": [
+                "Include all quests that visit the Pet Pavillion. Default on, adds 1 item and 4 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 1,
+            "group": "Modules"
+        },
 
 
 
