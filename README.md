@@ -20,7 +20,14 @@ Three yamls are provided in the repo in the `yamls` folder:
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
 ## Locations
-Every default location (except `Talk to Nick Jonas`) is a Wizard City quest which is accessible on a free-to-play account prior to reaching Level 12. This includes, for example, the first two Photomancy quests, but excludes Gardening and all of Colossus Boulevard. Quests with ** around them represent the final main quest in that area, and all quests below that are side quests.
+Every default location (except `Talk to Nick Jonas`) is a Wizard City quest which is accessible on a free-to-play account prior to reaching Level 12. This includes, for example, the first two Photomancy quests, but excludes Gardening and all of Colossus Boulevard.
+
+Quests are named as follows in the randomizer:
+**Questgiver: Quest Name (Clarifier)**
+
+- `Questgiver`: The name of the person who gives the quest, or MAIN for main quests.
+- `Quest Name`: The exact name of the quest in-game for reference.
+- `Clarifier`: A shorthand for what the quest expects from you if the quest name is unclear.
 
 With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave. Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, or utilities like Dungeon Recall.**
 
