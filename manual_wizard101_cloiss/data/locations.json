@@ -311,7 +311,7 @@
 			"xp": 8
         },
         {
-            "name": "*Foulgaze*",
+            "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
             "category": ["05 Olde Town","Quest"],
             "region": "PostStreets-AkillesSkip",
             "requires": "{ItemValue(damage:68)} and |Building-Foulgaze| and |Area-Haunted Cave|",
