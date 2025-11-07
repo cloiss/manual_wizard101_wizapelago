@@ -173,8 +173,10 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     
     for school in schools:
         if school != primary_school:
-            school_locations = list(world.location_name_groups["School-" + school])
-            location_names_to_remove.extend(school_locations)
+            school_key = "School-" + school
+            if school_key in world.location_name_groups:
+                school_locations = list(world.location_name_groups[school_key])
+                location_names_to_remove.extend(school_locations)
 
     for region in multiworld.regions:
         if region.player == player:
