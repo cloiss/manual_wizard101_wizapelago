@@ -265,7 +265,8 @@
         {
             "name": "Slot-Mount",
             "category": ["03 Slot"],
-            "progression": true
+            "progression": true,
+            "local": true
         },
         {
             "name": "Slot-Deck",
@@ -285,7 +286,8 @@
             "name": "Teleport-Mark",
             "category": ["04 Teleport"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "local": true
         },
         {
             "name": "Teleport-Dungeon",

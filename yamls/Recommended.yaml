@@ -179,7 +179,7 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Advanced Combat","Fears","Fishing 2","Baron Mordecai"]
+    ["Advanced Combat","Iron Golem","Fears","Fishing 2","Baron Mordecai"]
 
   exclude_locations:
     # Prevent these locations from having an important item.
