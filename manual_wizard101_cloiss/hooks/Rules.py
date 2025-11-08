@@ -14,7 +14,7 @@ def wizReach(location: str):
         # "$y" references the logic for "y" elsewhere in this table using recursion
         # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
-        "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {ItemValue(damage:26)} and {specialItemCheck(Rattlebones)}",
+        "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {advDamage(250)} and {specialItemCheck(Rattlebones)}",
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
         "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
@@ -92,3 +92,97 @@ def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
     required_xp = level_xp_requirements.get(level, 999999999)
     
     return hasXP(state, player, required_xp)
+
+# Custom function to do a more advanced damage check to properly screen how much damage a player has
+def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionState, player: int, damage: str | int) -> bool:
+    if not isinstance(damage, int):
+        damage: int = int(damage)
+
+    items = get_items_with_value(world, multiworld, "damage", player)
+
+    # Calculate how much damage a player has at this point
+    playerDmg = 0
+
+    for item, dmg in items.items():
+        item_dict = world.item_name_to_item.get(item, {})
+        item_categories: list[str] = item_dict.get("category",[])
+
+        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, multiworld, state, player):
+            playerDmg += dmg
+
+        # TODO Add other non spell card damage
+
+        # TODO Add enemy resistance check
+
+    return playerDmg >= damage
+
+def getSpellRank(categories: list[str]) -> int:
+    rank_dict = {
+        "SpellCard-Rank 1": 1,
+        "SpellCard-Rank 2": 2,
+        "SpellCard-Rank 3": 3,
+        "SpellCard-Rank 4": 4,
+        "SpellCard-Rank 5": 5,
+        "SpellCard-Rank 6": 6,
+        "SpellCard-Rank 7": 7,
+        "SpellCard-Rank 8": 8,
+        "SpellCard-Rank 9": 9,
+        "SpellCard-Rank 10": 10
+    }
+
+    # Check if any category in the categories list matches a spell card rank
+    for category in categories:
+        if category in rank_dict:
+            return rank_dict[category]
+    
+    return 0
+
+def canTrainSpell(categories: list[str], multiworld: MultiWorld, state: CollectionState, player: int) -> bool:
+    spell_rank = getSpellRank(categories)
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+
+    # TODO Add can reach ravenwood 
+    if "School-" + primary_school in categories:
+        match spell_rank:
+            case 1:
+                return True
+            case 2:
+                return hasLevel(state, player, 5)
+            case 3:
+                # TODO handle special case for natures wrath
+                return hasLevel(state, player, 10)
+    elif "School-" + primary_school not in categories:
+        match spell_rank:
+            case 1:
+                return hasTrainingPoints(state, player, 1)
+            case 2:
+                return hasTrainingPoints(state, player, 2)
+            case 3:
+                return hasTrainingPoints(state, player, 4)
+
+def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
+    if not isinstance(tp, int):
+        tp: int = int(tp)
+
+    playerTP = 0
+
+    # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
+    for level in range(4, 21, 4):
+        if hasLevel(state, player, level):
+            playerTP += 1
+        else:
+            break
+    
+    # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
+    # Start at 25 since level 20 was already counted above
+    for level in range(25, 171, 5):
+        if hasLevel(state, player, level):
+            playerTP += 1
+        else:
+            break
+
+    if state.prog_items[player].get("[QI]*To Ravenwood*", 0) > 0:
+        playerTP += 1
+    
+    return playerTP >= tp
