@@ -1,9 +1,5 @@
-from typing import Optional
-from worlds.AutoWorld import World
-from ..Helpers import clamp, get_items_with_value, get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
-import logging
-import re
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -98,16 +94,22 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
     if not isinstance(damage, int):
         damage: int = int(damage)
 
-    items = get_items_with_value(world, multiworld, "damage", player)
-
     # Calculate how much damage a player has at this point
     playerDmg = 0
 
-    for item, dmg in items.items():
+    for item, _ in state.prog_items[player].items():
+        item_dict: dict[str] = world.item_name_to_item.get(item, {})
+        dmg = item_dict.get("value", {}).get("damage", 0)
+        if dmg <= 0:
+            continue
+
         item_dict = world.item_name_to_item.get(item, {})
         item_categories: list[str] = item_dict.get("category",[])
 
         if "05 SpellCard" in item_categories and canTrainSpell(item_categories, multiworld, state, player):
+            playerDmg += dmg
+        
+        if "06 ItemCard" in item_categories:
             playerDmg += dmg
 
         # TODO Add other non spell card damage
@@ -182,7 +184,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
         else:
             break
 
-    if state.prog_items[player].get("[QI]*To Ravenwood*", 0) > 0:
+    if state.has("[QI]*To Ravenwood*", player):
         playerTP += 1
     
     return playerTP >= tp
