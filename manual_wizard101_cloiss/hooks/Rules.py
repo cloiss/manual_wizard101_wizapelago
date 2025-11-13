@@ -1,5 +1,6 @@
-import logging
-from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
+from worlds.AutoWorld import World
+from ..Helpers import format_state_prog_items_key, ProgItemsCat
+from .Helpers import get_option_value
 from BaseClasses import MultiWorld, CollectionState
 from typing import TYPE_CHECKING
 
@@ -22,7 +23,7 @@ def wizReach(location: str):
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
 
 # Checks for special item requirements at particular checkpoints based on yaml settings
-def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
+def specialItemCheck(world: World, player: int, location: str):
     # integer value for each location in the options
     locations_dict = {
         "Rattlebones": 1,
@@ -32,9 +33,9 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
 
     # pair option values with items
     option_item_pairs = [
-        (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
-        (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
-        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+        (get_option_value(world, "mark_location"),"|Teleport-Mark|"),
+        (get_option_value(world, "mount_location"),"|Slot-Mount|"),
+        (get_option_value(world, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
     ]
 
     # compare the option values to determine which items are needed at this specific checkpoint
@@ -107,7 +108,7 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
 
         item_categories: list[str] = item_dict.get("category",[])
 
-        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, item_values, multiworld, state, player):
+        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, item_values, world, state, player):
             playerDmg += dmg
         
         if "06 ItemCard" in item_categories:
@@ -119,9 +120,9 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
 
     return playerDmg >= damage
 
-def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: MultiWorld, state: CollectionState, player: int) -> bool:
+def canTrainSpell(categories: list[str], item_values: dict[str], world: World, state: CollectionState, player: int) -> bool:
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    primary_school = schools[get_option_value(world, "primary_school")]
 
     # If spell level is not found, assume untrainable
     spell_level = item_values.get("level", 999)

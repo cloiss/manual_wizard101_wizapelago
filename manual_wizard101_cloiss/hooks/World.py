@@ -17,7 +17,8 @@ if TYPE_CHECKING:
 from ..Data import game_table, item_table, location_table, region_table
 
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
-from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import format_state_prog_items_key, ProgItemsCat
+from .Helpers import get_option_value
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
@@ -40,7 +41,7 @@ import random, math
 def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
     # order is counterclockwise based on school position in Ravenwood
     school_names = ["Storm","Ice","Fire","Death","Myth","Life"] # balance not included because no Balance Shield or Balance Trap
-    halloween_option = get_option_value(multiworld, player, "halloween")
+    halloween_option = get_option_value(world, "halloween")
 
     # hits
     subpool_rank1 = ["Scarab","Thunder Snake","Ice Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
@@ -127,8 +128,8 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Before anything happens, edit the options for primary and secondary school
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+    primary_school = schools[get_option_value(world, "primary_school")]
+    secondary_school = schools[get_option_value(world, "secondary_school")]
 
     valid_schools = schools.copy()
     valid_schools.remove("Any")
@@ -157,7 +158,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # Handle Optional Locations from Yaml Options
     # 0 = none, 1 = all, 2 = ore
-    reagents_option = get_option_value(multiworld, player, "reagents")
+    reagents_option = get_option_value(world, "reagents")
     
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
@@ -169,7 +170,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    primary_school = schools[get_option_value(world, "primary_school")]
     
     for school in schools:
         if school != primary_school:
@@ -217,8 +218,8 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     item_names_to_add: list[str] = []
 
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+    primary_school = schools[get_option_value(world, "primary_school")]
+    secondary_school = schools[get_option_value(world, "secondary_school")]
 
     primary_school_spells = list(world.item_name_groups["School-" + primary_school])
     secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
@@ -237,8 +238,8 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     ### Handle Modifications to the Starting Inventory
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
-        (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
-        (not(get_option_value(multiworld, player, "mount_location")),"Slot-Mount")
+        (not(get_option_value(world, "mark_location")),"Teleport-Mark"),
+        (not(get_option_value(world, "mount_location")),"Slot-Mount")
     ]
 
     for option, item in option_item_pairs:
@@ -268,7 +269,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
+    secondary_school = "School-" + schools[get_option_value(world, "secondary_school")]
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
     
     # find the secondary rank 1 spell and add it to the pool
