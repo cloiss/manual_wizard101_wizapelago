@@ -1,3 +1,4 @@
+import logging
 from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
 from typing import TYPE_CHECKING
@@ -99,14 +100,14 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
 
     for item, _ in state.prog_items[player].items():
         item_dict: dict[str] = world.item_name_to_item.get(item, {})
-        dmg = item_dict.get("value", {}).get("damage", 0)
+        item_values: dict[str] =  item_dict.get("value", {})
+        dmg = item_values.get("damage", 0)
         if dmg <= 0:
             continue
 
-        item_dict = world.item_name_to_item.get(item, {})
         item_categories: list[str] = item_dict.get("category",[])
 
-        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, multiworld, state, player):
+        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, item_values, multiworld, state, player):
             playerDmg += dmg
         
         if "06 ItemCard" in item_categories:
@@ -118,50 +119,24 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
 
     return playerDmg >= damage
 
-def getSpellRank(categories: list[str]) -> int:
-    rank_dict = {
-        "SpellCard-Rank 1": 1,
-        "SpellCard-Rank 2": 2,
-        "SpellCard-Rank 3": 3,
-        "SpellCard-Rank 4": 4,
-        "SpellCard-Rank 5": 5,
-        "SpellCard-Rank 6": 6,
-        "SpellCard-Rank 7": 7,
-        "SpellCard-Rank 8": 8,
-        "SpellCard-Rank 9": 9,
-        "SpellCard-Rank 10": 10
-    }
-
-    # Check if any category in the categories list matches a spell card rank
-    for category in categories:
-        if category in rank_dict:
-            return rank_dict[category]
-    
-    return 0
-
-def canTrainSpell(categories: list[str], multiworld: MultiWorld, state: CollectionState, player: int) -> bool:
-    spell_rank = getSpellRank(categories)
+def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: MultiWorld, state: CollectionState, player: int) -> bool:
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
 
-    # TODO Add can reach ravenwood 
-    if "School-" + primary_school in categories:
-        match spell_rank:
-            case 1:
-                return True
-            case 2:
-                return hasLevel(state, player, 5)
-            case 3:
-                # TODO handle special case for natures wrath
-                return hasLevel(state, player, 10)
-    elif "School-" + primary_school not in categories:
-        match spell_rank:
-            case 1:
-                return hasTrainingPoints(state, player, 1)
-            case 2:
-                return hasTrainingPoints(state, player, 2)
-            case 3:
-                return hasTrainingPoints(state, player, 4)
+    # If spell level is not found, assume untrainable
+    spell_level = item_values.get("level", 999)
+    training_points = item_values.get("training_points", 999)
+
+    if not hasLevel(state, player, spell_level):
+        return False
+
+    if (spell_level > 1 or "School-" + primary_school not in categories) and not state.has("Area-Ravenwood", player):
+        return False
+
+    if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
+        return False
+
+    return True
 
 def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
     if not isinstance(tp, int):
@@ -184,7 +159,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
         else:
             break
 
-    if state.has("[QI]*To Ravenwood*", player):
+    if state.has("[QI]MAIN: To Ravenwood!", player):
         playerTP += 1
     
     return playerTP >= tp

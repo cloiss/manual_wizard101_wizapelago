@@ -152,58 +152,63 @@
             "name": "Arthur: Introduction to Balance (Level 7)",
             "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
-            "requires": "|Area-Golem Court|",
+            "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Halston: Leyden Lab (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 30
         },
         {
             "name": "Harold: Charge It Up (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Lydia: Introduction to Ice (Level 7)",
             "category": ["02 The Commons","Quest","School-Ice"],
             "region": "Level7",
-            "requires": "|Area-Shopping District|",
+            "requires": "|Area-Shopping District| and |Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Dalia: Introduction to Fire (Level 7)",
             "category": ["02 The Commons","Quest","School-Fire"],
             "region": "Level7",
-            "requires": "|Area-Golem Court|",
+            "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Malorn: The Buried Truth (Level 7)",
             "category": ["02 The Commons","Quest","School-Death"],
             "region": "Level7",
-            "requires": "|Area-Triton Avenue| and |Area-Haunted Cave|",
+            "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Cyrus: Not So Welcome to Myth (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 30
         },
         {
             "name": "Cyrus: Myth Adventure (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 190
         },
         {
             "name": "Moolinda: Introduction to Life (Level 7)",
             "category": ["02 The Commons","Quest","School-Life"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 190
         },
         {
@@ -789,8 +794,7 @@
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}",
-            "_comment": "Damage value should be 230 but this fails to generate currently."
+            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}"
         },
         {
             "name": "Ghosts: Cyclops Lane",
