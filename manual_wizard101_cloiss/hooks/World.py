@@ -77,14 +77,14 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 10
 
-    world.random.shuffle(pool_hits)
-    world.random.shuffle(pool_defense)
-    world.random.shuffle(pool_buffs)
-    world.random.shuffle(pool_drops)
-    world.random.shuffle(pool_useful)
-    world.random.shuffle(pool_exotic)
-    world.random.shuffle(pool_any)
-    world.random.shuffle(pool_quest_rewards)
+    multiworld.random.shuffle(pool_hits)
+    multiworld.random.shuffle(pool_defense)
+    multiworld.random.shuffle(pool_buffs)
+    multiworld.random.shuffle(pool_drops)
+    multiworld.random.shuffle(pool_useful)
+    multiworld.random.shuffle(pool_exotic)
+    multiworld.random.shuffle(pool_any)
+    multiworld.random.shuffle(pool_quest_rewards)
 
     random_pool_size = pool_size - len(pool_quest_rewards) # size of the random section of the pool, to determine the appropriate amount of each category to include
 
@@ -136,14 +136,14 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # roll a random school if Random was chosen
     if primary_school == "Random":
-        primary_school = world.random.choice(valid_schools)
+        primary_school = multiworld.random.choice(valid_schools)
     if secondary_school == "Random":
-        secondary_school = world.random.choice(valid_schools)
+        secondary_school = multiworld.random.choice(valid_schools)
 
     # choose a random secondary school if primary and secondary are the same
     if primary_school == secondary_school:
         valid_schools.remove(primary_school)
-        secondary_school = world.random.choice(valid_schools)
+        secondary_school = multiworld.random.choice(valid_schools)
 
     # modify the world options directly
     world.options.primary_school.value = schools.index(primary_school)
@@ -318,11 +318,11 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
     # populate to_add with enough filler items, prioritizing useful filler
     while filler_needed > 0:
-        if useful_filler and world.random.random() < 0.7: # 70% chance for filler item to be useful, while useful items are available in the pool
-            item = world.random.choice(useful_filler)
+        if useful_filler and multiworld.random.random() < 0.7: # 70% chance for filler item to be useful, while useful items are available in the pool
+            item = multiworld.random.choice(useful_filler)
             useful_filler.remove(item)
         else:
-            item = world.random.choice(filler_items)
+            item = multiworld.random.choice(filler_items)
             filler_items.remove(item)
         to_add.append(item)
         filler_needed -= 1

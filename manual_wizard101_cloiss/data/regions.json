@@ -42,6 +42,10 @@
         "requires": "|Area-Triton Avenue|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
+    "EarlyStreets-Firecat":{
+        "requires": "|Area-Firecat Alley|",
+        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
+    },
     "PostUW":{
         "requires": "{wizReach(PostUW)}",
         "connects_to": ["Judd"]

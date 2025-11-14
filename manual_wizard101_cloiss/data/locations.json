@@ -815,6 +815,32 @@
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
+        },
+        {
+            "name": "Housing Item: Brain Jar",
+            "category": ["10 Housing Items", "HousingItems"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+        },
+        {
+            "name": "Housing Item: Lynx Gazer",
+            "category": ["10 Housing Items", "HousingItems"],
+            "requires": "wizReach(Ravenwood)"
+        },
+        {
+            "name": "Housing Item: Open Book",
+            "category": ["10 Housing Items", "HousingItems"],
+            "region": "Triton-HarvestLord"
+        },
+        {
+            "name": "Housing Item: Pen and Ink",
+            "category": ["10 Housing Items", "HousingItems"],
+            "region": "EarlyStreets-Firecat"
+        },
+        {
+            "name": "Housing Item: Tiny Arched Door",
+            "category": ["10 Housing Items", "HousingItems"],
+            "region": "ShoppingDistrict"
         }
     ]
 }

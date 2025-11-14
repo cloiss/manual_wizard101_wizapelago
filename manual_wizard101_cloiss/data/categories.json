@@ -12,6 +12,9 @@
     "SpellCard-Rank 2": {
         "hidden": true
     },
+    "SpellCard-Rank 3": {
+        "hidden": true
+    },
     "SpellCard-Enrollment": {
         "hidden": true
     },
@@ -21,13 +24,17 @@
     "FillerItem": {
         "hidden": true
     },
-    "Friendly Teleport": {
+    "FriendlyTeleport": {
         "hidden": true,
         "yaml_option": ["friendly_teleport"]
     },
     "Halloween": {
         "hidden": true,
         "yaml_option": ["halloween"]
+    },
+    "HousingItems": {
+       "hidden": true,
+        "yaml_option": ["housing_items"] 
     },
     "School-Balance": {
         "hidden": true

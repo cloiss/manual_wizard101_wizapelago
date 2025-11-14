@@ -20,7 +20,8 @@ def wizReach(location: str):
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
         "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
         "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
-        "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})" # used for armorless and bastilla
+        "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})", # used for armorless and bastilla
+        "Ravenwood": "|Area-Ravenwood| and (|Area-The Commons| or |Teleport-Home| or |Teleport-Friendly|"
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
 

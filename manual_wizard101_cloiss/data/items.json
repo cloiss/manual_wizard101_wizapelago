@@ -305,7 +305,7 @@
         },
         {
             "name": "Teleport-Friendly",
-            "category": ["04 Teleport","Friendly Teleport"],
+            "category": ["04 Teleport","FriendlyTeleport"],
             "progression": true
         },
         {
