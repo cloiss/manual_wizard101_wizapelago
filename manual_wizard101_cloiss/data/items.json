@@ -644,7 +644,7 @@
             "name": "SpellCard-Secondary L10",
             "category": ["05 SpellCard","School-Any","SpellCard-Rank 3"],
             "value": {
-                "damage": 735,
+                "damage": 720,
                 "rank": 3,
                 "level": 10,
                 "training_points": 4
@@ -1057,49 +1057,49 @@
         {
             "name": "ItemCard-Balance Assist",
             "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Storm Assist",
             "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Ice Assist",
             "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Fire Assist",
             "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Death Assist",
             "category": ["06 ItemCard","School-Death","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Myth Assist",
             "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Life Assist",
             "category": ["06 ItemCard","School-Life","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 1},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
