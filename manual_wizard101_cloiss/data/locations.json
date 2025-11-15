@@ -610,8 +610,8 @@
         {
             "name": "Eleanor: What's In a Pet Name? (Larry)",
             "category": ["08 Firecat Alley","Quest"],
-            "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:43)} and |Area-Firecat Alley| and |Building-Larry|",
+            "region": "EarlyStreets-Firecat",
+            "requires": "{ItemValue(damage:43)} and |Building-Larry|",
 			"xp": 95
         },
         {
@@ -643,38 +643,38 @@
         {
             "name": "VICTORY: Defeat Nightshade",
             "victory": true,
-            "category": ["10 Nightshade"],
+            "category": ["99 Nightshade"],
             "region": "PostStreets-AkillesSkip",
             "requires": "{ItemValue(damage:109)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
-            "name": "Mist Wood",
+            "name": "Reagent: Mist Wood",
             "category": ["09 Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Cat Tail",
+            "name": "Reagent: Cat Tail",
             "category": ["09 Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Deep Mushroom",
+            "name": "Reagent: Deep Mushroom",
             "category": ["09 Reagents"],
             "region": "Commons"
         },
         {
-            "name": "Flax",
+            "name": "Reagent: Flax",
             "category": ["09 Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Ore",
+            "name": "Reagent: Ore",
             "category": ["09 Reagents"],
             "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
             "region": "EarlyStreets"
         },
         {
-            "name": "Any Rare Reagent",
+            "name": "Reagent: Any Rare Reagent",
             "category": ["09 Reagents"],
             "region": "UnicornWay"
         },
@@ -817,30 +817,31 @@
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         },
         {
-            "name": "Housing Item: Brain Jar",
-            "category": ["10 Housing Items", "HousingItems"],
-            "region": "PostStreets-AkillesSkip",
-            "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+            "name": "Housing Item: Lynx Gazer (Myth School)",
+            "category": ["02 The Commons", "HousingItems"],
+            "region": "Ravenwood"
         },
         {
-            "name": "Housing Item: Lynx Gazer",
-            "category": ["10 Housing Items", "HousingItems"],
-            "requires": "wizReach(Ravenwood)"
+            "name": "Housing Item: Tiny Arched Door (Shopping District Pet Shop)",
+            "category": ["02 The Commons", "HousingItems"],
+            "region": "ShoppingDistrict"
         },
         {
-            "name": "Housing Item: Open Book",
-            "category": ["10 Housing Items", "HousingItems"],
-            "region": "Triton-HarvestLord"
-        },
-        {
-            "name": "Housing Item: Pen and Ink",
-            "category": ["10 Housing Items", "HousingItems"],
+            "name": "Housing Item: Pen and Ink (Falmea's House)",
+            "category": ["08 Firecat Alley", "HousingItems"],
             "region": "EarlyStreets-Firecat"
         },
         {
-            "name": "Housing Item: Tiny Arched Door",
-            "category": ["10 Housing Items", "HousingItems"],
-            "region": "ShoppingDistrict"
+            "name": "Housing Item: Open Book (Galvanost Tower) ",
+            "category": ["07 Triton Avenue", "HousingItems"],
+            "region": "Triton",
+            "requires": "|Building-Harvest Lord|"
+        },
+        {
+            "name": "Housing Item: Brain Jar (Stormdrain Tower)",
+            "category": ["07 Triton Avenue", "HousingItems"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         }
     ]
 }
