@@ -127,12 +127,17 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
     spell_level = item_values.get("level", 999)
     training_points = item_values.get("training_points", 999)
 
+    # Check if player has high enough level to train spell
     if not hasLevel(state, player, spell_level):
         return False
 
+    # Check if the player can physically train the spells via ravenwood
+    # Primiary School Rank 1 spells are exempt from this
+    # TODO we will need to handle other trainers (Dworgyn, Niles, Alhazred etc.) for initiate
     if (spell_level > 1 or "School-" + primary_school not in categories) and not state.has("Area-Ravenwood", player):
         return False
 
+    # Check if the player has enough training points to train secondary school spells
     if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
         return False
 

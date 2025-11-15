@@ -77,6 +77,7 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 10
 
+    # Use multiworld random here to ensure consistency with seed
     multiworld.random.shuffle(pool_hits)
     multiworld.random.shuffle(pool_defense)
     multiworld.random.shuffle(pool_buffs)
@@ -171,6 +172,8 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
     
+    # UT adds a generation_is_fake attribute when it does it generation
+    # Since UT doesn't know our school randomness, leave all the spell quests in for UT so they show up highlighted properly
     if not getattr(multiworld, 'generation_is_fake', False):
         for school in schools:
             if school != primary_school:
