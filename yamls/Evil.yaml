@@ -146,6 +146,11 @@ Manual_Wizard101_Cloiss:
     all: 50
     ore: 0
 
+  housing_items:
+    # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
+    'false': 0
+    'true': 50
+
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
     'false': 50

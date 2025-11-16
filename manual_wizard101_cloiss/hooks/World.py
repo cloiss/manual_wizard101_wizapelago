@@ -162,7 +162,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["09 Reagents"]
+        reagent_locations = world.location_name_groups["Reagents"]
         location_names_to_remove.extend(reagent_locations)
     # add back ore for ore option
     if reagents_option == 2:

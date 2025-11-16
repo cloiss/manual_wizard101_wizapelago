@@ -156,6 +156,14 @@
             "default": false,
             "group": "Check Locations"
         },
+        "housing_items": {
+            "description": [
+                "Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Check Locations"
+        },
 
 
 
