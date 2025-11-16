@@ -649,33 +649,33 @@
         },
         {
             "name": "Reagent: Mist Wood",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
             "name": "Reagent: Cat Tail",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
             "name": "Reagent: Deep Mushroom",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "region": "Commons"
         },
         {
             "name": "Reagent: Flax",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
             "name": "Reagent: Ore",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
             "region": "EarlyStreets"
         },
         {
             "name": "Reagent: Any Rare Reagent",
-            "category": ["09 Reagents"],
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
@@ -822,7 +822,7 @@
             "region": "Ravenwood"
         },
         {
-            "name": "Housing Item: Tiny Arched Door (Shopping District Pet Shop)",
+            "name": "Housing Item: Tiny Arched Door (Pet Shop)",
             "category": ["02 The Commons", "HousingItems"],
             "region": "ShoppingDistrict"
         },

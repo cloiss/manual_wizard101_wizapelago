@@ -22,7 +22,7 @@
         "connects_to": ["ApprenticeTower"]
     },
     "Ravenwood": {
-        "requires": "wizReach(Ravenwood)"
+        "requires": "{wizReach(Ravenwood)}"
     },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
@@ -39,7 +39,7 @@
     },
     "EarlyStreets": {
         "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["EarlyStreets-Triton"]
+        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat"]
     },
     "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",

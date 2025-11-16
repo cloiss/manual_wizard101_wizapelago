@@ -36,6 +36,9 @@
        "hidden": true,
         "yaml_option": ["housing_items"] 
     },
+    "Reagents": {
+        "hidden": true
+    },
     "School-Balance": {
         "hidden": true
     },
