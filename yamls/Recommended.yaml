@@ -148,6 +148,7 @@ Manual_Wizard101_Cloiss:
     ore: 0
 
   housing_items:
+    # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
     'false': 50
     'true': 0
 
