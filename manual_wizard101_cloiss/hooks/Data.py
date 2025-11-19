@@ -1,4 +1,7 @@
 # called after the game.json file has been loaded
+import logging
+
+
 def after_load_game_file(game_table: dict) -> dict:
     return game_table
 # called after the items.json file has been loaded, before any item loading or processing has occurred
@@ -40,4 +43,4 @@ def after_load_meta_file(meta_table: dict) -> dict:
 # use this if you want to restore more data
 # return True if you want to trigger a regeneration if you changed anything
 def hook_interpret_slot_data(world, player: int, slot_data: dict[str, any]) -> dict | bool:
-    return False
+    return slot_data

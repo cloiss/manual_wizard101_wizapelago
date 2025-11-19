@@ -128,8 +128,13 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Before anything happens, edit the options for primary and secondary school
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+
+    if hasattr(multiworld, "re_gen_passthrough"):
+        primary_school = schools[multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"]["primary_school"]]
+        secondary_school = schools[multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"]["secondary_school"]]
+    else:
+        primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+        secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
 
     valid_schools = schools.copy()
     valid_schools.remove("Any")
@@ -149,7 +154,6 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # modify the world options directly
     world.options.primary_school.value = schools.index(primary_school)
     world.options.secondary_school.value = schools.index(secondary_school)
-    pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -172,15 +176,12 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
     
-    # UT adds a generation_is_fake attribute when it does it generation
-    # Since UT doesn't know our school randomness, leave all the spell quests in for UT so they show up highlighted properly
-    if not getattr(multiworld, 'generation_is_fake', False):
-        for school in schools:
-            if school != primary_school:
-                school_key = "School-" + school
-                if school_key in world.location_name_groups:
-                    school_locations = list(world.location_name_groups[school_key])
-                    location_names_to_remove.extend(school_locations)
+    for school in schools:
+        if school != primary_school:
+            school_key = "School-" + school
+            if school_key in world.location_name_groups:
+                school_locations = list(world.location_name_groups[school_key])
+                location_names_to_remove.extend(school_locations)
 
     # Actual Remove Code
     for region in multiworld.regions:
