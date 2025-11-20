@@ -1,7 +1,5 @@
 from CommonClient import gui_enabled, get_base_parser, server_loop, CommonContext, ClientCommandProcessor, logger
 from worlds.LauncherComponents import icon_paths
-from NetUtils import (JSONtoTextParser, RawJSONtoTextParser)
-from worlds import network_data_package
 import Utils
 import asyncio
 import typing
@@ -10,6 +8,8 @@ import sys
 import os
 import requests
 import subprocess
+import json
+import pkgutil
 
 class WizContext(CommonContext):
     items_handling = 0b111
@@ -29,11 +29,40 @@ class WizContext(CommonContext):
         await self.get_username()
         await self.send_connect(game="Manual_Wizard101_Cloiss")
 
-async def automark_loop(ctx: WizContext, log_path):
+# blatantly copied from Manual, which coincidentally also blatantly copies this from the Minecraft apworld. What a cycle
+def load_data_file(fname: str) -> dict:
+    try:
+        filedata = json.loads(pkgutil.get_data(__name__, fname).decode())
+    except:
+        filedata = []
+
+    return filedata
+
+async def automark_loop(ctx: WizContext):
+    path = subprocess.run(["powershell", "-Command", "(Get-Process", "-Name", "WizardGraphicalClient", ").Path", ], capture_output=True).stdout.decode("utf-8")
+    if path == "":
+        ctx.exit_event.set()
+        logger.info("ERROR: Wizard101 client is not running. The automark client will not work. Please start Wizard101, reopen the client and try again.")
+        return
+    real_path = path
+    log_path = f"{real_path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
     old_length = 0
-    main_log_msg_dict = {
-        1: "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_07.mp3 is ready for playing."
-    }
+    try:
+        locations_data = load_data_file("locations.json")
+        main_log_msg_dict = {}
+        id_counter = 1
+        for location in locations_data["data"]:
+            try:
+                main_log_msg_dict[id_counter] = location["log_msg"]
+            except:
+                pass
+            id_counter += 1
+    except Exception as e:
+        ctx.exit_event.set()
+        logger.info("ERROR: Could not load locations.json file. The automark client will not work. Please ensure the file exists, reopen the client and try again.")
+        logger.info(f"Exception details: {e}")
+        return
+    await asyncio.sleep(0.1)
     while not ctx.exit_event.is_set():
         real_log_str = ""
         # Read log
@@ -43,6 +72,9 @@ async def automark_loop(ctx: WizContext, log_path):
                     log.seek(0)
                     log_str = log.read()
                     new_length = len(log_str)
+                    if old_length == 0:
+                        old_length = new_length
+                        continue
                     if log_str[-1] == "\n":
                         log_str = log_str[:-1]
                     if new_length > old_length:
@@ -56,7 +88,9 @@ async def automark_loop(ctx: WizContext, log_path):
         # Process log lines
         for key, value in main_log_msg_dict.items():
             if value in real_log_str:
-                logger.info("Automark triggered")
+                ctx.locations_checked.add(key)
+                sync_msg = [{"cmd": "Sync"}, {"cmd": "LocationChecks", "locations": [key]}]
+                await ctx.send_msgs(sync_msg)
         await asyncio.sleep(0.1)
 
 async def main(args):
@@ -66,15 +100,8 @@ async def main(args):
     if gui_enabled:
         ctx.run_gui()
     ctx.run_cli()
-    path = subprocess.run(["powershell", "-Command", "(Get-Process", "-Name", "WizardGraphicalClient", ").Path", ], capture_output=True).stdout.decode("utf-8")
-    while path == "":
-        path = subprocess.run(["powershell", "-Command", "(Get-Process", "-Name", "WizardGraphicalClient", ").Path", ], capture_output=True).stdout.decode("utf-8")
-        logger.info("Could not find Wizard101 log file, retrying...")
-        await asyncio.sleep(1)
-    real_path = path
-    log_path = f"{real_path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
     main_automark_loop = asyncio.create_task(
-        automark_loop(ctx, log_path), name="WizAutomarkLoop")
+        automark_loop(ctx), name="WizAutomarkLoop")
 
     await ctx.exit_event.wait()
     ctx.server_address = None

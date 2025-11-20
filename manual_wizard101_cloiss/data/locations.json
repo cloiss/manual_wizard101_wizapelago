@@ -2,218 +2,253 @@
 	"$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.locations.schema.json",
     "data": [
         {
-            "name": "Pre-UW",
+            "name": "MAIN: Unicorn Way (Start)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
 			"xp": 38,
-            "_comment": "Tutorial: 33 xp, Quest: 5"
+            "_comment": "Tutorial: 33 xp, Quest: 5",
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/PrivateConnelly_001_04.mp3 is ready for playing."
         },
         {
-            "name": "Souls",
+            "name": "MAIN: Ghost Hunters (Souls)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:6)}",
+            "requires": "{advDamage(55)}",
 			"xp": 51,
-            "_comment": "Quest: 45, Additional Battle XP: 6"
+            "_comment": "Quest: 45, Additional Battle XP: 6",
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_02.mp3 is ready for playing."
         },
         {
-            "name": "Pirates",
+            "name": "MAIN: Skeleton Crew (Pirates)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:9)}",
+            "requires": "{advDamage(80)}",
 			"xp": 101,
-            "_comment": "Quest: 95, Additional Battle XP: 6"
+            "_comment": "Quest: 95, Additional Battle XP: 6",
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_12.mp3 is ready for playing."
         },
         {
-            "name": "Ceren to Oriel",
+            "name": "MAIN: Monsters and Mazes (To Oriel)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:9)}",
-			"xp": 110
+            "requires": "{advDamage(80)}",
+			"xp": 110,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/LadyOriel_001_04.mp3 is ready for playing."
         },
         {
-            "name": "Fairies",
+            "name": "MAIN: Finding Out Why (Cages/Fairies)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:12)}",
+            "requires": "{advDamage(115)}",
 			"xp": 126,
-            "_comment": "Quest: 120, Additional Battle XP: 6"
+            "_comment": "Quest: 120, Additional Battle XP: 6",
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/LadyOriel_001_11.mp3 is ready for playing."
         },
         {
-            "name": "Oriel to Ceren",
+            "name": "MAIN: Who Could It Be Now? (To Ceren)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:12)}",
-			"xp": 45
+            "requires": "{advDamage(115)}",
+			"xp": 45,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_17.mp3 is ready for playing."
         },
         {
-            "name": "*Rattlebones*",
+            "name": "MAIN: Sinister Skeleton (Rattlebones)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:26)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}",
-			"xp": 110
+            "requires": "{advDamage(250)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}",
+			"xp": 110,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_22.mp3 is ready for playing."
         },
         {
-            "name": "Olivia",
+            "name": "Olivia: Pesky Pirates",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:9)}",
-			"xp": 35
+            "requires": "{advDamage(80)}",
+			"xp": 35,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/OliviaDawnwillow_001_05.mp3 is ready for playing."
         },
         {
-            "name": "Dorothy 1",
+            "name": "Connelly: Yellow Brick Road (Dorothy)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:12)}",
-			"xp": 5
+            "requires": "{advDamage(115)}",
+			"xp": 5,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/DorothyGale_QST_05.mp3 is ready for playing."
         },
         {
-            "name": "Dorothy 2",
+            "name": "Dorothy: Not in Kansas Anymore",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:12)}",
-			"xp": 45
+            "requires": "{advDamage(115)}",
+			"xp": 45,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/PrivateConnelly_QST_17.mp3 is ready for playing."
         },
         {
-            "name": "Blackhope",
+            "name": "Connelly: Saving Private O'Ryan (Blackhope)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:34)} and |Building-Blackhope|",
-			"xp": 60
+            "requires": "{advDamage(330)} and |Building-Blackhope|",
+			"xp": 60,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/PrivateConnelly_001_13.mp3 is ready for playing."
         },
         {
-            "name": "Advanced Combat",
+            "name": "Diego: Advanced Combat",
             "category": ["01 Unicorn Way","Quest"],
             "region": "UnicornWay",
-            "requires": "{ItemValue(damage:12)}",
-			"xp": 150
+            "requires": "{advDamage(115)}",
+			"xp": 150,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound|WorldData|Sound/Dialogue_ADVTUT/Diego_ADVTUT_01.mp3 is ready for playing."
         },
         {
-            "name": "Roberto",
+            "name": "Diego: Unlocking the Truth (Roberto)",
             "category": ["01 Unicorn Way","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Building-Roberto|",
-			"xp": 100
+			"xp": 100,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_GEN|WorldData|Sound/Dialogue/GMC/DiegoTheDuelmaster_GMC_16.mp3 is ready for playing."
         },
         {
-            "name": "UW to Merle",
+            "name": "MAIN: Grim Tales (To Merle)",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
-			"xp": 150
+			"xp": 150,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/MerleAmbrose_001_11.mp3 is ready for playing."
         },
         {
-            "name": "*To Ravenwood*",
+            "name": "MAIN: To Ravenwood!",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
             "requires": "|Area-Ravenwood|",
-			"xp": 20
+			"xp": 20,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/MerleAmbrose_001_20.mp3 is ready for playing."
         },
         {
-            "name": "City Tour (Abby)",
+            "name": "Abby: City Tour",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
             "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|",
-			"xp": 20
+			"xp": 20,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_001|WorldData|Sound/Dialogue/AbbyKDoodle_001_20.mp3 is ready for playing."
         },
         {
-            "name": "Merle to Diego",
+            "name": "Merle: Diego the Duelmaster",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
             "requires": "{wizReach(To Muldoon)}",
-			"xp": 15
+			"xp": 15,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/DiegoTheDuelmaster_QST_01.mp3 is ready for playing."
         },
         {
-            "name": "Pet Sounds (Merle)",
+            "name": "Merle: Pet Sounds",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
             "requires": "|Area-Pet Pavillion|",
-			"xp": 25
+			"xp": 25,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/MiloBarker_002_01.mp3 is ready for playing."
         },
         {
-            "name": "Penny: Commons",
-            "category": ["02 The Commons","Quest"],
-            "region": "Judd"
-        },
-        {
-            "name": "Penny: Defeats",
+            "name": "Penny: Hey, Penny (Commons)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
-            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
-			"xp": 35
+            "xp": 5,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_19.mp3 is ready for playing."
         },
         {
-            "name": "Penny: Dark Cave",
+            "name": "Penny: Dreadful Assignment (Defeats)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
-            "requires": "{ItemValue(damage:40)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
-			"xp": 5
+            "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
+			"xp": 35,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_27.mp3 is ready for playing."
         },
         {
-            "name": "Balance Level 7 Quest",
+            "name": "Penny: Penny For Your Thoughts (Dark Cave)",
+            "category": ["02 The Commons","Quest"],
+            "region": "Judd",
+            "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
+			"xp": 5,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_35.mp3 is ready for playing."
+        },
+        {
+            "name": "Arthur: Introduction to Balance (Level 7)",
             "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
-            "requires": "|Area-Golem Court|",
-            "xp": 190
+            "requires": "|Area-Golem Court| and |Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/ProfArthurWethersfield_QST_10.mp3 is ready for playing."
         },
         {
-            "name": "Storm Level 7 Quest 1",
+            "name": "Halston: Leyden Lab (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
-            "xp": 30
+            "requires": "|Area-Ravenwood|",
+            "xp": 30,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/HaroldArgelston_QST_33.mp3 is ready for playing."
         },
         {
-            "name": "Storm Level 7 Quest 2",
+            "name": "Harold: Charge It Up (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
-            "xp": 190
+            "requires": "|Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/ProfHalstonBalestrom_QST_18.mp3 is ready for playing."
         },
         {
-            "name": "Ice Level 7 Quest",
+            "name": "Lydia: Introduction to Ice (Level 7)",
             "category": ["02 The Commons","Quest","School-Ice"],
             "region": "Level7",
-            "requires": "|Area-Shopping District|",
-            "xp": 190
+            "requires": "|Area-Shopping District| and |Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/ProfLydiaGreyrose_QST_11.mp3 is ready for playing."
         },
         {
-            "name": "Fire Level 7 Quest",
+            "name": "Dalia: Introduction to Fire (Level 7)",
             "category": ["02 The Commons","Quest","School-Fire"],
             "region": "Level7",
-            "requires": "|Area-Golem Court|",
-            "xp": 190
+            "requires": "|Area-Golem Court| and |Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/DaliaFalmea_QST_08.mp3 is ready for playing."
         },
         {
-            "name": "Death Level 7 Quest",
+            "name": "Malorn: The Buried Truth (Level 7)",
             "category": ["02 The Commons","Quest","School-Death"],
             "region": "Level7",
-            "requires": "|Area-Triton Avenue| and |Area-Haunted Cave|",
-            "xp": 190
+            "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_07.mp3 is ready for playing."
         },
         {
-            "name": "Myth Level 7 Quest 1",
+            "name": "Cyrus: Not So Welcome to Myth (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
-            "xp": 30
+            "requires": "|Area-Ravenwood|",
+            "xp": 30,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_28.mp3 is ready for playing."
         },
         {
-            "name": "Myth Level 7 Quest 2",
+            "name": "Cyrus: Myth Adventure (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
-            "xp": 190
+            "requires": "|Area-Ravenwood|",
+            "xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_30.mp3 is ready for playing."
         },
         {
-            "name": "Life Level 7 Quest",
+            "name": "Moolinda: Introduction to Life (Level 7)",
             "category": ["02 The Commons","Quest","School-Life"],
             "region": "Level7",
+            "requires": "|Area-Ravenwood|",
             "xp": 190
         },
         {
-            "name": "Fishing 1",
+            "name": "Lucky: A River Runs Through It (Fishing 1)",
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
 			"xp": 125
         },
         {
-            "name": "Fishing 2",
+            "name": "Lucky: Fishful Thinking (Fishing 2)",
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
             "requires": "|Area-Cyclops Lane|",
@@ -221,461 +256,484 @@
           "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375."
         },
         {
-            "name": "9/10 Smiths",
+            "name": "Zeke: Find the Smiths (9/10 Smiths)",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
-            "requires": "|Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
-            "_comment": "Access to Golem Court guaranteed by EarlyStreets region, so no complex logic is needed here."
+            "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
+            "_comment": "Must be PostUW to get the quest which guarantees access to everything barring gate skip"
         },
         {
-            "name": "5/7 Books",
+            "name": "Boris: The Lore You Know (5/7 Books)",
             "category": ["02 The Commons"],
             "region": "PostStreets-AkillesSkip",
             "requires": "|Building-Foulgaze| and (((|Building-Nightshade| and |Area-Haunted Cave|) and (|Building-Akilles| or |Building-Blackhope|)) or (|Building-Akilles| and |Building-Blackhope|))",
             "_comment": "Need 2/3 of Blackhope, Akilles, Nightshade"
         },
         {
-            "name": "Pre-Colossus",
+            "name": "Merle: Colossal Trouble",
             "category": ["02 The Commons","Quest"],
             "region": "PostStreets",
 			"xp": 35
         },
         {
-            "name": "Photomancy 1",
+            "name": "Annie: Say Cheese! (Photomancy 1)",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt",
 			"xp": 30
         },
         {
-            "name": "Photomancy 2",
+            "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
             "category": ["03 Golem Court","Quest"],
             "region": "EarlyOldeTown",
             "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
 			"xp": 35
         },
         {
-            "name": "Construct",
+            "name": "Regina: Science Fair (Construct)",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
-            "requires": "{ItemValue(damage:10)}",
+            "requires": "{advDamage(95)}",
 			"xp": 20
         },
         {
-            "name": "Clockwork",
+            "name": "Regina: Second Gear (Clockwork)",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
-            "requires": "{ItemValue(damage:27)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
+            "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
 			"xp": 45,
             "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise."
         },
         {
-            "name": "Iron Golem",
+            "name": "Regina: The Final Piece (Iron Golem)",
             "category": ["03 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
-            "requires": "{ItemValue(damage:29)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
+            "requires": "{advDamage(285)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
 			"xp": 100,
             "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment."
         },
         {
-            "name": "Best Friend",
+            "name": "Milo: A Wizard's Best Friend",
             "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
             "requires": "|Area-Pet Pavillion|",
 			"xp": 25
         },
         {
-            "name": "Wizzy 500",
+            "name": "Milo: Wizzy 500",
             "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
             "requires": "|Area-Pet Pavillion|",
 			"xp": 25
         },
         {
-            "name": "Hoard of the Rings",
+            "name": "Milo: Hoard of the Rings",
             "category": ["04 Pet Pavillion","Quest"],
             "region": "Judd",
             "requires": "|Area-Pet Pavillion| and |Area-The Commons| and |Area-Shopping District|",
 			"xp": 35
         },
         {
-            "name": "To Muldoon",
+            "name": "MAIN: Panic in Three Streets! (To Muldoon)",
             "category": ["05 Olde Town","Quest"],
             "region": "PostUW",
             "requires": "{wizReach(To Muldoon)}",
 			"xp": 10
         },
         {
-            "name": "Judd",
+            "name": "MAIN: Secret Strife of Pets (Judd)",
             "category": ["05 Olde Town","Quest"],
             "region": "Judd",
-			"xp": 8
+			"xp": 8,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_05.mp3 is ready for playing."
         },
         {
-            "name": "*Foulgaze*",
+            "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
             "category": ["05 Olde Town","Quest"],
             "region": "PostStreets-AkillesSkip",
-            "requires": "{ItemValue(damage:68)} and |Building-Foulgaze| and |Area-Haunted Cave|",
+            "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
             "_comment": "Quest ends at the entrance to Haunted Cave.",
-			"xp": 250
+			"xp": 250,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/DaisyWillowmancer_005_02.mp3 is ready for playing."
         },
         {
-            "name": "Crafting: Mist Wood",
+            "name": "Eudora: Wizards in the Mist (Mist Wood)",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOldeTown",
 			"xp": 30
         },
         {
-            "name": "Crafting: Daggers",
+            "name": "Eudora: The Razor's Edge (Craft Daggers)",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOldeTown",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)"
         },
         {
-            "name": "Walkabout",
+            "name": "Guildenstern: Walkabout",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOldeTown",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25
         },
         {
-            "name": "Gloria",
+            "name": "Gloria: Looking Sharp!",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:24)} and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Melweena)} and {YamlDisabled(beginner)}))",
+            "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55
         },
         {
-            "name": "Bear Market",
+            "name": "Baldur: Bear Market",
             "category": ["05 Olde Town","Quest"],
             "region": "PostStreets",
 			"xp": 15
         },
         {
-            "name": "Trade Voyage",
+            "name": "Baldur: Trade Voyage",
             "category": ["05 Olde Town","Quest"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
 			"xp": 15
         },
         {
-            "name": "Talk to Nick Jonas",
+            "name": "Talk to Nick Jonas (Not a Quest)",
             "category": ["05 Olde Town"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
             "_comment": "This is the only default check that isn't a quest, it was added for the memes"
         },
         {
-            "name": "Pre-Cyclops",
+            "name": "MAIN: A Good Day to Cyclops (Start)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
 			"xp": 15
         },
         {
-            "name": "Trolls Main",
+            "name": "MAIN: A Stroll with Trolls",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
-			"xp": 155
+			"xp": 155,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_10.mp3 is ready for playing."
         },
         {
-            "name": "Laundry",
+            "name": "MAIN: Run and Done (Laundry)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
             "requires": "|Area-Shopping District|",
-			"xp": 130
+			"xp": 130,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_17.mp3 is ready for playing."
         },
         {
-            "name": "Cyclops/Fodder/Bubbles",
+            "name": "MAIN: The Cave Escape (Cyclops/Fodder/Bubbles)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-			"xp": 210
+			"xp": 210,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_05.mp3 is ready for playing."
         },
         {
-            "name": "Warhorns",
+            "name": "MAIN: Oh Me, Oh Minotaur (Warhorns)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:29)}",
-			"xp": 155
+            "requires": "{advDamage(285)}",
+			"xp": 155,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/Romulus_005_02.mp3 is ready for playing."
         },
         {
-            "name": "*Akilles/Muldoon*",
+            "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:70)} and |Building-Akilles|",
-			"xp": 220
+            "requires": "{advDamage(705)} and |Building-Akilles|",
+			"xp": 220,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/Muldoon_005_07.mp3 is ready for playing."
         },
         {
-            "name": "Trolls Side",
+            "name": "Emerson: Don't Need the Trolls",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
 			"xp": 95
         },
         {
-            "name": "Armorless",
+            "name": "Sweeney: Mostly Armorless",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops",
             "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}"
         },
         {
-            "name": "Eyus",
+            "name": "Emerson: Mad Maximus (Eyus)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:64)} and |Building-Eyus|",
+            "requires": "{advDamage(635)} and |Building-Eyus|",
 			"xp": 225
         },
         {
-            "name": "Maze Books",
+            "name": "Rosie: Mazes and Minotaurs (Maze Books)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:29)}",
+            "requires": "{advDamage(285)}",
 			"xp": 110
         },
         {
-            "name": "CL Pet Dig",
+            "name": "Garrick: You Can Dig It (Pet Dig)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
 			"xp": 110
         },
         {
-            "name": "Pre-Fears (Electra)",
+            "name": "Electra: Faire Thee Well (Pre-Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:29)}",
+            "requires": "{advDamage(285)}",
 			"xp": 80
         },
         {
-            "name": "Fears",
+            "name": "Pierre: The Power is Ours (Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "requires": "{ItemValue(damage:29)} and |Area-Triton Avenue| and |Building-Fears|",
-          "xp": 345
+            "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
+            "xp": 345
         },
         {
-            "name": "Pre-Triton",
+            "name": "MAIN: Trouble on Triton Avenue (Start)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 15
         },
         {
-            "name": "TA Minions",
+            "name": "MAIN: Menacing Minions",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 235
+			"xp": 235,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_09.mp3 is ready for playing."
         },
         {
-            "name": "Eel Main",
+            "name": "MAIN: The Shadow of Death Magic (Eel)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 240
+			"xp": 240,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_08.mp3 is ready for playing."
         },
         {
-            "name": "Fodders Main",
+            "name": "MAIN: Quest for Clues (Fodders)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 230
+			"xp": 230,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_14.mp3 is ready for playing."
         },
         {
-            "name": "Duncan to Blad",
-            "category": ["07 Triton Avenue","Quest"],
-            "region": "Triton",
-			"xp": 55
-        },
-        {
-            "name": "Screamers",
-            "category": ["07 Triton Avenue","Quest"],
-            "region": "Triton",
-			"xp": 190
-        },
-        {
-            "name": "Blad to Duncan",
+            "name": "MAIN: Catching a Glimpse (To Blad)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 55
         },
         {
-            "name": "Harvest Lord/Nexus",
+            "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 190,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_10.mp3 is ready for playing."
+        },
+        {
+            "name": "MAIN: Luminate (To Duncan)",
+            "category": ["07 Triton Avenue","Quest"],
+            "region": "Triton",
+			"xp": 55
+        },
+        {
+            "name": "MAIN: The Enemy Revealed (Harvest Lord)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
-			"xp": 195
+			"xp": 195,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_07.mp3 is ready for playing."
         },
         {
-            "name": "Return to Artur",
+            "name": "MAIN: To Tame a Tempest (To Artur)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 85
         },
         {
-            "name": "*TA Muldoon*",
+            "name": "MAIN: Triton Report (To Muldoon)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
-			"xp": 55
+			"xp": 55,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_14.mp3 is ready for playing."
         },
         {
-            "name": "Kraken: Eels",
+            "name": "Sohomer: All the Eels",
             "category": ["07 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
-            "requires": "{ItemValue(damage:15)}",
-			"xp": 75
+            "requires": "{advDamage(150)}",
+			"xp": 75,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_07.mp3 is ready for playing."
         },
         {
-            "name": "Kraken: Barrels",
+            "name": "Sohomer: Wayward Barrels",
             "category": ["07 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
-            "requires": "{ItemValue(damage:15)}",
-			"xp": 50
+            "requires": "{advDamage(150)}",
+			"xp": 50,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_12.mp3 is ready for playing."
         },
         {
-            "name": "Kraken: Fodder",
+            "name": "Sohomer: Better Get Kraken (Fodder)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
-            "requires": "{ItemValue(damage:15)}",
-			"xp": 95
+            "requires": "{advDamage(150)}",
+			"xp": 95,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_16.mp3 is ready for playing."
         },
         {
-            "name": "Kraken",
+            "name": "Sohomer: Decease the Kraken!",
             "category": ["07 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
-            "requires": "{ItemValue(damage:51)} and |Building-Kraken|",
-			"xp": 205
+            "requires": "{advDamage(510)} and |Building-Kraken|",
+			"xp": 205,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_18.mp3 is ready for playing."
         },
         {
-            "name": "Skullsplitter",
+            "name": "Sandor: A Scrap of Trouble (Skullsplitter)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-            "requires": "{ItemValue(damage:70)} and |Building-Skullsplitter|",
+            "requires": "{advDamage(705)} and |Building-Skullsplitter|",
 			"xp": 130
         },
         {
-            "name": "TA Pet Dig",
+            "name": "Suzie: Sniff 'em Out (Pet Dig)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 60
         },
         {
-            "name": "Duncan 1",
+            "name": "Duncan: Haunting Questions (Haunted Cave)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 55
         },
         {
-            "name": "Duncan 2",
+            "name": "Duncan: Secret of the Cave (Field Guards)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 105
         },
         {
-            "name": "FA Minions",
+            "name": "MAIN: Putting Out the Fire! (Minions)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-			"xp": 15
+			"xp": 15,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateQuinn_005_06.mp3 is ready for playing."
         },
         {
-            "name": "Hunters",
+            "name": "MAIN: She Ran Crying Wildfire (Hunters)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-			"xp": 105
+			"xp": 105,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_06.mp3 is ready for playing."
         },
         {
-            "name": "Pathfinders/Magma Men",
+            "name": "MAIN: Which Hunt? (Pathfinders/Magma Men)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-			"xp": 150
+			"xp": 150,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_08.mp3 is ready for playing."
         },
         {
-            "name": "Fodder/Bastilla",
+            "name": "MAIN: 100% Not That Witch (Fodder/Bastilla)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Bastilla",
-			"xp": 230
+			"xp": 230,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_22.mp3 is ready for playing."
         },
         {
-            "name": "To Gloria",
+            "name": "MAIN: Which Craft? (Gloria)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Bastilla",
 			"xp": 250
         },
         {
-            "name": "Alicane",
+            "name": "MAIN: The Cure (Alicane)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
-			"xp": 250
+			"xp": 250,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_35.mp3 is ready for playing."
         },
         {
-            "name": "*FA Muldoon*",
+            "name": "MAIN: Firecat's In The Bag (To Muldoon)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
-			"xp": 25
+			"xp": 25,
+            "log_msg": "[DBGL] SoundSystem     Sound stream |Sound_Dialogue_005|WorldData|Sound/Dialogue/SeargeantMuldoon_005_04.mp3 is ready for playing."
         },
         {
-            "name": "Larry",
+            "name": "Eleanor: What's In a Pet Name? (Larry)",
             "category": ["08 Firecat Alley","Quest"],
-            "region": "EarlyStreets",
-            "requires": "{ItemValue(damage:43)} and |Area-Firecat Alley| and |Building-Larry|",
+            "region": "EarlyStreets-Firecat",
+            "requires": "{advDamage(430)} and |Building-Larry|",
 			"xp": 95
         },
         {
-            "name": "Wormguts: Minion",
+            "name": "Shelus: ReRecover the Ring (Minion)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 195
         },
         {
-            "name": "Wormguts: Warrior",
+            "name": "Shelus: Cold Hard Steel (Warrior)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 195
         },
         {
-            "name": "Wormguts",
+            "name": "Shelus: Nightmare Time (Wormguts)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-            "requires": "{ItemValue(damage:56)} and |Building-Wormguts|",
+            "requires": "{advDamage(550)} and |Building-Wormguts|",
 			"xp": 295
         },
         {
-            "name": "Melweena",
+            "name": "Lizzo: Problematic Casting (Melweena)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
 			"xp": 195
         },
         {
-            "name": "Nightshade",
+            "name": "VICTORY: Defeat Nightshade",
             "victory": true,
-            "category": ["10 Nightshade"],
+            "category": ["99 Nightshade"],
             "region": "PostStreets-AkillesSkip",
-            "requires": "{ItemValue(damage:109)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
-            "name": "Mist Wood",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Mist Wood",
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Cat Tail",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Cat Tail",
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Deep Mushroom",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Deep Mushroom",
+            "category": ["(No Category)", "Reagents"],
             "region": "Commons"
         },
         {
-            "name": "Flax",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Flax",
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Ore",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Ore",
+            "category": ["(No Category)", "Reagents"],
             "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
             "region": "EarlyStreets"
         },
         {
-            "name": "Any Rare Reagent",
-            "category": ["09 Reagents"],
+            "name": "Reagent: Any Rare Reagent",
+            "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
@@ -694,25 +752,25 @@
             "name": "Apprentice Tower - First Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:30)}"
+            "requires": "{advDamage(300)}"
         },
         {
             "name": "Apprentice Tower - Second Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
+            "requires": "{advDamage(300)} and |Teleport-Dungeon|"
         },
         {
             "name": "Apprentice Tower - Third Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:30)} and |Teleport-Dungeon|"
+            "requires": "{advDamage(300)} and |Teleport-Dungeon|"
         },
         {
-            "name": "Apprentice Tower - Fourth Floor",
+            "name": "Apprentice Tower - Final Floor",
             "category": ["31 Halloween","Halloween"],
             "region": "ApprenticeTower",
-            "requires": "{ItemValue(damage:65)} and |Teleport-Dungeon|"
+            "requires": "{advDamage(650)} and |Teleport-Dungeon|"
         },
         {
             "name": "Jack: Unicorn Way",
@@ -789,8 +847,7 @@
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {ItemValue(damage:170)}",
-            "_comment": "Damage value should be 230 but this fails to generate currently."
+            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}"
         },
         {
             "name": "Ghosts: Cyclops Lane",
@@ -815,6 +872,33 @@
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
+        },
+        {
+            "name": "Housing Item: Lynx Gazer (Myth School)",
+            "category": ["02 The Commons", "HousingItems"],
+            "region": "Ravenwood"
+        },
+        {
+            "name": "Housing Item: Tiny Arched Door (SD Pet Shop)",
+            "category": ["02 The Commons", "HousingItems"],
+            "region": "ShoppingDistrict"
+        },
+        {
+            "name": "Housing Item: Pen and Ink (Falmea's House)",
+            "category": ["08 Firecat Alley", "HousingItems"],
+            "region": "EarlyStreets-Firecat"
+        },
+        {
+            "name": "Housing Item: Open Book (Galvanost Tower) ",
+            "category": ["07 Triton Avenue", "HousingItems"],
+            "region": "Triton",
+            "requires": "|Building-Harvest Lord|"
+        },
+        {
+            "name": "Housing Item: Brain Jar (Stormdrain Tower)",
+            "category": ["07 Triton Avenue", "HousingItems"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         }
     ]
 }
