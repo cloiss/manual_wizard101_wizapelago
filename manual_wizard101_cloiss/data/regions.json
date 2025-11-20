@@ -55,11 +55,11 @@
     },
     "Judd":{
         "requires": "{wizReach(Judd)}",
-        "connects_to": ["Triton","Cyclops","Firecat","PetPavillion"]
+        "connects_to": ["Triton","Cyclops","Firecat","PetPavilion"]
     },
-    "PetPavillion":{
-        "requires": "|Area-Pet Pavillion|",
-        "module": "#PetPavillion#"
+    "PetPavilion":{
+        "requires": "|Area-Pet Pavilion|",
+        "module": "#PetPavilion#"
     },
     "Level7":{
         "requires": "{hasLevel(7)}"

@@ -47,7 +47,7 @@ Access to various abilities within the game is restricted via items. Below is a 
 You will receive a School item in the starting inventory. This tells you what school to play as. You can configure your primary and secondary school options in the yaml, which will impact which spell cards are available in the pool. If you select Random secondary school, you will not know your secondary school until you receive non-primary spell card from Ravenwood, such as Thunder Snake, Lightning Bats, Thermic Shield, or Storm Shark for Storm secondary.
 
 ### Area
-At the beginning of the game, you may only enter Unicorn Way and The Commons. You need access to each other area in the game in order to enter them. This includes side areas such as Golem Court, Pet Pavillion, and Northguard. Note that areas not listed here, such as Colossus Boulevard and The Arcanum, cannot be entered. (except the Drains, see Friendly Teleports)
+At the beginning of the game, you may only enter Unicorn Way and The Commons. You need access to each other area in the game in order to enter them. This includes side areas such as Golem Court, Pet Pavilion, and Northguard. Note that areas not listed here, such as Colossus Boulevard and The Arcanum, cannot be entered. (except the Drains, see Friendly Teleports)
 
 ### Building
 Buildings are anywhere you can go to fight something that is locked behind having a quest to enter it. This is mostly instances with sigils for bossfights, but also includes the solo fights Rattlebones, Blackhope, and Judd and the teleporter to the Kraken arena. Always-accessible areas like the Library, Lady Oriel, and Golem Tower are not included.

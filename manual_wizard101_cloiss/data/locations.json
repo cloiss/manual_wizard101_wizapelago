@@ -125,7 +125,7 @@
         {
             "name": "Merle: Pet Sounds",
             "category": ["02 The Commons","Quest"],
-            "region": "PetPavillion",
+            "region": "PetPavilion",
 			"xp": 25
         },
         {
@@ -282,20 +282,20 @@
         },
         {
             "name": "Milo: A Wizard's Best Friend",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "PetPavillion",
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
 			"xp": 25
         },
         {
             "name": "Milo: Wizzy 500",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "PetPavillion",
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
 			"xp": 25
         },
         {
             "name": "Milo: Hoard of the Rings",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "PetPavillion",
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
             "requires": "|Area-Shopping District|",
 			"xp": 35
         },

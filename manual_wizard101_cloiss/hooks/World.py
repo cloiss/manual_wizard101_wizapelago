@@ -19,6 +19,10 @@ from ..Data import game_table, item_table, location_table, region_table
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
 from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 
+# Used to parse the module requires strings
+from ..Rules import infix_to_postfix, evaluate_postfix
+import re
+
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
@@ -119,6 +123,41 @@ def get_item_school(item_name: str, world: World):
 def format_starting_item_block(item_name: str):
     return {"items": [item_name]}
 
+# copied from checkRequireStringForArea, parses the modulue logic strings for regions and locations
+def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
+    module_values = {
+        "PetPavilion": get_option_value(multiworld,player,"module_petpavilion")
+    }
+    
+    requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
+
+    for module in re.findall(r'#[^#]+#', requires_list):
+
+        module_base = module
+        module = module.lstrip('#').rstrip('#')
+
+        module_parts = module.split(":")  # type: list[str]
+        module_name = module
+        module_count = 1
+
+        if len(module_parts) > 1:
+            module_name = module_parts[0].strip()
+            module_count = int(module_parts[1].strip())
+
+        value = module_values.get(module_name,0) 
+
+        if value >= module_count:
+            requires_list = requires_list.replace(module_base, "1")
+
+        if value < module_count:
+            requires_list = requires_list.replace(module_base, "0")
+
+    requires_list = re.sub(r'\s?\bAND\b\s?', '&', requires_list, 0, re.IGNORECASE)
+    requires_list = re.sub(r'\s?\bOR\b\s?', '|', requires_list, 0, re.IGNORECASE)
+
+    requires_string = infix_to_postfix("".join(requires_list), area)
+    return (evaluate_postfix(requires_string, area))
+
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
@@ -155,6 +194,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
     location_names_to_remove: list[str] = [] # List of location names
+    region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
     # 0 = none, 1 = all, 2 = ore
@@ -182,11 +222,18 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     school_locations = list(world.location_name_groups[school_key])
                     location_names_to_remove.extend(school_locations)
 
+    # Handle Modules
+    for region_name in region_table:
+        region_data = region_table[region_name]
+        module_result = checkModuleStringForArea(multiworld,player,region_data)
+        if not module_result:
+            region_names_to_remove.append(region_name)
+
     # Actual Remove Code
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                if location.name in location_names_to_remove:
+                if location.name in location_names_to_remove or region.name in region_names_to_remove:
                     region.locations.remove(location)
 
     # Fake Events system
