@@ -11,6 +11,7 @@ import subprocess
 import json
 import pkgutil
 
+# This does some minor changes to CommonContext to change the window title and mirror the login behavior of Manual
 class WizContext(CommonContext):
     items_handling = 0b111
     # Change name in window
@@ -38,8 +39,11 @@ def load_data_file(fname: str) -> dict:
 
     return filedata
 
+# The main automark loop
 async def automark_loop(ctx: WizContext):
+    # Get Wizard101 client path
     path = subprocess.run(["powershell", "-Command", "(Get-Process", "-Name", "WizardGraphicalClient", ").Path", ], capture_output=True).stdout.decode("utf-8")
+    # If path is empty (meaning the game is not open), stop the loop function
     if path == "":
         ctx.exit_event.set()
         logger.info("ERROR: Wizard101 client is not running. The automark client will not work. Please start Wizard101, reopen the client and try again.")
@@ -47,6 +51,7 @@ async def automark_loop(ctx: WizContext):
     real_path = path
     log_path = f"{real_path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
     old_length = 0
+    # Load location data
     try:
         locations_data = load_data_file("locations.json")
         main_log_msg_dict = {}
@@ -57,12 +62,14 @@ async def automark_loop(ctx: WizContext):
             except:
                 pass
             id_counter += 1
+    # If locations.json isn't found (likely because of a packaging error), stop the loop function
     except Exception as e:
         ctx.exit_event.set()
         logger.info("ERROR: Could not load locations.json file. The automark client will not work. Please ensure the file exists, reopen the client and try again.")
         logger.info(f"Exception details: {e}")
         return
     await asyncio.sleep(0.1)
+    # Actual main automark loop
     while not ctx.exit_event.is_set():
         real_log_str = ""
         # Read log
@@ -85,7 +92,7 @@ async def automark_loop(ctx: WizContext):
                 except Exception as e:
                     logger.info(f"Error reading log file: {e}")
                 await asyncio.sleep(0.1)
-        # Process log lines
+        # Process log lines and, if a match is found with a location's log message, mark it
         for key, value in main_log_msg_dict.items():
             if value in real_log_str:
                 ctx.locations_checked.add(key)
@@ -93,6 +100,7 @@ async def automark_loop(ctx: WizContext):
                 await ctx.send_msgs(sync_msg)
         await asyncio.sleep(0.1)
 
+# This function and the launch function are both mangled Manual code
 async def main(args):
     ctx = WizContext(args.connect, args.password)
     ctx.server_task = asyncio.create_task(server_loop(ctx), name="server loop")

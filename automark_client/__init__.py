@@ -13,6 +13,7 @@ from BaseClasses import CollectionState, ItemClassification, Item
 from Options import PerGameCommonOptions
 from worlds.AutoWorld import World
 
+# Pretty much this entire file is mangled code from Manual
 class VersionedComponent(Component):
     def __init__(self, display_name: str, script_name: Optional[str] = None, func: Optional[Callable] = None, version: int = 0, file_identifier: Optional[Callable[[str], bool]] = None, icon: Optional[str] = None):
         super().__init__(display_name=display_name, script_name=script_name, func=func, component_type=Type.CLIENT, file_identifier=file_identifier, icon=icon)
