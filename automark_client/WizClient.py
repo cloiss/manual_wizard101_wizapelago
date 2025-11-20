@@ -48,20 +48,16 @@ async def automark_loop(ctx: WizContext):
         ctx.exit_event.set()
         logger.info("ERROR: Wizard101 client is not running. The automark client will not work. Please start Wizard101, reopen the client and try again.")
         return
-    real_path = path
-    log_path = f"{real_path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
+    log_path = f"{path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
     old_length = 0
     # Load location data
     try:
         locations_data = load_data_file("locations.json")
         main_log_msg_dict = {}
-        id_counter = 1
-        for location in locations_data["data"]:
-            try:
-                main_log_msg_dict[id_counter] = location["log_msg"]
-            except:
-                pass
-            id_counter += 1
+        for id, location in enumerate(locations_data["data"], start=1):
+            log_msg = location.get("log_msg", None)
+            if log_msg is not None:
+                main_log_msg_dict[log_msg] = id
     # If locations.json isn't found (likely because of a packaging error), stop the loop function
     except Exception as e:
         ctx.exit_event.set()
@@ -71,32 +67,30 @@ async def automark_loop(ctx: WizContext):
     await asyncio.sleep(0.1)
     # Actual main automark loop
     while not ctx.exit_event.is_set():
-        real_log_str = ""
+        log_str = ""
         # Read log
         with open(log_path, "r") as log:
-            while real_log_str == "":
+            while log_str == "":
                 try:
                     log.seek(0)
-                    log_str = log.read()
-                    new_length = len(log_str)
+                    log_lines = log.readlines()
+                    new_length = len(log_lines)
                     if old_length == 0:
                         old_length = new_length
                         continue
-                    if log_str[-1] == "\n":
-                        log_str = log_str[:-1]
-                    if new_length > old_length:
-                        real_log_str = log_str[old_length:]
-                    elif new_length < old_length:
-                        real_log_str = log_str
+                    if new_length >= old_length:
+                        log_lines = log_lines[old_length - 1:]
+                    log_str = "".join(log_lines)
                     old_length = new_length
                 except Exception as e:
                     logger.info(f"Error reading log file: {e}")
                 await asyncio.sleep(0.1)
         # Process log lines and, if a match is found with a location's log message, mark it
-        for key, value in main_log_msg_dict.items():
-            if value in real_log_str:
-                ctx.locations_checked.add(key)
-                sync_msg = [{"cmd": "Sync"}, {"cmd": "LocationChecks", "locations": [key]}]
+        for msg in main_log_msg_dict:
+            if msg in log_str:
+                id = main_log_msg_dict[msg]
+                ctx.locations_checked.add(id)
+                sync_msg = [{"cmd": "Sync"}, {"cmd": "LocationChecks", "locations": [id]}]
                 await ctx.send_msgs(sync_msg)
         await asyncio.sleep(0.1)
 
