@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 from ..Data import game_table, item_table, location_table, region_table
 
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
-from ..Helpers import is_option_enabled, get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
@@ -77,14 +77,15 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 10
 
-    world.random.shuffle(pool_hits)
-    world.random.shuffle(pool_defense)
-    world.random.shuffle(pool_buffs)
-    world.random.shuffle(pool_drops)
-    world.random.shuffle(pool_useful)
-    world.random.shuffle(pool_exotic)
-    world.random.shuffle(pool_any)
-    world.random.shuffle(pool_quest_rewards)
+    # Use multiworld random here to ensure consistency with seed
+    multiworld.random.shuffle(pool_hits)
+    multiworld.random.shuffle(pool_defense)
+    multiworld.random.shuffle(pool_buffs)
+    multiworld.random.shuffle(pool_drops)
+    multiworld.random.shuffle(pool_useful)
+    multiworld.random.shuffle(pool_exotic)
+    multiworld.random.shuffle(pool_any)
+    multiworld.random.shuffle(pool_quest_rewards)
 
     random_pool_size = pool_size - len(pool_quest_rewards) # size of the random section of the pool, to determine the appropriate amount of each category to include
 
@@ -136,14 +137,14 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     # roll a random school if Random was chosen
     if primary_school == "Random":
-        primary_school = world.random.choice(valid_schools)
+        primary_school = multiworld.random.choice(valid_schools)
     if secondary_school == "Random":
-        secondary_school = world.random.choice(valid_schools)
+        secondary_school = multiworld.random.choice(valid_schools)
 
     # choose a random secondary school if primary and secondary are the same
     if primary_school == secondary_school:
         valid_schools.remove(primary_school)
-        secondary_school = world.random.choice(valid_schools)
+        secondary_school = multiworld.random.choice(valid_schools)
 
     # modify the world options directly
     world.options.primary_school.value = schools.index(primary_school)
@@ -161,7 +162,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     
     # If option is none or ore, remove all items but ore
     if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["09 Reagents"]
+        reagent_locations = world.location_name_groups["Reagents"]
         location_names_to_remove.extend(reagent_locations)
     # add back ore for ore option
     if reagents_option == 2:
@@ -171,11 +172,17 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]
     
-    for school in schools:
-        if school != primary_school:
-            school_locations = list(world.location_name_groups["School-" + school])
-            location_names_to_remove.extend(school_locations)
+    # UT adds a generation_is_fake attribute when it does it generation
+    # Since UT doesn't know our school randomness, leave all the spell quests in for UT so they show up highlighted properly
+    if not getattr(multiworld, 'generation_is_fake', False):
+        for school in schools:
+            if school != primary_school:
+                school_key = "School-" + school
+                if school_key in world.location_name_groups:
+                    school_locations = list(world.location_name_groups[school_key])
+                    location_names_to_remove.extend(school_locations)
 
+    # Actual Remove Code
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
@@ -316,11 +323,11 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
     # populate to_add with enough filler items, prioritizing useful filler
     while filler_needed > 0:
-        if useful_filler and world.random.random() < 0.7: # 70% chance for filler item to be useful, while useful items are available in the pool
-            item = world.random.choice(useful_filler)
+        if useful_filler and multiworld.random.random() < 0.7: # 70% chance for filler item to be useful, while useful items are available in the pool
+            item = multiworld.random.choice(useful_filler)
             useful_filler.remove(item)
         else:
-            item = world.random.choice(filler_items)
+            item = multiworld.random.choice(filler_items)
             filler_items.remove(item)
         to_add.append(item)
         filler_needed -= 1

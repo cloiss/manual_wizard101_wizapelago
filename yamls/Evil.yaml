@@ -146,6 +146,11 @@ Manual_Wizard101_Cloiss:
     all: 50
     ore: 0
 
+  housing_items:
+    # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
+    'false': 0
+    'true': 50
+
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
     'false': 50
@@ -178,11 +183,11 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Fishing 2","Baron Mordecai"]
+    ["Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Any Rare Reagent","Fishing 2","Baron Mordecai"]
+    ["Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
