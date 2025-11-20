@@ -87,34 +87,40 @@
             "name": "Area-Cyclops Lane",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Cyclops#"
         },
         {
             "name": "Area-Triton Avenue",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Triton#"
         },
         {
             "name": "Area-Firecat Alley",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Firecat#"
         },
         {
             "name": "Area-Dark Cave",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops# or #Firecat:2#"
         },
         {
             "name": "Area-Haunted Cave",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#"
         },
         {
             "name": "Area-Northguard",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#"
         },
         {
             "name": "Building-Rattlebones",
@@ -132,37 +138,43 @@
             "name": "Building-Akilles",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2#"
         },
         {
             "name": "Building-Harvest Lord",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#"
         },
         {
             "name": "Building-Bastilla",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#"
         },
         {
             "name": "Building-Alicane",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#"
         },
         {
             "name": "Building-Foulgaze",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#"
         },
         {
             "name": "Building-Nightshade",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#"
         },
         {
             "name": "Building-Blackhope",
@@ -172,47 +184,56 @@
         {
             "name": "Building-Eyus",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops#"
         },
         {
             "name": "Building-Fears",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2# and #Triton#"
         },
         {
             "name": "Building-Kraken",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton#"
         },
         {
             "name": "Building-Skullsplitter",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton#"
         },
         {
             "name": "Building-Roberto",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#"
         },
         {
             "name": "Building-Larry",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Firecat#"
         },
         {
             "name": "Building-Wormguts",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Firecat#"
         },
         {
             "name": "Building-Melweena",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#"
         },
         {
             "name": "Building-Mordecai",
             "category": ["02 Building","Halloween"],
-            "progression": true
+            "progression": true,
+            "module": "#GolemCourt# and #Triton#"
         },
         {
             "name": "Building-Apprentice Tower",
@@ -221,8 +242,7 @@
         },
         {
             "name": "Building-Adept Tower",
-            "category": ["02 Building","Halloween"],
-            "progression": true
+            "category": ["02 Building","Halloween"]
         },
         {
             "name": "Building-Master Tower",
