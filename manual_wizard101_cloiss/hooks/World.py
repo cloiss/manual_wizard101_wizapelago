@@ -37,6 +37,12 @@ import random, math
 ## The fill_slot_data method will be used to send data to the Manual client for later use, like deathlink.
 ########################################################################################
 
+def get_option_value_regen(multiworld: MultiWorld, player: int, option_name: str):
+    if hasattr(multiworld, "re_gen_passthrough"):
+       return multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"][option_name]
+    else:
+       return get_option_value(multiworld, player, option_name)
+
 def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
     # order is counterclockwise based on school position in Ravenwood
     school_names = ["Storm","Ice","Fire","Death","Myth","Life"] # balance not included because no Balance Shield or Balance Trap
@@ -129,12 +135,8 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Before anything happens, edit the options for primary and secondary school
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
 
-    if hasattr(multiworld, "re_gen_passthrough"):
-        primary_school = schools[multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"]["primary_school"]]
-        secondary_school = schools[multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"]["secondary_school"]]
-    else:
-        primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-        secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+    primary_school = schools[get_option_value_regen(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value_regen(multiworld, player, "secondary_school")]
 
     valid_schools = schools.copy()
     valid_schools.remove("Any")
