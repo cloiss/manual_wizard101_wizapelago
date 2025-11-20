@@ -112,6 +112,7 @@
             "name": "Abby: City Tour",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
+            "module": "#GolemCourt#",
             "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|",
 			"xp": 20
         },
@@ -151,6 +152,7 @@
             "name": "Arthur: Introduction to Balance (Level 7)",
             "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
+            "module": "#GolemCourt#",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190
         },
@@ -180,6 +182,7 @@
             "category": ["02 The Commons","Quest","School-Fire"],
             "region": "Level7",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
+            "module": "#GolemCourt#",
             "xp": 190
         },
         {
@@ -254,20 +257,21 @@
             "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
             "category": ["03 Golem Court","Quest"],
             "region": "EarlyOldeTown",
+            "module": "#GolemCourt#",
             "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
 			"xp": 35
         },
         {
             "name": "Regina: Science Fair (Construct)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(95)}",
 			"xp": 20
         },
         {
             "name": "Regina: Second Gear (Clockwork)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
 			"xp": 45,
             "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise."
@@ -275,7 +279,7 @@
         {
             "name": "Regina: The Final Piece (Iron Golem)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(285)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
 			"xp": 100,
             "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment."
@@ -336,6 +340,7 @@
             "name": "Guildenstern: Walkabout",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOldeTown",
+            "module": "#GolemCourt#",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25
         },

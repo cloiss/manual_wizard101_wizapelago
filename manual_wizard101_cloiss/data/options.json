@@ -176,6 +176,19 @@
             "default": 1,
             "group": "Modules"
         },
+        "module_golemcourt": {
+            "description": [
+                "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default on, adds 1-2 items and 4-8 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
 
 
 

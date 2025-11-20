@@ -126,7 +126,8 @@ def format_starting_item_block(item_name: str):
 # copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
 def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
     module_values = {
-        "PetPavilion": get_option_value(multiworld,player,"module_petpavilion")
+        "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
+        "GolemCourt": get_option_value(multiworld,player,"module_golemcourt")
     }
     
     requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
@@ -222,12 +223,17 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     school_locations = list(world.location_name_groups[school_key])
                     location_names_to_remove.extend(school_locations)
 
-    # Handle Modules
+    # Handle Modules for regions and locations
     for region_name in region_table:
         region_data = region_table[region_name]
         module_result = checkModuleStringForArea(multiworld,player,region_data)
         if not module_result:
             region_names_to_remove.append(region_name)
+
+    for location in location_table:
+        module_result = checkModuleStringForArea(multiworld,player,location)
+        if not module_result:
+            location_names_to_remove.append(location['name'])
 
     # Actual Remove Code
     for region in multiworld.regions:
@@ -317,8 +323,13 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
             item_names_to_remove.append(item['name'])
 
     for item_name in item_names_to_remove:
-        item = next(i for i in item_pool if i.name == item_name)
-        item_pool.remove(item)
+        # try-except here accounts for trying to remove items that don't exist (e.g. Fire Prism when Golem Court is disabled and you are not a Fire wizard)
+        try:
+            item = next(i for i in item_pool if i.name == item_name)
+            item_pool.remove(item)
+        except:
+            pass
+
 
     item_names_to_add: list[str] = []
 

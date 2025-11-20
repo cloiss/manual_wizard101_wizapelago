@@ -74,7 +74,8 @@
         {
             "name": "Area-Golem Court",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#GolemCourt#"
         },
         {
             "name": "Area-Pet Pavilion",
@@ -707,6 +708,7 @@
         {
             "name": "SpellCard-Precision",
             "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
+            "module": "#GolemCourt#",
             "count": 0
         },
         {
@@ -722,6 +724,7 @@
         {
             "name": "SpellCard-Fire Prism",
             "category": ["05 SpellCard","School-Fire","PrimaryOnly"],
+            "module": "#GolemCourt#",
             "count": 0
         },
         {

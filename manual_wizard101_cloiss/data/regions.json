@@ -30,11 +30,13 @@
     },
     "GolemCourt":{
         "requires": "{wizReach(Golem Court)}",
+        "module": "#GolemCourt#",
         "_comment": "Friendly Teleport to Kane ShadowBane in The Drains to access this area before finishing Unicorn Way.",
-        "connects_to": ["GolemCourt-Level5"]
+        "connects_to": ["GolemCourt-GolemTower"]
     },
-    "GolemCourt-Level5":{
+    "GolemCourt-GolemTower":{
         "requires": "{hasLevel(5)}",
+        "module": "#GolemCourt:2#",
         "_comment": "Quests for Golem Tower fights require Level 5"
     },
     "EarlyStreets": {
