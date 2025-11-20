@@ -123,7 +123,7 @@ def get_item_school(item_name: str, world: World):
 def format_starting_item_block(item_name: str):
     return {"items": [item_name]}
 
-# copied from checkRequireStringForArea, parses the modulue logic strings for regions and locations
+# copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
 def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
     module_values = {
         "PetPavilion": get_option_value(multiworld,player,"module_petpavilion")
@@ -305,15 +305,19 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
 def before_create_items_filler(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
     # Use this hook to remove items from the item pool
-    itemNamesToRemove: list[str] = [] # List of item names
+    item_names_to_remove: list[str] = [] # List of item names
 
     # Add your code here to calculate which items to remove.
     #
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
+    for item in item_table:
+        module_result = checkModuleStringForArea(multiworld,player,item)
+        if not module_result:
+            item_names_to_remove.append(item['name'])
 
-    for itemName in itemNamesToRemove:
-        item = next(i for i in item_pool if i.name == itemName)
+    for item_name in item_names_to_remove:
+        item = next(i for i in item_pool if i.name == item_name)
         item_pool.remove(item)
 
     item_names_to_add: list[str] = []

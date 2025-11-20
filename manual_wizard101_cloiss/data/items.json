@@ -79,7 +79,8 @@
         {
             "name": "Area-Pet Pavilion",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#PetPavilion#"
         },
         {
             "name": "Area-Cyclops Lane",
