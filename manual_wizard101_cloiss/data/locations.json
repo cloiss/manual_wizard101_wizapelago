@@ -138,13 +138,16 @@
             "name": "Penny: Dreadful Assignment (Defeats)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
+            "module": "#Triton:2#",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
-			"xp": 35
+			"xp": 35,
+            "_comment": "Note that Haunted Cave is behind the FULL triton module"
         },
         {
             "name": "Penny: Penny For Your Thoughts (Dark Cave)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
+            "module": "#Triton:2# and (#Cyclops# or #Firecat:2#)",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
 			"xp": 5
         },
@@ -224,6 +227,7 @@
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
             "requires": "|Area-Cyclops Lane|",
+            "module": "#Cyclops#",
 			"xp": 0,
           "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375."
         },
@@ -231,6 +235,7 @@
             "name": "Zeke: Find the Smiths (9/10 Smiths)",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# and #Triton# and #Firecat# and #GolemCourt#",
             "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "_comment": "Must be PostUW to get the quest which guarantees access to everything barring gate skip"
         },
@@ -348,6 +353,7 @@
             "name": "Gloria: Looking Sharp!",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# and #Firecat# and (#Firecat:2# or #Triton#)",
             "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55
@@ -401,6 +407,7 @@
             "name": "MAIN: Oh Me, Oh Minotaur (Warhorns)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 155
         },
@@ -408,6 +415,7 @@
             "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(705)} and |Building-Akilles|",
 			"xp": 220
         },
@@ -434,6 +442,7 @@
             "name": "Rosie: Mazes and Minotaurs (Maze Books)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 110
         },
@@ -441,12 +450,14 @@
             "name": "Garrick: You Can Dig It (Pet Dig)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
 			"xp": 110
         },
         {
             "name": "Electra: Faire Thee Well (Pre-Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 80
         },
@@ -454,6 +465,7 @@
             "name": "Pierre: The Power is Ours (Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2# and #Triton#",
             "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
           "xp": 345
         },
@@ -473,30 +485,35 @@
             "name": "MAIN: The Shadow of Death Magic (Eel)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 240
         },
         {
             "name": "MAIN: Quest for Clues (Fodders)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 230
         },
         {
             "name": "MAIN: Catching a Glimpse (To Blad)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 55
         },
         {
             "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 190
         },
         {
             "name": "MAIN: Luminate (To Duncan)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 55
         },
         {
@@ -650,9 +667,7 @@
         {
             "name": "VICTORY: Defeat Nightshade",
             "victory": true,
-            "category": ["99 Nightshade"],
-            "region": "PostStreets-AkillesSkip",
-            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+            "category": ["99 Nightshade"]
         },
         {
             "name": "Reagent: Mist Wood",
@@ -677,8 +692,9 @@
         {
             "name": "Reagent: Ore",
             "category": ["(No Category)", "Reagents"],
-            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
-            "region": "EarlyStreets"
+            "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2# or #Triton:2#",
+            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|"
         },
         {
             "name": "Reagent: Any Rare Reagent",
@@ -735,36 +751,42 @@
             "name": "Jack: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Pumpkins: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
             "name": "Jack: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Pumpkins: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
             "name": "Jack: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
             "name": "Pumpkins: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
@@ -796,30 +818,35 @@
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Triton#",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}"
         },
         {
             "name": "Ghosts: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
         },
         {
             "name": "Apple: Ravenwood",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
         },
         {
             "name": "Ghosts: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops# and #Firecat#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
         },
         {
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops# and #Firecat# and #Triton:2#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
         },
         {
@@ -841,6 +868,7 @@
             "name": "Housing Item: Open Book (Galvanost Tower) ",
             "category": ["07 Triton Avenue", "HousingItems"],
             "region": "Triton",
+            "module": "#Triton:2#",
             "requires": "|Building-Harvest Lord|"
         },
         {

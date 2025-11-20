@@ -164,6 +164,19 @@
             "default": false,
             "group": "Check Locations"
         },
+        "module_golemcourt": {
+            "description": [
+                "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default full, adds 1-2 items and 4-8 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
         "module_petpavilion": {
             "description": [
                 "Include all quests that visit the Pet Pavilion. Default on, adds 1 item and 4 locations."
@@ -176,9 +189,34 @@
             "default": 1,
             "group": "Modules"
         },
-        "module_golemcourt": {
+        "module_cyclops": {
             "description": [
-                "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default on, adds 1-2 items and 4-8 locations."
+                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds X items and Y locations."],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_triton": {
+            "description": [
+                "Half module includes Kraken and Skullsplitter, full module includes everything in Triton. Default full, adds 2-5 items and 5-18 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_firecat": {
+            "description": [
+                "Half module includes Larry and Wormguts, full module includes everything in Firecat. Default full, adds X items and Y locations."
             ],
             "type": "Choice",
             "values": {

@@ -126,8 +126,11 @@ def format_starting_item_block(item_name: str):
 # copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
 def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
     module_values = {
+        "GolemCourt": get_option_value(multiworld,player,"module_golemcourt"),
         "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
-        "GolemCourt": get_option_value(multiworld,player,"module_golemcourt")
+        "Cyclops": get_option_value(multiworld,player,"module_cyclops"),
+        "Triton": get_option_value(multiworld,player,"module_triton"),
+        "Firecat": get_option_value(multiworld,player,"module_firecat")
     }
     
     requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
