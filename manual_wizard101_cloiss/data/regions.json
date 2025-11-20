@@ -55,7 +55,11 @@
     },
     "Judd":{
         "requires": "{wizReach(Judd)}",
-        "connects_to": ["Triton","Cyclops","Firecat"]
+        "connects_to": ["Triton","Cyclops","Firecat","PetPavillion"]
+    },
+    "PetPavillion":{
+        "requires": "|Area-Pet Pavillion|",
+        "module": "#PetPavillion#"
     },
     "Level7":{
         "requires": "{hasLevel(7)}"
