@@ -388,7 +388,7 @@
             "region": "EarlyOldeTown",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25,
-            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_26.mp3"
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_27.mp3"
         },
         {
             "name": "Gloria: Looking Sharp!",
