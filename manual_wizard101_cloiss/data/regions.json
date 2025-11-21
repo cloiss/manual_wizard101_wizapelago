@@ -2,7 +2,7 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
     "Start":{
         "starting": true,
-        "connects_to": ["UnicornWay","GolemCourt","EarlyStreets","Level7"]
+        "connects_to": ["UnicornWay","GolemCourt","EarlyStreets","Level7", "Ravenwood"]
     },
     "UnicornWay":{
         "requires": "|Area-Unicorn Way|",
@@ -21,6 +21,9 @@
         "requires": "{hasLevel(5)}",
         "connects_to": ["ApprenticeTower"]
     },
+    "Ravenwood": {
+        "requires": "{wizReach(Ravenwood)}"
+    },
     "ShoppingDistrict":{
         "requires": "{wizReach(Shopping District)}",
         "_comment": "Majid TP available at level 5 via UW quests. No assumed direct friendly TP to shopping district: instead go to Bazaar."
@@ -36,10 +39,14 @@
     },
     "EarlyStreets": {
         "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["EarlyStreets-Triton"]
+        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat"]
     },
     "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",
+        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
+    },
+    "EarlyStreets-Firecat":{
+        "requires": "|Area-Firecat Alley|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{
@@ -58,7 +65,7 @@
         "connects_to": ["Triton-HarvestLord"]
     },
     "Triton-HarvestLord":{
-        "requires": "{ItemValue(damage:66)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
+        "requires": "{advDamage(660)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["PostStreets-AkillesSkip"]
     },
     "Cyclops":{
@@ -73,11 +80,11 @@
         "connects_to": ["Firecat-Bastilla"]
     },
     "Firecat-Bastilla":{
-        "requires": "{ItemValue(damage:57)} and |Building-Bastilla| and {wizReach(Fodder)} and {specialItemCheck(Mid-Streets)}",
+        "requires": "{advDamage(590)} and |Building-Bastilla| and {wizReach(Fodder)} and {specialItemCheck(Mid-Streets)}",
         "connects_to": ["Firecat-Alicane"]
     },
     "Firecat-Alicane":{
-        "requires": "{ItemValue(damage:72)} and |Building-Alicane|"
+        "requires": "{advDamage(715)} and |Building-Alicane|"
     },
     "PostStreets-AkillesSkip":{
         "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and (|Building-Akilles| or {YamlEnabled(akilles_skip)})",

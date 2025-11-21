@@ -1,9 +1,6 @@
-from typing import Optional
 from worlds.AutoWorld import World
-from ..Helpers import clamp, get_items_with_value, get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
-import logging
-import re
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -14,13 +11,14 @@ def wizReach(location: str):
         # "$y" references the logic for "y" elsewhere in this table using recursion
         # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
-        "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {ItemValue(damage:26)} and {specialItemCheck(Rattlebones)}",
+        "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {advDamage(250)} and {specialItemCheck(Rattlebones)}",
         "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
         "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
         "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
         "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
-        "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})" # used for armorless and bastilla
+        "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})", # used for armorless and bastilla
+        "Ravenwood": "|Area-Ravenwood| and (|Area-The Commons| or |Teleport-Home| or |Teleport-Friendly|)"
     }
     return "(" + locations_dict[location] + ")" # not wrapping these strings in parentheses can break logic in subtle ways
 
@@ -92,3 +90,82 @@ def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
     required_xp = level_xp_requirements.get(level, 999999999)
     
     return hasXP(state, player, required_xp)
+
+# Custom function to do a more advanced damage check to properly screen how much damage a player has
+def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionState, player: int, damage: str | int) -> bool:
+    if not isinstance(damage, int):
+        damage: int = int(damage)
+
+    # Calculate how much damage a player has at this point
+    playerDmg = 0
+
+    for item, _ in state.prog_items[player].items():
+        item_dict: dict[str] = world.item_name_to_item.get(item, {})
+        item_values: dict[str] =  item_dict.get("value", {})
+        dmg = item_values.get("damage", 0)
+        if dmg <= 0:
+            continue
+
+        item_categories: list[str] = item_dict.get("category",[])
+
+        if "05 SpellCard" in item_categories and canTrainSpell(item_categories, item_values, multiworld, state, player):
+            playerDmg += dmg
+        
+        if "06 ItemCard" in item_categories:
+            playerDmg += dmg
+
+        # TODO Add other non spell card damage
+
+        # TODO Add enemy resistance check
+
+    return playerDmg >= damage
+
+def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: MultiWorld, state: CollectionState, player: int) -> bool:
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+
+    # If spell level is not found, assume untrainable
+    spell_level = item_values.get("level", 999)
+    training_points = item_values.get("training_points", 999)
+
+    # Check if player has high enough level to train spell
+    if not hasLevel(state, player, spell_level):
+        return False
+
+    # Check if the player can physically train the spells via ravenwood
+    # Primiary School Rank 1 spells are exempt from this
+    # TODO we will need to handle other trainers (Dworgyn, Niles, Alhazred etc.) for initiate
+    if (spell_level > 1 or "School-" + primary_school not in categories) and not state.has("Area-Ravenwood", player):
+        return False
+
+    # Check if the player has enough training points to train secondary school spells
+    if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
+        return False
+
+    return True
+
+def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
+    if not isinstance(tp, int):
+        tp: int = int(tp)
+
+    playerTP = 0
+
+    # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
+    for level in range(4, 21, 4):
+        if hasLevel(state, player, level):
+            playerTP += 1
+        else:
+            break
+    
+    # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
+    # Start at 25 since level 20 was already counted above
+    for level in range(25, 171, 5):
+        if hasLevel(state, player, level):
+            playerTP += 1
+        else:
+            break
+
+    if state.has("[QI]MAIN: To Ravenwood!", player):
+        playerTP += 1
+    
+    return playerTP >= tp

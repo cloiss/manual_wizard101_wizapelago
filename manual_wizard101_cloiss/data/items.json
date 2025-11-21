@@ -265,7 +265,8 @@
         {
             "name": "Slot-Mount",
             "category": ["03 Slot"],
-            "progression": true
+            "progression": true,
+            "local": true
         },
         {
             "name": "Slot-Deck",
@@ -285,7 +286,8 @@
             "name": "Teleport-Mark",
             "category": ["04 Teleport"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "local": true
         },
         {
             "name": "Teleport-Dungeon",
@@ -303,13 +305,18 @@
         },
         {
             "name": "Teleport-Friendly",
-            "category": ["04 Teleport","Friendly Teleport"],
+            "category": ["04 Teleport","FriendlyTeleport"],
             "progression": true
         },
         {
             "name": "SpellCard-Scarab",
             "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 19},
+            "value": {
+                "damage": 195,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0,
@@ -318,7 +325,12 @@
         {
             "name": "SpellCard-Thunder Snake",
             "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 31},
+            "value": {
+                "damage": 315,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -326,7 +338,12 @@
         {
             "name": "SpellCard-Ice Beetle",
             "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 19},
+            "value": {
+                "damage": 195,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -334,7 +351,12 @@
         {
             "name": "SpellCard-Fire Cat",
             "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 24},
+            "value": {
+                "damage": 240,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -342,7 +364,12 @@
         {
             "name": "SpellCard-Dark Sprite",
             "category": ["05 SpellCard","School-Death","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 19},
+            "value": {
+                "damage": 195,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -350,7 +377,12 @@
         {
             "name": "SpellCard-Blood Bat",
             "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 21},
+            "value": {
+                "damage": 210,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -358,7 +390,12 @@
         {
             "name": "SpellCard-Imp",
             "category": ["05 SpellCard","School-Life","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 19},
+            "value": {
+                "damage": 195,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -366,7 +403,12 @@
         {
             "name": "SpellCard-Secondary L1",
             "category": ["05 SpellCard","School-Any","SpellCard-Rank 1","PrimaryOnly"],
-            "value": {"damage": 19},
+            "value": {
+                "damage": 195,
+                "rank": 1,
+                "level": 1,
+                "training_points": 1
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -374,7 +416,12 @@
         {
             "name": "SpellCard-Scorpion",
             "category": ["05 SpellCard","School-Balance","SpellCard-Rank 2"],
-            "value": {"damage": 48},
+            "value": {
+                "damage": 480,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -382,7 +429,12 @@
         {
             "name": "SpellCard-Lightning Bats",
             "category": ["05 SpellCard","School-Storm","SpellCard-Rank 2"],
-            "value": {"damage": 73},
+            "value": {
+                "damage": 735,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -390,7 +442,12 @@
         {
             "name": "SpellCard-Snow Serpent",
             "category": ["05 SpellCard","School-Ice","SpellCard-Rank 2"],
-            "value": {"damage": 46},
+            "value": {
+                "damage": 465,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -398,7 +455,12 @@
         {
             "name": "SpellCard-Fire Elf",
             "category": ["05 SpellCard","School-Fire","SpellCard-Rank 2"],
-            "value": {"damage": 93},
+            "value": {
+                "damage": 930,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -406,7 +468,12 @@
         {
             "name": "SpellCard-Ghoul",
             "category": ["05 SpellCard","School-Death","SpellCard-Rank 2"],
-            "value": {"damage": 48},
+            "value": {
+                "damage": 480,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -414,7 +481,12 @@
         {
             "name": "SpellCard-Troll",
             "category": ["05 SpellCard","School-Myth","SpellCard-Rank 2"],
-            "value": {"damage": 51},
+            "value": {
+                "damage": 510,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -422,7 +494,12 @@
         {
             "name": "SpellCard-Leprechaun",
             "category": ["05 SpellCard","School-Life","SpellCard-Rank 2"],
-            "value": {"damage": 46},
+            "value": {
+                "damage": 465,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -430,7 +507,12 @@
         {
             "name": "SpellCard-Secondary L5",
             "category": ["05 SpellCard","School-Any","SpellCard-Rank 2"],
-            "value": {"damage": 46},
+            "value": {
+                "damage": 465,
+                "rank": 2,
+                "level": 5,
+                "training_points": 2
+            },
             "useful": true,
             "progression": true,
             "count": 0
@@ -477,42 +559,98 @@
         },
         {
             "name": "SpellCard-Locust Swarm",
-            "category": ["05 SpellCard","School-Balance"],
+            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 3"],
+            "value": {
+                "damage": 735,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Storm Shark",
-            "category": ["05 SpellCard","School-Storm"],
+            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 3"],
+            "value": {
+                "damage": 1125,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Evil Snowman",
-            "category": ["05 SpellCard","School-Ice"],
+            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 3"],
+            "value": {
+                "damage": 720,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Sunbird",
-            "category": ["05 SpellCard","School-Fire"],
+            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 3"],
+            "value": {
+                "damage": 885,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Banshee",
-            "category": ["05 SpellCard","School-Death"],
+            "category": ["05 SpellCard","School-Death","SpellCard-Rank 3"],
+            "value": {
+                "damage": 735,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Cyclops",
-            "category": ["05 SpellCard","School-Myth"],
+            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 3"],
+            "value": {
+                "damage": 795,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
             "name": "SpellCard-Sprite",
-            "category": ["05 SpellCard","School-Life"],
+            "category": ["05 SpellCard","School-Life","SpellCard-Rank 3"],
             "count": 0
         },
         {
             "name": "SpellCard-Secondary L10",
-            "category": ["05 SpellCard","School-Any"],
+            "category": ["05 SpellCard","School-Any","SpellCard-Rank 3"],
+            "value": {
+                "damage": 720,
+                "rank": 3,
+                "level": 10,
+                "training_points": 4
+            },
+            "useful": true,
+            "progression": true,
             "count": 0
         },
         {
@@ -687,43 +825,43 @@
         {
             "name": "ItemCard-Scarab",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 5},
+            "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Thunder Snake",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 9},
+            "value": {"damage": 95, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Ice Beetle",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 5},
+            "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Fire Cat",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 7},
+            "value": {"damage": 70, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Dark Sprite",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 5},
+            "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Blood Bat",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 6},
+            "value": {"damage": 60, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Imp",
             "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 5},
+            "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
@@ -919,49 +1057,49 @@
         {
             "name": "ItemCard-Balance Assist",
             "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Storm Assist",
             "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Ice Assist",
             "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Fire Assist",
             "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Death Assist",
             "category": ["06 ItemCard","School-Death","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Myth Assist",
             "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Life Assist",
             "category": ["06 ItemCard","School-Life","PrimaryOnly"],
-            "value": {"damage": 13},
+            "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
@@ -1542,7 +1680,7 @@
             "useful": true
         },
         {
-            "name": "Vendor-Bazaar Amulets",
+            "name": "Vendor-Bazaar",
             "category": ["08 Vendor"],
             "useful": true
         },
