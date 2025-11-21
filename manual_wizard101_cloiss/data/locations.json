@@ -517,13 +517,15 @@
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
-            "xp": 345
+            "xp": 345,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_13.mp3"
         },
         {
             "name": "MAIN: Trouble on Triton Avenue (Start)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 15
+			"xp": 15,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_02.mp3"
         },
         {
             "name": "MAIN: Menacing Minions",
@@ -550,7 +552,8 @@
             "name": "MAIN: Catching a Glimpse (To Blad)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 55
+			"xp": 55,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_01.mp3"
         },
         {
             "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
@@ -563,7 +566,8 @@
             "name": "MAIN: Luminate (To Duncan)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-			"xp": 55
+			"xp": 55,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_18.mp3"
         },
         {
             "name": "MAIN: The Enemy Revealed (Harvest Lord)",
@@ -576,7 +580,8 @@
             "name": "MAIN: To Tame a Tempest (To Artur)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
-			"xp": 85
+			"xp": 85,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_18.mp3"
         },
         {
             "name": "MAIN: Triton Report (To Muldoon)",
@@ -622,27 +627,31 @@
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
             "requires": "{advDamage(705)} and |Building-Skullsplitter|",
-			"xp": 130
+			"xp": 130,
+            "log_msg": "|Sound_Dialogue_LM|WorldData|Sound/Dialogue/LM/Sandor_Spitfire_WC-TRITON_005.mp3"
         },
         {
             "name": "Suzie: Sniff 'em Out (Pet Dig)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
-			"xp": 60
+			"xp": 60,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_21.mp3"
         },
         {
             "name": "Duncan: Haunting Questions (Haunted Cave)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
-			"xp": 55
+			"xp": 55,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_29.mp3"
         },
         {
             "name": "Duncan: Secret of the Cave (Field Guards)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
-			"xp": 105
+			"xp": 105,
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_39.mp3"
         },
         {
             "name": "MAIN: Putting Out the Fire! (Minions)",
@@ -676,7 +685,8 @@
             "name": "MAIN: Which Craft? (Gloria)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Bastilla",
-			"xp": 250
+			"xp": 250,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_29.mp3"
         },
         {
             "name": "MAIN: The Cure (Alicane)",
@@ -697,40 +707,46 @@
             "category": ["08 Firecat Alley","Quest"],
             "region": "EarlyStreets-Firecat",
             "requires": "{advDamage(430)} and |Building-Larry|",
-			"xp": 95
+			"xp": 95,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/EleanorAbernathy_005_13.mp3"
         },
         {
             "name": "Shelus: ReRecover the Ring (Minion)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-			"xp": 195
+			"xp": 195,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_12.mp3"
         },
         {
             "name": "Shelus: Cold Hard Steel (Warrior)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
-			"xp": 195
+			"xp": 195,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_17.mp3"
         },
         {
             "name": "Shelus: Nightmare Time (Wormguts)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat",
             "requires": "{advDamage(550)} and |Building-Wormguts|",
-			"xp": 295
+			"xp": 295,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_25.mp3"
         },
         {
             "name": "Lizzo: Problematic Casting (Melweena)",
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
-			"xp": 195
+			"xp": 195,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_20.mp3"
         },
         {
             "name": "VICTORY: Defeat Nightshade",
             "victory": true,
             "category": ["99 Nightshade"],
             "region": "PostStreets-AkillesSkip",
-            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LordNightshade_005_03.mp3"
         },
         {
             "name": "Reagent: Mist Wood",
@@ -767,13 +783,15 @@
             "name": "Pumpkins: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
+            "_comment": "Level 5 required, can be obtained from sphere 0 in UW",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_05.mp3"
         },
         {
             "name": "Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "requires": "|Area-Ravenwood|"
+            "requires": "|Area-Ravenwood|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_01.mp3"
         },
         {
             "name": "Apprentice Tower - First Floor",
@@ -802,103 +820,120 @@
         {
             "name": "Jack: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Level5"
+            "region": "Commons-Level5",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_04.mp3"
         },
         {
             "name": "Pumpkins: Unicorn Way",
             "category": ["31 Halloween","Halloween","Quest"],
-            "region": "Commons-Level5"
+            "region": "Commons-Level5",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_03.mp3"
         },
         {
             "name": "Jack: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_05.mp3"
         },
         {
             "name": "Pumpkins: Triton Avenue",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_04.mp3"
         },
         {
             "name": "Jack: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_05.mp3"
         },
         {
             "name": "Pumpkins: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_04.mp3"
         },
         {
             "name": "Jack: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_05.mp3"
         },
         {
             "name": "Pumpkins: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
+            "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_04.mp3"
         },
         {
             "name": "Ghosts: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "ShoppingDistrict",
-            "requires": "|Area-The Commons| and {hasLevel(5)}"
+            "requires": "|Area-The Commons| and {hasLevel(5)}",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_20.mp3"
         },
         {
             "name": "Apple: Golem Court",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
-            "_comment": "wizReach Apples covers all of the logic here, the region is for clarity"
+            "_comment": "wizReach Apples covers all of the logic here, the region is for clarity",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_23.mp3"
         },
         {
             "name": "Ghosts: Commons",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
-            "requires": "{wizReach(Apples)}"
+            "requires": "{wizReach(Apples)}",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_28.mp3"
         },
         {
             "name": "Apple: Shopping District",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
-            "requires": "{wizReach(Apples)}"
+            "requires": "{wizReach(Apples)}",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_32.mp3"
         },
         {
             "name": "Baron Mordecai",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}"
+            "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_16.mp3"
         },
         {
             "name": "Ghosts: Cyclops Lane",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_37.mp3"
         },
         {
             "name": "Apple: Ravenwood",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_40.mp3"
         },
         {
             "name": "Ghosts: Firecat Alley",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_46.mp3"
         },
         {
             "name": "Apple: Haunted Cave",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
-            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
+            "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_50.mp3"
         },
         {
             "name": "Housing Item: Lynx Gazer (Myth School)",
