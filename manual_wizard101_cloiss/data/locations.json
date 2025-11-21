@@ -684,13 +684,13 @@
             "region": "UnicornWay"
         },
         {
-            "name": "Pumpkins: Commons",
+            "name": "Jack Hallow: Tricks and Treats (Commons Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW"
         },
         {
-            "name": "Ghostly Spires",
+            "name": "Jack Hallow: Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "requires": "|Area-Ravenwood|"
@@ -720,102 +720,102 @@
             "requires": "{advDamage(650)} and |Teleport-Dungeon|"
         },
         {
-            "name": "Jack: Unicorn Way",
+            "name": "Jack Hallow: Straw Man (UW Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5"
         },
         {
-            "name": "Pumpkins: Unicorn Way",
+            "name": "Jack Straw: Unicorn Delight (UW Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5"
         },
         {
-            "name": "Jack: Triton Avenue",
+            "name": "Jack Hallow: Orange Lantern (TA Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
-            "name": "Pumpkins: Triton Avenue",
+            "name": "Jack O'Lantern: Tricks and Sticks (TA Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|"
         },
         {
-            "name": "Jack: Cyclops Lane",
+            "name": "Jack Hallow: Pumpkin Head (CL Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
-            "name": "Pumpkins: Cyclops Lane",
+            "name": "Pumpkin Jack: One-Eyed Snacks (CL Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|"
         },
         {
-            "name": "Jack: Firecat Alley",
+            "name": "Jack Hallow: Meeting Crow (FA Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
-            "name": "Pumpkins: Firecat Alley",
+            "name": "Jack Crow: Firecat Strike (FA Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|"
         },
         {
-            "name": "Ghosts: Shopping District",
+            "name": "Jack Hallow: Inky Blues (SD Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "ShoppingDistrict",
             "requires": "|Area-The Commons| and {hasLevel(5)}"
         },
         {
-            "name": "Apple: Golem Court",
+            "name": "Jack Hallow: Apple in Yer Eye (GC Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "_comment": "wizReach Apples covers all of the logic here, the region is for clarity"
         },
         {
-            "name": "Ghosts: Commons",
+            "name": "Jack Hallow: Blink and Yer Red (Commons Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}"
         },
         {
-            "name": "Apple: Shopping District",
+            "name": "Jack Hallow: Dunking Do-Nots (SD Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}"
         },
         {
-            "name": "Baron Mordecai",
+            "name": "Jack Hallow: Baron of Nightmares (Baron Mordecai)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}"
         },
         {
-            "name": "Ghosts: Cyclops Lane",
+            "name": "Jack Hallow: Orange Ye Scared? (CL Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|"
         },
         {
-            "name": "Apple: Ravenwood",
+            "name": "Jack Hallow: Barreling Along (RW Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|"
         },
         {
-            "name": "Ghosts: Firecat Alley",
+            "name": "Jack Hallow: Pinky Swear (FA Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|"
         },
         {
-            "name": "Apple: Haunted Cave",
+            "name": "Jack Hallow: A Sight for Core Eyes (HC Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|"
