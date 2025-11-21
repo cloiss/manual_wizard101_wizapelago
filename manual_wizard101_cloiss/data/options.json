@@ -3,11 +3,8 @@
     "_comment": "Add a _ before an option name to comment it out and it wont be added to the apworld",
     "core": {
         "goal":{
-            "_comment": [
-                "Using 'goal' as the name of an option let you override some of the generated goal parameters"
-            ],
-            "display_name": "The End Objective",
-            "description": "How to End your Randomized playthrough.",
+            "_comment": "Using 'goal' as the name of an option let you override some of the generated goal parameters",
+            "description": "Set which boss must be defeated to complete the randomizer. If an unreachable boss is chosen, generation will fail.",
             "aliases": {"easiest": 0},
             "hidden": false
         },

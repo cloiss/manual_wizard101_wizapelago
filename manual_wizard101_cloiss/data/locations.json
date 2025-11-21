@@ -665,9 +665,39 @@
 			"xp": 195
         },
         {
-            "name": "VICTORY: Defeat Nightshade",
+            "name": "Defeat General Akilles",
             "victory": true,
-            "category": ["99 Nightshade"]
+            "category": ["99 Victory"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{canReachLocation(MAIN: Akilles' Deal (Akilles/Muldoon))}"
+        },
+        {
+            "name": "Defeat Roberto",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Triton-HarvestLord",
+            "requires": "{canReachLocation(Diego: Unlocking the Truth (Roberto))}"
+        },
+        {
+            "name": "Defeat Melweena Smite",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Firecat-Alicane",
+            "requires": "{canReachLocation(Lizzo: Problematic Casting (Melweena))}"
+        },
+        {
+            "name": "Defeat Foulgaze",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|"
+        },
+        {
+            "name": "Defeat Lord Nightshade",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
             "name": "Reagent: Mist Wood",
