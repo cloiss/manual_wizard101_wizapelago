@@ -20,10 +20,3 @@ def before_is_item_enabled(multiworld: MultiWorld, player: int, item: "ManualIte
 # Return True to enable the location, False to disable it, or None to use the default behavior
 def before_is_location_enabled(multiworld: MultiWorld, player: int, location: "ManualLocation") -> Optional[bool]:
     return None
-
-def get_option_value(world: World, name: str) -> int | dict:
-    option = getattr(world.options, name, None)
-    if option is None:
-        return 0
-
-    return option.value

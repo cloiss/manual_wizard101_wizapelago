@@ -187,7 +187,7 @@ Manual_Wizard101_Cloiss:
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    ["Reagent: Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
