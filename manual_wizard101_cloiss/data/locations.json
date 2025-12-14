@@ -895,7 +895,7 @@
             "region": "EarlyStreets-Firecat"
         },
         {
-            "name": "Housing Item: Open Book (Galvanost Tower) ",
+            "name": "Housing Item: Open Book (Galvanost Tower)",
             "category": ["07 Triton Avenue", "HousingItems"],
             "region": "Triton",
             "module": "#Triton:2#",
