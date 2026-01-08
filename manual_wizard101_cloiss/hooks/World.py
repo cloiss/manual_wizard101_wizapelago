@@ -172,7 +172,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         location_names_to_remove.extend(reagent_locations)
     # add back ore for ore option
     if reagents_option == 2:
-        location_names_to_remove.remove("Ore")
+        location_names_to_remove.remove("Reagent: Ore")
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
