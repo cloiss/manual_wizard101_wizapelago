@@ -112,7 +112,8 @@
         {
             "name": "Area-Northguard",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Rattlebones",
@@ -170,12 +171,14 @@
         {
             "name": "Building-Eyus",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Fears",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Kraken",
@@ -185,12 +188,14 @@
         {
             "name": "Building-Skullsplitter",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Roberto",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Larry",
@@ -200,17 +205,20 @@
         {
             "name": "Building-Wormguts",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Melweena",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Mordecai",
             "category": ["02 Building","Halloween"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Apprentice Tower",
@@ -220,7 +228,8 @@
         {
             "name": "Building-Adept Tower",
             "category": ["02 Building","Halloween"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Building-Master Tower",
@@ -280,7 +289,8 @@
         {
             "name": "Teleport-Home",
             "category": ["04 Teleport"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Teleport-Mark",
@@ -568,6 +578,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -581,6 +592,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -594,6 +606,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -607,6 +620,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -620,6 +634,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -633,6 +648,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
@@ -651,6 +667,7 @@
             },
             "useful": true,
             "progression": true,
+            "progression_skip_balancing": true,
             "count": 0
         },
         {
