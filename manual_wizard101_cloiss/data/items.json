@@ -289,7 +289,8 @@
         {
             "name": "Teleport-Home",
             "category": ["04 Teleport"],
-            "progression": true
+            "progression": true,
+            "progression_skip_balancing": true
         },
         {
             "name": "Teleport-Mark",
