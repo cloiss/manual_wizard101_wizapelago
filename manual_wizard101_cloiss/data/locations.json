@@ -860,29 +860,29 @@
         {
             "name": "Wooden Chest: Triton Avenue",
             "category": ["07 Triton Avenue", "WoodenChests"],
-            "region": "Triton"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Wooden Chest: Firecat Alley",
             "category": ["08 Firecat Alley", "WoodenChests"],
-            "region": "Firecat"
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Wooden Chest: Cyclops Lane",
             "category": ["06 Cyclops Lane", "WoodenChests"],
-            "region": "Cyclops"
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Wooden Chest: Haunted Cave",
             "category": ["07 Triton Avenue", "WoodenChests"],
-            "region": "Triton",
+            "region": "EarlyStreets-Triton",
             "requires": "|Area-Haunted Cave|"
         },
         {
             "name": "Wooden Chest: Dark Cave",
             "category": ["06 Cyclops Lane", "WoodenChests"],
-            "region": "Cyclops",
-            "requires": "|Area-Dark Cave|"
+            "region": "EarlyStreets",
+            "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         }
     ]
 }

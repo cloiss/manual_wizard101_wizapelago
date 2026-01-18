@@ -175,21 +175,19 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         location_names_to_remove.remove("Ore")
 
     # Handle Wooden Chest Locations
-    # 0 = none, 1 = generic, 2 = all
+    # 0 = none, 1 = anywhere, 2 = all
     wooden_chests_option = get_option_value(multiworld, player, "wooden_chests")
-    
-    if "WoodenChests" in world.location_name_groups:
-        wooden_chest_locations = world.location_name_groups["WoodenChests"]
-        
-        # If option is none, remove all wooden chest locations
-        if wooden_chests_option == 0:
+
+    wooden_chest_locations = world.location_name_groups.get("WoodenChests",[])
+    # If option is none, remove all wooden chest locations
+    if wooden_chests_option == 0:
             location_names_to_remove.extend(wooden_chest_locations)
-        # If option is generic, remove all but the generic one
-        elif wooden_chests_option == 1:
-            wooden_chest_locations.remove("Wooden Chest: Anywhere")
+    # If option is anywhere, remove all but the anywhere one
+    elif wooden_chests_option == 1:
             location_names_to_remove.extend(wooden_chest_locations)
-        # If option is all, only remove the generic one
-        elif wooden_chests_option == 2:
+            location_names_to_remove.remove("Wooden Chest: Anywhere")
+    # If option is all, only remove the anywhere one
+    elif wooden_chests_option == 2:
             location_names_to_remove.remove("Wooden Chest: Anywhere")
 
     # Handle School-Based Locations
