@@ -39,7 +39,7 @@
     },
     "EarlyStreets": {
         "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat"]
+        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat", "EarlyStreets-Cyclops"]
     },
     "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",

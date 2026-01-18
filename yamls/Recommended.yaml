@@ -152,6 +152,12 @@ Manual_Wizard101_Cloiss:
     'false': 50
     'true': 0
 
+  wooden_chests:
+    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 5 locations.
+    "none": 50
+    "anywhere": 0
+    "all": 0
+
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
     'false': 50
@@ -184,7 +190,7 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Diego: Advanced Combat","Regina: The Final Piece (Iron Golem)","Pierre: The Power is Ours (Fears)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    ["Regina: The Final Piece (Iron Golem)","Pierre: The Power is Ours (Fears)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   exclude_locations:
     # Prevent these locations from having an important item.

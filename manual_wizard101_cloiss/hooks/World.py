@@ -188,7 +188,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
             location_names_to_remove.remove("Wooden Chest: Anywhere")
     # If option is all, only remove the anywhere one
     elif wooden_chests_option == 2:
-            location_names_to_remove.remove("Wooden Chest: Anywhere")
+            location_names_to_remove.append("Wooden Chest: Anywhere")
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
