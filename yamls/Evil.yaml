@@ -151,6 +151,12 @@ Manual_Wizard101_Cloiss:
     'false': 0
     'true': 50
 
+  wooden_chests:
+    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 5 locations.
+    "none": 0
+    "anywhere": 0
+    "all": 50
+
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
     'false': 50

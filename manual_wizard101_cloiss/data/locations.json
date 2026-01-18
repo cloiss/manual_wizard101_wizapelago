@@ -846,6 +846,43 @@
             "category": ["07 Triton Avenue", "HousingItems"],
             "region": "PostStreets-AkillesSkip",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+        },
+        {
+            "name": "Wooden Chest: Anywhere",
+            "category": ["(No Category)", "WoodenChests"],
+            "region": "UnicornWay"
+        },
+        {
+            "name": "Wooden Chest: Unicorn Way",
+            "category": ["01 Unicorn Way", "WoodenChests"],
+            "region": "UnicornWay"
+        },
+        {
+            "name": "Wooden Chest: Triton Avenue",
+            "category": ["07 Triton Avenue", "WoodenChests"],
+            "region": "EarlyStreets-Triton"
+        },
+        {
+            "name": "Wooden Chest: Firecat Alley",
+            "category": ["08 Firecat Alley", "WoodenChests"],
+            "region": "EarlyStreets-Firecat"
+        },
+        {
+            "name": "Wooden Chest: Cyclops Lane",
+            "category": ["06 Cyclops Lane", "WoodenChests"],
+            "region": "EarlyStreets-Cyclops"
+        },
+        {
+            "name": "Wooden Chest: Haunted Cave",
+            "category": ["07 Triton Avenue", "WoodenChests"],
+            "region": "EarlyStreets-Triton",
+            "requires": "|Area-Haunted Cave|"
+        },
+        {
+            "name": "Wooden Chest: Dark Cave",
+            "category": ["06 Cyclops Lane", "WoodenChests"],
+            "region": "EarlyStreets",
+            "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         }
     ]
 }

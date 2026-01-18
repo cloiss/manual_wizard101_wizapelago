@@ -39,7 +39,7 @@
     },
     "EarlyStreets": {
         "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat"]
+        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat", "EarlyStreets-Cyclops"]
     },
     "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",
@@ -47,6 +47,10 @@
     },
     "EarlyStreets-Firecat":{
         "requires": "|Area-Firecat Alley|",
+        "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
+    },
+    "EarlyStreets-Cyclops":{
+        "requires": "|Area-Cyclops Lane|",
         "_comment": "Friendly teleport to a random player to access early. Can be reached directly from Olde Town after Muldoon by walking through the closed gate."
     },
     "PostUW":{

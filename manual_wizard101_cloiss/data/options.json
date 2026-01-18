@@ -164,6 +164,19 @@
             "default": false,
             "group": "Check Locations"
         },
+        "wooden_chests": {
+            "description": [
+                "Adds locations for wooden chests in Wizard City. Select 'anywhere' to add one wooden chest location, or 'all' to add wooden chest locations for Unicorn Way, Triton Avenue, Firecat Alley, Cyclops Lane, Haunted Cave, and Dark Cave."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "anywhere": 1,
+                "all": 2
+            },
+            "default": 0,
+            "group": "Check Locations"
+        },
 
 
 
