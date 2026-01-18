@@ -124,7 +124,7 @@ Manual_Wizard101_Cloiss:
     'true': 50
 
   akilles_skip:
-    # Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled.
+    # Allows Akilles Skip in logic. This skip is patched, leave this setting as false.
     'false': 0
     'true': 50
 
@@ -153,7 +153,7 @@ Manual_Wizard101_Cloiss:
     'true': 0
 
   wooden_chests:
-    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 5 locations.
+    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 6 locations.
     "none": 50
     "anywhere": 0
     "all": 0

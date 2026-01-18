@@ -113,7 +113,7 @@
         },
         "akilles_skip":{
             "description": [
-                "Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled."
+                "Allows Akilles Skip in logic. This skip is patched, leave this setting as false."
             ],
             "type": "Toggle",
             "default": false,
