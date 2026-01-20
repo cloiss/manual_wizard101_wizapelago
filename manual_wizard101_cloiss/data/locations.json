@@ -485,7 +485,6 @@
             "name": "MAIN: The Shadow of Death Magic (Eel)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
-            "module": "#Triton:2#",
 			"xp": 240
         },
         {
