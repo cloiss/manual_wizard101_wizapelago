@@ -110,7 +110,7 @@
         },
         "akilles_skip":{
             "description": [
-                "Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled."
+                "Allows Akilles Skip in logic. This skip is patched, leave this setting as false."
             ],
             "type": "Toggle",
             "default": false,
@@ -161,10 +161,23 @@
             "default": false,
             "group": "Check Locations"
         },
+        "wooden_chests": {
+            "description": [
+                "Adds locations for wooden chests in Wizard City. Select 'anywhere' to add one wooden chest location, or 'all' to add wooden chest locations for Unicorn Way, Triton Avenue, Firecat Alley, Cyclops Lane, Haunted Cave, and Dark Cave."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "anywhere": 1,
+                "all": 2
+            },
+            "default": 0,
+            "group": "Check Locations"
+        },
         "module_golemcourt": {
             "description": [
                 "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default full, adds 1-2 items and 4-8 locations."
-            ],
+                  ],
             "type": "Choice",
             "values": {
                 "none": 0,
@@ -225,9 +238,8 @@
             "group": "Modules"
         },
 
-
-
-
+      
+      
         "_Example_Toggle":{
             "description": [
                 "This is a Toggle",

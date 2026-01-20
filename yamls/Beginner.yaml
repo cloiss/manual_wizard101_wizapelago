@@ -124,7 +124,7 @@ Manual_Wizard101_Cloiss:
     'true': 0
 
   akilles_skip:
-    # Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled.
+    # Allows Akilles Skip in logic. This skip is patched, leave this setting as false.
     'false': 50
     'true': 0
 
@@ -151,6 +151,12 @@ Manual_Wizard101_Cloiss:
     # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
     'false': 50
     'true': 0
+
+  wooden_chests:
+    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 6 locations.
+    "none": 50
+    "anywhere": 0
+    "all": 0
 
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
@@ -184,11 +190,11 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Diego: Advanced Combat","Regina: The Final Piece (Iron Golem)","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
+    ["Regina: The Final Piece (Iron Golem)","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Regina: The Final Piece (Iron Golem)","Any Rare Reagent","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
+    ["Regina: The Final Piece (Iron Golem)","Reagent: Any Rare Reagent","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.

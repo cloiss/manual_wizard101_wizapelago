@@ -123,9 +123,9 @@ Manual_Wizard101_Cloiss:
     'true': 50
 
   akilles_skip:
-    # Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled.
-    'false': 0
-    'true': 50
+    # Allows Akilles Skip in logic. This skip is patched, leave this setting as false.
+    'false': 50
+    'true': 0
 
   gate_skip:
     # Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled.
@@ -150,6 +150,12 @@ Manual_Wizard101_Cloiss:
     # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
     'false': 0
     'true': 50
+
+  wooden_chests:
+    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 6 locations.
+    "none": 0
+    "anywhere": 0
+    "all": 50
 
   halloween:
     # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
@@ -183,11 +189,11 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
+    ["Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Baron Mordecai"]
+    ["Reagent: Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
