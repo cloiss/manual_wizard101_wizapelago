@@ -935,12 +935,14 @@
             "name": "Wooden Chest: Haunted Cave",
             "category": ["07 Triton Avenue", "WoodenChests"],
             "region": "EarlyStreets-Triton",
+            "module": "#Triton:2",
             "requires": "|Area-Haunted Cave|"
         },
         {
             "name": "Wooden Chest: Dark Cave",
             "category": ["06 Cyclops Lane", "WoodenChests"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2#",
             "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         }
     ]
