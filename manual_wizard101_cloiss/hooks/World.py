@@ -51,6 +51,8 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     # order is counterclockwise based on school position in Ravenwood
     school_names = ["Storm","Ice","Fire","Death","Myth","Life"] # balance not included because no Balance Shield or Balance Trap
     halloween_option = get_option_value(multiworld, player, "halloween")
+    golem_court_option = get_option_value(multiworld, player, "module_golemcourt")
+    triton_option = get_option_value(multiworld, player, "module_triton")
 
     # hits
     subpool_rank1 = ["Scarab","Thunder Snake","Ice Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
@@ -82,7 +84,13 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     pool_any = ["Any Rank 1","Any Rank 2","Any Rank 3","Any Rank 4+","Any Shield","Any Blade","Any Trap","Any TC"] * 3
 
     # in the spirit of the randomizer, any TCs you can get from a quest will always be there
-    pool_quest_rewards = ["Kraken","Ghoul","Blood Bat","Sprite"]
+    pool_quest_rewards = ["Sprite"]
+    # add rewards from Kraken quest
+    if triton_option > 0: # half or full triton module includes kraken
+        pool_quest_rewards += ["Kraken"]
+    # add rewards from Iron Golem quest
+    if golem_court_option == 2: # full golem court module
+        pool_quest_rewards += ["Ghoul", "Blood Bat"]
     # add black cats for halloween
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 10
