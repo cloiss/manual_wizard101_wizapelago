@@ -8,6 +8,11 @@ from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 from ..Items import ManualItem
 from ..Locations import ManualLocation
 
+# For evaluating functions within modules
+from .. import Rules as GlobalRules
+from . import Rules as HooksRules
+import inspect
+
 if TYPE_CHECKING:
     from .. import ManualWorld
 
@@ -138,7 +143,100 @@ def format_starting_item_block(item_name: str):
     return {"items": [item_name]}
 
 # copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
-def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
+def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, area: dict):
+    # modified version of this function to handle modules (since this is an inner function and part of Manual, I can't import it)
+    def findAndRecursivelyExecuteFunctions(requires_list: str, recursionDepth: int = 0) -> str:
+            found_functions = re.findall(r'\{(\w+)\((.*?)\)\}', requires_list)
+            if found_functions:
+                if recursionDepth > world.rules_functions_maximum_recursion:
+                    raise RecursionError(f'One or more functions in a module looped too many time (maximum recursion is {world.rules_functions_maximum_recursion}) \
+                                         \n    As of this Exception the following function(s) are waiting to run: {[f[0] for f in found_functions]} \
+                                         \n    And the currently processed requires look like this: "{requires_list}"')
+                else:
+                    for item in found_functions:
+                        func_name = item[0]
+                        func_args = item[1].split(",")
+                        if func_args == ['']:
+                            func_args.pop()
+
+                        func = globals().get(func_name) # I'm 99% sure this line does nothing but I'm scared to remove it -Cloiss
+
+                        # Look for the function in Rules.py (for global functions like YamlEnabled)
+                        if func is None:
+                            func = getattr(GlobalRules, func_name, None)
+
+                        # Look for the function in hooks/Rules.py (for user-defined functions like wizReach)
+                        if func is None:
+                            func = getattr(HooksRules, func_name, None)
+
+                        if not callable(func):
+                            raise ValueError(f'Invalid function "{func_name}" in a module')
+
+                        convert_req_function_args(func, func_args, "a module")
+                        try:
+                            result = func(*func_args)
+                        except Exception as ex:
+                            raise RuntimeError(f'A call to the function "{func_name}" in a module"\'s requires raised an Exception. \
+                                                \nUnless it was called by another function, it should look something like "{{{func_name}({item[1]})}}" in a module. \
+                                                \nFull error message: \
+                                                \n\n{type(ex).__name__}: {ex}')
+                        if isinstance(result, bool):
+                            requires_list = requires_list.replace("{" + func_name + "(" + item[1] + ")}", "1" if result else "0")
+                        else:
+                            raise ValueError(f'Function {func_name} attempted to return a string within module logic, which is not supported')
+
+                requires_list = findAndRecursivelyExecuteFunctions(requires_list, recursionDepth + 1)
+            return requires_list
+
+    # copied from Manual, removed support for collection state (throws an error) because the state doesn't exist yet at this point in generation
+    def convert_req_function_args(func, args: list[str], areaName: str):
+        parameters = inspect.signature(func).parameters
+        knownParameters = [World, 'ManualWorld', MultiWorld, CollectionState]
+        index = -1
+        for parameter in parameters.values():
+            target_type = parameter.annotation
+            index += 1
+            if target_type in knownParameters:
+                if target_type in [World, 'ManualWorld']:
+                    args.insert(index, world)
+                elif target_type == MultiWorld:
+                    args.insert(index, multiworld)
+                elif target_type == CollectionState:
+                    raise ValueError(f'Function {func.__name__} uses information from the collection state, which is not supported for modules')
+                continue
+            if parameter.name.lower() == "player":
+                args.insert(index, player)
+                continue
+
+            if index < len(args) and args[index] != "":
+                value = args[index].strip()
+            else:
+                if parameter.default is not inspect.Parameter.empty:
+                    if index < len(args):
+                        args[index] = parameter.default
+                    else:
+                        args.insert(index, parameter.default)
+                    continue
+                else:
+                    if parameter.annotation is inspect.Parameter.empty:
+                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value for its argument \"{parameter.name}\" but it's missing.")
+                    else:
+                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type} for its argument \"{parameter.name}\" but it's missing.")
+
+            if target_type == str or parameter.annotation is inspect.Parameter.empty: #Don't convert since its already a string or if we don't know the type to convert to
+                args[index] = value
+                continue
+
+            try:
+                value = convert_string_to_type(value, target_type)
+
+            except Exception as e:
+                raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type}\nfor its argument \"{parameter.name}\" but its value \"{value}\" cannot be converted to {target_type} \nOriginal Error:'{e}'")
+
+            args[index] = value
+
+    # Actual module code starts here
+
     module_values = {
         "GolemCourt": get_option_value(multiworld,player,"module_golemcourt"),
         "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
@@ -148,6 +246,7 @@ def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
     }
     
     requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
+    requires_list = findAndRecursivelyExecuteFunctions(requires_list)
 
     for module in re.findall(r'#[^#]+#', requires_list):
 
@@ -175,6 +274,8 @@ def checkModuleStringForArea(multiworld: MultiWorld, player: int, area: dict):
 
     requires_string = infix_to_postfix("".join(requires_list), area)
     return (evaluate_postfix(requires_string, area))
+
+
 
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
@@ -256,12 +357,12 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Handle Modules for regions and locations
     for region_name in region_table:
         region_data = region_table[region_name]
-        module_result = checkModuleStringForArea(multiworld,player,region_data)
+        module_result = checkModuleStringForArea(world,multiworld,player,region_data)
         if not module_result:
             region_names_to_remove.append(region_name)
 
     for location in location_table:
-        module_result = checkModuleStringForArea(multiworld,player,location)
+        module_result = checkModuleStringForArea(world,multiworld,player,location)
         if not module_result:
             location_names_to_remove.append(location['name'])
 
@@ -348,7 +449,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
     for item in item_table:
-        module_result = checkModuleStringForArea(multiworld,player,item)
+        module_result = checkModuleStringForArea(world,multiworld,player,item)
         if not module_result:
             item_names_to_remove.append(item['name'])
 

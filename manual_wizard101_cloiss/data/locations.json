@@ -193,6 +193,7 @@
             "category": ["02 The Commons","Quest","School-Death"],
             "region": "Level7",
             "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
+            "module": "#Triton:2#",
             "xp": 190
         },
         {
@@ -353,7 +354,7 @@
             "name": "Gloria: Looking Sharp!",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
-            "module": "#Cyclops# and #Firecat# and (#Firecat:2# or #Triton#)",
+            "module": "#Cyclops# and #Firecat# and ((#Firecat:2# and {YamlDisabled(beginner)}) or #Triton#)",
             "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55
@@ -935,7 +936,7 @@
             "name": "Wooden Chest: Haunted Cave",
             "category": ["07 Triton Avenue", "WoodenChests"],
             "region": "EarlyStreets-Triton",
-            "module": "#Triton:2",
+            "module": "#Triton:2#",
             "requires": "|Area-Haunted Cave|"
         },
         {
