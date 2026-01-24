@@ -285,15 +285,16 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
 
     # For goals (surrounded in $), we want to remove quests that happen after that goal, so e.g. $Alicane$ means goal is NOT alicane
     for goal in re.findall(r'\$[^\$]+\$', requires_list):
+        goal_base = goal
         goal = goal.lstrip('$').rstrip('$').strip()
 
-        value = goal_values.get(goal,0) 
+        value = goal_values.get(goal,-1) # if the goal is not on the list of goals, assume -1 which will not match anything 
 
         # if we match the goal we want to REMOVE this area from the randomizer, so we return false
-        if value:
-            requires_list = requires_list.replace(module_base, "0")
+        if value == goal_option:
+            requires_list = requires_list.replace(goal_base, "0")
         else:
-            requires_list = requires_list.replace(module_base, "1")
+            requires_list = requires_list.replace(goal_base, "1")
         
     requires_list = re.sub(r'\s?\bAND\b\s?', '&', requires_list, 0, re.IGNORECASE)
     requires_list = re.sub(r'\s?\bOR\b\s?', '|', requires_list, 0, re.IGNORECASE)

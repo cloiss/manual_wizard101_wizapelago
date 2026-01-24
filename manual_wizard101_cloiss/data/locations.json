@@ -672,33 +672,35 @@
             "victory": true,
             "category": ["99 Victory"],
             "region": "Cyclops-DarkCave",
-            "requires": "{canReachLocation(MAIN: Akilles' Deal (Akilles/Muldoon))}"
+            "requires": "{advDamage(705)} and |Building-Akilles|"
         },
         {
             "name": "Defeat Harvest Lord",
             "victory": true,
             "category": ["99 Victory"],
-            "region": "Triton-HarvestLord"
+            "region": "Triton",
+            "requires": "{advDamage(660)} and |Building-Harvest Lord|"
         },
         {
             "name": "Defeat Roberto",
             "victory": true,
             "category": ["99 Victory"],
             "region": "Triton-HarvestLord",
-            "requires": "{canReachLocation(Diego: Unlocking the Truth (Roberto))}"
+            "requires": "|Building-Roberto|"
         },
         {
             "name": "Defeat Alicane Swiftarrow",
             "victory": true,
             "category": ["99 Victory"],
-            "region": "Firecat-Alicane"
+            "region": "Firecat-Bastilla",
+            "requires": "{advDamage(715)} and |Building-Alicane|"
         },
         {
             "name": "Defeat Melweena Smite",
             "victory": true,
             "category": ["99 Victory"],
             "region": "Firecat-Alicane",
-            "requires": "{canReachLocation(Lizzo: Problematic Casting (Melweena))}"
+            "requires": "|Building-Melweena|"
         },
         {
             "name": "Defeat Foulgaze",
