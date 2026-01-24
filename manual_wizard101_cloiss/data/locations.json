@@ -93,6 +93,7 @@
             "category": ["01 Unicorn Way","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Building-Roberto|",
+            "module": "$Roberto$",
 			"xp": 100
         },
         {
@@ -327,6 +328,7 @@
             "category": ["05 Olde Town","Quest"],
             "region": "PostStreets-AkillesSkip",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
+            "module": "$Foulgaze$",
             "_comment": "Quest ends at the entrance to Haunted Cave.",
 			"xp": 250
         },
@@ -417,7 +419,7 @@
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "module": "#Cyclops:2#",
-            "requires": "{advDamage(705)} and |Building-Akilles|",
+            "requires": "{advDamage(705)} and |Building-Akilles| and $Akilles$",
 			"xp": 220
         },
         {
@@ -662,6 +664,7 @@
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
+            "module": "$Melweena$",
 			"xp": 195
         },
         {
@@ -672,11 +675,23 @@
             "requires": "{canReachLocation(MAIN: Akilles' Deal (Akilles/Muldoon))}"
         },
         {
+            "name": "Defeat Harvest Lord",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Triton-HarvestLord"
+        },
+        {
             "name": "Defeat Roberto",
             "victory": true,
             "category": ["99 Victory"],
             "region": "Triton-HarvestLord",
             "requires": "{canReachLocation(Diego: Unlocking the Truth (Roberto))}"
+        },
+        {
+            "name": "Defeat Alicane Swiftarrow",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Firecat-Alicane"
         },
         {
             "name": "Defeat Melweena Smite",

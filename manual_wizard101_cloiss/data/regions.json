@@ -80,7 +80,7 @@
     },
     "Triton-HarvestLord":{
         "requires": "{advDamage(660)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
-        "module": "#Triton:2#",
+        "module": "#Triton:2# and $HarvestLord$",
         "connects_to": ["PostStreets-AkillesSkip"]
     },
     "Cyclops":{
@@ -104,7 +104,7 @@
     },
     "Firecat-Alicane":{
         "requires": "{advDamage(715)} and |Building-Alicane|",
-        "module": "#Firecat:2#"
+        "module": "#Firecat:2# and $Alicane$"
     },
     "PostStreets-AkillesSkip":{
         "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and (|Building-Akilles| or {YamlEnabled(akilles_skip)})",

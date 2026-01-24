@@ -12,6 +12,7 @@ from ..Locations import ManualLocation
 from .. import Rules as GlobalRules
 from . import Rules as HooksRules
 import inspect
+from ..Helpers import convert_string_to_type
 
 if TYPE_CHECKING:
     from .. import ManualWorld
@@ -237,6 +238,7 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
 
     # Actual module code starts here
 
+    # Define modules and goals that impact which quests are made available
     module_values = {
         "GolemCourt": get_option_value(multiworld,player,"module_golemcourt"),
         "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
@@ -244,10 +246,22 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
         "Triton": get_option_value(multiworld,player,"module_triton"),
         "Firecat": get_option_value(multiworld,player,"module_firecat")
     }
+
+    goal_option = get_option_value(multiworld,player,"goal")
+    goal_values = {
+         "Akilles": 0,
+         "HarvestLord": 1,
+         "Roberto": 2,
+         "Alicane": 3,
+         "Melweena": 4,
+         "Foulgaze": 5,
+         "Nightshade": 6
+    }
     
     requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
     requires_list = findAndRecursivelyExecuteFunctions(requires_list)
 
+    # For modules (surrounded in #), only include those that meet the module type and quantity
     for module in re.findall(r'#[^#]+#', requires_list):
 
         module_base = module
@@ -269,6 +283,18 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
         if value < module_count:
             requires_list = requires_list.replace(module_base, "0")
 
+    # For goals (surrounded in $), we want to remove quests that happen after that goal, so e.g. $Alicane$ means goal is NOT alicane
+    for goal in re.findall(r'\$[^\$]+\$', requires_list):
+        goal = goal.lstrip('$').rstrip('$').strip()
+
+        value = goal_values.get(goal,0) 
+
+        # if we match the goal we want to REMOVE this area from the randomizer, so we return false
+        if value:
+            requires_list = requires_list.replace(module_base, "0")
+        else:
+            requires_list = requires_list.replace(module_base, "1")
+        
     requires_list = re.sub(r'\s?\bAND\b\s?', '&', requires_list, 0, re.IGNORECASE)
     requires_list = re.sub(r'\s?\bOR\b\s?', '|', requires_list, 0, re.IGNORECASE)
 
