@@ -24,6 +24,10 @@ def wizReach(location: str):
 
 # Checks for special item requirements at particular checkpoints based on yaml settings
 def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
+    # show checks as in logic for UT even when they are missing "special" items
+    if getattr(multiworld, 'generation_is_fake', False):
+        return True
+
     # integer value for each location in the options
     locations_dict = {
         "Rattlebones": 1,
