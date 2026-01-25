@@ -1,17 +1,7 @@
-from base64 import b64encode
-import logging
-import os
-import json
-from typing import Callable, Optional, Counter
-import webbrowser
+from typing import Callable, Optional
 
 import Utils
-from worlds.generic.Rules import forbid_items_for_player
-from worlds.LauncherComponents import Component, SuffixIdentifier, components, Type, launch_subprocess, icon_paths
-
-from BaseClasses import CollectionState, ItemClassification, Item
-from Options import PerGameCommonOptions
-from worlds.AutoWorld import World
+from worlds.LauncherComponents import Component, components, Type, launch_subprocess, icon_paths
 
 # Pretty much this entire file is mangled code from Manual
 class VersionedComponent(Component):
@@ -24,7 +14,7 @@ def launch_client(*args):
     from .WizClient import launch as Main
 
     if CommonClient.gui_enabled:
-        launch_subprocess(Main, name="Manual Wizard101 Client")
+        launch_subprocess(Main, name="Wizard101 Auto-Marking Client")
     else:
         Main()
 
@@ -33,10 +23,10 @@ def add_client_to_launcher() -> None:
     found = False
 
     if "w101" not in icon_paths:
-        icon_paths["w101"] = Utils.user_path('data', 'manual.png')
+        icon_paths["w101"] = Utils.user_path('data', 'wiz.png')
 
     for c in components:
-        if c.display_name == "Manual Wizard101 Client":
+        if c.display_name == "Wizard101 Auto-Marking Client":
             found = True
             if getattr(c, "version", 0) < version:
                 c.version = version
@@ -44,6 +34,6 @@ def add_client_to_launcher() -> None:
                 c.icon = "w101"
 
     if not found:
-        components.append(VersionedComponent("Manual Wizard101 Client", "WizClient", func=launch_client, version=version, icon="w101"))
+        components.append(VersionedComponent("Wizard101 Auto-Marking Client", "WizClient", func=launch_client, version=version, icon="w101"))
 
 add_client_to_launcher()

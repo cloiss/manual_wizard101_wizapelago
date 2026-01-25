@@ -8,8 +8,12 @@ package:
 clean:
 	if (Test-Path "manual_wizard101_cloiss.apworld") { Remove-Item -Path "manual_wizard101_cloiss.apworld" -Force }
 
+package-automark:
+	Copy-Item -Path "manual_wizard101_cloiss\data\locations.json" -Destination "automark_client\locations.json" -Force; Compress-Archive -Path "automark_client" -DestinationPath "automark_client.apworld" -Force; Remove-Item -Path "automark_client\locations.json" -Force
+
 generate:
 	$(ARCHIPELAGO_PATH)\ArchipelagoGenerate.exe
+gen: generate
 
 host:
 	$(ARCHIPELAGO_PATH)\ArchipelagoServer.exe
@@ -17,4 +21,4 @@ host:
 client:
 	$(ARCHIPELAGO_PATH)\ArchipelagoLauncherDebug.exe "Manual Client"
 
-.PHONY: package clean
+.PHONY: package clean package-automark

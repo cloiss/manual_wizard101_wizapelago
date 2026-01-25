@@ -1,13 +1,9 @@
 from CommonClient import gui_enabled, get_base_parser, server_loop, CommonContext, ClientCommandProcessor, logger
 from worlds.LauncherComponents import icon_paths
-import Utils
 import asyncio
-import typing
-import time
 import sys
 import os
-import requests
-import subprocess
+import shutil
 import json
 import pkgutil
 
@@ -26,7 +22,7 @@ class WizContext(CommonContext):
     # Pretty much entirely taken from TextContext in Archipelago text client
     async def server_auth(self, password_requested: bool = False):
         if password_requested and not self.password:
-            await super(WizContext, self).server_auth(password_requested)
+            await super().server_auth(password_requested)
         await self.get_username()
         await self.send_connect(game="Manual_Wizard101_Cloiss")
 
@@ -34,21 +30,28 @@ class WizContext(CommonContext):
 def load_data_file(fname: str) -> dict:
     try:
         filedata = json.loads(pkgutil.get_data(__name__, fname).decode())
-    except:
+    except Exception:
         filedata = []
 
     return filedata
 
 # The main automark loop
 async def automark_loop(ctx: WizContext):
-    # Get Wizard101 client path
-    path = subprocess.run(["powershell", "-Command", "(Get-Process", "-Name", "WizardGraphicalClient", ").Path", ], capture_output=True).stdout.decode("utf-8")
+    # Get Wizard101 client path (non-blocking)
+    process = await asyncio.create_subprocess_exec(
+        "powershell", "-Command", "(Get-Process -Name WizardGraphicalClient -ErrorAction SilentlyContinue).Path",
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    stdout, _ = await process.communicate()
+    path = stdout.decode().strip() if stdout else ""
+    
     # If path is empty (meaning the game is not open), stop the loop function
-    if path == "":
+    if not path:
         ctx.exit_event.set()
         logger.info("ERROR: Wizard101 client is not running. The automark client will not work. Please start Wizard101, reopen the client and try again.")
         return
-    log_path = f"{path.split("\\WizardGraphicalClient.exe")[0]}\\WizardClient.log"
+    log_path = f"{path.split('\\WizardGraphicalClient.exe')[0]}\\WizardClient.log"
     old_length = 0
     # Load location data
     try:
@@ -124,10 +127,10 @@ def launch() -> None:
     colorama.deinit()
 
     if not os.path.exists(icon_paths["w101"]):
-        # Download the icon for next time
-        icon_url = "https://manualforarchipelago.github.io/ManualBuilder/images/ap-manual-discord-logo-square-96x96.png"
-        with open(icon_paths["w101"], 'wb') as f:
-            f.write(requests.get(icon_url).content)
+        # Use the wiz.ico file from the automark_client directory
+        wiz_ico_path = os.path.join(os.path.dirname(__file__), "wiz.png")
+        if os.path.exists(wiz_ico_path):
+            shutil.copy(wiz_ico_path, icon_paths["w101"])
 
 if __name__ == '__main__':
     launch()
