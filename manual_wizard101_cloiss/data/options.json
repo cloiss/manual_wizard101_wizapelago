@@ -177,7 +177,19 @@
             "default": 0,
             "group": "Check Locations"
         },
-
+        "silver_chests": {
+            "description": [
+                "Adds locations for silver chests in Wizard City. Select 'anywhere' to add one silver chest location, or 'all' to add silver chest locations for Triton Avenue, Firecat Alley, and Cyclops Lane."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "anywhere": 1,
+                "all": 2
+            },
+            "default": 0,
+            "group": "Check Locations"
+        },
 
 
 

@@ -42,6 +42,9 @@
     "WoodenChests": {
         "hidden": true
     },
+    "SilverChests": {
+        "hidden": true
+    },
     "School-Balance": {
         "hidden": true
     },
