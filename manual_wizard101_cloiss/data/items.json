@@ -284,11 +284,11 @@
         },
         {
             "name": "Teleport-Commons",
-            "category": ["04 Teleport"]
+            "category": ["04 Teleport","Teleport-Button"]
         },
         {
             "name": "Teleport-Home",
-            "category": ["04 Teleport"],
+            "category": ["04 Teleport","Teleport-Button"],
             "progression": true,
             "progression_skip_balancing": true
         },
@@ -306,7 +306,7 @@
         },
         {
             "name": "Teleport-World",
-            "category": ["04 Teleport"]
+            "category": ["04 Teleport","Teleport-Button"]
         },
         {
             "name": "Teleport-Majid",
