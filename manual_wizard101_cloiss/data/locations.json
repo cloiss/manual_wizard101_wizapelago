@@ -172,7 +172,7 @@
         },
         {
             "name": "Arthur: Introduction to Balance (Level 7)",
-            "category": ["02 The Commons","Quest","School-Balance"],
+            "category": ["03 Ravenwood","Quest","School-Balance"],
             "region": "Level7",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190,
@@ -180,7 +180,7 @@
         },
         {
             "name": "Halston: Leyden Lab (Level 7)",
-            "category": ["02 The Commons","Quest","School-Storm"],
+            "category": ["03 Ravenwood","Quest","School-Storm"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 30,
@@ -188,7 +188,7 @@
         },
         {
             "name": "Harold: Charge It Up (Level 7)",
-            "category": ["02 The Commons","Quest","School-Storm"],
+            "category": ["03 Ravenwood","Quest","School-Storm"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -196,7 +196,7 @@
         },
         {
             "name": "Lydia: Introduction to Ice (Level 7)",
-            "category": ["02 The Commons","Quest","School-Ice"],
+            "category": ["03 Ravenwood","Quest","School-Ice"],
             "region": "Level7",
             "requires": "|Area-Shopping District| and |Area-Ravenwood|",
             "xp": 190,
@@ -204,7 +204,7 @@
         },
         {
             "name": "Dalia: Introduction to Fire (Level 7)",
-            "category": ["02 The Commons","Quest","School-Fire"],
+            "category": ["03 Ravenwood","Quest","School-Fire"],
             "region": "Level7",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190,
@@ -212,7 +212,7 @@
         },
         {
             "name": "Malorn: The Buried Truth (Level 7)",
-            "category": ["02 The Commons","Quest","School-Death"],
+            "category": ["03 Ravenwood","Quest","School-Death"],
             "region": "Level7",
             "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
             "xp": 190,
@@ -220,7 +220,7 @@
         },
         {
             "name": "Cyrus: Not So Welcome to Myth (Level 7)",
-            "category": ["02 The Commons","Quest","School-Myth"],
+            "category": ["03 Ravenwood","Quest","School-Myth"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 30,
@@ -228,7 +228,7 @@
         },
         {
             "name": "Cyrus: Myth Adventure (Level 7)",
-            "category": ["02 The Commons","Quest","School-Myth"],
+            "category": ["03 Ravenwood","Quest","School-Myth"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -236,7 +236,7 @@
         },
         {
             "name": "Moolinda: Introduction to Life (Level 7)",
-            "category": ["02 The Commons","Quest","School-Life"],
+            "category": ["03 Ravenwood","Quest","School-Life"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -281,14 +281,14 @@
         },
         {
             "name": "Annie: Say Cheese! (Photomancy 1)",
-            "category": ["03 Golem Court","Quest"],
+            "category": ["04 Golem Court","Quest"],
             "region": "GolemCourt",
 			"xp": 30,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_15.mp3"
         },
         {
             "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
-            "category": ["03 Golem Court","Quest"],
+            "category": ["04 Golem Court","Quest"],
             "region": "EarlyOldeTown",
             "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
 			"xp": 35,
@@ -296,7 +296,7 @@
         },
         {
             "name": "Regina: Science Fair (Construct)",
-            "category": ["03 Golem Court","Quest"],
+            "category": ["04 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
             "requires": "{advDamage(95)}",
 			"xp": 20,
@@ -304,7 +304,7 @@
         },
         {
             "name": "Regina: Second Gear (Clockwork)",
-            "category": ["03 Golem Court","Quest"],
+            "category": ["04 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
             "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
 			"xp": 45,
@@ -313,7 +313,7 @@
         },
         {
             "name": "Regina: The Final Piece (Iron Golem)",
-            "category": ["03 Golem Court","Quest"],
+            "category": ["04 Golem Court","Quest"],
             "region": "GolemCourt-Level5",
             "requires": "{advDamage(285)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
 			"xp": 100,
@@ -346,7 +346,7 @@
         },
         {
             "name": "MAIN: Panic in Three Streets! (To Muldoon)",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "PostUW",
             "requires": "{wizReach(To Muldoon)}",
 			"xp": 10,
@@ -354,14 +354,14 @@
         },
         {
             "name": "MAIN: Secret Strife of Pets (Judd)",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "Judd",
 			"xp": 8,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_05.mp3"
         },
         {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "PostStreets-AkillesSkip",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
             "_comment": "Quest ends at the entrance to Haunted Cave.",
@@ -370,21 +370,21 @@
         },
         {
             "name": "Eudora: Wizards in the Mist (Mist Wood)",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "EarlyOldeTown",
 			"xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_07.mp3"
         },
         {
             "name": "Eudora: The Razor's Edge (Craft Daggers)",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "EarlyOldeTown",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_14.mp3"
         },
         {
             "name": "Guildenstern: Walkabout",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "EarlyOldeTown",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25,
@@ -392,7 +392,7 @@
         },
         {
             "name": "Gloria: Looking Sharp!",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "EarlyStreets",
             "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
@@ -401,14 +401,14 @@
         },
         {
             "name": "Baldur: Bear Market",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "PostStreets",
 			"xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/BaldurGoldpaws_QST_06.mp3"
         },
         {
             "name": "Baldur: Trade Voyage",
-            "category": ["05 Olde Town","Quest"],
+            "category": ["06 Olde Town","Quest"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
 			"xp": 15,
@@ -416,7 +416,7 @@
         },
         {
             "name": "Talk to Nick Jonas (Not a Quest)",
-            "category": ["05 Olde Town"],
+            "category": ["06 Olde Town"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
             "_comment": "This is the only default check that isn't a quest, it was added for the memes",
@@ -424,21 +424,21 @@
         },
         {
             "name": "MAIN: A Good Day to Cyclops (Start)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops",
 			"xp": 15,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_02.mp3"
         },
         {
             "name": "MAIN: A Stroll with Trolls",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops",
 			"xp": 155,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_10.mp3"
         },
         {
             "name": "MAIN: Run and Done (Laundry)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops",
             "requires": "|Area-Shopping District|",
 			"xp": 130,
@@ -446,14 +446,14 @@
         },
         {
             "name": "MAIN: The Cave Escape (Cyclops/Fodder/Bubbles)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
 			"xp": 210,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_05.mp3"
         },
         {
             "name": "MAIN: Oh Me, Oh Minotaur (Warhorns)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(285)}",
 			"xp": 155,
@@ -461,7 +461,7 @@
         },
         {
             "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(705)} and |Building-Akilles|",
 			"xp": 220,
@@ -469,21 +469,21 @@
         },
         {
             "name": "Emerson: Don't Need the Trolls",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops",
 			"xp": 95,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateEmerson_005_05.mp3"
         },
         {
             "name": "Sweeney: Mostly Armorless",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops",
             "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateSweeney_005_06.mp3"
         },
         {
             "name": "Emerson: Mad Maximus (Eyus)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(635)} and |Building-Eyus|",
 			"xp": 225,
@@ -491,7 +491,7 @@
         },
         {
             "name": "Rosie: Mazes and Minotaurs (Maze Books)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(285)}",
 			"xp": 110,
@@ -499,14 +499,14 @@
         },
         {
             "name": "Garrick: You Can Dig It (Pet Dig)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
 			"xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GarrickGoldenhawk_005_12.mp3"
         },
         {
             "name": "Electra: Faire Thee Well (Pre-Fears)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(285)}",
 			"xp": 80,
@@ -514,7 +514,7 @@
         },
         {
             "name": "Pierre: The Power is Ours (Fears)",
-            "category": ["06 Cyclops Lane","Quest"],
+            "category": ["07 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
             "xp": 345,
@@ -522,77 +522,77 @@
         },
         {
             "name": "MAIN: Trouble on Triton Avenue (Start)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 15,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_02.mp3"
         },
         {
             "name": "MAIN: Menacing Minions",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 235,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_09.mp3"
         },
         {
             "name": "MAIN: The Shadow of Death Magic (Eel)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 240,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_08.mp3"
         },
         {
             "name": "MAIN: Quest for Clues (Fodders)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 230,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_14.mp3"
         },
         {
             "name": "MAIN: Catching a Glimpse (To Blad)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_01.mp3"
         },
         {
             "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 190,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_10.mp3"
         },
         {
             "name": "MAIN: Luminate (To Duncan)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
 			"xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_18.mp3"
         },
         {
             "name": "MAIN: The Enemy Revealed (Harvest Lord)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 195,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_07.mp3"
         },
         {
             "name": "MAIN: To Tame a Tempest (To Artur)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 85,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_18.mp3"
         },
         {
             "name": "MAIN: Triton Report (To Muldoon)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_14.mp3"
         },
         {
             "name": "Sohomer: All the Eels",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
             "requires": "{advDamage(150)}",
 			"xp": 75,
@@ -600,7 +600,7 @@
         },
         {
             "name": "Sohomer: Wayward Barrels",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
             "requires": "{advDamage(150)}",
 			"xp": 50,
@@ -608,7 +608,7 @@
         },
         {
             "name": "Sohomer: Better Get Kraken (Fodder)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
             "requires": "{advDamage(150)}",
 			"xp": 95,
@@ -616,7 +616,7 @@
         },
         {
             "name": "Sohomer: Decease the Kraken!",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "EarlyStreets-Triton",
             "requires": "{advDamage(510)} and |Building-Kraken|",
 			"xp": 205,
@@ -624,7 +624,7 @@
         },
         {
             "name": "Sandor: A Scrap of Trouble (Skullsplitter)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton",
             "requires": "{advDamage(705)} and |Building-Skullsplitter|",
 			"xp": 130,
@@ -632,14 +632,14 @@
         },
         {
             "name": "Suzie: Sniff 'em Out (Pet Dig)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
 			"xp": 60,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_21.mp3"
         },
         {
             "name": "Duncan: Haunting Questions (Haunted Cave)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 55,
@@ -647,7 +647,7 @@
         },
         {
             "name": "Duncan: Secret of the Cave (Field Guards)",
-            "category": ["07 Triton Avenue","Quest"],
+            "category": ["08 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 105,
@@ -655,56 +655,56 @@
         },
         {
             "name": "MAIN: Putting Out the Fire! (Minions)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 15,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateQuinn_005_06.mp3"
         },
         {
             "name": "MAIN: She Ran Crying Wildfire (Hunters)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 105,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_06.mp3"
         },
         {
             "name": "MAIN: Which Hunt? (Pathfinders/Magma Men)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 150,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_08.mp3"
         },
         {
             "name": "MAIN: 100% Not That Witch (Fodder/Bastilla)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat-Bastilla",
 			"xp": 230,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_22.mp3"
         },
         {
             "name": "MAIN: Which Craft? (Gloria)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat-Bastilla",
 			"xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_29.mp3"
         },
         {
             "name": "MAIN: The Cure (Alicane)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
 			"xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_35.mp3"
         },
         {
             "name": "MAIN: Firecat's In The Bag (To Muldoon)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
 			"xp": 25,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/SeargeantMuldoon_005_04.mp3"
         },
         {
             "name": "Eleanor: What's In a Pet Name? (Larry)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "EarlyStreets-Firecat",
             "requires": "{advDamage(430)} and |Building-Larry|",
 			"xp": 95,
@@ -712,21 +712,21 @@
         },
         {
             "name": "Shelus: ReRecover the Ring (Minion)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_12.mp3"
         },
         {
             "name": "Shelus: Cold Hard Steel (Warrior)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
 			"xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_17.mp3"
         },
         {
             "name": "Shelus: Nightmare Time (Wormguts)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat",
             "requires": "{advDamage(550)} and |Building-Wormguts|",
 			"xp": 295,
@@ -734,7 +734,7 @@
         },
         {
             "name": "Lizzo: Problematic Casting (Melweena)",
-            "category": ["08 Firecat Alley","Quest"],
+            "category": ["09 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
 			"xp": 195,
@@ -937,7 +937,7 @@
         },
         {
             "name": "Housing Item: Lynx Gazer (Myth School)",
-            "category": ["02 The Commons", "HousingItems"],
+            "category": ["03 Ravenwood", "HousingItems"],
             "region": "Ravenwood"
         },
         {
@@ -947,18 +947,18 @@
         },
         {
             "name": "Housing Item: Pen and Ink (Falmea's House)",
-            "category": ["08 Firecat Alley", "HousingItems"],
+            "category": ["09 Firecat Alley", "HousingItems"],
             "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Housing Item: Open Book (Galvanost Tower) ",
-            "category": ["07 Triton Avenue", "HousingItems"],
+            "category": ["08 Triton Avenue", "HousingItems"],
             "region": "Triton",
             "requires": "|Building-Harvest Lord|"
         },
         {
             "name": "Housing Item: Brain Jar (Stormdrain Tower)",
-            "category": ["07 Triton Avenue", "HousingItems"],
+            "category": ["08 Triton Avenue", "HousingItems"],
             "region": "PostStreets-AkillesSkip",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
@@ -974,28 +974,28 @@
         },
         {
             "name": "Wooden Chest: Triton Avenue",
-            "category": ["07 Triton Avenue", "WoodenChests"],
+            "category": ["08 Triton Avenue", "WoodenChests"],
             "region": "EarlyStreets-Triton"
         },
         {
             "name": "Wooden Chest: Firecat Alley",
-            "category": ["08 Firecat Alley", "WoodenChests"],
+            "category": ["09 Firecat Alley", "WoodenChests"],
             "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Wooden Chest: Cyclops Lane",
-            "category": ["06 Cyclops Lane", "WoodenChests"],
+            "category": ["07 Cyclops Lane", "WoodenChests"],
             "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Wooden Chest: Haunted Cave",
-            "category": ["07 Triton Avenue", "WoodenChests"],
+            "category": ["08 Triton Avenue", "WoodenChests"],
             "region": "EarlyStreets-Triton",
             "requires": "|Area-Haunted Cave|"
         },
         {
             "name": "Wooden Chest: Dark Cave",
-            "category": ["06 Cyclops Lane", "WoodenChests"],
+            "category": ["07 Cyclops Lane", "WoodenChests"],
             "region": "EarlyStreets",
             "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         }
