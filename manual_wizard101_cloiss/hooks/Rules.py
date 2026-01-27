@@ -68,7 +68,11 @@ def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
 
     return player_xp >= xp
 
-def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level: str | int) -> bool:
+    # show checks as in logic for UT even when they are missing experience
+    if getattr(multiworld, 'generation_is_fake', False):
+        return True
+
     if not isinstance(level, int):
         level: int = int(level)
 
