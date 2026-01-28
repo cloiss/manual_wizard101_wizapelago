@@ -71,5 +71,8 @@
     },
     "Quest": {
         "hidden": true
+    },
+    "Teleport-Button": {
+        "hidden": true
     }
 }
