@@ -1002,7 +1002,8 @@
         {
             "name": "Silver Chest: Anywhere",
             "category": ["(No Category)", "SilverChests"],
-            "region": "UnicornWay"
+            "region": "EarlyStreets",
+            "module": "#Triton# or #Cyclops# or #Firecat#"
         },
         {
             "name": "Silver Chest: Triton Avenue",
