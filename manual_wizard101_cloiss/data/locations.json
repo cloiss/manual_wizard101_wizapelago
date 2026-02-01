@@ -713,8 +713,8 @@
             "name": "Defeat Foulgaze",
             "victory": true,
             "category": ["99 Victory"],
-            "region": "PostStreets",
-            "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|"
+            "region": "Foulgaze",
+            "requires": "{advDamage(685)} and |Building-Foulgaze|"
         },
         {
             "name": "Reagent: Mist Wood",

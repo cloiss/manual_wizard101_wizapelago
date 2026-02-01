@@ -81,7 +81,7 @@
     "Triton-HarvestLord":{
         "requires": "{advDamage(660)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
         "module": "#Triton:2# and $HarvestLord$",
-        "connects_to": ["PostStreets"]
+        "connects_to": ["Foulgaze"]
     },
     "Cyclops":{
         "requires": "|Area-Cyclops Lane|",
@@ -106,8 +106,12 @@
         "requires": "{advDamage(715)} and |Building-Alicane|",
         "module": "#Firecat:2# and $Alicane$"
     },
-    "PostStreets":{
+    "Foulgaze":{
         "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and |Building-Akilles|",
+        "connects_to": ["PostStreets"],
+        "_comment": "Same as PostStreets without the module restriction, allowing Foulgaze victory with PostStreets module disabled."
+    },
+    "PostStreets":{
         "module": "#PostStreets#"
     },
     "ApprenticeTower":{
