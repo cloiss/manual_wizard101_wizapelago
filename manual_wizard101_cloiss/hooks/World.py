@@ -337,6 +337,31 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     world.options.primary_school.value = schools.index(primary_school)
     world.options.secondary_school.value = schools.index(secondary_school)
 
+    # Also alter module settings to fit goal as needed
+    goals = ["Nightshade","Akilles","HarvestLord","Roberto","Alicane","Melweena","Foulgaze"]
+
+    goal = goals[get_option_value_regen(multiworld, player, "goal")]
+
+    # use full version of each street for bosses on that street
+    if goal == "Akilles":
+        world.options.module_cyclops.value = 2
+    if goal in ["HarvestLord","Roberto"]:
+        world.options.module_triton.value = 2
+    if goal in ["Alicane","Melweena"]:
+        world.options.module_firecat.value = 2
+    
+    # turn off poststreets for mainline bosses
+    if goal in ["Akilles","HarvestLord","Alicane"]:
+        world.options.module_poststreets.value = 0
+    # turn on poststreets for nightshade
+    if goal == "Nightshade":
+        world.options.module_poststreets.value = 1
+    # set all streets to full if poststreets enabled or Foulgaze is the goal
+    if world.options.module_poststreets or goal == "Foulgaze":
+        world.options.module_cyclops.value = 2
+        world.options.module_triton.value = 2
+        world.options.module_firecat.value = 2
+
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
