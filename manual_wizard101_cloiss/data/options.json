@@ -237,6 +237,18 @@
             "default": 2,
             "group": "Modules"
         },
+        "module_poststreets": {
+            "description": [
+                "Includes everything made available after all three streets are completed, adding about 1-3 items and 7-9 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 1,
+            "group": "Modules"
+        },
 
       
       

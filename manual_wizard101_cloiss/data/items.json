@@ -120,7 +120,7 @@
             "name": "Area-Northguard",
             "category": ["01 Area"],
             "progression": true,
-            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#",
+            "module": "#PostStreets#",
             "progression_skip_balancing": true
         },
         {
@@ -168,14 +168,14 @@
             "category": ["02 Building"],
             "useful": true,
             "progression": true,
-            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#"
+            "module": "#PostStreets#"
         },
         {
             "name": "Building-Nightshade",
             "category": ["02 Building"],
             "useful": true,
             "progression": true,
-            "module": "#Cyclops:2# and #Firecat:2# and #Triton:2#"
+            "module": "#PostStreets# and $Foulgaze$"
         },
         {
             "name": "Building-Blackhope",
@@ -213,7 +213,7 @@
             "name": "Building-Roberto",
             "category": ["02 Building"],
             "progression": true,
-            "module": "#Triton:2#",
+            "module": "#Triton:2# and $HarvestLord$",
             "progression_skip_balancing": true
         },
         {
@@ -233,7 +233,7 @@
             "name": "Building-Melweena",
             "category": ["02 Building"],
             "progression": true,
-            "module": "#Firecat:2#",
+            "module": "#Firecat:2# and $Alicane$",
             "progression_skip_balancing": true
         },
         {

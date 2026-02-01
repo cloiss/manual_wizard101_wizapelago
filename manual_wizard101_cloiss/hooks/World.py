@@ -244,7 +244,8 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
         "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
         "Cyclops": get_option_value(multiworld,player,"module_cyclops"),
         "Triton": get_option_value(multiworld,player,"module_triton"),
-        "Firecat": get_option_value(multiworld,player,"module_firecat")
+        "Firecat": get_option_value(multiworld,player,"module_firecat"),
+        "PostStreets": get_option_value(multiworld,player,"module_poststreets")
     }
 
     goal_option = get_option_value(multiworld,player,"goal")

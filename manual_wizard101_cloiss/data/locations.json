@@ -244,9 +244,9 @@
         {
             "name": "Boris: The Lore You Know (5/7 Books)",
             "category": ["02 The Commons"],
-            "region": "PostStreets-AkillesSkip",
-            "requires": "|Building-Foulgaze| and (((|Building-Nightshade| and |Area-Haunted Cave|) and (|Building-Akilles| or |Building-Blackhope|)) or (|Building-Akilles| and |Building-Blackhope|))",
-            "_comment": "Need 2/3 of Blackhope, Akilles, Nightshade"
+            "region": "PostStreets",
+            "requires": "|Building-Foulgaze| and ((|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|)",
+            "_comment": "Need either Blackhope or Nightshade"
         },
         {
             "name": "Merle: Colossal Trouble",
@@ -326,7 +326,7 @@
         {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
             "category": ["05 Olde Town","Quest"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
             "module": "$Foulgaze$",
             "_comment": "Quest ends at the entrance to Haunted Cave.",
@@ -671,7 +671,7 @@
             "name": "Defeat Lord Nightshade",
             "victory": true,
             "category": ["99 Victory"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
@@ -713,7 +713,7 @@
             "name": "Defeat Foulgaze",
             "victory": true,
             "category": ["99 Victory"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|"
         },
         {
@@ -921,7 +921,7 @@
         {
             "name": "Housing Item: Brain Jar (Stormdrain Tower)",
             "category": ["07 Triton Avenue", "HousingItems"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {

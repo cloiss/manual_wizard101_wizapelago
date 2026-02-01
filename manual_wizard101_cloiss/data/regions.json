@@ -81,7 +81,7 @@
     "Triton-HarvestLord":{
         "requires": "{advDamage(660)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
         "module": "#Triton:2# and $HarvestLord$",
-        "connects_to": ["PostStreets-AkillesSkip"]
+        "connects_to": ["PostStreets"]
     },
     "Cyclops":{
         "requires": "|Area-Cyclops Lane|",
@@ -106,14 +106,9 @@
         "requires": "{advDamage(715)} and |Building-Alicane|",
         "module": "#Firecat:2# and $Alicane$"
     },
-    "PostStreets-AkillesSkip":{
-        "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and (|Building-Akilles| or {YamlEnabled(akilles_skip)})",
-        "module": "#Cyclops:2# and #Triton:2# and #Firecat:2#",
-        "connects_to": ["PostStreets"]
-    },
     "PostStreets":{
-        "requires": "|Building-Akilles|",
-        "module": "#Cyclops:2# and #Triton:2# and #Firecat:2#"
+        "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and |Building-Akilles|",
+        "module": "#PostStreets#"
     },
     "ApprenticeTower":{
         "requires": "|Area-Ravenwood| and |Building-Apprentice Tower| and {hasLevel(7)} and |@SpellCard-Rank 2|"
