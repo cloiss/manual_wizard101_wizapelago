@@ -40,6 +40,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
         (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
         (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
         (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+        (get_option_value(multiworld, player, "teleport_button_location"), "|@Teleport-Button|")
     ]
 
     # compare the option values to determine which items are needed at this specific checkpoint
