@@ -29,7 +29,9 @@ Quests are named as follows in the randomizer:
 - `Quest Name`: The exact name of the quest in-game for reference.
 - `Clarifier`: A shorthand for what the quest expects from you if the quest name is unclear.
 
-With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave. Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, or utilities like Dungeon Recall.**
+With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave.**
+
+Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, or utilities like Dungeon Recall. These will still appear as green in Universal Tracker, even if they are not technically in logic.
 
 ### Reagents
 The `reagents` option enables checks for collecting one of each specific reagent that can be found in Wizard City, as well as an additional check for getting any rare reagent. This refers to any reagent found in the "Rare Harvest" category of the reagent menu in-game.
@@ -37,8 +39,11 @@ The `reagents` option enables checks for collecting one of each specific reagent
 ### Halloween
 During the Hallowe'en and Eerie April events, 19 additional quests are available from Jack Hallow in The Commons. This option adds a check for each of these quests, and is highly recommended to be enabled when the event is active to add some variety to the game. 
 
+### Modules
+Some sections of Wizard City can be selectively disabled or reduced for a shorter game. For example, setting `module_cyclops` to `half` removes about half of the content in Cyclops Lane, leaving only the quests that are accessible by the time you can fight Eyus Maximus. Setting it to `none` completely removes Cyclops Lane from the game, including any quests that visit that area. For full details on what each module setting does, see the setting descriptions in the yaml. This can be used in combination with configuring the goal to be one of the earlier bosses, as described below. 
+
 ### Goal
-Currently the goal location is to defeat Lord Nightshade. Unlike other locations, this goal can be claimed as soon as the boss is defeated, so returning to Daisy Willowmancer to turn in the quest is not required. This also means that the two remaining main quests after the boss are not part of the randomizer.
+Currently, the default goal location is to defeat Lord Nightshade. Unlike other locations, this goal can be claimed as soon as the boss is defeated, so returning to Daisy Willowmancer to turn in the quest is not required. This also means that the two remaining main quests after the boss are not part of the randomizer. The goal can also be set to a number of other Wizard City bosses for a shorter game in combination with the Modules function above. In all cases, the goal is to defeat the boss, and all associated quests on or after that boss are not part of the randomizer.
 
 ## Items
 Access to various abilities within the game is restricted via items. Below is a description of each item category and what you are and aren't allowed to do:

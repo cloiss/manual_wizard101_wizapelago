@@ -249,13 +249,13 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
 
     goal_option = get_option_value(multiworld,player,"goal")
     goal_values = {
-         "Akilles": 0,
-         "HarvestLord": 1,
-         "Roberto": 2,
-         "Alicane": 3,
-         "Melweena": 4,
-         "Foulgaze": 5,
-         "Nightshade": 6
+         "Nightshade": 0,
+         "Akilles": 1,
+         "HarvestLord": 2,
+         "Roberto": 3,
+         "Alicane": 4,
+         "Melweena": 5,
+         "Foulgaze": 6
     }
     
     requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)

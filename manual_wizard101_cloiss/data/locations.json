@@ -668,6 +668,13 @@
 			"xp": 195
         },
         {
+            "name": "Defeat Lord Nightshade",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "PostStreets-AkillesSkip",
+            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
+        },
+        {
             "name": "Defeat General Akilles",
             "victory": true,
             "category": ["99 Victory"],
@@ -708,13 +715,6 @@
             "category": ["99 Victory"],
             "region": "PostStreets-AkillesSkip",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|"
-        },
-        {
-            "name": "Defeat Lord Nightshade",
-            "victory": true,
-            "category": ["99 Victory"],
-            "region": "PostStreets-AkillesSkip",
-            "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
             "name": "Reagent: Mist Wood",
