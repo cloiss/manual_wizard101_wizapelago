@@ -190,6 +190,22 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     elif wooden_chests_option == 2:
             location_names_to_remove.append("Wooden Chest: Anywhere")
 
+    # Handle Silver Chest Locations
+    # 0 = none, 1 = anywhere, 2 = all
+    silver_chests_option = get_option_value(multiworld, player, "silver_chests")
+
+    silver_chest_locations = world.location_name_groups.get("SilverChests",[])
+    # If option is none, remove all silver chest locations
+    if silver_chests_option == 0:
+            location_names_to_remove.extend(silver_chest_locations)
+    # If option is anywhere, remove all but the anywhere one
+    elif silver_chests_option == 1:
+            location_names_to_remove.extend(silver_chest_locations)
+            location_names_to_remove.remove("Silver Chest: Anywhere")
+    # If option is all, only remove the anywhere one
+    elif silver_chests_option == 2:
+            location_names_to_remove.append("Silver Chest: Anywhere")
+
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
     primary_school = schools[get_option_value(multiworld, player, "primary_school")]

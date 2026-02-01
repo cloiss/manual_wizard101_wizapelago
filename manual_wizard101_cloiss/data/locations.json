@@ -998,6 +998,28 @@
             "category": ["06 Cyclops Lane", "WoodenChests"],
             "region": "EarlyStreets",
             "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
+        },
+        {
+            "name": "Silver Chest: Anywhere",
+            "category": ["(No Category)", "SilverChests"],
+            "region": "EarlyStreets",
+			"requires": "|Area-Triton Avenue| or |Area-Cyclops Lane| or |Area-Firecat Alley|",
+            "module": "#Triton# or #Cyclops# or #Firecat#"
+        },
+        {
+            "name": "Silver Chest: Triton Avenue",
+            "category": ["07 Triton Avenue", "SilverChests"],
+            "region": "EarlyStreets-Triton"
+        },
+        {
+            "name": "Silver Chest: Firecat Alley",
+            "category": ["08 Firecat Alley", "SilverChests"],
+            "region": "EarlyStreets-Firecat"
+        },
+        {
+            "name": "Silver Chest: Cyclops Lane",
+            "category": ["06 Cyclops Lane", "SilverChests"],
+            "region": "EarlyStreets-Cyclops"
         }
     ]
 }
