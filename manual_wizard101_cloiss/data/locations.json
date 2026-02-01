@@ -418,8 +418,8 @@
             "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
-            "module": "#Cyclops:2#",
-            "requires": "{advDamage(705)} and |Building-Akilles| and $Akilles$",
+            "module": "#Cyclops:2# and $Akilles$",
+            "requires": "{advDamage(705)} and |Building-Akilles|",
 			"xp": 220
         },
         {

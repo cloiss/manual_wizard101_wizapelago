@@ -108,14 +108,6 @@
             "default": false,
             "group": "Logic"
         },
-        "akilles_skip":{
-            "description": [
-                "Allows Akilles Skip in logic. This skip is patched, leave this setting as false."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Logic"
-        },
         "gate_skip":{
             "description": [
                 "Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled."

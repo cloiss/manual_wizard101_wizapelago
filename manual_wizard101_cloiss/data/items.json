@@ -168,7 +168,8 @@
             "category": ["02 Building"],
             "useful": true,
             "progression": true,
-            "module": "#PostStreets#"
+            "module": "#PostStreets# or !$Foulgaze$",
+            "_comment": "Force include this if Foulgaze is the goal, allowing for Foulgaze ending with PostStreets disabled."
         },
         {
             "name": "Building-Nightshade",
