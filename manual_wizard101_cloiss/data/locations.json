@@ -1003,6 +1003,7 @@
             "name": "Silver Chest: Anywhere",
             "category": ["(No Category)", "SilverChests"],
             "region": "EarlyStreets",
+			"requires": "|Area-Triton Avenue| or |Area-Cyclops Lane| or |Area-Firecat Alley|",
             "module": "#Triton# or #Cyclops# or #Firecat#"
         },
         {
