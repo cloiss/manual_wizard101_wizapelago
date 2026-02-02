@@ -34,6 +34,12 @@ With Universal Tracker enabled, all locations will be highlighted in green when 
 ### Reagents
 The `reagents` option enables checks for collecting one of each specific reagent that can be found in Wizard City, as well as an additional check for getting any rare reagent. This refers to any reagent found in the "Rare Harvest" category of the reagent menu in-game.
 
+### Housing Items
+The `housing_items` option enables checks for collecting each housing item that can be found out in the open in Wizard City. The naming of these checks will help inform you on where these housing items can be found.
+
+### Wooden/Silver Chests
+The `wooden_chests` and `silver_chests` options enable checks for Wooden and Silver Chests respectively in Wizard City.
+
 ### Halloween
 During the Hallowe'en and Eerie April events, 19 additional quests are available from Jack Hallow in The Commons. This option adds a check for each of these quests, and is highly recommended to be enabled when the event is active to add some variety to the game. 
 
