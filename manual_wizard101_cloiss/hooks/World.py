@@ -437,9 +437,12 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Actual Remove Code
     for region in multiworld.regions:
         if region.player == player:
-            for location in list(region.locations):
-                if region.name in region_names_to_remove or location.name in location_names_to_remove:
-                    region.locations.remove(location)
+            if region.name in region_names_to_remove:
+                region.locations.clear()
+            else:
+                for location in list(region.locations):
+                    if location.name in location_names_to_remove:
+                        region.locations.remove(location)
 
     # Fake Events system
     # Add Quest Mirror for each location
