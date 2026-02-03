@@ -471,8 +471,13 @@ def OptAll(world: "ManualWorld", requires: str):
 # Rule to expose the can_reach_location core function
 def canReachLocation(state: CollectionState, player: int, location: str):
     """Can the player reach the given location?"""
-    if state.can_reach_location(location, player):
-        return True
+    try:
+        if state.can_reach_location(location, player):
+            return True
+    # modified from Manual: pass if there is an error because we sometimes call this on locations that don't exist due to Modules (for gloria melweena)
+    except:
+        #logging.warning(f"Location {location} does not exist.") #this warning gets spammed so I removed it
+        pass
     return False
 
 def YamlEnabled(multiworld: MultiWorld, player: int, param: str) -> bool:

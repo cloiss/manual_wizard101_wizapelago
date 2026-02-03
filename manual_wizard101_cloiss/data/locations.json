@@ -105,7 +105,8 @@
             "category": ["01 Unicorn Way","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Building-Roberto|",
-			"xp": 100,
+            "module": "$Roberto$",
+			      "xp": 100,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/GMC/DiegoTheDuelmaster_GMC_16.mp3"
         },
         {
@@ -127,6 +128,7 @@
             "name": "Abby: City Tour",
             "category": ["02 The Commons","Quest"],
             "region": "PostUW",
+            "module": "#GolemCourt#",
             "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|",
 			"xp": 20,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/AbbyKDoodle_001_20.mp3"
@@ -142,9 +144,8 @@
         {
             "name": "Merle: Pet Sounds",
             "category": ["02 The Commons","Quest"],
-            "region": "Judd",
-            "requires": "|Area-Pet Pavillion|",
-			"xp": 25,
+            "region": "PetPavilion",
+			      "xp": 25,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/MiloBarker_002_01.mp3"
         },
         {
@@ -158,14 +159,17 @@
             "name": "Penny: Dreadful Assignment (Defeats)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
+            "module": "#Triton:2#",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
 			"xp": 35,
+            "_comment": "Note that Haunted Cave is behind the FULL triton module",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_27.mp3"
         },
         {
             "name": "Penny: Penny For Your Thoughts (Dark Cave)",
             "category": ["02 The Commons","Quest"],
             "region": "Judd",
+            "module": "#Triton:2# and (#Cyclops# or #Firecat:2#)",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
 			"xp": 5,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_35.mp3"
@@ -174,6 +178,7 @@
             "name": "Arthur: Introduction to Balance (Level 7)",
             "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
+            "module": "#GolemCourt#",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfArthurWethersfield_QST_10.mp3"
@@ -207,6 +212,7 @@
             "category": ["02 The Commons","Quest","School-Fire"],
             "region": "Level7",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
+            "module": "#GolemCourt#",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DaliaFalmea_QST_08.mp3"
         },
@@ -215,6 +221,7 @@
             "category": ["02 The Commons","Quest","School-Death"],
             "region": "Level7",
             "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
+            "module": "#Triton:2#",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_07.mp3"
         },
@@ -254,6 +261,7 @@
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
             "requires": "|Area-Cyclops Lane|",
+            "module": "#Cyclops#",
 			"xp": 0,
             "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375.",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3"
@@ -262,15 +270,16 @@
             "name": "Zeke: Find the Smiths (9/10 Smiths)",
             "category": ["02 The Commons"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# and #Triton# and #Firecat# and #GolemCourt#",
             "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "_comment": "Must be PostUW to get the quest which guarantees access to everything barring gate skip"
         },
         {
             "name": "Boris: The Lore You Know (5/7 Books)",
             "category": ["02 The Commons"],
-            "region": "PostStreets-AkillesSkip",
-            "requires": "|Building-Foulgaze| and (((|Building-Nightshade| and |Area-Haunted Cave|) and (|Building-Akilles| or |Building-Blackhope|)) or (|Building-Akilles| and |Building-Blackhope|))",
-            "_comment": "Need 2/3 of Blackhope, Akilles, Nightshade"
+            "region": "PostStreets",
+            "requires": "|Building-Foulgaze| and ((|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|)",
+            "_comment": "Need either Blackhope or Nightshade"
         },
         {
             "name": "Merle: Colossal Trouble",
@@ -290,6 +299,7 @@
             "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
             "category": ["03 Golem Court","Quest"],
             "region": "EarlyOldeTown",
+            "module": "#GolemCourt#",
             "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
 			"xp": 35,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_25.mp3"
@@ -297,7 +307,7 @@
         {
             "name": "Regina: Science Fair (Construct)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(95)}",
 			"xp": 20,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_16.mp3"
@@ -305,7 +315,7 @@
         {
             "name": "Regina: Second Gear (Clockwork)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
 			"xp": 45,
             "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise.",
@@ -314,7 +324,7 @@
         {
             "name": "Regina: The Final Piece (Iron Golem)",
             "category": ["03 Golem Court","Quest"],
-            "region": "GolemCourt-Level5",
+            "region": "GolemCourt-GolemTower",
             "requires": "{advDamage(285)} and {hasLevel(7)} and |@SpellCard-Rank 2| and |Teleport-Dungeon|",
 			"xp": 100,
             "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment.",
@@ -322,26 +332,24 @@
         },
         {
             "name": "Milo: A Wizard's Best Friend",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "Judd",
-            "requires": "|Area-Pet Pavillion|",
-			"xp": 25,
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
+			      "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MiloBarker_QST_11.mp3"
         },
         {
             "name": "Milo: Wizzy 500",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "Judd",
-            "requires": "|Area-Pet Pavillion|",
-			"xp": 25,
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
+			      "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MiloBarker_QST_21.mp3"
         },
         {
             "name": "Milo: Hoard of the Rings",
-            "category": ["04 Pet Pavillion","Quest"],
-            "region": "Judd",
-            "requires": "|Area-Pet Pavillion| and |Area-The Commons| and |Area-Shopping District|",
-			"xp": 35,
+            "category": ["04 Pet Pavilion","Quest"],
+            "region": "PetPavilion",
+            "requires": "|Area-Shopping District|",
+			      "xp": 35,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/MiloBarker_002_10.mp3"
         },
         {
@@ -362,8 +370,9 @@
         {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
             "category": ["05 Olde Town","Quest"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
+            "module": "$Foulgaze$",
             "_comment": "Quest ends at the entrance to Haunted Cave.",
 			"xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/DaisyWillowmancer_005_02.mp3"
@@ -386,6 +395,7 @@
             "name": "Guildenstern: Walkabout",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyOldeTown",
+            "module": "#GolemCourt#",
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_27.mp3"
@@ -394,6 +404,7 @@
             "name": "Gloria: Looking Sharp!",
             "category": ["05 Olde Town","Quest"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# and #Firecat# and ((#Firecat:2# and {YamlDisabled(beginner)}) or #Triton#)",
             "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55,
@@ -455,6 +466,7 @@
             "name": "MAIN: Oh Me, Oh Minotaur (Warhorns)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 155,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Romulus_005_02.mp3"
@@ -463,6 +475,7 @@
             "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2# and $Akilles$",
             "requires": "{advDamage(705)} and |Building-Akilles|",
 			"xp": 220,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Muldoon_005_07.mp3"
@@ -493,6 +506,7 @@
             "name": "Rosie: Mazes and Minotaurs (Maze Books)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/RosieIronheart_005_09.mp3"
@@ -501,6 +515,7 @@
             "name": "Garrick: You Can Dig It (Pet Dig)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
 			"xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GarrickGoldenhawk_005_12.mp3"
         },
@@ -508,6 +523,7 @@
             "name": "Electra: Faire Thee Well (Pre-Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2#",
             "requires": "{advDamage(285)}",
 			"xp": 80,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PierreGallantmane_005_01.mp3"
@@ -516,6 +532,7 @@
             "name": "Pierre: The Power is Ours (Fears)",
             "category": ["06 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
+            "module": "#Cyclops:2# and #Triton#",
             "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
             "xp": 345,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_13.mp3"
@@ -545,6 +562,7 @@
             "name": "MAIN: Quest for Clues (Fodders)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 230,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_14.mp3"
         },
@@ -552,6 +570,7 @@
             "name": "MAIN: Catching a Glimpse (To Blad)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_01.mp3"
         },
@@ -559,6 +578,7 @@
             "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 190,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_10.mp3"
         },
@@ -566,6 +586,7 @@
             "name": "MAIN: Luminate (To Duncan)",
             "category": ["07 Triton Avenue","Quest"],
             "region": "Triton",
+            "module": "#Triton:2#",
 			"xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_18.mp3"
         },
@@ -737,16 +758,59 @@
             "category": ["08 Firecat Alley","Quest"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
+            "module": "$Melweena$",
 			"xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_20.mp3"
         },
         {
-            "name": "VICTORY: Defeat Nightshade",
+            "name": "Defeat Lord Nightshade",
             "victory": true,
-            "category": ["99 Nightshade"],
-            "region": "PostStreets-AkillesSkip",
+            "category": ["99 Victory"],
+            "region": "PostStreets",
             "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LordNightshade_005_03.mp3"
+        },
+        {
+            "name": "Defeat General Akilles",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Cyclops-DarkCave",
+            "requires": "{advDamage(705)} and |Building-Akilles|"
+        },
+        {
+            "name": "Defeat Harvest Lord",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Triton",
+            "requires": "{advDamage(660)} and |Building-Harvest Lord|"
+        },
+        {
+            "name": "Defeat Roberto",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Triton-HarvestLord",
+            "requires": "|Building-Roberto|"
+        },
+        {
+            "name": "Defeat Alicane Swiftarrow",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Firecat-Bastilla",
+            "requires": "{advDamage(715)} and |Building-Alicane|"
+        },
+        {
+            "name": "Defeat Melweena Smite",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Firecat-Alicane",
+            "requires": "|Building-Melweena|"
+        },
+        {
+            "name": "Defeat Foulgaze",
+            "victory": true,
+            "category": ["99 Victory"],
+            "region": "Foulgaze",
+            "requires": "{advDamage(685)} and |Building-Foulgaze|"
         },
         {
             "name": "Reagent: Mist Wood",
@@ -771,8 +835,9 @@
         {
             "name": "Reagent: Ore",
             "category": ["(No Category)", "Reagents"],
-            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|",
-            "region": "EarlyStreets"
+            "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2# or #Triton:2#",
+            "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|"
         },
         {
             "name": "Reagent: Any Rare Reagent",
@@ -833,6 +898,7 @@
             "name": "Hallow: Orange Lantern (TA Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_05.mp3"
         },
@@ -840,6 +906,7 @@
             "name": "O'Lantern: Tricks and Sticks (TA Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_04.mp3"
         },
@@ -847,6 +914,7 @@
             "name": "Hallow: Pumpkin Head (CL Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_05.mp3"
         },
@@ -854,6 +922,7 @@
             "name": "Pumpkin: One-Eyed Snacks (CL Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_04.mp3"
         },
@@ -861,6 +930,7 @@
             "name": "Hallow: Meeting Crow (FA Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_05.mp3"
         },
@@ -868,6 +938,7 @@
             "name": "Crow: Firecat Strike (FA Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_04.mp3"
         },
@@ -904,6 +975,7 @@
             "name": "Hallow: Baron of Nightmares (Baron Mordecai)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Triton#",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_16.mp3"
         },
@@ -911,6 +983,7 @@
             "name": "Hallow: Orange Ye Scared? (CL Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_37.mp3"
         },
@@ -918,6 +991,7 @@
             "name": "Hallow: Barreling Along (Ravenwood Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_40.mp3"
         },
@@ -925,6 +999,7 @@
             "name": "Hallow: Pinky Swear (FA Ghosts)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops# and #Firecat#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_46.mp3"
         },
@@ -932,6 +1007,7 @@
             "name": "Hallow: A Sight for Core Eyes (HC Apple)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
+            "module": "#GolemCourt# and #Cyclops# and #Firecat# and #Triton:2#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_50.mp3"
         },
@@ -951,15 +1027,16 @@
             "region": "EarlyStreets-Firecat"
         },
         {
-            "name": "Housing Item: Open Book (Galvanost Tower) ",
+            "name": "Housing Item: Open Book (Galvanost Tower)",
             "category": ["07 Triton Avenue", "HousingItems"],
             "region": "Triton",
+            "module": "#Triton:2#",
             "requires": "|Building-Harvest Lord|"
         },
         {
             "name": "Housing Item: Brain Jar (Stormdrain Tower)",
             "category": ["07 Triton Avenue", "HousingItems"],
-            "region": "PostStreets-AkillesSkip",
+            "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
         {
@@ -991,12 +1068,14 @@
             "name": "Wooden Chest: Haunted Cave",
             "category": ["07 Triton Avenue", "WoodenChests"],
             "region": "EarlyStreets-Triton",
+            "module": "#Triton:2#",
             "requires": "|Area-Haunted Cave|"
         },
         {
             "name": "Wooden Chest: Dark Cave",
             "category": ["06 Cyclops Lane", "WoodenChests"],
             "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2#",
             "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         },
         {
