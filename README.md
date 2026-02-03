@@ -19,6 +19,9 @@ Three yamls are provided in the repo in the `yamls` folder:
 
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
+### Auto-Marking Client
+This is a separate client we have developed that can automatically mark most of the locations in the game, but it is 100% optional to use. In order for it to work, you must open it before you open the game itself. It currently only has support for automatically marking quest locations, goal locations, and `Talk to Nick Jonas`.
+
 ## Locations
 Every default location (except `Talk to Nick Jonas`) is a Wizard City quest which is accessible on a free-to-play account prior to reaching Level 12. This includes, for example, the first two Photomancy quests, but excludes Gardening and all of Colossus Boulevard.
 
