@@ -160,7 +160,7 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
                         if func_args == ['']:
                             func_args.pop()
 
-                        func = globals().get(func_name) # I'm 99% sure this line does nothing but I'm scared to remove it -Cloiss
+                        func = globals().get(func_name) # Look for the function in the global variables (not sure if this works)
 
                         # Look for the function in Rules.py (for global functions like YamlEnabled)
                         if func is None:
@@ -266,7 +266,7 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
     for module in re.findall(r'#[^#]+#', requires_list):
 
         module_base = module
-        module = module.lstrip('#').rstrip('#')
+        module = module.strip("#").strip()
 
         module_parts = module.split(":")  # type: list[str]
         module_name = module
@@ -280,14 +280,13 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
 
         if value >= module_count:
             requires_list = requires_list.replace(module_base, "1")
-
-        if value < module_count:
+        else:
             requires_list = requires_list.replace(module_base, "0")
 
     # For goals (surrounded in $), we want to remove quests that happen after that goal, so e.g. $Alicane$ means goal is NOT alicane
     for goal in re.findall(r'\$[^\$]+\$', requires_list):
         goal_base = goal
-        goal = goal.lstrip('$').rstrip('$').strip()
+        goal = goal.strip("$").strip()
 
         value = goal_values.get(goal,-1) # if the goal is not on the list of goals, assume -1 which will not match anything 
 
@@ -357,7 +356,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     if goal == "Nightshade":
         world.options.module_poststreets.value = 1
     # set all streets to full if poststreets enabled or Foulgaze is the goal
-    if world.options.module_poststreets or goal == "Foulgaze":
+    if world.options.module_poststreets == 1 or goal == "Foulgaze":
         world.options.module_cyclops.value = 2
         world.options.module_triton.value = 2
         world.options.module_firecat.value = 2
@@ -439,7 +438,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                if location.name in location_names_to_remove or region.name in region_names_to_remove:
+                if region.name in region_names_to_remove or location.name in location_names_to_remove:
                     region.locations.remove(location)
 
     # Fake Events system
@@ -525,6 +524,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     for item_name in item_names_to_remove:
         # try-except here accounts for trying to remove items that don't exist (e.g. Fire Prism when Golem Court is disabled and you are not a Fire wizard)
         try:
+            # next clause accounts for removing the correct number of copies of an item, rather than all copies
             item = next(i for i in item_pool if i.name == item_name)
             item_pool.remove(item)
         except:

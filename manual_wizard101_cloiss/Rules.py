@@ -474,6 +474,7 @@ def canReachLocation(state: CollectionState, player: int, location: str):
     try:
         if state.can_reach_location(location, player):
             return True
+    # modified from Manual: pass if there is an error because we sometimes call this on locations that don't exist due to Modules (for gloria melweena)
     except:
         #logging.warning(f"Location {location} does not exist.") #this warning gets spammed so I removed it
         pass
