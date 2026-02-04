@@ -176,7 +176,7 @@
         },
         {
             "name": "Arthur: Introduction to Balance (Level 7)",
-            "category": ["102 The Commons","Quest","School-Balance"],
+            "category": ["103 Ravenwood","Quest","School-Balance"],
             "region": "Level7",
             "module": "#GolemCourt#",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
@@ -185,7 +185,7 @@
         },
         {
             "name": "Halston: Leyden Lab (Level 7)",
-            "category": ["102 The Commons","Quest","School-Storm"],
+            "category": ["103 Ravenwood","Quest","School-Storm"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 30,
@@ -193,7 +193,7 @@
         },
         {
             "name": "Harold: Charge It Up (Level 7)",
-            "category": ["102 The Commons","Quest","School-Storm"],
+            "category": ["103 Ravenwood","Quest","School-Storm"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -201,7 +201,7 @@
         },
         {
             "name": "Lydia: Introduction to Ice (Level 7)",
-            "category": ["102 The Commons","Quest","School-Ice"],
+            "category": ["103 Ravenwood","Quest","School-Ice"],
             "region": "Level7",
             "requires": "|Area-Shopping District| and |Area-Ravenwood|",
             "xp": 190,
@@ -209,7 +209,7 @@
         },
         {
             "name": "Dalia: Introduction to Fire (Level 7)",
-            "category": ["102 The Commons","Quest","School-Fire"],
+            "category": ["103 Ravenwood","Quest","School-Fire"],
             "region": "Level7",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "module": "#GolemCourt#",
@@ -218,7 +218,7 @@
         },
         {
             "name": "Malorn: The Buried Truth (Level 7)",
-            "category": ["102 The Commons","Quest","School-Death"],
+            "category": ["103 Ravenwood","Quest","School-Death"],
             "region": "Level7",
             "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
             "module": "#Triton:2#",
@@ -227,7 +227,7 @@
         },
         {
             "name": "Cyrus: Not So Welcome to Myth (Level 7)",
-            "category": ["102 The Commons","Quest","School-Myth"],
+            "category": ["103 Ravenwood","Quest","School-Myth"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 30,
@@ -235,7 +235,7 @@
         },
         {
             "name": "Cyrus: Myth Adventure (Level 7)",
-            "category": ["102 The Commons","Quest","School-Myth"],
+            "category": ["103 Ravenwood","Quest","School-Myth"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -243,7 +243,7 @@
         },
         {
             "name": "Moolinda: Introduction to Life (Level 7)",
-            "category": ["102 The Commons","Quest","School-Life"],
+            "category": ["103 Ravenwood","Quest","School-Life"],
             "region": "Level7",
             "requires": "|Area-Ravenwood|",
             "xp": 190,
@@ -369,7 +369,7 @@
         },
         {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
-            "category": ["105 Olde Town","Quest"],
+            "category": ["135 Haunted Cave","Quest"],
             "region": "PostStreets",
             "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
             "module": "$Foulgaze$",
@@ -419,7 +419,7 @@
         },
         {
             "name": "Baldur: Trade Voyage",
-            "category": ["105 Olde Town","Quest"],
+            "category": ["301 Northguard","Quest"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
 			"xp": 15,
@@ -427,7 +427,7 @@
         },
         {
             "name": "Talk to Nick Jonas (Not a Quest)",
-            "category": ["105 Olde Town"],
+            "category": ["301 Northguard"],
             "region": "PostStreets",
             "requires": "|Area-Northguard|",
             "_comment": "This is the only default check that isn't a quest, it was added for the memes",
@@ -660,7 +660,7 @@
         },
         {
             "name": "Duncan: Haunting Questions (Haunted Cave)",
-            "category": ["130 Triton Avenue","Quest"],
+            "category": ["135 Haunted Cave","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 55,
@@ -668,7 +668,7 @@
         },
         {
             "name": "Duncan: Secret of the Cave (Field Guards)",
-            "category": ["130 Triton Avenue","Quest"],
+            "category": ["135 Haunted Cave","Quest"],
             "region": "Triton-HarvestLord",
             "requires": "|Area-Haunted Cave|",
 			"xp": 105,
@@ -765,7 +765,7 @@
         {
             "name": "Defeat Lord Nightshade",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "PostStreets",
             "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LordNightshade_005_03.mp3"
@@ -773,42 +773,42 @@
         {
             "name": "Defeat General Akilles",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(705)} and |Building-Akilles|"
         },
         {
             "name": "Defeat Harvest Lord",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Triton",
             "requires": "{advDamage(660)} and |Building-Harvest Lord|"
         },
         {
             "name": "Defeat Roberto",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Triton-HarvestLord",
             "requires": "|Building-Roberto|"
         },
         {
             "name": "Defeat Alicane Swiftarrow",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Firecat-Bastilla",
             "requires": "{advDamage(715)} and |Building-Alicane|"
         },
         {
             "name": "Defeat Melweena Smite",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|"
         },
         {
             "name": "Defeat Foulgaze",
             "victory": true,
-            "category": ["99 Victory"],
+            "category": ["999 Victory"],
             "region": "Foulgaze",
             "requires": "{advDamage(685)} and |Building-Foulgaze|"
         },
@@ -846,57 +846,57 @@
         },
         {
             "name": "Hallow: Tricks and Treats (Commons Pumpkins)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_05.mp3"
         },
         {
             "name": "Hallow: Ghostly Spires",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "requires": "|Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_01.mp3"
         },
         {
             "name": "Apprentice Tower - First Floor",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["666 Halloween","Halloween"],
             "region": "ApprenticeTower",
             "requires": "{advDamage(300)}"
         },
         {
             "name": "Apprentice Tower - Second Floor",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["666 Halloween","Halloween"],
             "region": "ApprenticeTower",
             "requires": "{advDamage(300)} and |Teleport-Dungeon|"
         },
         {
             "name": "Apprentice Tower - Third Floor",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["666 Halloween","Halloween"],
             "region": "ApprenticeTower",
             "requires": "{advDamage(300)} and |Teleport-Dungeon|"
         },
         {
             "name": "Apprentice Tower - Final Floor",
-            "category": ["31 Halloween","Halloween"],
+            "category": ["666 Halloween","Halloween"],
             "region": "ApprenticeTower",
             "requires": "{advDamage(650)} and |Teleport-Dungeon|"
         },
         {
             "name": "Hallow: Straw Man (UW Jack)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_04.mp3"
         },
         {
             "name": "Straw: Unicorn Delight (UW Pumpkins)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_03.mp3"
         },
         {
             "name": "Hallow: Orange Lantern (TA Jack)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
@@ -904,7 +904,7 @@
         },
         {
             "name": "O'Lantern: Tricks and Sticks (TA Pumpkins)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
@@ -912,7 +912,7 @@
         },
         {
             "name": "Hallow: Pumpkin Head (CL Jack)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
@@ -920,7 +920,7 @@
         },
         {
             "name": "Pumpkin: One-Eyed Snacks (CL Pumpkins)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
@@ -928,7 +928,7 @@
         },
         {
             "name": "Hallow: Meeting Crow (FA Jack)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
@@ -936,7 +936,7 @@
         },
         {
             "name": "Crow: Firecat Strike (FA Pumpkins)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
@@ -944,14 +944,14 @@
         },
         {
             "name": "Hallow: Inky Blues (SD Ghosts)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "ShoppingDistrict",
             "requires": "|Area-The Commons| and {hasLevel(5)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_20.mp3"
         },
         {
             "name": "Hallow: Apple in Yer Eye (GC Apple)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "_comment": "wizReach Apples covers all of the logic here, the region is for clarity",
@@ -959,21 +959,21 @@
         },
         {
             "name": "Hallow: Blink and Yer Red (Commons Ghosts)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_28.mp3"
         },
         {
             "name": "Hallow: Dunking Do-Nots (SD Apple)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_32.mp3"
         },
         {
             "name": "Hallow: Baron of Nightmares (Baron Mordecai)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#GolemCourt# and #Triton#",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}",
@@ -981,7 +981,7 @@
         },
         {
             "name": "Hallow: Orange Ye Scared? (CL Ghosts)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|",
@@ -989,7 +989,7 @@
         },
         {
             "name": "Hallow: Barreling Along (Ravenwood Apple)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|",
@@ -997,7 +997,7 @@
         },
         {
             "name": "Hallow: Pinky Swear (FA Ghosts)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#GolemCourt# and #Cyclops# and #Firecat#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|",
@@ -1005,7 +1005,7 @@
         },
         {
             "name": "Hallow: A Sight for Core Eyes (HC Apple)",
-            "category": ["31 Halloween","Halloween","Quest"],
+            "category": ["666 Halloween","Halloween","Quest"],
             "region": "EarlyStreets",
             "module": "#GolemCourt# and #Cyclops# and #Firecat# and #Triton:2#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|",
@@ -1013,12 +1013,12 @@
         },
         {
             "name": "Housing Item: Lynx Gazer (Myth School)",
-            "category": ["102 The Commons", "HousingItems"],
+            "category": ["103 Ravenwood", "HousingItems"],
             "region": "Ravenwood"
         },
         {
             "name": "Housing Item: Tiny Arched Door (SD Pet Shop)",
-            "category": ["102 The Commons", "HousingItems"],
+            "category": ["104 Shopping District", "HousingItems"],
             "region": "ShoppingDistrict"
         },
         {
@@ -1035,7 +1035,7 @@
         },
         {
             "name": "Housing Item: Brain Jar (Stormdrain Tower)",
-            "category": ["130 Triton Avenue", "HousingItems"],
+            "category": ["135 Haunted Cave", "HousingItems"],
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|"
         },
@@ -1066,14 +1066,14 @@
         },
         {
             "name": "Wooden Chest: Haunted Cave",
-            "category": ["130 Triton Avenue", "WoodenChests"],
+            "category": ["135 Haunted Cave", "WoodenChests"],
             "region": "EarlyStreets-Triton",
             "module": "#Triton:2#",
             "requires": "|Area-Haunted Cave|"
         },
         {
             "name": "Wooden Chest: Dark Cave",
-            "category": ["140 Cyclops Lane", "WoodenChests"],
+            "category": ["145 Dark Cave", "WoodenChests"],
             "region": "EarlyStreets",
             "module": "#Cyclops# or #Firecat:2#",
             "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
