@@ -39,7 +39,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     option_item_pairs = [
         (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
         (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
-        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|"),
         (get_option_value(multiworld, player, "teleport_button_location"), "|@Teleport-Button|")
     ]
 
@@ -69,12 +69,7 @@ def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
 
     return player_xp >= xp
 
-def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
-    if not isinstance(level, int):
-        level: int = int(level)
-
-    """Check if player has reached the specified level based on total XP."""
-    level_xp_requirements = {
+level_xp_requirements = {
         1: 0,
         2: 45,
         3: 160,
@@ -91,7 +86,12 @@ def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
         14: 13755,
         15: 16680
     }
-    
+
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+    if not isinstance(level, int):
+        level: int = int(level)
+
+    """Check if player has reached the specified level based on total XP."""
     required_xp = level_xp_requirements.get(level, 999999999)
     
     return hasXP(state, player, required_xp)

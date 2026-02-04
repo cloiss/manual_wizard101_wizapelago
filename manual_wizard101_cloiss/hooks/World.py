@@ -444,6 +444,25 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     if location.name in location_names_to_remove:
                         region.locations.remove(location)
 
+    # Total XP still in locations (after removals)
+    total_xp = 0
+    lvl7_xp = 0
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in region.locations:
+                location_dict = world.location_name_to_location.get(location.name, {})
+                xp = location_dict.get("xp", 0)
+                if region.name == "Level7":
+                    lvl7_xp += xp
+                total_xp += xp
+
+    # If player cannot reach level 7, remove all level 7 related locations
+    if total_xp - lvl7_xp < HooksRules.level_xp_requirements[7]:
+        # Remove all level 7 related locations
+        if region := next((r for r in multiworld.regions if r.player == player and r.name == "Level7"), None):
+            region.locations.clear()
+            total_xp -= lvl7_xp
+
     # Fake Events system
     # Add Quest Mirror for each location
     for region in multiworld.regions:
@@ -523,6 +542,25 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         module_result = checkModuleStringForArea(world,multiworld,player,item)
         if not module_result:
             item_names_to_remove.append(item['name'])
+
+    # Total XP still in locations (after removals)
+    total_xp = 0
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in region.locations:
+                location_dict = world.location_name_to_location.get(location.name, {})
+                total_xp += location_dict.get("xp", 0)
+    
+    # Convert total XP to level (largest level whose requirement <= total_xp)
+    max_level = max(
+        (level for level, req in HooksRules.level_xp_requirements.items() if total_xp >= req),
+        default=1,
+    )
+
+    # Remove all items that are ranked higher than the player's current level
+    for item in item_table:
+        if item.get("value", {}).get("level", 0) > max_level:
+            item_names_to_remove.append(item["name"])
 
     for item_name in item_names_to_remove:
         # try-except here accounts for trying to remove items that don't exist (e.g. Fire Prism when Golem Court is disabled and you are not a Fire wizard)
