@@ -775,42 +775,48 @@
             "victory": true,
             "category": ["999 Victory"],
             "region": "Cyclops-DarkCave",
-            "requires": "{advDamage(705)} and |Building-Akilles|"
+            "requires": "{advDamage(705)} and |Building-Akilles|",
+			"log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GreatOne_005_06.mp3"
         },
         {
             "name": "Defeat Harvest Lord",
             "victory": true,
             "category": ["999 Victory"],
             "region": "Triton",
-            "requires": "{advDamage(660)} and |Building-Harvest Lord|"
+            "requires": "{advDamage(660)} and |Building-Harvest Lord|",
+			"log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/HarvestLord_002_03.mp3"
         },
         {
             "name": "Defeat Roberto",
             "victory": true,
             "category": ["999 Victory"],
             "region": "Triton-HarvestLord",
-            "requires": "|Building-Roberto|"
+            "requires": "|Building-Roberto|",
+			"log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/GMC/Roberto_GMC_03.mp3"
         },
         {
             "name": "Defeat Alicane Swiftarrow",
             "victory": true,
             "category": ["999 Victory"],
             "region": "Firecat-Bastilla",
-            "requires": "{advDamage(715)} and |Building-Alicane|"
+            "requires": "{advDamage(715)} and |Building-Alicane|",
+			"log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/AlicaneSwiftarrow_005_02.mp3"
         },
         {
             "name": "Defeat Melweena Smite",
             "victory": true,
             "category": ["999 Victory"],
             "region": "Firecat-Alicane",
-            "requires": "|Building-Melweena|"
+            "requires": "|Building-Melweena|",
+			"log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/MelweenaSmite_005_05.mp3"
         },
         {
             "name": "Defeat Foulgaze",
             "victory": true,
             "category": ["999 Victory"],
             "region": "Foulgaze",
-            "requires": "{advDamage(685)} and |Building-Foulgaze|"
+            "requires": "{advDamage(685)} and |Building-Foulgaze|",
+			"log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Foulgaze_005_04.mp3"
         },
         {
             "name": "Reagent: Mist Wood",
