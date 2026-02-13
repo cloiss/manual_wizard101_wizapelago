@@ -13,12 +13,7 @@ def after_load_progressive_item_file(progressive_item_table: list) -> list:
 
 # called after the locations.json file has been loaded, before any location loading or processing has occurred
 # if you need access to the locations after processing to add ids, etc., you should use the hooks in World.py
-# Modified from source to let us dynamically update location names based on options
-def after_load_location_file(location_table: list, option_table: dict = None) -> list:
-    for l in location_table:
-        if l["name"] == "Zeke: Find the Smiths (X/10 Smiths)":
-            l["name"] = "Zeke: Find the Smiths (9/10 Smiths)"
-
+def after_load_location_file(location_table: list) -> list:
     return location_table
 
 # called after the locations.json file has been loaded, before any location loading or processing has occurred
