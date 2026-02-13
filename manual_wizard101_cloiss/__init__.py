@@ -49,6 +49,7 @@ class ManualWorld(World):
     location_table = location_table # this is likely imported from Data instead of Locations because the Game Complete location should not be in here, but is used for lookups
     event_table = event_table
     category_table = category_table
+    region_table = region_table # not found in manual source -- added to expose "module" field for better module implementation
 
     item_id_to_name = item_id_to_name
     item_name_to_id = item_name_to_id

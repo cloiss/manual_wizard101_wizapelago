@@ -3,11 +3,8 @@
     "_comment": "Add a _ before an option name to comment it out and it wont be added to the apworld",
     "core": {
         "goal":{
-            "_comment": [
-                "Using 'goal' as the name of an option let you override some of the generated goal parameters"
-            ],
-            "display_name": "The End Objective",
-            "description": "How to End your Randomized playthrough.",
+            "_comment": "Using 'goal' as the name of an option let you override some of the generated goal parameters",
+            "description": "Set which boss must be defeated to complete the randomizer. If an unreachable boss is chosen, generation will fail.",
             "aliases": {"easiest": 0},
             "hidden": false
         },
@@ -103,17 +100,23 @@
             "default": 4,
             "group": "Special Item Locations"
         },
+        "teleport_button_location":{
+            "description": [
+                "Guarantee at least one World/Commons/Home teleport buttons prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
+            ],
+            "type": "Choice",
+            "values": {
+                "rattlebones": 1,
+                "judd": 2,
+                "mid-streets": 3,
+                "anywhere": 4
+            },
+            "default": 4,
+            "group": "Special Item Locations"
+        },
         "friendly_teleport":{
             "description": [
                 "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Logic"
-        },
-        "akilles_skip":{
-            "description": [
-                "Allows Akilles Skip in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled."
             ],
             "type": "Toggle",
             "default": false,
@@ -177,10 +180,100 @@
             "default": 0,
             "group": "Check Locations"
         },
+        "silver_chests": {
+            "description": [
+                "Adds locations for silver chests in Wizard City. Select 'anywhere' to add one silver chest location, or 'all' to add silver chest locations for Triton Avenue, Firecat Alley, and Cyclops Lane."
+              ],
+            "type": "Choice",
+            "values": {
+                "none": 0,             
+                "anywhere": 1,
+                "all": 2
+            },
+            "default": 0,
+            "group": "Check Locations"
+        },
+      
+      
+      
+        "module_golemcourt": {
+            "description": [
+                "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default full, adds about 1-2 items and 4-8 locations."
+                  ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_petpavilion": {
+            "description": [
+                "Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 1,
+            "group": "Modules"
+        },
+        "module_cyclops": {
+            "description": [
+                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations."],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_triton": {
+            "description": [
+                "Half module includes Kraken and Skullsplitter, full module includes everything in Triton. Default full, adds about 3-6 items and 8-19 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_firecat": {
+            "description": [
+                "Half module includes Larry and Wormguts, full module includes everything in Firecat. Default full, adds about 3-7 items and 9-14 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_poststreets": {
+            "description": [
+                "Includes everything made available after all three streets are completed, adding about 1-3 items and 7-9 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 1,
+            "group": "Modules"
+        },
 
-
-
-
+      
+      
         "_Example_Toggle":{
             "description": [
                 "This is a Toggle",

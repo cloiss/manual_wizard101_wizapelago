@@ -74,45 +74,53 @@
         {
             "name": "Area-Golem Court",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#GolemCourt#"
         },
         {
-            "name": "Area-Pet Pavillion",
+            "name": "Area-Pet Pavilion",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#PetPavilion#"
         },
         {
             "name": "Area-Cyclops Lane",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Cyclops#"
         },
         {
             "name": "Area-Triton Avenue",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Triton#"
         },
         {
             "name": "Area-Firecat Alley",
             "category": ["01 Area"],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Firecat#"
         },
         {
             "name": "Area-Dark Cave",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops# or #Firecat:2#"
         },
         {
             "name": "Area-Haunted Cave",
             "category": ["01 Area"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#"
         },
         {
             "name": "Area-Northguard",
             "category": ["01 Area"],
             "progression": true,
+            "module": "#PostStreets#",
             "progression_skip_balancing": true
         },
         {
@@ -131,37 +139,44 @@
             "name": "Building-Akilles",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2#"
         },
         {
             "name": "Building-Harvest Lord",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#"
         },
         {
             "name": "Building-Bastilla",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#"
         },
         {
             "name": "Building-Alicane",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#"
         },
         {
             "name": "Building-Foulgaze",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#PostStreets# or !$Foulgaze$",
+            "_comment": "Force include this if Foulgaze is the goal, allowing for Foulgaze ending with PostStreets disabled."
         },
         {
             "name": "Building-Nightshade",
             "category": ["02 Building"],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#PostStreets# and $Foulgaze$"
         },
         {
             "name": "Building-Blackhope",
@@ -172,52 +187,61 @@
             "name": "Building-Eyus",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Cyclops#",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Fears",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Cyclops:2# and #Triton#",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Kraken",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Triton#"
         },
         {
             "name": "Building-Skullsplitter",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Triton#",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Roberto",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Triton:2# and $HarvestLord$",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Larry",
             "category": ["02 Building"],
-            "progression": true
+            "progression": true,
+            "module": "#Firecat#"
         },
         {
             "name": "Building-Wormguts",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Firecat#",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Melweena",
             "category": ["02 Building"],
             "progression": true,
+            "module": "#Firecat:2# and $Alicane$",
             "progression_skip_balancing": true
         },
         {
             "name": "Building-Mordecai",
             "category": ["02 Building","Halloween"],
             "progression": true,
+            "module": "#GolemCourt# and #Triton#",
             "progression_skip_balancing": true
         },
         {
@@ -284,11 +308,11 @@
         },
         {
             "name": "Teleport-Commons",
-            "category": ["04 Teleport"]
+            "category": ["04 Teleport","Teleport-Button"]
         },
         {
             "name": "Teleport-Home",
-            "category": ["04 Teleport"],
+            "category": ["04 Teleport","Teleport-Button"],
             "progression": true,
             "progression_skip_balancing": true
         },
@@ -306,7 +330,7 @@
         },
         {
             "name": "Teleport-World",
-            "category": ["04 Teleport"]
+            "category": ["04 Teleport","Teleport-Button"]
         },
         {
             "name": "Teleport-Majid",
@@ -723,6 +747,7 @@
         {
             "name": "SpellCard-Precision",
             "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
+            "module": "#GolemCourt#",
             "count": 0
         },
         {
@@ -738,6 +763,7 @@
         {
             "name": "SpellCard-Fire Prism",
             "category": ["05 SpellCard","School-Fire","PrimaryOnly"],
+            "module": "#GolemCourt#",
             "count": 0
         },
         {

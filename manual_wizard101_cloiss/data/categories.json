@@ -42,6 +42,9 @@
     "WoodenChests": {
         "hidden": true
     },
+    "SilverChests": {
+        "hidden": true
+    },
     "School-Balance": {
         "hidden": true
     },
@@ -70,6 +73,9 @@
         "hidden": true
     },
     "Quest": {
+        "hidden": true
+    },
+    "Teleport-Button": {
         "hidden": true
     }
 }
