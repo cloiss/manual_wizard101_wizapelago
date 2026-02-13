@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
 
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+from typing import Any
 from worlds.AutoWorld import World
 from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
@@ -471,3 +472,10 @@ def before_extend_hint_information(hint_data: dict[int, dict[int, str]], world: 
 
 def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: World, multiworld: MultiWorld, player: int) -> None:
     pass
+
+def hook_interpret_slot_data(world: World, player: int, slot_data: dict[str, Any]) -> dict[str, Any]:
+    """
+        Called when Universal Tracker wants to perform a fake generation
+        Use this if you want to use or modify the slot_data for passed into re_gen_passthrough
+    """
+    return slot_data
