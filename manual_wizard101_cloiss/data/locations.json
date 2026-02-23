@@ -178,6 +178,7 @@
             "name": "Arthur: Introduction to Balance (Level 7)",
             "category": ["02 The Commons","Quest","School-Balance"],
             "region": "Level7",
+            "required_level": 7,
             "module": "#GolemCourt#",
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190,
@@ -187,6 +188,7 @@
             "name": "Halston: Leyden Lab (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Ravenwood|",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/HaroldArgelston_QST_33.mp3"
@@ -195,6 +197,7 @@
             "name": "Harold: Charge It Up (Level 7)",
             "category": ["02 The Commons","Quest","School-Storm"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfHalstonBalestrom_QST_18.mp3"
@@ -203,6 +206,7 @@
             "name": "Lydia: Introduction to Ice (Level 7)",
             "category": ["02 The Commons","Quest","School-Ice"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Shopping District| and |Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfLydiaGreyrose_QST_11.mp3"
@@ -211,6 +215,7 @@
             "name": "Dalia: Introduction to Fire (Level 7)",
             "category": ["02 The Commons","Quest","School-Fire"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "module": "#GolemCourt#",
             "xp": 190,
@@ -220,6 +225,7 @@
             "name": "Malorn: The Buried Truth (Level 7)",
             "category": ["02 The Commons","Quest","School-Death"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Ravenwood|",
             "module": "#Triton:2#",
             "xp": 190,
@@ -229,6 +235,7 @@
             "name": "Cyrus: Not So Welcome to Myth (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Ravenwood|",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_28.mp3"
@@ -237,6 +244,7 @@
             "name": "Cyrus: Myth Adventure (Level 7)",
             "category": ["02 The Commons","Quest","School-Myth"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_30.mp3"
@@ -245,6 +253,7 @@
             "name": "Moolinda: Introduction to Life (Level 7)",
             "category": ["02 The Commons","Quest","School-Life"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound|WorldData|Sound/Dialogue_CIN/LadyOriel_CIN_23.mp3"
@@ -253,6 +262,7 @@
             "name": "Lucky: A River Runs Through It (Fishing 1)",
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
+            "required_level": 7,
 			"xp": 125,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_23.mp3"
         },
@@ -260,6 +270,7 @@
             "name": "Lucky: Fishful Thinking (Fishing 2)",
             "category": ["02 The Commons","Quest"],
             "region": "Level7",
+            "required_level": 7,
             "requires": "|Area-Cyclops Lane|",
             "module": "#Cyclops#",
 			"xp": 0,
@@ -848,6 +859,7 @@
             "name": "Hallow: Tricks and Treats (Commons Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
+            "required_level": 5,
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_05.mp3"
         },
@@ -855,6 +867,7 @@
             "name": "Hallow: Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
+            "required_level": 5,
             "requires": "|Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_01.mp3"
         },
@@ -886,12 +899,14 @@
             "name": "Hallow: Straw Man (UW Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
+            "required_level": 5,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_04.mp3"
         },
         {
             "name": "Straw: Unicorn Delight (UW Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
+            "required_level": 5,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_03.mp3"
         },
         {

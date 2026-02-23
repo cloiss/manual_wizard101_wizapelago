@@ -361,6 +361,34 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
         world.options.module_triton.value = 2
         world.options.module_firecat.value = 2
 
+def get_locations_total_xp(
+    multiworld: MultiWorld,
+    player: int,
+    location_name_to_location: dict,
+    include_level_xp: bool = False,
+) -> int | tuple[int, dict[int, int], dict[int, set[str]]]:
+    """Sum XP from all locations for this player. If include_level_xp is True, also return per-level XP and location names for level-gated locations."""
+    total_xp = 0
+    level_xp: dict[int, int] = {}
+    level_location_names: dict[int, set[str]] = {}
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in region.locations:
+                location_dict = location_name_to_location.get(location.name, {})
+                xp = location_dict.get("xp", 0)
+                total_xp += xp
+                if include_level_xp:
+                    required_level = location_dict.get("required_level")
+                    if required_level is not None and required_level in HooksRules.level_xp_requirements:
+                        level_xp[required_level] = level_xp.get(required_level, 0) + xp
+                        if required_level not in level_location_names:
+                            level_location_names[required_level] = set()
+                        level_location_names[required_level].add(location.name)
+    if include_level_xp:
+        return total_xp, level_xp, level_location_names
+    return total_xp
+
+
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
@@ -444,24 +472,29 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     if location.name in location_names_to_remove:
                         region.locations.remove(location)
 
-    # Total XP still in locations (after removals)
-    total_xp = 0
-    lvl7_xp = 0
+    # Total XP still in locations (after removals), and per-level XP/location names for level-gated locations
+    total_xp, level_xp, level_location_names = get_locations_total_xp(
+        multiworld, player, world.location_name_to_location, include_level_xp=True
+    )
+
+    # For each level with gated locations: if player cannot reach that level (XP without that level's locations < requirement), remove those locations.
+    # Level 5 is assumed always reachable; only check level 6 and above.
+    # Process levels in descending order; only subtract XP from running total when we remove a level's locations.
+    to_remove: set[str] = set()
+    running_total = total_xp
+    levels_to_check = [lvl for lvl in sorted(level_xp.keys(), reverse=True) if lvl >= 6]
+    for level in levels_to_check:
+        xp_at_level = level_xp[level]
+        req = HooksRules.level_xp_requirements[level]
+        if running_total - xp_at_level < req:
+            to_remove |= level_location_names[level]
+            running_total -= xp_at_level
+
     for region in multiworld.regions:
         if region.player == player:
-            for location in region.locations:
-                location_dict = world.location_name_to_location.get(location.name, {})
-                xp = location_dict.get("xp", 0)
-                if region.name == "Level7":
-                    lvl7_xp += xp
-                total_xp += xp
-
-    # If player cannot reach level 7, remove all level 7 related locations
-    if total_xp - lvl7_xp < HooksRules.level_xp_requirements[7]:
-        # Remove all level 7 related locations
-        if region := next((r for r in multiworld.regions if r.player == player and r.name == "Level7"), None):
-            region.locations.clear()
-            total_xp -= lvl7_xp
+            for location in list(region.locations):
+                if location.name in to_remove:
+                    region.locations.remove(location)
 
     # Fake Events system
     # Add Quest Mirror for each location
@@ -544,17 +577,13 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
             item_names_to_remove.append(item['name'])
 
     # Total XP still in locations (after removals)
-    total_xp = 0
-    for region in multiworld.regions:
-        if region.player == player:
-            for location in region.locations:
-                location_dict = world.location_name_to_location.get(location.name, {})
-                total_xp += location_dict.get("xp", 0)
-    
+    total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
+
     # Convert total XP to level (largest level whose requirement <= total_xp)
-    max_level = max(
-        (level for level, req in HooksRules.level_xp_requirements.items() if total_xp >= req),
-        default=1,
+    reqs = HooksRules.level_xp_requirements
+    max_level = next(
+        (level for level in sorted(reqs, reverse=True) if total_xp >= reqs[level]),
+        1,
     )
 
     # Remove all items that are ranked higher than the player's current level
@@ -574,7 +603,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     item_names_to_add: list[str] = []
 
-    # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
     secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
@@ -654,7 +682,7 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    pass
+    world.total_xp_for_rules = get_locations_total_xp(multiworld, player, world.location_name_to_location)
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):

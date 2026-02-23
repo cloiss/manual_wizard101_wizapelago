@@ -63,11 +63,17 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
 
 def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
-        xp: int = int(xp)
+        xp = int(xp)
 
     player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
-
-    return player_xp >= xp
+    if player_xp >= xp:
+        return True
+    # Requirement not met yet; if total XP in the world is below the threshold, it's unreachable so treat as satisfied
+    world = state.multiworld.worlds[player]
+    total_xp = getattr(world, "total_xp_for_rules", None)
+    if total_xp is not None and total_xp < xp:
+        return True
+    return False
 
 level_xp_requirements = {
         1: 0,
@@ -89,11 +95,10 @@ level_xp_requirements = {
 
 def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
     if not isinstance(level, int):
-        level: int = int(level)
+        level = int(level)
 
     """Check if player has reached the specified level based on total XP."""
     required_xp = level_xp_requirements.get(level, 999999999)
-    
     return hasXP(state, player, required_xp)
 
 # Custom function to do a more advanced damage check to properly screen how much damage a player has
