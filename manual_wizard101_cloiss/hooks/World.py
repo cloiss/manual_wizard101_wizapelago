@@ -368,16 +368,28 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
-    # 0 = none, 1 = all, 2 = ore
+    # 0 = none, 1 = anywhere (6 location types), 2 = anywhere-ore only, 3 = all (per-area)
     reagents_option = get_option_value(multiworld, player, "reagents")
-    
-    # If option is none or ore, remove all items but ore
-    if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["Reagents"]
+    reagent_locations = world.location_name_groups.get("Reagents", [])
+    reagent_anywhere_names = [
+        "Reagent: Mist Wood (Anywhere)",
+        "Reagent: Cat Tail (Anywhere)",
+        "Reagent: Deep Mushroom (Anywhere)",
+        "Reagent: Flax (Anywhere)",
+        "Reagent: Ore (Anywhere)",
+        "Reagent: Rare Reagent (Anywhere)",
+    ]
+    if reagents_option == 0:
         location_names_to_remove.extend(reagent_locations)
-    # add back ore for ore option
-    if reagents_option == 2:
-        location_names_to_remove.remove("Reagent: Ore")
+    elif reagents_option == 1:
+        location_names_to_remove.extend(reagent_locations)
+        for name in reagent_anywhere_names:
+            location_names_to_remove.remove(name)
+    elif reagents_option == 2:
+        location_names_to_remove.extend(reagent_locations)
+        location_names_to_remove.remove("Reagent: Ore (Anywhere)")
+    elif reagents_option == 3:
+        location_names_to_remove.extend(reagent_anywhere_names)
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
