@@ -487,8 +487,11 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         xp_at_level = level_xp[level]
         req = HooksRules.level_xp_requirements[level]
         if running_total - xp_at_level < req:
+            # Bitwaise OR operation on the set, adding all location names for the level to the set
             to_remove |= level_location_names[level]
             running_total -= xp_at_level
+        else:
+            break
 
     for region in multiworld.regions:
         if region.player == player:
@@ -581,6 +584,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # Convert total XP to level (largest level whose requirement <= total_xp)
     reqs = HooksRules.level_xp_requirements
+    #sort the level requirements in descending order and takes the first (highest) level whose requirement is met.
     max_level = next(
         (level for level in sorted(reqs, reverse=True) if total_xp >= reqs[level]),
         1,
