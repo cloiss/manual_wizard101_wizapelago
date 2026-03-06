@@ -914,84 +914,70 @@
             "name": "Reagent: Cat Tail (Olde Town)",
             "category": ["105 Olde Town", "Reagents"],
             "region": "EarlyOldeTown",
-            "module": "#Cyclops# or #Triton# or #Firecat#",
             "requires": "|Area-Olde Town|"
         },
         {
             "name": "Reagent: Mist Wood (Olde Town)",
             "category": ["105 Olde Town", "Reagents"],
             "region": "EarlyOldeTown",
-            "module": "#Cyclops# or #Triton# or #Firecat#",
             "requires": "|Area-Olde Town|"
         },
         {
             "name": "Reagent: Cat Tail (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
             "region": "EarlyStreets-Cyclops",
-            "module": "#Cyclops#",
             "requires": "|Area-Cyclops Lane|"
         },
         {
             "name": "Reagent: Deep Mushroom (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
             "region": "EarlyStreets-Cyclops",
-            "module": "#Cyclops#",
             "requires": "|Area-Cyclops Lane|"
         },
         {
             "name": "Reagent: Mist Wood (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
             "region": "EarlyStreets-Cyclops",
-            "module": "#Cyclops#",
             "requires": "|Area-Cyclops Lane|"
         },
         {
             "name": "Reagent: Mist Wood (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
             "region": "EarlyStreets-Triton",
-            "module": "#Triton#",
             "requires": "|Area-Triton Avenue|"
         },
         {
             "name": "Reagent: Flax (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
             "region": "EarlyStreets-Triton",
-            "module": "#Triton#",
             "requires": "|Area-Triton Avenue|"
         },
         {
             "name": "Reagent: Cat Tail (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
             "region": "EarlyStreets-Triton",
-            "module": "#Triton#",
             "requires": "|Area-Triton Avenue|"
         },
         {
             "name": "Reagent: Flax (Haunted Cave)",
             "category": ["135 Haunted Cave", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "module": "#Triton:2#",
-            "requires": "|Area-Haunted Cave|"
+            "region": "EarlyStreets-HauntedCave"
         },
         {
             "name": "Reagent: Ore (Haunted Cave)",
             "category": ["135 Haunted Cave", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "module": "#Triton:2#",
-            "requires": "|Area-Haunted Cave|"
+            "region": "EarlyStreets-HauntedCave"
         },
         {
             "name": "Reagent: Mist Wood (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
             "region": "EarlyStreets-Firecat",
-            "module": "#Firecat#",
             "requires": "|Area-Firecat Alley|"
         },
         {
             "name": "Reagent: Ore (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
             "region": "EarlyStreets-Firecat",
-            "module": "#Firecat#",
             "requires": "|Area-Firecat Alley|"
         },
         {
@@ -1231,9 +1217,7 @@
         {
             "name": "Wooden Chest: Haunted Cave",
             "category": ["135 Haunted Cave", "WoodenChests"],
-            "region": "EarlyStreets-Triton",
-            "module": "#Triton:2#",
-            "requires": "|Area-Haunted Cave|"
+            "region": "EarlyStreets-HauntedCave"
         },
         {
             "name": "Wooden Chest: Dark Cave",
