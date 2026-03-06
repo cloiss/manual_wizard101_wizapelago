@@ -686,7 +686,7 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    world.total_xp_for_rules = get_locations_total_xp(multiworld, player, world.location_name_to_location)
+    world.final_total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):

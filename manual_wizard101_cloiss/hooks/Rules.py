@@ -70,7 +70,7 @@ def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
         return True
     # Requirement not met yet; if total XP in the world is below the threshold, it's unreachable so treat as satisfied
     world = state.multiworld.worlds[player]
-    total_xp = getattr(world, "total_xp_for_rules", None)
+    total_xp = getattr(world, "final_total_xp", None)
     if total_xp is not None and total_xp < xp:
         return True
     return False

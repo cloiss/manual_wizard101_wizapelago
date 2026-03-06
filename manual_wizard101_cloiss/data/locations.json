@@ -859,7 +859,6 @@
             "name": "Hallow: Tricks and Treats (Commons Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "required_level": 5,
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_05.mp3"
         },
@@ -867,7 +866,6 @@
             "name": "Hallow: Ghostly Spires",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "required_level": 5,
             "requires": "|Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_01.mp3"
         },
@@ -899,14 +897,12 @@
             "name": "Hallow: Straw Man (UW Jack)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "required_level": 5,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_04.mp3"
         },
         {
             "name": "Straw: Unicorn Delight (UW Pumpkins)",
             "category": ["31 Halloween","Halloween","Quest"],
             "region": "Commons-Level5",
-            "required_level": 5,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_03.mp3"
         },
         {
