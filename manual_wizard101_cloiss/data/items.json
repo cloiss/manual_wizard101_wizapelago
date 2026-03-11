@@ -554,41 +554,65 @@
         {
             "name": "SpellCard-Weakness",
             "category": ["05 SpellCard","School-Balance"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Thermic Shield",
             "category": ["05 SpellCard","School-Storm"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Volcanic Shield",
             "category": ["05 SpellCard","School-Ice"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Glacial Shield",
             "category": ["05 SpellCard","School-Fire"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Dream Shield",
             "category": ["05 SpellCard","School-Death"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Myth Trap",
             "category": ["05 SpellCard","School-Myth"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Legend Shield",
             "category": ["05 SpellCard","School-Life"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Secondary L8",
             "category": ["05 SpellCard","School-Any"],
+            "value": {
+                "level": 8
+            },
             "count": 0
         },
         {
@@ -678,6 +702,9 @@
         {
             "name": "SpellCard-Sprite",
             "category": ["05 SpellCard","School-Life","SpellCard-Rank 3"],
+            "value": {
+                "level": 10
+            },
             "count": 0
         },
         {
@@ -748,108 +775,165 @@
             "name": "SpellCard-Precision",
             "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
             "module": "#GolemCourt#",
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Storm Prism",
             "category": ["05 SpellCard","School-Storm","PrimaryOnly"],
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Ice Trap",
             "category": ["05 SpellCard","School-Ice","PrimaryOnly"],
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Fire Prism",
             "category": ["05 SpellCard","School-Fire","PrimaryOnly"],
             "module": "#GolemCourt#",
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Deathblade",
             "category": ["05 SpellCard","School-Death","PrimaryOnly"],
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Troll Minion",
             "category": ["05 SpellCard","School-Myth","PrimaryOnly"],
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Unicorn",
             "category": ["05 SpellCard","School-Life","PrimaryOnly"],
+            "value": {
+                "level": 7
+            },
             "count": 0
         },
         {
             "name": "SpellCard-Storm Shield",
             "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Snow Shield",
             "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Fire Shield",
             "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Death Shield",
             "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Myth Shield",
             "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Life Shield",
             "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Storm Weakness",
             "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Ice Weakness",
             "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Fire Weakness",
             "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Death Weakness",
             "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Myth Weakness",
             "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },
         {
             "name": "SpellCard-Life Weakness",
             "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
+            "value": {
+                "level": 10
+            },
             "filler": true,
             "count": 0
         },

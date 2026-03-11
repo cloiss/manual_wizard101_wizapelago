@@ -39,7 +39,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     option_item_pairs = [
         (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
         (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
-        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|"),
         (get_option_value(multiworld, player, "teleport_button_location"), "|@Teleport-Button|")
     ]
 
@@ -63,22 +63,19 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
 
 def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
-        xp: int = int(xp)
+        xp = int(xp)
 
     player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
-
-    return player_xp >= xp
-
-def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level: str | int) -> bool:
-    # show checks as in logic for UT even when they are missing experience
-    if getattr(multiworld, 'generation_is_fake', False):
+    if player_xp >= xp:
         return True
+    # Requirement not met yet; if total XP in the world is below the threshold, it's unreachable so treat as satisfied
+    world = state.multiworld.worlds[player]
+    total_xp = getattr(world, "final_total_xp", None)
+    if total_xp is not None and total_xp < xp:
+        return True
+    return False
 
-    if not isinstance(level, int):
-        level: int = int(level)
-
-    """Check if player has reached the specified level based on total XP."""
-    level_xp_requirements = {
+level_xp_requirements = {
         1: 0,
         2: 45,
         3: 160,
@@ -95,9 +92,17 @@ def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level:
         14: 13755,
         15: 16680
     }
-    
+
+def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level: str | int) -> bool:
+    # show checks as in logic for UT even when they are missing experience
+    if getattr(multiworld, 'generation_is_fake', False):
+        return True
+
+    if not isinstance(level, int):
+        level: int = int(level)
+
+    """Check if player has reached the specified level based on total XP."""
     required_xp = level_xp_requirements.get(level, 999999999)
-    
     return hasXP(state, player, required_xp)
 
 # Custom function to do a more advanced damage check to properly screen how much damage a player has
@@ -138,7 +143,7 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
     training_points = item_values.get("training_points", 999)
 
     # Check if player has high enough level to train spell
-    if not hasLevel(state, player, spell_level):
+    if not hasLevel(multiworld, state, player, spell_level):
         return False
 
     # Check if the player can physically train the spells via ravenwood
@@ -148,12 +153,12 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
         return False
 
     # Check if the player has enough training points to train secondary school spells
-    if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
+    if "School-" + primary_school not in categories and not hasTrainingPoints(multiworld, state, player, training_points):
         return False
 
     return True
 
-def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
+def hasTrainingPoints(multiworld: MultiWorld, state: CollectionState, player: int, tp: int | str) -> bool:
     if not isinstance(tp, int):
         tp: int = int(tp)
 
@@ -161,7 +166,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
 
     # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
     for level in range(4, 21, 4):
-        if hasLevel(state, player, level):
+        if hasLevel(multiworld, state, player, level):
             playerTP += 1
         else:
             break
@@ -169,7 +174,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
     # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
     # Start at 25 since level 20 was already counted above
     for level in range(25, 171, 5):
-        if hasLevel(state, player, level):
+        if hasLevel(multiworld, state, player, level):
             playerTP += 1
         else:
             break
