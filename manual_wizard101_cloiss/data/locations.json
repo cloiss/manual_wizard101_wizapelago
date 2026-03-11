@@ -830,36 +830,180 @@
 			"log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Foulgaze_005_04.mp3"
         },
         {
-            "name": "Reagent: Mist Wood",
+            "name": "Reagent: Mist Wood (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Reagent: Cat Tail",
+            "name": "Reagent: Cat Tail (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Reagent: Deep Mushroom",
+            "name": "Reagent: Deep Mushroom (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "Commons"
         },
         {
-            "name": "Reagent: Flax",
+            "name": "Reagent: Flax (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
         },
         {
-            "name": "Reagent: Ore",
+            "name": "Reagent: Ore (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "EarlyStreets",
             "module": "#Cyclops# or #Firecat:2# or #Triton:2#",
             "requires": "(|Area-Haunted Cave| and |Area-Triton Avenue|) or (|Area-Dark Cave| and |Area-Cyclops Lane|) or |Area-Firecat Alley|"
         },
         {
-            "name": "Reagent: Any Rare Reagent",
+            "name": "Reagent: Rare Reagent (Anywhere)",
             "category": ["(No Category)", "Reagents"],
             "region": "UnicornWay"
+        },
+        {
+            "name": "Reagent: Cat Tail (Unicorn Way)",
+            "category": ["101 Unicorn Way", "Reagents"],
+            "region": "UnicornWay"
+        },
+        {
+            "name": "Reagent: Flax (Unicorn Way)",
+            "category": ["101 Unicorn Way", "Reagents"],
+            "region": "UnicornWay"
+        },
+        {
+            "name": "Reagent: Mist Wood (Unicorn Way)",
+            "category": ["101 Unicorn Way", "Reagents"],
+            "region": "UnicornWay"
+        },
+        {
+            "name": "Reagent: Cat Tail (Commons)",
+            "category": ["102 The Commons", "Reagents"],
+            "region": "Commons"
+        },
+        {
+            "name": "Reagent: Deep Mushroom (Commons)",
+            "category": ["102 The Commons", "Reagents"],
+            "region": "Commons"
+        },
+        {
+            "name": "Reagent: Flax (Commons)",
+            "category": ["102 The Commons", "Reagents"],
+            "region": "Commons"
+        },
+        {
+            "name": "Reagent: Cat Tail (Ravenwood)",
+            "category": ["103 Ravenwood", "Reagents"],
+            "region": "Ravenwood"
+        },
+        {
+            "name": "Reagent: Flax (Ravenwood)",
+            "category": ["103 Ravenwood", "Reagents"],
+            "region": "Ravenwood"
+        },
+        {
+            "name": "Reagent: Mist Wood (Ravenwood)",
+            "category": ["103 Ravenwood", "Reagents"],
+            "region": "Ravenwood"
+        },
+        {
+            "name": "Reagent: Deep Mushroom (Shopping District)",
+            "category": ["104 Shopping District", "Reagents"],
+            "region": "ShoppingDistrict"
+        },
+        {
+            "name": "Reagent: Flax (Shopping District)",
+            "category": ["104 Shopping District", "Reagents"],
+            "region": "ShoppingDistrict"
+        },
+        {
+            "name": "Reagent: Mist Wood (Shopping District)",
+            "category": ["104 Shopping District", "Reagents"],
+            "region": "ShoppingDistrict"
+        },
+        {
+            "name": "Reagent: Cat Tail (Olde Town)",
+            "category": ["105 Olde Town", "Reagents"],
+            "region": "EarlyOldeTown",
+            "requires": "|Area-Olde Town|"
+        },
+        {
+            "name": "Reagent: Mist Wood (Olde Town)",
+            "category": ["105 Olde Town", "Reagents"],
+            "region": "EarlyOldeTown",
+            "requires": "|Area-Olde Town|"
+        },
+        {
+            "name": "Reagent: Cat Tail (Cyclops Lane)",
+            "category": ["140 Cyclops Lane", "Reagents"],
+            "region": "EarlyStreets-Cyclops",
+            "requires": "|Area-Cyclops Lane|"
+        },
+        {
+            "name": "Reagent: Deep Mushroom (Cyclops Lane)",
+            "category": ["140 Cyclops Lane", "Reagents"],
+            "region": "EarlyStreets-Cyclops",
+            "requires": "|Area-Cyclops Lane|"
+        },
+        {
+            "name": "Reagent: Mist Wood (Cyclops Lane)",
+            "category": ["140 Cyclops Lane", "Reagents"],
+            "region": "EarlyStreets-Cyclops",
+            "requires": "|Area-Cyclops Lane|"
+        },
+        {
+            "name": "Reagent: Mist Wood (Triton Avenue)",
+            "category": ["130 Triton Avenue", "Reagents"],
+            "region": "EarlyStreets-Triton",
+            "requires": "|Area-Triton Avenue|"
+        },
+        {
+            "name": "Reagent: Flax (Triton Avenue)",
+            "category": ["130 Triton Avenue", "Reagents"],
+            "region": "EarlyStreets-Triton",
+            "requires": "|Area-Triton Avenue|"
+        },
+        {
+            "name": "Reagent: Cat Tail (Triton Avenue)",
+            "category": ["130 Triton Avenue", "Reagents"],
+            "region": "EarlyStreets-Triton",
+            "requires": "|Area-Triton Avenue|"
+        },
+        {
+            "name": "Reagent: Flax (Haunted Cave)",
+            "category": ["135 Haunted Cave", "Reagents"],
+            "region": "EarlyStreets-HauntedCave"
+        },
+        {
+            "name": "Reagent: Ore (Haunted Cave)",
+            "category": ["135 Haunted Cave", "Reagents"],
+            "region": "EarlyStreets-HauntedCave"
+        },
+        {
+            "name": "Reagent: Mist Wood (Firecat Alley)",
+            "category": ["150 Firecat Alley", "Reagents"],
+            "region": "EarlyStreets-Firecat",
+            "requires": "|Area-Firecat Alley|"
+        },
+        {
+            "name": "Reagent: Ore (Firecat Alley)",
+            "category": ["150 Firecat Alley", "Reagents"],
+            "region": "EarlyStreets-Firecat",
+            "requires": "|Area-Firecat Alley|"
+        },
+        {
+            "name": "Reagent: Flax (Dark Cave)",
+            "category": ["145 Dark Cave", "Reagents"],
+            "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2#",
+            "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
+        },
+        {
+            "name": "Reagent: Ore (Dark Cave)",
+            "category": ["145 Dark Cave", "Reagents"],
+            "region": "EarlyStreets",
+            "module": "#Cyclops# or #Firecat:2#",
+            "requires": "|Area-Dark Cave| and (|Area-Cyclops Lane| or |Area-Firecat Alley|)"
         },
         {
             "name": "Hallow: Tricks and Treats (Commons Pumpkins)",
@@ -1084,9 +1228,7 @@
         {
             "name": "Wooden Chest: Haunted Cave",
             "category": ["135 Haunted Cave", "WoodenChests"],
-            "region": "EarlyStreets-Triton",
-            "module": "#Triton:2#",
-            "requires": "|Area-Haunted Cave|"
+            "region": "EarlyStreets-HauntedCave"
         },
         {
             "name": "Wooden Chest: Dark Cave",

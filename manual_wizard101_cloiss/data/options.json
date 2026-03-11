@@ -140,13 +140,14 @@
         },
         "reagents": {
             "description": [
-                "Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic."
+                "Adds locations for collecting reagents in Wizard City. Select 'anywhere' to add one location per reagent type (6 locations). Select 'anywhere-ore' to only add the Ore location, which has the most interesting access logic. Select 'all' to add reagent locations per area: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town, Cyclops Lane, Triton Avenue, Haunted Cave, Firecat Alley, and Dark Cave. (Adds up to 26 locations)"
             ],
             "type": "Choice",
             "values": {
                 "none": 0,
-                "all": 1,
-                "ore": 2
+                "anywhere": 1,
+                "anywhere-ore": 2,
+                "all": 3
             },
             "default": 0,
             "group": "Check Locations"

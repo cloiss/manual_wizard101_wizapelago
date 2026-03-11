@@ -396,31 +396,46 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
-    # 0 = none, 1 = all, 2 = ore
+    # 0 = none, 1 = anywhere (6 location types), 2 = anywhere-ore only, 3 = all (per-area)
     reagents_option = get_option_value(multiworld, player, "reagents")
-    
-    # If option is none or ore, remove all items but ore
-    if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["Reagents"]
-        location_names_to_remove.extend(reagent_locations)
-    # add back ore for ore option
-    if reagents_option == 2:
-        location_names_to_remove.remove("Reagent: Ore")
+    reagent_locations = world.location_name_groups.get("Reagents", [])
+    reagent_anywhere_names = [
+        "Reagent: Mist Wood (Anywhere)",
+        "Reagent: Cat Tail (Anywhere)",
+        "Reagent: Deep Mushroom (Anywhere)",
+        "Reagent: Flax (Anywhere)",
+        "Reagent: Ore (Anywhere)",
+        "Reagent: Rare Reagent (Anywhere)",
+    ]
+    match reagents_option:
+        case 0:
+            location_names_to_remove.extend(reagent_locations)
+        case 1:
+            # Remove all reagent locations except the "anywhere" ones
+            reagent_locations_to_remove = list(reagent_locations)
+            for name in reagent_anywhere_names:
+                reagent_locations_to_remove.remove(name)
+            location_names_to_remove.extend(reagent_locations_to_remove)
+        case 2:
+            location_names_to_remove.extend(reagent_locations)
+            location_names_to_remove.remove("Reagent: Ore (Anywhere)")
+        case 3:
+            location_names_to_remove.extend(reagent_anywhere_names)
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
     wooden_chests_option = get_option_value(multiworld, player, "wooden_chests")
 
     wooden_chest_locations = world.location_name_groups.get("WoodenChests",[])
-    # If option is none, remove all wooden chest locations
-    if wooden_chests_option == 0:
+    # 0 = none, 1 = anywhere, 2 = all
+    match wooden_chests_option:
+        case 0:  # none: remove all wooden chest locations
             location_names_to_remove.extend(wooden_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif wooden_chests_option == 1:
-            location_names_to_remove.extend(wooden_chest_locations)
-            location_names_to_remove.remove("Wooden Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif wooden_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            wooden_chest_locations_to_remove = list(wooden_chest_locations)
+            wooden_chest_locations_to_remove.remove("Wooden Chest: Anywhere")
+            location_names_to_remove.extend(wooden_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Wooden Chest: Anywhere")
 
     # Handle Silver Chest Locations
@@ -428,15 +443,14 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     silver_chests_option = get_option_value(multiworld, player, "silver_chests")
 
     silver_chest_locations = world.location_name_groups.get("SilverChests",[])
-    # If option is none, remove all silver chest locations
-    if silver_chests_option == 0:
+    match silver_chests_option:
+        case 0:  # none: remove all silver chest locations
             location_names_to_remove.extend(silver_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif silver_chests_option == 1:
-            location_names_to_remove.extend(silver_chest_locations)
-            location_names_to_remove.remove("Silver Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif silver_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            silver_chest_locations_to_remove = list(silver_chest_locations)
+            silver_chest_locations_to_remove.remove("Silver Chest: Anywhere")
+            location_names_to_remove.extend(silver_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
 
     # Handle School-Based Locations
