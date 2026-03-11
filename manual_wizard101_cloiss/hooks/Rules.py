@@ -143,7 +143,7 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
     training_points = item_values.get("training_points", 999)
 
     # Check if player has high enough level to train spell
-    if not hasLevel(state, player, spell_level):
+    if not hasLevel(multiworld, state, player, spell_level):
         return False
 
     # Check if the player can physically train the spells via ravenwood
@@ -153,12 +153,12 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
         return False
 
     # Check if the player has enough training points to train secondary school spells
-    if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
+    if "School-" + primary_school not in categories and not hasTrainingPoints(multiworld, state, player, training_points):
         return False
 
     return True
 
-def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
+def hasTrainingPoints(multiworld: MultiWorld, state: CollectionState, player: int, tp: int | str) -> bool:
     if not isinstance(tp, int):
         tp: int = int(tp)
 
@@ -166,7 +166,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
 
     # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
     for level in range(4, 21, 4):
-        if hasLevel(state, player, level):
+        if hasLevel(multiworld, state, player, level):
             playerTP += 1
         else:
             break
@@ -174,7 +174,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
     # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
     # Start at 25 since level 20 was already counted above
     for level in range(25, 171, 5):
-        if hasLevel(state, player, level):
+        if hasLevel(multiworld, state, player, level):
             playerTP += 1
         else:
             break
