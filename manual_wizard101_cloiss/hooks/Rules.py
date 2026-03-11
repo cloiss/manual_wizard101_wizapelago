@@ -93,9 +93,13 @@ level_xp_requirements = {
         15: 16680
     }
 
-def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level: str | int) -> bool:
+    # show checks as in logic for UT even when they are missing experience
+    if getattr(multiworld, 'generation_is_fake', False):
+        return True
+
     if not isinstance(level, int):
-        level = int(level)
+        level: int = int(level)
 
     """Check if player has reached the specified level based on total XP."""
     required_xp = level_xp_requirements.get(level, 999999999)
