@@ -51,7 +51,8 @@
     },
     "EarlyStreets-HauntedCave": {
         "requires": "|Area-Haunted Cave|",
-        "module": "#Triton:2#"
+        "module": "#Triton:2#",
+        "_comment": "Friendly teleporting directly to the Haunted Cave is not possible, so it is only accessible through the Triton area."
     },
     "EarlyStreets-Firecat":{
         "requires": "|Area-Firecat Alley|",
