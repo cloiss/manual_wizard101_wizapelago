@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
 
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+from typing import Any
 from worlds.AutoWorld import World
 from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
@@ -23,7 +24,7 @@ if TYPE_CHECKING:
 from ..Data import game_table, item_table, location_table, region_table
 
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
-from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat, remove_specific_item
 
 # Used to parse the module requires strings
 from ..Rules import infix_to_postfix, evaluate_postfix
@@ -46,12 +47,6 @@ import random, math
 ## The create_item method is used by plando and start_inventory settings to create an item from an item name.
 ## The fill_slot_data method will be used to send data to the Manual client for later use, like deathlink.
 ########################################################################################
-
-def get_option_value_regen(multiworld: MultiWorld, player: int, option_name: str):
-    if hasattr(multiworld, "re_gen_passthrough"):
-       return multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"][option_name]
-    else:
-       return get_option_value(multiworld, player, option_name)
 
 def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
     # order is counterclockwise based on school position in Ravenwood
@@ -309,13 +304,20 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
     return False
 
+def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> None:
+    """
+    This is the earliest hook called during generation, before anything else is done.
+    Use it to check or modify incompatible options, or to set up variables for later use.
+    """
+    pass
+
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Before anything happens, edit the options for primary and secondary school
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
 
-    primary_school = schools[get_option_value_regen(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value_regen(multiworld, player, "secondary_school")]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
 
     valid_schools = schools.copy()
     valid_schools.remove("Any")
@@ -339,7 +341,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Also alter module settings to fit goal as needed
     goals = ["Nightshade","Akilles","HarvestLord","Roberto","Alicane","Melweena","Foulgaze"]
 
-    goal = goals[get_option_value_regen(multiworld, player, "goal")]
+    goal = goals[get_option_value(multiworld, player, "goal")]
 
     # use full version of each street for bosses on that street
     if goal == "Akilles":
@@ -614,7 +616,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         try:
             # next clause accounts for removing the correct number of copies of an item, rather than all copies
             item = next(i for i in item_pool if i.name == item_name)
-            item_pool.remove(item)
+            remove_specific_item(item_pool, item)
         except:
             pass
 
@@ -641,7 +643,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == "Location Name")
     # item_to_place = next(i for i in item_pool if i.name == "Item Name")
     # location.place_locked_item(item_to_place)
-    # item_pool.remove(item_to_place)
+    # remove_specific_item(item_pool, item_to_place)
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
@@ -794,3 +796,10 @@ def before_extend_hint_information(hint_data: dict[int, dict[int, str]], world: 
 
 def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: World, multiworld: MultiWorld, player: int) -> None:
     pass
+
+def hook_interpret_slot_data(world: World, player: int, slot_data: dict[str, Any]) -> dict[str, Any]:
+    """
+        Called when Universal Tracker wants to perform a fake generation
+        Use this if you want to use or modify the slot_data for passed into re_gen_passthrough
+    """
+    return slot_data
