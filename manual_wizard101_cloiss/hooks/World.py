@@ -341,7 +341,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Also alter module settings to fit goal as needed
     goals = ["Nightshade","Akilles","HarvestLord","Roberto","Alicane","Melweena","Foulgaze"]
 
-    goal = goals[get_option_value_regen(multiworld, player, "goal")]
+    goal = goals[get_option_value(multiworld, player, "goal")]
 
     # use full version of each street for bosses on that street
     if goal == "Akilles":

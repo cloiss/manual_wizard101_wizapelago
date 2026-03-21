@@ -17,6 +17,11 @@ generate:
 	$(ARCHIPELAGO_PATH)\ArchipelagoGenerate.exe
 gen: generate
 
+pig: package install wait gen
+
+wait:
+	sleep 5
+
 host:
 	$(ARCHIPELAGO_PATH)\ArchipelagoServer.exe
 
