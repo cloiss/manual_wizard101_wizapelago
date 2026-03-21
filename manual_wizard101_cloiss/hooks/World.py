@@ -363,6 +363,34 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
         world.options.module_triton.value = 2
         world.options.module_firecat.value = 2
 
+def get_locations_total_xp(
+    multiworld: MultiWorld,
+    player: int,
+    location_name_to_location: dict,
+    include_level_xp: bool = False,
+) -> int | tuple[int, dict[int, int], dict[int, set[str]]]:
+    """Sum XP from all locations for this player. If include_level_xp is True, also return per-level XP and location names for level-gated locations."""
+    total_xp = 0
+    level_xp: dict[int, int] = {}
+    level_location_names: dict[int, set[str]] = {}
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in region.locations:
+                location_dict = location_name_to_location.get(location.name, {})
+                xp = location_dict.get("xp", 0)
+                total_xp += xp
+                if include_level_xp:
+                    required_level = location_dict.get("required_level")
+                    if required_level is not None and required_level in HooksRules.level_xp_requirements:
+                        level_xp[required_level] = level_xp.get(required_level, 0) + xp
+                        if required_level not in level_location_names:
+                            level_location_names[required_level] = set()
+                        level_location_names[required_level].add(location.name)
+    if include_level_xp:
+        return total_xp, level_xp, level_location_names
+    return total_xp
+
+
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
@@ -370,31 +398,46 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
-    # 0 = none, 1 = all, 2 = ore
+    # 0 = none, 1 = anywhere (6 location types), 2 = anywhere-ore only, 3 = all (per-area)
     reagents_option = get_option_value(multiworld, player, "reagents")
-    
-    # If option is none or ore, remove all items but ore
-    if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["Reagents"]
-        location_names_to_remove.extend(reagent_locations)
-    # add back ore for ore option
-    if reagents_option == 2:
-        location_names_to_remove.remove("Reagent: Ore")
+    reagent_locations = world.location_name_groups.get("Reagents", [])
+    reagent_anywhere_names = [
+        "Reagent: Mist Wood (Anywhere)",
+        "Reagent: Cat Tail (Anywhere)",
+        "Reagent: Deep Mushroom (Anywhere)",
+        "Reagent: Flax (Anywhere)",
+        "Reagent: Ore (Anywhere)",
+        "Reagent: Rare Reagent (Anywhere)",
+    ]
+    match reagents_option:
+        case 0:
+            location_names_to_remove.extend(reagent_locations)
+        case 1:
+            # Remove all reagent locations except the "anywhere" ones
+            reagent_locations_to_remove = list(reagent_locations)
+            for name in reagent_anywhere_names:
+                reagent_locations_to_remove.remove(name)
+            location_names_to_remove.extend(reagent_locations_to_remove)
+        case 2:
+            location_names_to_remove.extend(reagent_locations)
+            location_names_to_remove.remove("Reagent: Ore (Anywhere)")
+        case 3:
+            location_names_to_remove.extend(reagent_anywhere_names)
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
     wooden_chests_option = get_option_value(multiworld, player, "wooden_chests")
 
     wooden_chest_locations = world.location_name_groups.get("WoodenChests",[])
-    # If option is none, remove all wooden chest locations
-    if wooden_chests_option == 0:
+    # 0 = none, 1 = anywhere, 2 = all
+    match wooden_chests_option:
+        case 0:  # none: remove all wooden chest locations
             location_names_to_remove.extend(wooden_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif wooden_chests_option == 1:
-            location_names_to_remove.extend(wooden_chest_locations)
-            location_names_to_remove.remove("Wooden Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif wooden_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            wooden_chest_locations_to_remove = list(wooden_chest_locations)
+            wooden_chest_locations_to_remove.remove("Wooden Chest: Anywhere")
+            location_names_to_remove.extend(wooden_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Wooden Chest: Anywhere")
 
     # Handle Silver Chest Locations
@@ -402,15 +445,14 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     silver_chests_option = get_option_value(multiworld, player, "silver_chests")
 
     silver_chest_locations = world.location_name_groups.get("SilverChests",[])
-    # If option is none, remove all silver chest locations
-    if silver_chests_option == 0:
+    match silver_chests_option:
+        case 0:  # none: remove all silver chest locations
             location_names_to_remove.extend(silver_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif silver_chests_option == 1:
-            location_names_to_remove.extend(silver_chest_locations)
-            location_names_to_remove.remove("Silver Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif silver_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            silver_chest_locations_to_remove = list(silver_chest_locations)
+            silver_chest_locations_to_remove.remove("Silver Chest: Anywhere")
+            location_names_to_remove.extend(silver_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
 
     # Handle School-Based Locations
@@ -445,6 +487,33 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                 for location in list(region.locations):
                     if location.name in location_names_to_remove:
                         region.locations.remove(location)
+
+    # Total XP still in locations (after removals), and per-level XP/location names for level-gated locations
+    total_xp, level_xp, level_location_names = get_locations_total_xp(
+        multiworld, player, world.location_name_to_location, include_level_xp=True
+    )
+
+    # For each level with gated locations: if player cannot reach that level (XP without that level's locations < requirement), remove those locations.
+    # Level 5 is assumed always reachable; only check level 6 and above.
+    # Process levels in descending order; only subtract XP from running total when we remove a level's locations.
+    to_remove: set[str] = set()
+    running_total = total_xp
+    levels_to_check = [lvl for lvl in sorted(level_xp.keys(), reverse=True) if lvl >= 6]
+    for level in levels_to_check:
+        xp_at_level = level_xp[level]
+        req = HooksRules.level_xp_requirements[level]
+        if running_total - xp_at_level < req:
+            # Bitwaise OR operation on the set, adding all location names for the level to the set
+            to_remove |= level_location_names[level]
+            running_total -= xp_at_level
+        else:
+            break
+
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in list(region.locations):
+                if location.name in to_remove:
+                    region.locations.remove(location)
 
     # Fake Events system
     # Add Quest Mirror for each location
@@ -526,6 +595,22 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         if not module_result:
             item_names_to_remove.append(item['name'])
 
+    # Total XP still in locations (after removals)
+    total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
+
+    # Convert total XP to level (largest level whose requirement <= total_xp)
+    reqs = HooksRules.level_xp_requirements
+    #sort the level requirements in descending order and takes the first (highest) level whose requirement is met.
+    max_level = next(
+        (level for level in sorted(reqs, reverse=True) if total_xp >= reqs[level]),
+        1,
+    )
+
+    # Remove all items that are ranked higher than the player's current level
+    for item in item_table:
+        if item.get("value", {}).get("level", 0) > max_level:
+            item_names_to_remove.append(item["name"])
+
     for item_name in item_names_to_remove:
         # try-except here accounts for trying to remove items that don't exist (e.g. Fire Prism when Golem Court is disabled and you are not a Fire wizard)
         try:
@@ -538,7 +623,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     item_names_to_add: list[str] = []
 
-    # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
     secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
@@ -618,7 +702,7 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    pass
+    world.final_total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):

@@ -194,7 +194,7 @@ Manual_Wizard101_Cloiss:
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Regina: The Final Piece (Iron Golem)","Reagent: Any Rare Reagent","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    ["Regina: The Final Piece (Iron Golem)","Reagent: Rare Reagent (Anywhere)","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
