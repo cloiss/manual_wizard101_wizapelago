@@ -10,7 +10,7 @@ from worlds.LauncherComponents import Component, SuffixIdentifier, components, T
 from .Data import item_table, location_table, event_table, region_table, category_table
 from .Game import game_name, filler_item_name, starting_items
 from .Meta import world_description, world_webworld
-from .Locations import location_id_to_name, location_name_to_id, location_name_to_location, location_name_groups, victory_names, event_name_to_event
+from .Locations import location_id_to_name, location_id_to_alias, location_name_to_id, location_name_to_location, location_name_groups, victory_names, event_name_to_event
 from .Items import item_id_to_name, item_name_to_id, item_name_to_item, item_name_groups
 from .DataValidation import runGenerationDataValidation, runPreFillDataValidation
 
@@ -49,7 +49,6 @@ class ManualWorld(World):
     location_table = location_table # this is likely imported from Data instead of Locations because the Game Complete location should not be in here, but is used for lookups
     event_table = event_table
     category_table = category_table
-    region_table = region_table # not found in manual source -- added to expose "module" field for better module implementation
 
     item_id_to_name = item_id_to_name
     item_name_to_id = item_name_to_id
@@ -64,6 +63,7 @@ class ManualWorld(World):
     start_inventory = {}
 
     location_id_to_name = location_id_to_name
+    location_id_to_alias = location_id_to_alias 
     location_name_to_id = location_name_to_id
     location_name_to_location = location_name_to_location
     location_name_groups = location_name_groups

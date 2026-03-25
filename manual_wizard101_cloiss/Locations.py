@@ -45,6 +45,7 @@ if not victory_names:
     victory_names.append("__Manual Game Complete__")
 
 location_id_to_name: dict[int, str] = {}
+location_id_to_alias: dict[int, str] = {}
 location_name_to_location: dict[str, dict[str, Any]] = {}
 location_name_groups: dict[str, list[str]] = {}
 event_name_to_event: dict[str, dict[str, Any]] = {}
@@ -52,6 +53,8 @@ event_name_to_event: dict[str, dict[str, Any]] = {}
 for loc in location_table:
     loc_name = loc.get("name", f"Unnamed Location {loc['id']}")
     location_id_to_name[loc["id"]] = loc_name
+    if loc.get("alias"):
+        location_id_to_alias[loc["id"]] = str(loc["alias"])
     location_name_to_location[loc_name] = loc
 
     for c in loc.get("category", []):

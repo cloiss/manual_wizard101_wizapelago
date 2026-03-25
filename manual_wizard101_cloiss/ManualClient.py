@@ -209,6 +209,34 @@ class ManualContext(SuperContext):
         name = self.location_names.lookup_in_game(id)
         return self.get_location_by_name(name)
 
+    def get_location_alias_by_id(self, id: int) -> str:
+        world = AutoWorldRegister.world_types.get(self.game)
+        if world is None:
+            return ""
+        aliases = getattr(world, "location_id_to_alias", {})
+        return aliases.get(id, "")
+
+    def get_location_display_name_by_id(self, id: int) -> str:
+        alias = self.get_location_alias_by_id(id)
+        if alias:
+            return alias
+        return self.location_names.lookup_in_game(id)
+
+    def is_location_reachable_by_id(self, id: int) -> bool:
+        canonical_name = self.location_names.lookup_in_game(id)
+        if canonical_name in self.tracker_reachable_locations:
+            return True
+
+        alias = self.get_location_alias_by_id(id)
+        if not alias:
+            return False
+
+        # UT may report canonical names, aliases, or canonical names with aliases appended.
+        return (
+            alias in self.tracker_reachable_locations
+            or f"{canonical_name} ({alias})" in self.tracker_reachable_locations
+        )
+
     def get_item_by_name(self, name):
         item = self.item_table.get(name)
         if not item:
@@ -777,7 +805,7 @@ class ManualContext(SuperContext):
                     category_scroll.add_widget(category_layout)
 
                     for location_id in self.listed_locations[location_category]:
-                        location_button = TreeViewButton(text=self.ctx.location_names.lookup_in_game(location_id), size_hint=(None, None), height=30, width=400)
+                        location_button = TreeViewButton(text=self.ctx.get_location_display_name_by_id(location_id), size_hint=(None, None), height=30, width=400)
                         location_button.bind(on_release=lambda *args, loc_id=location_id: self.location_button_callback(loc_id, *args))
                         location_button.id = location_id
                         category_layout.add_widget(location_button)
@@ -823,7 +851,7 @@ class ManualContext(SuperContext):
 
                     locations_length = len([
                         l for l in self.ctx.missing_locations
-                            if self.ctx.search_term.lower() in self.ctx.location_names.lookup_in_game(l).lower()
+                            if self.ctx.search_term.lower() in self.ctx.get_location_display_name_by_id(l).lower()
                     ])
 
                 for _, child in enumerate(self.tracker_and_locations_panel.children):
@@ -1018,7 +1046,7 @@ class ManualContext(SuperContext):
                                 for location_button in category_grid.children:
                                     if type(location_button) is TreeViewButton:
                                         # should only be true for the victory location button, which has different text
-                                        if location_button.text not in (self.ctx.location_table or AutoWorldRegister.world_types[self.ctx.game].location_name_to_location):
+                                        if location_button.id is None:
                                             # if the player is searching for text and the location name doesn't contain it, hide and disable it
                                             if self.ctx.search_term and not self.ctx.search_term.lower() in location_button.text.lower():
                                                 hide_button_during_search(location_button)
@@ -1041,7 +1069,7 @@ class ManualContext(SuperContext):
 
                                         was_reachable = False
 
-                                        if location_button.text in self.ctx.tracker_reachable_locations:
+                                        if self.ctx.is_location_reachable_by_id(location_button.id):
                                             location_button.background_color = self.ctx.colors['location_in_logic']
                                             was_reachable = True
                                         else:
@@ -1088,7 +1116,8 @@ class ManualContext(SuperContext):
                                 category_scrollview.size=(Window.width / 2, scrollview_height)
 
             def location_button_callback(self, location_id, button):
-                if button.text not in self.ctx.location_names_to_id:
+                location_name = self.ctx.location_names.lookup_in_game(location_id)
+                if location_name not in self.ctx.location_names_to_id:
                     raise Exception("Locations were not loaded correctly. Please reconnect your client.")
 
                 # if the mouse is currently hovering over any of the controls/tabs at the top of the client, ignore clicks for location buttons underneath
@@ -1103,7 +1132,7 @@ class ManualContext(SuperContext):
                     return
 
                 if location_id:
-                    if tracker_loaded and self.ctx.block_unreachable_location_press and button.text not in self.ctx.tracker_reachable_locations:
+                    if tracker_loaded and self.ctx.block_unreachable_location_press and not self.ctx.is_location_reachable_by_id(location_id):
                         logger.debug(f"button for location '{button.text}' was pressed while unreachable")
                     else:
                         self.ctx.locations_checked.append(location_id)
