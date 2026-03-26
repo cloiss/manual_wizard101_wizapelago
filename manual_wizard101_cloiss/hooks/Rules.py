@@ -12,10 +12,10 @@ def wizReach(location: str):
         # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
         "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {advDamage(250)} and {specialItemCheck(Rattlebones)}",
-        "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
-        "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
+        "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|) and {specialItemCheck(Muldoon)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
         "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Pet Shop": "{wizReach(Shopping District)} and |Vendor-Pet Shops|",
         "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
         "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})", # used for armorless and bastilla
         "Ravenwood": "|Area-Ravenwood| and (|Area-The Commons| or |Teleport-Home| or |Teleport-Friendly|)"
@@ -31,7 +31,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     # integer value for each location in the options
     locations_dict = {
         "Rattlebones": 1,
-        "Judd": 2,
+        "Muldoon": 2,
         "Mid-Streets": 3
     }
 
@@ -93,11 +93,7 @@ level_xp_requirements = {
         15: 16680
     }
 
-def hasLevel(multiworld: MultiWorld, state: CollectionState, player: int, level: str | int) -> bool:
-    # show checks as in logic for UT even when they are missing experience
-    if getattr(multiworld, 'generation_is_fake', False):
-        return True
-
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
     if not isinstance(level, int):
         level: int = int(level)
 
@@ -143,7 +139,7 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
     training_points = item_values.get("training_points", 999)
 
     # Check if player has high enough level to train spell
-    if not hasLevel(multiworld, state, player, spell_level):
+    if not hasLevel(state, player, spell_level):
         return False
 
     # Check if the player can physically train the spells via ravenwood
@@ -153,12 +149,12 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
         return False
 
     # Check if the player has enough training points to train secondary school spells
-    if "School-" + primary_school not in categories and not hasTrainingPoints(multiworld, state, player, training_points):
+    if "School-" + primary_school not in categories and not hasTrainingPoints(state, player, training_points):
         return False
 
     return True
 
-def hasTrainingPoints(multiworld: MultiWorld, state: CollectionState, player: int, tp: int | str) -> bool:
+def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> bool:
     if not isinstance(tp, int):
         tp: int = int(tp)
 
@@ -166,7 +162,7 @@ def hasTrainingPoints(multiworld: MultiWorld, state: CollectionState, player: in
 
     # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
     for level in range(4, 21, 4):
-        if hasLevel(multiworld, state, player, level):
+        if hasLevel(state, player, level):
             playerTP += 1
         else:
             break
@@ -174,7 +170,7 @@ def hasTrainingPoints(multiworld: MultiWorld, state: CollectionState, player: in
     # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
     # Start at 25 since level 20 was already counted above
     for level in range(25, 171, 5):
-        if hasLevel(multiworld, state, player, level):
+        if hasLevel(state, player, level):
             playerTP += 1
         else:
             break

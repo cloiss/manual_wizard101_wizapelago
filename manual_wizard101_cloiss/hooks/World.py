@@ -423,6 +423,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
             location_names_to_remove.remove("Reagent: Ore (Anywhere)")
         case 3:
             location_names_to_remove.extend(reagent_anywhere_names)
+            location_names_to_remove.remove("Reagent: Rare Reagent (Anywhere)")
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
@@ -520,7 +521,11 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                location_dict = world.location_name_to_location[location.name]
+                try:
+                    location_dict = world.location_name_to_location[location.name]
+                # If location is not found in table then is most likly an event
+                except KeyError: 
+                    continue
                 try:
                     categories: list[str] = location_dict["category"]
                     if "Quest" in categories:

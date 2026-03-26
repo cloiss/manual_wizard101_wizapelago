@@ -64,7 +64,7 @@
             "values": {
                 "start": 0,
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -79,7 +79,7 @@
             "values": {
                 "start": 0,
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -93,7 +93,7 @@
             "type": "Choice",
             "values": {
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -107,7 +107,7 @@
             "type": "Choice",
             "values": {
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -117,14 +117,6 @@
         "friendly_teleport":{
             "description": [
                 "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Logic"
-        },
-        "gate_skip":{
-            "description": [
-                "Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled."
             ],
             "type": "Toggle",
             "default": false,
@@ -219,12 +211,12 @@
                 "none": 0,
                 "full": 1
             },
-            "default": 1,
+            "default": 0,
             "group": "Modules"
         },
         "module_cyclops": {
             "description": [
-                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations."],
+                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations. This is currently broken in live so is disabled until fixed"],
             "type": "Choice",
             "values": {
                 "none": 0,
