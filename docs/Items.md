@@ -11,7 +11,7 @@ At the beginning of the game, you may only enter Unicorn Way and The Commons. Yo
 Buildings are anywhere you can go to fight something that is locked behind having a quest to enter it. This is mostly instances with sigils for bossfights, but also includes the solo fights Rattlebones, Blackhope, and Judd and the teleporter to the Kraken arena. Always-accessible areas like the Library, Lady Oriel, and Golem Tower are not included.
 
 ## Slot
-Each equipment slot must be unlocked, except for those that you start with (Wand, Deck, and usually Mount). Once you have the item, you can equip anything to that slot. **Note that Slot-Pet is a required item to complete Judd, as you must use the Play as Pet feature within the tower.**
+Each equipment slot must be unlocked, except for those that you start with (Wand, Deck, and usually Mount). Once you have the item, you can equip anything to that slot. **Note that Slot-Pet is a required item to complete some side quests, as you must use the Play as Pet feature to find things.**
 
 ## Teleport
 All forms of teleportation (except fleeing) are treated as a separate item. These are noted below:
