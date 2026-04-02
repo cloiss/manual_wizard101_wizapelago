@@ -2,15 +2,15 @@
 	"$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.events.schema.json",
     "data": [
         {
-            "name": "CompletedCyclops",
+            "name": "Event-CompletedCyclops",
             "copy_location": "MAIN: Akilles' Deal (Akilles/Muldoon)"
         },
         {
-            "name": "CompletedTriton",
+            "name": "Event-CompletedTriton",
             "copy_location": "MAIN: Triton Report (To Muldoon)"
         },
         {
-            "name": "CompletedFirecat",
+            "name": "Event-CompletedFirecat",
             "copy_location": "MAIN: Firecat's In The Bag (To Muldoon)"
         }
     ]

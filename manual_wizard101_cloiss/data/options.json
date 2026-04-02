@@ -204,7 +204,7 @@
         },
         "module_petpavilion": {
             "description": [
-                "Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations."
+                "Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations. This is currently broken in live so is disabled until fixed."
             ],
             "type": "Choice",
             "values": {
@@ -216,7 +216,7 @@
         },
         "module_cyclops": {
             "description": [
-                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations. This is currently broken in live so is disabled until fixed"],
+                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations."],
             "type": "Choice",
             "values": {
                 "none": 0,
@@ -254,7 +254,7 @@
         },
         "module_poststreets": {
             "description": [
-                "Includes everything made available after all three streets are completed, adding about 1-3 items and 7-9 locations."
+                "Includes everything made available after either one or all three streets are completed, adding about 1-3 items and 12-14 locations."
             ],
             "type": "Choice",
             "values": {

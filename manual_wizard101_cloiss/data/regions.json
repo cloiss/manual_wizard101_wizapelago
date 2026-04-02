@@ -114,7 +114,7 @@
         "module": "#Firecat:2# and $Alicane$"
     },
     "Foulgaze":{
-        "requires": "|CompletedCyclops| and |CompletedTriton| and |CompletedFirecat|",
+        "requires": "|Event-CompletedCyclops| and |Event-CompletedTriton| and |Event-CompletedFirecat|",
         "connects_to": ["PostStreets"],
         "_comment": "Requires completing all three streets via events. Same as PostStreets without the module restriction, allowing Foulgaze victory with PostStreets module disabled."
     },
@@ -122,7 +122,8 @@
         "module": "#PostStreets#"
     },
     "PostOneStreet":{
-        "requires": "|CompletedCyclops| or |CompletedTriton| or |CompletedFirecat|",
+        "requires": "|Event-CompletedCyclops| or |Event-CompletedTriton| or |Event-CompletedFirecat|",
+        "module": "#PostStreets#",
         "_comment": "Side systems (city tour, fishing, photomancy) unlocked after completing one street"
     },
     "ApprenticeTower":{

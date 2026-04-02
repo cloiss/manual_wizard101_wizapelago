@@ -931,38 +931,37 @@
         {
             "name": "Reagent: Cat Tail (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Deep Mushroom (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Mist Wood (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
+        },
+        {
+            "name": "Reagent: Flax (Cyclops Lane)",
+            "category": ["140 Cyclops Lane", "Reagents"],
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Mist Wood (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Flax (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Cat Tail (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Flax (Haunted Cave)",
@@ -977,20 +976,17 @@
         {
             "name": "Reagent: Mist Wood (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
-            "region": "EarlyStreets-Firecat",
-            "requires": "|Area-Firecat Alley|"
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Reagent: Flax (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
-            "region": "EarlyStreets-Firecat",
-            "requires": "|Area-Firecat Alley|"
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Reagent: Ore (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
-            "region": "EarlyStreets-Firecat",
-            "requires": "|Area-Firecat Alley|"
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Reagent: Flax (Dark Cave)",
