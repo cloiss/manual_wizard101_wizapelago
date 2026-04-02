@@ -274,7 +274,8 @@
         {
             "name": "Slot-Wand",
             "category": ["03 Slot"],
-            "useful": true
+            "useful": true,
+            "local": true
         },
         {
             "name": "Slot-Athame",
@@ -304,7 +305,8 @@
         {
             "name": "Slot-Deck",
             "category": ["03 Slot"],
-            "early": true
+            "early": true,
+            "local": true
         },
         {
             "name": "Teleport-Commons",
