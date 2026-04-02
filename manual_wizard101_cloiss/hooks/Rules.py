@@ -1,5 +1,5 @@
 from worlds.AutoWorld import World
-from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat, is_option_enabled
 from BaseClasses import MultiWorld, CollectionState
 from typing import TYPE_CHECKING
 
@@ -113,6 +113,8 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
     # Calculate how much damage a player has at this point
     playerDmg = 0
 
+    wand_items: list[tuple[str, int]] = []
+    amulet_items: list[tuple[str, int]] = []
     for item, _ in state.prog_items[player].items():
         item_dict: dict[str] = world.item_name_to_item.get(item, {})
         item_values: dict[str] =  item_dict.get("value", {})
@@ -126,7 +128,23 @@ def advDamage(world: "ManualWorld", multiworld: MultiWorld, state: CollectionSta
             playerDmg += dmg
         
         if "06 ItemCard" in item_categories:
-            playerDmg += dmg
+            # Only count pet assist if 1. Can obtain pet or 2. Can acquire pet by walking up to tower and then going to the pet pavillion to train it to Teen.
+            if "PetAssist" in item_categories and state.has("Slot-Pet", player) \
+                and (state.has("[QI]MAIN: Secret Strife of Pets (Judd)", player) \
+                or not is_option_enabled(multiworld, player, "beginner") and (state.has("[QI]MAIN: Panic in Three Streets! (To Muldoon)", player) and state.has("Area-Pet Pavillion", player))):
+                    playerDmg += dmg
+            
+            if "Wand" in item_categories:
+                wand_items.append((item, dmg))
+
+            if "Amulet" in item_categories:
+                amulet_items.append((item, dmg))
+
+        # Handle Wand Damage
+        wand_dmg = 0
+        for item, dmg in wand_items:
+            wand_dmg += dmg
+        playerDmg += wand_dmg
 
         # TODO Add other non spell card damage
 

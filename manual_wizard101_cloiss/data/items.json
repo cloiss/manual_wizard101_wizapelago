@@ -951,49 +951,49 @@
         },
         {
             "name": "ItemCard-Scarab",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Thunder Snake",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 95, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Ice Beetle",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Fire Cat",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 70, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Dark Sprite",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Blood Bat",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 60, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Imp",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
+            "category": ["06 ItemCard","ItemCard-Rank 1","Wand"],
             "value": {"damage": 55, "rank": 1},
             "progression": true
         },
         {
             "name": "ItemCard-Heartbeat",
-            "category": ["06 ItemCard"]
+            "category": ["06 ItemCard","Wand"]
         },
         {
             "name": "ItemCard-Scorpion",
@@ -1183,49 +1183,49 @@
         },
         {
             "name": "ItemCard-Balance Assist",
-            "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Balance","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Storm Assist",
-            "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Storm","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Ice Assist",
-            "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Ice","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Fire Assist",
-            "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Fire","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Death Assist",
-            "category": ["06 ItemCard","School-Death","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Death","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Myth Assist",
-            "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Myth","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
         },
         {
             "name": "ItemCard-Life Assist",
-            "category": ["06 ItemCard","School-Life","PrimaryOnly"],
+            "category": ["06 ItemCard","School-Life","PrimaryOnly","PetAssist"],
             "value": {"damage": 135, "rank": 0},
             "progression": true,
             "count": 0
