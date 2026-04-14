@@ -276,12 +276,11 @@
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3"
         },
         {
-            "name": "Zeke: Find the Smiths (9/10 Smiths)",
+            "name": "Zeke: Find the Smiths",
             "category": ["102 The Commons"],
             "region": "EarlyStreets",
-            "module": "#Cyclops# and #Triton# and #Firecat# and #GolemCourt#",
-            "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
-            "_comment": "Must be PostUW to get the quest which guarantees access to all areas"
+            "requires": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town|",
+            "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules"
         },
         {
             "name": "Boris: The Lore You Know (5/7 Books)",

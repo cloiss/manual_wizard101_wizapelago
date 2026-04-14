@@ -271,7 +271,7 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
             module_name = module_parts[0].strip()
             module_count = int(module_parts[1].strip())
 
-        value = module_values.get(module_name,0) 
+        value = module_values.get(module_name,0)
 
         if value >= module_count:
             requires_list = requires_list.replace(module_base, "1")
@@ -454,6 +454,20 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
             location_names_to_remove.extend(silver_chest_locations_to_remove)
         case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
+    
+    # Handle Smiths Locations
+    id = world.location_name_to_id["Zeke: Find the Smiths"]
+    # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
+    num_smiths = 5
+    if world.options.module_golemcourt.value > 0:
+        num_smiths += 1
+    if world.options.module_cyclops.value > 0:
+        num_smiths += 1
+    if world.options.module_triton.value > 0:
+        num_smiths += 1
+    if world.options.module_firecat.value > 0:
+        num_smiths += 1
+    world.location_id_to_alias[id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
@@ -713,13 +727,31 @@ def before_set_rules(world: World, multiworld: MultiWorld, player: int):
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to modify the access rules for a given location
-    
+
+    # Finish setting fake event system's xp items
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
                 if location.name.startswith("[QL]"):
                     m_loc = multiworld.get_location(location.name[4:], player)
                     location.access_rule = m_loc.access_rule
+
+    # Pre-compute the list of required smiths areas based on modules enabled
+    smiths_module_areas = []
+    if world.options.module_golemcourt.value > 0:
+        smiths_module_areas.append("Area-Golem Court")
+    if world.options.module_firecat.value > 0:
+        smiths_module_areas.append("Area-Firecat Alley")
+    if world.options.module_triton.value > 0:
+        smiths_module_areas.append("Area-Triton Avenue")
+    if world.options.module_cyclops.value > 0:
+        smiths_module_areas.append("Area-Cyclops Lane")
+    
+    smiths = world.get_location("Zeke: Find the Smiths")
+    # Prevent recursion issue
+    smiths_access = smiths.access_rule
+    smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
+        sa(state) and state.has_all(areas, p)
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
