@@ -130,12 +130,6 @@
             "progression": true
         },
         {
-            "name": "Building-Judd",
-            "category": ["02 Building"],
-            "useful": true,
-            "progression": true
-        },
-        {
             "name": "Building-Akilles",
             "category": ["02 Building"],
             "useful": true,
@@ -1184,55 +1178,6 @@
             "count": 0
         },
         {
-            "name": "ItemCard-Balance Assist",
-            "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Storm Assist",
-            "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Ice Assist",
-            "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Fire Assist",
-            "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Death Assist",
-            "category": ["06 ItemCard","School-Death","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Myth Assist",
-            "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Life Assist",
-            "category": ["06 ItemCard","School-Life","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
         "name": "TreasureCard-Scarab",
         "category": ["07 TreasureCard"],
         "filler": true,
@@ -1777,7 +1722,7 @@
         {
             "name": "Vendor-Pet Shops",
             "category": ["08 Vendor"],
-            "filler": true
+            "progression": true
         },
         {
             "name": "Vendor-Mount Shop",

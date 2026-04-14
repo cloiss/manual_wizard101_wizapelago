@@ -127,16 +127,16 @@
         {
             "name": "Abby: City Tour",
             "category": ["102 The Commons","Quest"],
-            "region": "PostUW",
+            "region": "PostOneStreet",
             "module": "#GolemCourt#",
-            "requires": "|Area-Ravenwood| and |Area-Golem Court| and |Area-Shopping District| and |Area-Olde Town|",
+            "requires": "|Area-Golem Court| and |Area-Shopping District|",
 			"xp": 20,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/AbbyKDoodle_001_20.mp3"
         },
         {
             "name": "Merle: Diego the Duelmaster",
             "category": ["102 The Commons","Quest"],
-            "region": "PostUW",
+            "region": "Muldoon",
             "requires": "{wizReach(To Muldoon)}",
 			"xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DiegoTheDuelmaster_QST_01.mp3"
@@ -151,14 +151,14 @@
         {
             "name": "Penny: Hey, Penny (Commons)",
             "category": ["102 The Commons","Quest"],
-            "region": "Judd",
+            "region": "Muldoon",
             "xp": 5,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_19.mp3"
         },
         {
             "name": "Penny: Dreadful Assignment (Defeats)",
             "category": ["102 The Commons","Quest"],
-            "region": "Judd",
+            "region": "Muldoon",
             "module": "#Triton:2#",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave|",
 			"xp": 35,
@@ -168,7 +168,7 @@
         {
             "name": "Penny: Penny For Your Thoughts (Dark Cave)",
             "category": ["102 The Commons","Quest"],
-            "region": "Judd",
+            "region": "Muldoon",
             "module": "#Triton:2# and (#Cyclops# or #Firecat:2#)",
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
 			"xp": 5,
@@ -261,16 +261,14 @@
         {
             "name": "Lucky: A River Runs Through It (Fishing 1)",
             "category": ["102 The Commons","Quest"],
-            "region": "Level7",
-            "required_level": 7,
+            "region": "PostOneStreet",
 			"xp": 125,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_23.mp3"
         },
         {
             "name": "Lucky: Fishful Thinking (Fishing 2)",
             "category": ["102 The Commons","Quest"],
-            "region": "Level7",
-            "required_level": 7,
+            "region": "PostOneStreet",
             "requires": "|Area-Cyclops Lane|",
             "module": "#Cyclops#",
 			"xp": 0,
@@ -283,7 +281,7 @@
             "region": "EarlyStreets",
             "module": "#Cyclops# and #Triton# and #Firecat# and #GolemCourt#",
             "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
-            "_comment": "Must be PostUW to get the quest which guarantees access to everything barring gate skip"
+            "_comment": "Must be PostUW to get the quest which guarantees access to all areas"
         },
         {
             "name": "Boris: The Lore You Know (5/7 Books)",
@@ -302,16 +300,18 @@
         {
             "name": "Annie: Say Cheese! (Photomancy 1)",
             "category": ["110 Golem Court","Quest"],
-            "region": "GolemCourt",
+            "region": "PostOneStreet",
+            "module": "#GolemCourt#",
+            "requires": "{wizReach(Golem Court)}",
 			"xp": 30,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_15.mp3"
         },
         {
             "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
             "category": ["110 Golem Court","Quest"],
-            "region": "EarlyOldeTown",
+            "region": "PostOneStreet",
             "module": "#GolemCourt#",
-            "requires": "{wizReach(Golem Court)} and |Area-Ravenwood| and |Area-The Commons|",
+            "requires": "{wizReach(Golem Court)}",
 			"xp": 35,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_25.mp3"
         },
@@ -372,13 +372,6 @@
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/SeargeantMuldoon_001_01.mp3"
         },
         {
-            "name": "MAIN: Secret Strife of Pets (Judd)",
-            "category": ["105 Olde Town","Quest"],
-            "region": "Judd",
-			"xp": 8,
-            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_05.mp3"
-        },
-        {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
             "category": ["135 Haunted Cave","Quest"],
             "region": "PostStreets",
@@ -416,7 +409,7 @@
             "category": ["105 Olde Town","Quest"],
             "region": "EarlyStreets",
             "module": "#Cyclops# and #Firecat# and ((#Firecat:2# and {YamlDisabled(beginner)}) or #Triton#)",
-            "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({canReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
+            "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({CanReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/GloriaKrendell_002_07.mp3"
@@ -527,6 +520,7 @@
             "category": ["140 Cyclops Lane","Quest"],
             "region": "Cyclops-DarkCave",
             "module": "#Cyclops:2#",
+            "requires": "{wizReach(Pet Shop)} and |Slot-Pet|",
 			"xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GarrickGoldenhawk_005_12.mp3"
         },
@@ -666,6 +660,7 @@
             "name": "Suzie: Sniff 'em Out (Pet Dig)",
             "category": ["130 Triton Avenue","Quest"],
             "region": "Triton-HarvestLord",
+            "requires": "{wizReach(Pet Shop)} and |Slot-Pet|",
 			"xp": 60,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_21.mp3"
         },
@@ -936,38 +931,37 @@
         {
             "name": "Reagent: Cat Tail (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Deep Mushroom (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Mist Wood (Cyclops Lane)",
             "category": ["140 Cyclops Lane", "Reagents"],
-            "region": "EarlyStreets-Cyclops",
-            "requires": "|Area-Cyclops Lane|"
+            "region": "EarlyStreets-Cyclops"
+        },
+        {
+            "name": "Reagent: Flax (Cyclops Lane)",
+            "category": ["140 Cyclops Lane", "Reagents"],
+            "region": "EarlyStreets-Cyclops"
         },
         {
             "name": "Reagent: Mist Wood (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Flax (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Cat Tail (Triton Avenue)",
             "category": ["130 Triton Avenue", "Reagents"],
-            "region": "EarlyStreets-Triton",
-            "requires": "|Area-Triton Avenue|"
+            "region": "EarlyStreets-Triton"
         },
         {
             "name": "Reagent: Flax (Haunted Cave)",
@@ -982,14 +976,17 @@
         {
             "name": "Reagent: Mist Wood (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
-            "region": "EarlyStreets-Firecat",
-            "requires": "|Area-Firecat Alley|"
+            "region": "EarlyStreets-Firecat"
+        },
+        {
+            "name": "Reagent: Flax (Firecat Alley)",
+            "category": ["150 Firecat Alley", "Reagents"],
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Reagent: Ore (Firecat Alley)",
             "category": ["150 Firecat Alley", "Reagents"],
-            "region": "EarlyStreets-Firecat",
-            "requires": "|Area-Firecat Alley|"
+            "region": "EarlyStreets-Firecat"
         },
         {
             "name": "Reagent: Flax (Dark Cave)",

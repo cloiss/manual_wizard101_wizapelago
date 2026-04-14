@@ -40,8 +40,9 @@
         "_comment": "Quests for Golem Tower fights require Level 5"
     },
     "EarlyStreets": {
-        "requires": "|Teleport-Friendly| or ({wizReach(To Muldoon)} and {YamlEnabled(gate_skip)}) or {wizReach(Judd)}",
-        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat", "EarlyStreets-Cyclops"]
+        "requires": "|Teleport-Friendly| or {wizReach(To Muldoon)}",
+        "connects_to": ["EarlyStreets-Triton", "EarlyStreets-Firecat", "EarlyStreets-Cyclops"],
+        "_comment": "Friendly teleport for early access OR main access through Muldoon region."
     },
     "EarlyStreets-Triton":{
         "requires": "|Area-Triton Avenue|",
@@ -66,11 +67,12 @@
     },
     "PostUW":{
         "requires": "{wizReach(PostUW)}",
-        "connects_to": ["Judd"]
+        "connects_to": ["Muldoon", "PetPavilion"]
     },
-    "Judd":{
-        "requires": "{wizReach(Judd)}",
-        "connects_to": ["Triton","Cyclops","Firecat","PetPavilion"]
+    "Muldoon":{
+        "requires": "{wizReach(To Muldoon)}",
+        "connects_to": ["EarlyStreets", "Triton", "Cyclops", "Firecat", "Foulgaze", "PostOneStreet"],
+        "_comment": "Gate to the Three Streets and other post-Muldoon content"
     },
     "PetPavilion":{
         "requires": "|Area-Pet Pavilion|",
@@ -86,8 +88,7 @@
     },
     "Triton-HarvestLord":{
         "requires": "{advDamage(660)} and |Building-Harvest Lord| and {specialItemCheck(Mid-Streets)}",
-        "module": "#Triton:2# and $HarvestLord$",
-        "connects_to": ["Foulgaze"]
+        "module": "#Triton:2# and $HarvestLord$"
     },
     "Cyclops":{
         "requires": "|Area-Cyclops Lane|",
@@ -113,12 +114,17 @@
         "module": "#Firecat:2# and $Alicane$"
     },
     "Foulgaze":{
-        "requires": "|Area-Cyclops Lane| and |Area-Firecat Alley| and |Area-Dark Cave| and |Area-Shopping District| and |Building-Bastilla| and |Building-Alicane| and |Building-Akilles|",
+        "requires": "|Event-CompletedCyclops| and |Event-CompletedTriton| and |Event-CompletedFirecat|",
         "connects_to": ["PostStreets"],
-        "_comment": "Same as PostStreets without the module restriction, allowing Foulgaze victory with PostStreets module disabled."
+        "_comment": "Requires completing all three streets via events. Same as PostStreets without the module restriction, allowing Foulgaze victory with PostStreets module disabled."
     },
     "PostStreets":{
         "module": "#PostStreets#"
+    },
+    "PostOneStreet":{
+        "requires": "|Event-CompletedCyclops| or |Event-CompletedTriton| or |Event-CompletedFirecat|",
+        "module": "#PostStreets#",
+        "_comment": "Side systems (city tour, fishing, photomancy) unlocked after completing one street"
     },
     "ApprenticeTower":{
         "requires": "|Area-Ravenwood| and |Building-Apprentice Tower| and {hasLevel(7)} and |@SpellCard-Rank 2|"

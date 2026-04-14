@@ -127,11 +127,6 @@ Manual_Wizard101_Cloiss:
     'false': 50
     'true': 0
 
-  gate_skip:
-    # Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled.
-    'false': 0
-    'true': 50
-
   beginner:
     # Enable this setting to disable unintuitive logic and improve the starting inventory.
     'false': 50
