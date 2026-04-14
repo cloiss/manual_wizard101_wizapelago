@@ -398,6 +398,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
+    # Handle Reagent Locations
     # 0 = none, 1 = anywhere (6 location types), 2 = anywhere-ore only, 3 = all (per-area)
     reagents_option = get_option_value(multiworld, player, "reagents")
     reagent_locations = world.location_name_groups.get("Reagents", [])
@@ -410,26 +411,25 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         "Reagent: Rare Reagent (Anywhere)",
     ]
     match reagents_option:
-        case 0:
+        case 0: # none: remove all reagent locations
             location_names_to_remove.extend(reagent_locations)
-        case 1:
-            # Remove all reagent locations except the "anywhere" ones
+        case 1: # anywhere: remove all but the anywhere ones
             reagent_locations_to_remove = list(reagent_locations)
             for name in reagent_anywhere_names:
                 reagent_locations_to_remove.remove(name)
             location_names_to_remove.extend(reagent_locations_to_remove)
-        case 2:
+        case 2: # anywhere-ore: remove all but the anywhere ore one
             location_names_to_remove.extend(reagent_locations)
             location_names_to_remove.remove("Reagent: Ore (Anywhere)")
-        case 3:
+        case 3: # all: remove all but the rare reagent one
             location_names_to_remove.extend(reagent_anywhere_names)
+            location_names_to_remove.remove("Reagent: Rare Reagent (Anywhere)")
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
     wooden_chests_option = get_option_value(multiworld, player, "wooden_chests")
-
     wooden_chest_locations = world.location_name_groups.get("WoodenChests",[])
-    # 0 = none, 1 = anywhere, 2 = all
+
     match wooden_chests_option:
         case 0:  # none: remove all wooden chest locations
             location_names_to_remove.extend(wooden_chest_locations)
@@ -520,7 +520,13 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                location_dict = world.location_name_to_location[location.name]
+                try:
+                    location_dict = world.location_name_to_location[location.name]
+                except KeyError:
+                    # If location is not found, check if it's actually an event
+                    if location.name in world.event_name_to_event:
+                        continue  # It's a valid event, skip it
+                    raise  # Not found in either table, this is an error
                 try:
                     categories: list[str] = location_dict["category"]
                     if "Quest" in categories:
