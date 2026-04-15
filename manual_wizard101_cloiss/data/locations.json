@@ -287,7 +287,7 @@
             "category": ["102 The Commons"],
             "region": "EarlyStreets",
             "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
-            "_comment": "Need either Blackhope or Nightshade"
+            "_comment": "Need either Blackhope or Nightshade. Requires String is set dynamically in rule to handle modules"
         },
         {
             "name": "Merle: Colossal Trouble",
