@@ -455,21 +455,36 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
     
-    # Handle Smiths Locations
-    id = world.location_name_to_id["Zeke: Find the Smiths"]
-    # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
-    num_smiths = 5
-    if world.options.module_golemcourt.value > 0:
-        num_smiths += 1
-    if world.options.module_cyclops.value > 0:
-        num_smiths += 1
-    if world.options.module_triton.value > 0:
-        num_smiths += 1
-    if world.options.module_firecat.value > 0:
-        num_smiths += 1
-    # Compatibility with older versions of Archipelago Manual
-    if hasattr(world, "location_id_to_alias"):
-        world.location_id_to_alias[id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
+    # Handle Smiths Locations Alias
+    smiths_id = world.location_name_to_id.get("Zeke: Find the Smiths")
+    if smiths_id is not None and hasattr(world, "location_id_to_alias"):
+        # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
+        num_smiths = 5
+        if world.options.module_golemcourt.value > 0:
+            num_smiths += 1
+        if world.options.module_cyclops.value > 0:
+            num_smiths += 1
+        if world.options.module_triton.value > 0:
+            num_smiths += 1
+        if world.options.module_firecat.value > 0:
+            num_smiths += 1
+
+        world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
+
+    # Handle Books Locations Alias
+    books_id = world.location_name_to_id.get("Boris: The Lore You Know")
+    if books_id is not None and hasattr(world, "location_id_to_alias"):
+        num_books = 1
+        if world.options.module_poststreets.value > 0:
+            num_books += 1
+        if world.options.module_cyclops.value == 2:
+            num_books += 1
+        if world.options.module_triton.value == 2:
+            num_books += 1
+        if world.options.module_firecat.value == 2:
+            num_books += 1
+        
+        world.location_id_to_alias[books_id] = f"Boris: The Lore You Know ({num_books}/7 Books)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
@@ -749,11 +764,40 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     if world.options.module_cyclops.value > 0:
         smiths_module_areas.append("Area-Cyclops Lane")
     
-    smiths = world.get_location("Zeke: Find the Smiths")
-    # Prevent recursion issue
-    smiths_access = smiths.access_rule
-    smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
-        sa(state) and state.has_all(areas, p)
+    try:
+        smiths = world.get_location("Zeke: Find the Smiths")
+        # Prevent recursion issue
+        smiths_access = smiths.access_rule
+        smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
+            sa(state) and state.has_all(areas, p)
+    except KeyError:
+        pass
+
+    # Handle Books Access Rules
+    books_module_location_names = []
+    if world.options.module_poststreets.value > 0:
+        books_module_location_names.append("Defeat Foulgaze")
+    if world.options.module_cyclops.value == 2:
+        books_module_location_names.append("Defeat General Akilles")
+    if world.options.module_triton.value == 2:
+        books_module_location_names.append("Defeat Harvest Lord")
+    if world.options.module_firecat.value == 2:
+        books_module_location_names.append("Defeat Alicane Swiftarrow")
+        
+    boss_rules = []
+    for loc_name in books_module_location_names:
+        try:
+            boss_rules.append(world.get_location(loc_name).access_rule)
+        except KeyError:
+            pass
+
+    try:
+        books = world.get_location("Boris: The Lore You Know")
+        books_access = books.access_rule
+        books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
+            ba(state) and all(rule(state) for rule in rules)
+    except KeyError:
+        pass
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
