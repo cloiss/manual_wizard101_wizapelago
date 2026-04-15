@@ -467,7 +467,9 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         num_smiths += 1
     if world.options.module_firecat.value > 0:
         num_smiths += 1
-    world.location_id_to_alias[id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
+    # Compatibility with older versions of Archipelago Manual
+    if hasattr(world, "location_id_to_alias"):
+        world.location_id_to_alias[id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
