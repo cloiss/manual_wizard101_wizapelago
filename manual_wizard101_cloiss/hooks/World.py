@@ -765,7 +765,7 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         smiths_module_areas.append("Area-Cyclops Lane")
     
     try:
-        smiths = world.get_location("Zeke: Find the Smiths (X/10)")
+        smiths = world.get_location("Zeke: Find the Smiths (X/10 Smiths)")
         # Prevent recursion issue
         smiths_access = smiths.access_rule
         smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
@@ -801,7 +801,7 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         )
 
     try:
-        books = world.get_location("Boris: The Lore You Know (X/7)")
+        books = world.get_location("Boris: The Lore You Know (X/7 Books)")
         books_access = books.access_rule
         books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
             ba(state) and all(rule(state) for rule in rules)
