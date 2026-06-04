@@ -801,7 +801,7 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         )
 
     try:
-        books = world.get_location("Boris: The Lore You Know (X/10)")
+        books = world.get_location("Boris: The Lore You Know (X/7)")
         books_access = books.access_rule
         books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
             ba(state) and all(rule(state) for rule in rules)

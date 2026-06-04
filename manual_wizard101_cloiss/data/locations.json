@@ -283,7 +283,7 @@
             "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules"
         },
         {
-            "name": "Boris: The Lore You Know (X/10)",
+            "name": "Boris: The Lore You Know (X/7)",
             "category": ["102 The Commons"],
             "region": "EarlyStreets",
             "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
