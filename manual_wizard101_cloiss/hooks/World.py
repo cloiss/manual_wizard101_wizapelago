@@ -765,38 +765,48 @@ def after_set_rules(world: World, multiworld: MultiWorld, player: int):
         smiths_module_areas.append("Area-Cyclops Lane")
     
     try:
-        smiths = world.get_location("Zeke: Find the Smiths")
+        smiths = world.get_location("Zeke: Find the Smiths (X/10)")
         # Prevent recursion issue
         smiths_access = smiths.access_rule
         smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
             sa(state) and state.has_all(areas, p)
     except KeyError:
+        # Prevent panic if "Zeke: Find the Smiths" is not a registered location (e.g. if smiths are disabled or excluded)
         pass
-
     # Handle Books Access Rules
-    books_module_location_names = []
+    # Each book is located in a boss area. To collect a book, the player needs to
+    # reach that area (region access) and have the building item for the boss's lair,
+    # but does NOT need the damage to defeat the boss.
+    # We encode these directly instead of pulling from defeat locations, which may
+    # be removed when they aren't the chosen goal.
+    books_module_requirements = []
     if world.options.module_poststreets.value > 0:
-        books_module_location_names.append("Defeat Foulgaze")
+        # Foulgaze book: need to reach the Foulgaze region + have Building-Foulgaze
+        books_module_requirements.append(("Foulgaze", "Building-Foulgaze"))
     if world.options.module_cyclops.value == 2:
-        books_module_location_names.append("Defeat General Akilles")
+        # Akilles book: need to reach Cyclops-DarkCave region + have Building-Akilles
+        books_module_requirements.append(("Cyclops-DarkCave", "Building-Akilles"))
     if world.options.module_triton.value == 2:
-        books_module_location_names.append("Defeat Harvest Lord")
+        # Harvest Lord book: need to reach Triton region + have Building-Harvest Lord
+        books_module_requirements.append(("Triton", "Building-Harvest Lord"))
     if world.options.module_firecat.value == 2:
-        books_module_location_names.append("Defeat Alicane Swiftarrow")
-        
+        # Alicane book: need to reach Firecat-Bastilla region + have Building-Alicane
+        books_module_requirements.append(("Firecat-Bastilla", "Building-Alicane"))
+
     boss_rules = []
-    for loc_name in books_module_location_names:
-        try:
-            boss_rules.append(world.get_location(loc_name).access_rule)
-        except KeyError:
-            pass
+    for region_name, building_item in books_module_requirements:
+        boss_rules.append(
+            lambda state, rn=region_name, bi=building_item, p=player:
+                state.can_reach_region(rn, p) and state.has(bi, p)
+        )
 
     try:
-        books = world.get_location("Boris: The Lore You Know")
+        books = world.get_location("Boris: The Lore You Know (X/10)")
         books_access = books.access_rule
         books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
             ba(state) and all(rule(state) for rule in rules)
     except KeyError:
+        # Prevent panic if "Boris: The Lore You Know" is not a registered location (e.g. if books are disabled or excluded)
         pass
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
