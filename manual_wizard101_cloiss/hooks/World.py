@@ -271,7 +271,7 @@ def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, 
             module_name = module_parts[0].strip()
             module_count = int(module_parts[1].strip())
 
-        value = module_values.get(module_name,0) 
+        value = module_values.get(module_name,0)
 
         if value >= module_count:
             requires_list = requires_list.replace(module_base, "1")
@@ -454,6 +454,37 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
             location_names_to_remove.extend(silver_chest_locations_to_remove)
         case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
+    
+    # Handle Smiths Locations Alias
+    smiths_id = world.location_name_to_id.get("Zeke: Find the Smiths")
+    if smiths_id is not None and hasattr(world, "location_id_to_alias"):
+        # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
+        num_smiths = 5
+        if world.options.module_golemcourt.value > 0:
+            num_smiths += 1
+        if world.options.module_cyclops.value > 0:
+            num_smiths += 1
+        if world.options.module_triton.value > 0:
+            num_smiths += 1
+        if world.options.module_firecat.value > 0:
+            num_smiths += 1
+
+        world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
+
+    # Handle Books Locations Alias
+    books_id = world.location_name_to_id.get("Boris: The Lore You Know")
+    if books_id is not None and hasattr(world, "location_id_to_alias"):
+        num_books = 1
+        if world.options.module_poststreets.value > 0:
+            num_books += 1
+        if world.options.module_cyclops.value == 2:
+            num_books += 1
+        if world.options.module_triton.value == 2:
+            num_books += 1
+        if world.options.module_firecat.value == 2:
+            num_books += 1
+        
+        world.location_id_to_alias[books_id] = f"Boris: The Lore You Know ({num_books}/7 Books)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
@@ -713,13 +744,70 @@ def before_set_rules(world: World, multiworld: MultiWorld, player: int):
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to modify the access rules for a given location
-    
+
+    # Finish setting fake event system's xp items
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
                 if location.name.startswith("[QL]"):
                     m_loc = multiworld.get_location(location.name[4:], player)
                     location.access_rule = m_loc.access_rule
+
+    # Pre-compute the list of required smiths areas based on modules enabled
+    smiths_module_areas = []
+    if world.options.module_golemcourt.value > 0:
+        smiths_module_areas.append("Area-Golem Court")
+    if world.options.module_firecat.value > 0:
+        smiths_module_areas.append("Area-Firecat Alley")
+    if world.options.module_triton.value > 0:
+        smiths_module_areas.append("Area-Triton Avenue")
+    if world.options.module_cyclops.value > 0:
+        smiths_module_areas.append("Area-Cyclops Lane")
+    
+    try:
+        smiths = world.get_location("Zeke: Find the Smiths (X/10 Smiths)")
+        # Prevent recursion issue
+        smiths_access = smiths.access_rule
+        smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
+            sa(state) and state.has_all(areas, p)
+    except KeyError:
+        # Prevent panic if "Zeke: Find the Smiths" is not a registered location (e.g. if smiths are disabled or excluded)
+        pass
+    # Handle Books Access Rules
+    # Each book is located in a boss area. To collect a book, the player needs to
+    # reach that area (region access) and have the building item for the boss's lair,
+    # but does NOT need the damage to defeat the boss.
+    # We encode these directly instead of pulling from defeat locations, which may
+    # be removed when they aren't the chosen goal.
+    books_module_requirements = []
+    if world.options.module_poststreets.value > 0:
+        # Foulgaze book: need to reach the Foulgaze region + have Building-Foulgaze
+        books_module_requirements.append(("Foulgaze", "Building-Foulgaze"))
+    if world.options.module_cyclops.value == 2:
+        # Akilles book: need to reach Cyclops-DarkCave region + have Building-Akilles
+        books_module_requirements.append(("Cyclops-DarkCave", "Building-Akilles"))
+    if world.options.module_triton.value == 2:
+        # Harvest Lord book: need to reach Triton region + have Building-Harvest Lord
+        books_module_requirements.append(("Triton", "Building-Harvest Lord"))
+    if world.options.module_firecat.value == 2:
+        # Alicane book: need to reach Firecat-Bastilla region + have Building-Alicane
+        books_module_requirements.append(("Firecat-Bastilla", "Building-Alicane"))
+
+    boss_rules = []
+    for region_name, building_item in books_module_requirements:
+        boss_rules.append(
+            lambda state, rn=region_name, bi=building_item, p=player:
+                state.can_reach_region(rn, p) and state.has(bi, p)
+        )
+
+    try:
+        books = world.get_location("Boris: The Lore You Know (X/7 Books)")
+        books_access = books.access_rule
+        books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
+            ba(state) and all(rule(state) for rule in rules)
+    except KeyError:
+        # Prevent panic if "Boris: The Lore You Know" is not a registered location (e.g. if books are disabled or excluded)
+        pass
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:

@@ -276,19 +276,18 @@
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3"
         },
         {
-            "name": "Zeke: Find the Smiths (9/10 Smiths)",
+            "name": "Zeke: Find the Smiths (X/10 Smiths)",
             "category": ["102 The Commons"],
             "region": "EarlyStreets",
-            "module": "#Cyclops# and #Triton# and #Firecat# and #GolemCourt#",
-            "requires": "{wizReach(PostUW)} and |Area-Golem Court| and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Cyclops Lane|",
-            "_comment": "Must be PostUW to get the quest which guarantees access to all areas"
+            "requires": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town|",
+            "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules"
         },
         {
-            "name": "Boris: The Lore You Know (5/7 Books)",
+            "name": "Boris: The Lore You Know (X/7 Books)",
             "category": ["102 The Commons"],
-            "region": "PostStreets",
-            "requires": "|Building-Foulgaze| and ((|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|)",
-            "_comment": "Need either Blackhope or Nightshade"
+            "region": "EarlyStreets",
+            "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
+            "_comment": "Need either Blackhope or Nightshade. Requires String is set dynamically in rule to handle modules"
         },
         {
             "name": "Merle: Colossal Trouble",
@@ -924,6 +923,12 @@
         },
         {
             "name": "Reagent: Mist Wood (Olde Town)",
+            "category": ["105 Olde Town", "Reagents"],
+            "region": "EarlyOldeTown",
+            "requires": "|Area-Olde Town|"
+        },
+        {
+            "name": "Reagent: Flax (Olde Town)",
             "category": ["105 Olde Town", "Reagents"],
             "region": "EarlyOldeTown",
             "requires": "|Area-Olde Town|"
