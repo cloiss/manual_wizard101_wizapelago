@@ -1761,6 +1761,12 @@
         {
             "name": "Vendor-Sell Fish",
             "category": ["08 Vendor"]
+        },
+        {
+            "name": "Building-Dee's Storm Mirror",
+            "category": ["02 Building"],
+            "progression": true,
+            "module": "#LostPages#"
         }
     ]
 }

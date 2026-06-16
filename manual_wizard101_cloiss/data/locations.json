@@ -1863,6 +1863,63 @@
             ],
             "region": "EarlyStreets-Cyclops",
             "sort-key": "_Silver Chest: Cyclops Lane"
+        },
+        {
+            "name": "Harold: The Carpe Diem Society",
+            "category": [
+                "103 Ravenwood",
+                "Quest"
+            ],
+            "region": "LostPages-Ravenwood",
+            "module": "#LostPages#",
+            "xp": 10,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_04.mp3"
+        },
+        {
+            "name": "Simon: Stormy Verse (Spellwrit Screamers)",
+            "category": [
+                "103 Ravenwood",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "module": "#LostPages#",
+            "xp": 15,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_06.mp3"
+        },
+        {
+            "name": "Simon: Quiet Storm",
+            "category": [
+                "103 Ravenwood",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "module": "#LostPages#",
+            "xp": 10,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_01.mp3"
+        },
+        {
+            "name": "Arthur: Right As Rain (Kestrel)",
+            "category": [
+                "103 Ravenwood",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "|Building-Dee's Storm Mirror|",
+            "module": "#LostPages#",
+            "xp": 25,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3"
+        },
+        {
+            "name": "Kestrel Instance: A Line-Storm Song",
+            "category": [
+                "103 Ravenwood",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "|Building-Dee's Storm Mirror|",
+            "module": "#LostPages#",
+            "xp": 25,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3"
         }
     ]
 }
