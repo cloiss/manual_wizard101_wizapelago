@@ -5,9 +5,9 @@ This is a randomizer for Wizard101 developed by Fraxker, Cloiss, and ItzGray. It
 
 ### Software
 You will need the following software:
-- [Archipelago ver. 0.6.6](https://github.com/ArchipelagoMW/Archipelago/releases/tag/0.6.6)
+- [Archipelago ver. 0.6.7](https://github.com/ArchipelagoMW/Archipelago/releases/tag/0.6.7)
 - [Manual_Stable_20260319](https://github.com/ManualForArchipelago/Manual/releases/tag/manual_stable_20260319)
-- [Universal Tracker](https://github.com/FarisTheAncient/Archipelago/releases)
+- [Universal Tracker](https://github.com/FarisTheAncient/Archipelago/releases/tag/Tracker_v0.2.32)
 
 Follow the getting started instructions for Archipelago and Manual to learn how to generate, host, and use the Manual client. Universal Tracker is an apworld that you can install to improve the Manual client's functionality.
 
