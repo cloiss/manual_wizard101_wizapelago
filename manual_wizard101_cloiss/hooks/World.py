@@ -469,7 +469,7 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         if world.options.module_firecat.value > 0:
             num_smiths += 1
 
-        world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smith ({num_smiths}/10 Smiths)"
+        world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
 
     # Handle Books Locations Alias
     books_id = world.location_name_to_id.get("Boris: The Lore You Know")
