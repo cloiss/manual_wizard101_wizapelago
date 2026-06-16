@@ -10,13 +10,6 @@ The modules system allows sections of Wizard City to be selectively disabled or 
 
 `full` - All Golem Court goals.
 
-### Pet Pavilion
-`none` - No Pet Pavilion goals.
-
-`full` - All Pet Pavilion goals.
-
-There is no `half` option for this module.
-
 ### Cyclops Lane
 `none` - No Cyclops Lane goals.
 
