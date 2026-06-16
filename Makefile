@@ -28,4 +28,7 @@ host:
 client:
 	$(ARCHIPELAGO_PATH)\ArchipelagoLauncherDebug.exe "Manual Client"
 
+add-sort-keys:
+	python ./scripts/add_sort_keys.py
+
 .PHONY: package clean package-automark
