@@ -1871,7 +1871,6 @@
                 "Quest"
             ],
             "region": "LostPages-Ravenwood",
-            "module": "#LostPages#",
             "xp": 10,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_04.mp3"
         },
@@ -1882,7 +1881,6 @@
                 "Quest"
             ],
             "region": "LostPages-Triton",
-            "module": "#LostPages#",
             "xp": 15,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_06.mp3"
         },
@@ -1893,7 +1891,6 @@
                 "Quest"
             ],
             "region": "LostPages-Triton",
-            "module": "#LostPages#",
             "xp": 10,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_01.mp3"
         },
@@ -1905,7 +1902,6 @@
             ],
             "region": "LostPages-Triton",
             "requires": "|Building-Dee's Storm Mirror|",
-            "module": "#LostPages#",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3"
         },
@@ -1917,7 +1913,6 @@
             ],
             "region": "LostPages-Triton",
             "requires": "|Building-Dee's Storm Mirror|",
-            "module": "#LostPages#",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3"
         }
