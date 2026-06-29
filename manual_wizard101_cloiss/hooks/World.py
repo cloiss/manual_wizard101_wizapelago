@@ -455,21 +455,36 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
     
-    # Handle Smiths Locations Alias
-    smiths_id = world.location_name_to_id.get("Zeke: Find the Smiths")
-    if smiths_id is not None and hasattr(world, "location_id_to_alias"):
-        # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
-        num_smiths = 5
-        if world.options.module_golemcourt.value > 0:
-            num_smiths += 1
-        if world.options.module_cyclops.value > 0:
-            num_smiths += 1
-        if world.options.module_triton.value > 0:
-            num_smiths += 1
-        if world.options.module_firecat.value > 0:
-            num_smiths += 1
+    # Handle Smiths Locations
+    # 0 = none, 1 = quest (current behavior), 2 = all (per-area)
+    smiths_option = get_option_value(multiworld, player, "find_the_smiths")
+    smiths_locations = world.location_name_groups.get("Smiths", [])
 
-        world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
+    match smiths_option:
+        case 0:  # none: remove quest location and all per-area smith locations
+            location_names_to_remove.append("Zeke: Find the Smiths (X/10 Smiths)")
+            location_names_to_remove.extend(smiths_locations)
+        case 1:  # quest: remove per-area smith locations, keep quest location
+            location_names_to_remove.extend(smiths_locations)
+        case 2:  # all: remove quest location, keep per-area smith locations
+            location_names_to_remove.append("Zeke: Find the Smiths (X/10 Smiths)")
+
+    # Handle Smiths Locations Alias (only relevant when quest location is kept)
+    if smiths_option == 1:
+        smiths_id = world.location_name_to_id.get("Zeke: Find the Smiths (X/10 Smiths)")
+        if smiths_id is not None and hasattr(world, "location_id_to_alias"):
+            # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
+            num_smiths = 5
+            if world.options.module_golemcourt.value > 0:
+                num_smiths += 1
+            if world.options.module_cyclops.value > 0:
+                num_smiths += 1
+            if world.options.module_triton.value > 0:
+                num_smiths += 1
+            if world.options.module_firecat.value > 0:
+                num_smiths += 1
+
+            world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
 
     # Handle Books Locations Alias
     books_id = world.location_name_to_id.get("Boris: The Lore You Know")

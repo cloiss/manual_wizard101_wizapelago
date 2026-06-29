@@ -45,6 +45,9 @@
     "SilverChests": {
         "hidden": true
     },
+    "Smiths": {
+        "hidden": true
+    },
     "School-Balance": {
         "hidden": true
     },

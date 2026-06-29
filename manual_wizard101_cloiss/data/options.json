@@ -186,6 +186,19 @@
             "default": 0,
             "group": "Check Locations"
         },
+        "find_the_smiths": {
+            "description": [
+                "Adds locations for finding the Smiths for Zeke. Select 'quest' for a single combined location, or 'all' to add individual locations for each area. (Adds up to 9 locations)"
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "quest": 1,
+                "all": 2
+            },
+            "default": 1,
+            "group": "Check Locations"
+        },
       
       
       
