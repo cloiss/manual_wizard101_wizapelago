@@ -1757,6 +1757,7 @@
                 "135 Haunted Cave",
                 "HousingItems"
             ],
+            "module": "$Foulgaze$",
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "sort-key": "_Housing Item: Brain Jar (Stormdrain Tower)"
@@ -1872,7 +1873,7 @@
             ],
             "region": "LostPages-Ravenwood",
             "xp": 10,
-            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_04.mp3"
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_09.mp3"
         },
         {
             "name": "Simon: Stormy Verse (Spellwrit Screamers)",
@@ -1903,7 +1904,7 @@
             "region": "LostPages-Triton",
             "requires": "|Building-Dee's Storm Mirror|",
             "xp": 25,
-            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3"
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3"
         },
         {
             "name": "Kestrel Instance: A Line-Storm Song",
@@ -1914,7 +1915,7 @@
             "region": "LostPages-Triton",
             "requires": "|Building-Dee's Storm Mirror|",
             "xp": 25,
-            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3"
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3"
         }
     ]
 }

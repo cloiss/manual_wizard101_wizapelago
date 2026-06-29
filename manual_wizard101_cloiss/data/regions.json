@@ -135,7 +135,7 @@
         "connects_to": ["LostPages-Triton"]
     },
     "LostPages-Triton":{
-        "requires": "(|Teleport-Friendly| or {wizReach(To Muldoon)})",
+        "requires": "(|Teleport-Friendly| or {wizReach(To Muldoon)}) and |Area-Triton Avenue|",
         "module": "#LostPages# and #Triton#"
     }
 }
