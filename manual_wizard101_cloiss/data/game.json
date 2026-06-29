@@ -5,11 +5,35 @@
   "filler_item_name": "Filler TC",
   "starting_items": [
     {
-      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons","Vendor-Library","Teleport-Dungeon"]
+      "items": ["Slot-Wand","Slot-Deck","Area-Unicorn Way","Area-The Commons"]
     },
     {
-      "items": ["ItemCard-Thunder Snake","Vendor-Potions"],
-      "yaml_option": ["beginner"]
+      "items": ["Vendor-Potions"], 
+      "yaml_option": ["start_vendor_potions"]
+    },
+    {
+      "items": ["Vendor-Library"], 
+      "yaml_option": ["start_vendor_library"]
+    },
+    {
+      "item_categories": ["08 Vendor"],
+      "yaml_option": ["start_all_vendors"]
+    },
+    {
+      "items": ["Teleport-Dungeon"], 
+      "yaml_option": ["start_teleport_dungeon"]
+    },
+    {
+      "item_categories": ["04 Teleport"],
+      "yaml_option": ["start_all_teleports"]
+    },
+    {
+      "items": ["ItemCard-Thunder Snake"], 
+      "yaml_option": ["start_thunder_snake"]
+    },
+    {
+      "items": ["SpellCard-Pixie"], 
+      "yaml_option": ["start_pixie"]
     },
     {
       "item_categories": ["00 School"],
