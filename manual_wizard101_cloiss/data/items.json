@@ -759,7 +759,7 @@
         },
         {
             "name": "SpellCard-Golem Minion",
-            "category": ["05 SpellCard","School-Myth","PrimaryOnly","SpellCard-Rank 1","SpellCard-Enrollment"],
+            "category": ["05 SpellCard","School-Myth","SpellCard-Enrollment"],
             "count": 0
         },
         {
