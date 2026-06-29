@@ -15,7 +15,7 @@
     },
     "Commons": {
         "requires": "|Area-The Commons|",
-        "connects_to": ["Commons-Level5", "LostPages-Ravenwood"]
+        "connects_to": ["Commons-Level5", "LostPages"]
     },
     "Commons-Level5":{
         "requires": "{hasLevel(5)}",
@@ -129,7 +129,7 @@
     "ApprenticeTower":{
         "requires": "|Area-Ravenwood| and |Building-Apprentice Tower| and {hasLevel(7)} and |@SpellCard-Rank 2|"
     },
-    "LostPages-Ravenwood":{
+    "LostPages":{
         "requires": "{hasLevel(6)} and |Area-Ravenwood|",
         "module": "#LostPages# and #Triton#",
         "connects_to": ["LostPages-Triton"]
