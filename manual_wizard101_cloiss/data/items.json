@@ -811,7 +811,7 @@
         },
         {
             "name": "SpellCard-Troll Minion",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 2"],
+            "category": ["05 SpellCard","School-Myth"],
             "value": {
                 "level": 7
             },
