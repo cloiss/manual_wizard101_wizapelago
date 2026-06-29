@@ -396,7 +396,7 @@
                 "101 Unicorn Way",
                 "Smiths"
             ],
-            "region": "Smiths",
+            "region": "PostUW-Ravenwood",
             "sort-key": "_Smith: Unicorn Way"
         },
         {
@@ -405,7 +405,7 @@
                 "102 The Commons",
                 "Smiths"
             ],
-            "region": "Smiths",
+            "region": "PostUW-Ravenwood",
             "sort-key": "_Smith: The Commons"
         },
         {
@@ -414,7 +414,7 @@
                 "103 Ravenwood",
                 "Smiths"
             ],
-            "region": "Smiths",
+            "region": "PostUW-Ravenwood",
             "sort-key": "_Smith: Ravenwood"
         },
         {
@@ -423,7 +423,7 @@
                 "104 Shopping District",
                 "Smiths"
             ],
-            "region": "Smiths",
+            "region": "PostUW-Ravenwood",
             "requires": "|Area-Shopping District|",
             "sort-key": "_Smith: Shopping District"
         },
@@ -442,8 +442,8 @@
                 "110 Golem Court",
                 "Smiths"
             ],
-            "region": "Smiths",
-            "requires": "|Area- Golem Tower|",
+            "region": "PostUW-Ravenwood",
+            "requires": "|Area-Golem Court|",
             "module": "#GolemCourt#",
             "sort-key": "_Smith: Golem Court"
         },

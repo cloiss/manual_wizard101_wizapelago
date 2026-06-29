@@ -188,7 +188,7 @@
         },
         "find_the_smiths": {
             "description": [
-                "Adds locations for finding the Smiths for Zeke. Select 'quest' to add a single quest location for finding the Smiths (requires access to all enabled areas with a Smith). Select 'all' to add individual per-area Smith locations for Unicorn Way, The Commons, Ravenwood, Shopping District, Olde Town, Golem Court, Cyclops Lane, Triton Avenue, and Firecat Alley. (Adds up to 9 locations)"
+                "Adds locations for finding the Smiths for Zeke. Select 'quest' for a single combined location, or 'all' to add individual locations for each area. (Adds up to 9 locations)"
             ],
             "type": "Choice",
             "values": {

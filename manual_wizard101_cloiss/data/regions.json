@@ -67,14 +67,14 @@
     },
     "PostUW":{
         "requires": "{wizReach(PostUW)}",
-        "connects_to": ["Muldoon", "PetPavilion", "Smiths"]
+        "connects_to": ["Muldoon", "PetPavilion", "PostUW-Ravenwood"]
     },
-    "Smiths":{
+    "PostUW-Ravenwood":{
         "requires": "|Area-Ravenwood|"
     },
     "Muldoon":{
         "requires": "{wizReach(To Muldoon)}",
-        "connects_to": ["EarlyStreets", "Triton", "Cyclops", "Firecat", "Foulgaze", "PostOneStreet"],
+        "connects_to": ["Triton", "Cyclops", "Firecat", "Foulgaze", "PostOneStreet"],
         "_comment": "Gate to the Three Streets and other post-Muldoon content"
     },
     "PetPavilion":{
