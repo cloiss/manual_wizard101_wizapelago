@@ -391,6 +391,93 @@
             "sort-key": "_Zeke: Find the Smiths (X/10 Smiths)"
         },
         {
+            "name": "Smith: Unicorn Way",
+            "category": [
+                "101 Unicorn Way",
+                "Smiths"
+            ],
+            "region": "Smiths",
+            "sort-key": "_Smith: Unicorn Way"
+        },
+        {
+            "name": "Smith: The Commons",
+            "category": [
+                "102 The Commons",
+                "Smiths"
+            ],
+            "region": "Smiths",
+            "sort-key": "_Smith: The Commons"
+        },
+        {
+            "name": "Smith: Ravenwood",
+            "category": [
+                "103 Ravenwood",
+                "Smiths"
+            ],
+            "region": "Smiths",
+            "sort-key": "_Smith: Ravenwood"
+        },
+        {
+            "name": "Smith: Shopping District",
+            "category": [
+                "104 Shopping District",
+                "Smiths"
+            ],
+            "region": "Smiths",
+            "requires": "|Area-Shopping District|",
+            "sort-key": "_Smith: Shopping District"
+        },
+        {
+            "name": "Smith: Olde Town",
+            "category": [
+                "105 Olde Town",
+                "Smiths"
+            ],
+            "region": "Muldoon",
+            "sort-key": "_Smith: Olde Town"
+        },
+        {
+            "name": "Smith: Golem Court",
+            "category": [
+                "110 Golem Court",
+                "Smiths"
+            ],
+            "region": "Smiths",
+            "requires": "|Area- Golem Tower|",
+            "module": "#GolemCourt#",
+            "sort-key": "_Smith: Golem Court"
+        },
+        {
+            "name": "Smith: Cyclops Lane",
+            "category": [
+                "140 Cyclops Lane",
+                "Smiths"
+            ],
+            "region": "Cyclops",
+            "module": "#Cyclops#",
+            "sort-key": "_Smith: Cyclops Lane"
+        },
+        {
+            "name": "Smith: Triton Avenue",
+            "category": [
+                "130 Triton Avenue",
+                "Smiths"
+            ],
+            "region": "Triton",
+            "module": "#Triton#",
+            "sort-key": "_Smith: Triton Avenue"
+        },
+        {
+            "name": "Smith: Firecat Alley",
+            "category": [
+                "150 Firecat Alley",
+                "Smiths"
+            ],
+            "region": "Firecat",
+            "module": "#Firecat#",
+            "sort-key": "_Smith: Firecat Alley"
+        },
+        {
             "name": "Boris: The Lore You Know (X/7 Books)",
             "category": [
                 "102 The Commons"

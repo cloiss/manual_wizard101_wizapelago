@@ -67,7 +67,10 @@
     },
     "PostUW":{
         "requires": "{wizReach(PostUW)}",
-        "connects_to": ["Muldoon", "PetPavilion"]
+        "connects_to": ["Muldoon", "PetPavilion", "Smiths"]
+    },
+    "Smiths":{
+        "requires": "|Area-Ravenwood|"
     },
     "Muldoon":{
         "requires": "{wizReach(To Muldoon)}",
