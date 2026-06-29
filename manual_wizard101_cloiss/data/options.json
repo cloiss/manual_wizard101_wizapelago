@@ -181,11 +181,21 @@
             "default": false,
             "group": "Starting Inventory"
         },
+        "start_rank_1_item_cards":{
+            "description": [
+                "Start with the specified number of rank 1 item cards (not including Thunder Snake, if chosen above), for use with the default wand. Recommended 3."
+            ],
+            "type": "Range",
+            "range_start": 0,
+            "default": 3,
+            "range_end": 7,
+            "group": "Starting Inventory"
+        },
 
 
 
 
-        
+
         "friendly_teleport":{
             "description": [
                 "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."

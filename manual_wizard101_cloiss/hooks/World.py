@@ -610,7 +610,10 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
             item_blocks_to_remove.append(item_block)
     for item_block in item_blocks_to_remove:
         world.starting_items.remove(item_block)
+    
+    item_blocks_to_add = []
 
+    # Handle starting items from non-binary options
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
         (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
@@ -620,7 +623,15 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     for option, item in option_item_pairs:
         starting_item_block = format_starting_item_block(item)
         if option: # add to starting item if option enabled
-            world.starting_items.append(starting_item_block)
+            item_blocks_to_add.append(starting_item_block)
+
+    # Handle starting inventory options
+    option_rank_1_item_cards = get_option_value(multiworld, player, "start_rank_1_item_cards")
+    
+    item_blocks_to_add.append({"item_categories": ["ItemCard-Rank 1"],"random": option_rank_1_item_cards, "_comment": "REMOVE"})
+
+    for item_block in item_blocks_to_add:
+        world.starting_items.append(item_block)
     
     return item_pool
 
