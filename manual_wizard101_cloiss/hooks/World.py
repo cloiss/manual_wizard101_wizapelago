@@ -136,7 +136,7 @@ def get_item_school(item_name: str, world: World):
     return None
 
 def format_starting_item_block(item_name: str):
-    return {"items": [item_name]}
+    return {"items": [item_name], "_comment": "REMOVE"} # REMOVE instruction clears this starting item block when moving to the next player
 
 # copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
 def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, area: dict):
@@ -603,6 +603,14 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         item_pool.append(world.create_item(item_name))
 
     ### Handle Modifications to the Starting Inventory
+    # Clear out any modifications made by previous players' yamls
+    item_blocks_to_remove = []
+    for item_block in world.starting_items:
+        if item_block.get("_comment",None) == "REMOVE":
+            item_blocks_to_remove.append(item_block)
+    for item_block in item_blocks_to_remove:
+        world.starting_items.remove(item_block)
+
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
         (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
@@ -613,8 +621,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         starting_item_block = format_starting_item_block(item)
         if option: # add to starting item if option enabled
             world.starting_items.append(starting_item_block)
-        elif starting_item_block in world.starting_items: # remove if option not enabled (prevents issues with multiple worlds overlapping)
-            world.starting_items.remove(starting_item_block)
     
     return item_pool
 
