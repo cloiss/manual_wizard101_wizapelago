@@ -1844,6 +1844,7 @@
                 "135 Haunted Cave",
                 "HousingItems"
             ],
+            "module": "$Foulgaze$",
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "sort-key": "_Housing Item: Brain Jar (Stormdrain Tower)"
@@ -1950,6 +1951,60 @@
             ],
             "region": "EarlyStreets-Cyclops",
             "sort-key": "_Silver Chest: Cyclops Lane"
+        },
+        {
+            "name": "Harold: The Carpe Diem Society",
+            "category": [
+                "601 Lost Pages",
+                "Quest"
+            ],
+            "region": "LostPages",
+            "xp": 10,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_09.mp3"
+        },
+        {
+            "name": "Simeon: Stormy Verse (Spellwrit Screamers)",
+            "category": [
+                "601 Lost Pages",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "{advDamage(315)}",
+            "xp": 15,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_06.mp3"
+        },
+        {
+            "name": "Simeon: Quiet Storm",
+            "category": [
+                "601 Lost Pages",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "{advDamage(315)}",
+            "xp": 10,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_01.mp3"
+        },
+        {
+            "name": "Arthur: Right As Rain (Kestrel)",
+            "category": [
+                "601 Lost Pages",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "|Building-Dee's Storm Mirror| and {advDamage(955)} and |Teleport-Dungeon|",
+            "xp": 25,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3"
+        },
+        {
+            "name": "Dee's Storm Mirror: A Line-Storm Song (Instance)",
+            "category": [
+                "601 Lost Pages",
+                "Quest"
+            ],
+            "region": "LostPages-Triton",
+            "requires": "|Building-Dee's Storm Mirror| and {advDamage(955)} and |Teleport-Dungeon|",
+            "xp": 25,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3"
         }
     ]
 }

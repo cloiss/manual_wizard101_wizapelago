@@ -277,6 +277,18 @@
             "default": 1,
             "group": "Modules"
         },
+        "module_lostpages": {
+            "description": [
+                "Includes quests that are part of the Lost Pages event, adding about 1 item and 5 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 0,
+            "group": "Modules"
+        },
 
       
       
