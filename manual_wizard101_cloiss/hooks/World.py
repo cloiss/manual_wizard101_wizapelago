@@ -649,6 +649,9 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         for spell_name in rank_2_spells:
             if get_item_school(spell_name,world) == primary_school:
                 item_blocks_to_add.append(format_starting_item_block(spell_name))
+    
+    if start_primary_rank_1 + option_rank_1_item_cards == 0:
+        logging.warning(f"WARNING: Player {player} has no damage in the starting inventory. The seed may fail to generate.")
 
     for item_block in item_blocks_to_add:
         world.starting_items.append(item_block)
