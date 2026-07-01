@@ -340,7 +340,7 @@
         },
         {
             "name": "SpellCard-Scarab",
-            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1"],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -349,12 +349,11 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0,
-            "_comment": "these are tagged PrimaryOnly due to a workaround for starting inventory"
+            "count": 0
         },          
         {
             "name": "SpellCard-Thunder Snake",
-            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1"],
             "value": {
                 "damage": 315,
                 "rank": 1,
@@ -367,7 +366,7 @@
         },          
         {
             "name": "SpellCard-Ice Beetle",
-            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1"],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -380,7 +379,7 @@
         },          
         {
             "name": "SpellCard-Fire Cat",
-            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1"],
             "value": {
                 "damage": 240,
                 "rank": 1,
@@ -393,7 +392,7 @@
         },          
         {
             "name": "SpellCard-Dark Sprite",
-            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1"],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -406,7 +405,7 @@
         },          
         {
             "name": "SpellCard-Blood Bat",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1"],
             "value": {
                 "damage": 210,
                 "rank": 1,
@@ -419,7 +418,7 @@
         },          
         {
             "name": "SpellCard-Imp",
-            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1"],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -432,7 +431,7 @@
         },          
         {
             "name": "SpellCard-Secondary L1",
-            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1","PrimaryOnly"],
+            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1"],
             "value": {
                 "damage": 195,
                 "rank": 1,

@@ -136,7 +136,7 @@ def get_item_school(item_name: str, world: World):
     return None
 
 def format_starting_item_block(item_name: str):
-    return {"items": [item_name]}
+    return {"items": [item_name], "_comment": "REMOVE"} # REMOVE instruction clears this starting item block when moving to the next player
 
 # copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
 def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, area: dict):
@@ -619,6 +619,17 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         item_pool.append(world.create_item(item_name))
 
     ### Handle Modifications to the Starting Inventory
+    # Clear out any modifications made by previous players' yamls
+    item_blocks_to_remove = []
+    for item_block in world.starting_items:
+        if item_block.get("_comment",None) == "REMOVE":
+            item_blocks_to_remove.append(item_block)
+    for item_block in item_blocks_to_remove:
+        world.starting_items.remove(item_block)
+    
+    item_blocks_to_add = []
+
+    # Handle starting items from non-binary options
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
         (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
@@ -628,9 +639,36 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     for option, item in option_item_pairs:
         starting_item_block = format_starting_item_block(item)
         if option: # add to starting item if option enabled
-            world.starting_items.append(starting_item_block)
-        elif starting_item_block in world.starting_items: # remove if option not enabled (prevents issues with multiple worlds overlapping)
-            world.starting_items.remove(starting_item_block)
+            item_blocks_to_add.append(starting_item_block)
+
+    # Handle starting inventory options
+
+    # Rank 1 Item Cards
+    option_rank_1_item_cards = get_option_value(multiworld, player, "start_rank_1_item_cards")
+    
+    item_blocks_to_add.append({"item_categories": ["ItemCard-Rank 1"],"random": option_rank_1_item_cards, "_comment": "REMOVE"})
+
+    # Ranks 1 & 2 Primary Spell Cards
+    start_primary_rank_1 = get_option_value(multiworld, player, "start_primary_rank_1")
+    start_primary_rank_2 = get_option_value(multiworld, player, "start_primary_rank_2")
+    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
+    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
+    
+    # include the appropriate spells based on the settings and primary school
+    if start_primary_rank_1:
+        for spell_name in rank_1_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
+    if start_primary_rank_2:
+        for spell_name in rank_2_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
+    
+    if start_primary_rank_1 + option_rank_1_item_cards == 0:
+        logging.warning(f"WARNING: Player {player} has no damage in the starting inventory. The seed may fail to generate.")
+
+    for item_block in item_blocks_to_add:
+        world.starting_items.append(item_block)
     
     return item_pool
 
@@ -672,21 +710,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
             remove_specific_item(item_pool, item)
         except:
             pass
-
-
-    item_names_to_add: list[str] = []
-
-    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
-    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
-    
-    # find the secondary rank 1 spell and add it to the pool
-    for spell_name in rank_1_spells:
-        if get_item_school(spell_name,world) == secondary_school:
-            item_names_to_add.append(spell_name)
-
-    for item_name in item_names_to_add:
-        item_pool.append(world.create_item(item_name))
 
     return item_pool
 
