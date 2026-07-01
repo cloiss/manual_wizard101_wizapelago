@@ -424,14 +424,14 @@
             "sort-key": "iMoolinda: Introduction to Life (Level 7)"
         },
         {
-            "name": "Zeke: Find the Smiths (X/10 Smiths)",
+            "name": "X/10 Smiths for 'Find the Smiths'",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town|",
             "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "_Zeke: Find the Smiths (X/10 Smiths)"
+            "sort-key": "_X/10 Smiths for 'Find the Smiths'"
         },
         {
             "name": "Smith: Unicorn Way",
@@ -521,14 +521,14 @@
             "sort-key": "_Smith: Firecat Alley"
         },
         {
-            "name": "Boris: The Lore You Know (X/7 Books)",
+            "name": "X/7 Books for 'The Lore You Know'",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
             "_comment": "Need either Blackhope or Nightshade. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "_Boris: The Lore You Know (X/7 Books)"
+            "sort-key": "_X/7 Books for 'The Lore You Know'"
         },
         {
             "name": "Annie: Say Cheese! (Photomancy 1)",
