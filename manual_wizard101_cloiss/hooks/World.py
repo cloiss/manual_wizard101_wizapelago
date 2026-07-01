@@ -633,8 +633,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     item_blocks_to_add.append({"item_categories": ["ItemCard-Rank 1"],"random": option_rank_1_item_cards, "_comment": "REMOVE"})
 
     # Ranks 1 & 2 Primary Spell Cards
-    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = "School-" + schools[get_option_value(multiworld, player, "primary_school")]
     start_primary_rank_1 = get_option_value(multiworld, player, "start_primary_rank_1")
     start_primary_rank_2 = get_option_value(multiworld, player, "start_primary_rank_2")
     rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
@@ -696,12 +694,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
             remove_specific_item(item_pool, item)
         except:
             pass
-
-    # currently unused, no items get added here
-    item_names_to_add: list[str] = []
-
-    for item_name in item_names_to_add:
-        item_pool.append(world.create_item(item_name))
 
     return item_pool
 
