@@ -181,6 +181,22 @@
             "default": false,
             "group": "Starting Inventory"
         },
+        "start_primary_rank_1":{
+            "description": [
+                "Start with your primary school's rank 1 Spell Card. Highly recommended."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_primary_rank_2":{
+            "description": [
+                "Start with your primary school's rank 2 Spell Card. This option is mostly for future use with higher-level randomizers, as using it for Wizard City may result in a less interesting game."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
         "start_rank_1_item_cards":{
             "description": [
                 "Start with the specified number of rank 1 item cards (not including Thunder Snake, if chosen above), for use with the default wand. Recommended 3."

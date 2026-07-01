@@ -626,9 +626,29 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
             item_blocks_to_add.append(starting_item_block)
 
     # Handle starting inventory options
+
+    # Rank 1 Item Cards
     option_rank_1_item_cards = get_option_value(multiworld, player, "start_rank_1_item_cards")
     
     item_blocks_to_add.append({"item_categories": ["ItemCard-Rank 1"],"random": option_rank_1_item_cards, "_comment": "REMOVE"})
+
+    # Ranks 1 & 2 Primary Spell Cards
+    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
+    primary_school = "School-" + schools[get_option_value(multiworld, player, "primary_school")]
+    start_primary_rank_1 = get_option_value(multiworld, player, "start_primary_rank_1")
+    start_primary_rank_2 = get_option_value(multiworld, player, "start_primary_rank_2")
+    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
+    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
+    
+    # include the appropriate spells based on the settings and primary school
+    if start_primary_rank_1:
+        for spell_name in rank_1_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
+    if start_primary_rank_2:
+        for spell_name in rank_2_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
 
     for item_block in item_blocks_to_add:
         world.starting_items.append(item_block)
@@ -674,17 +694,8 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         except:
             pass
 
-
+    # currently unused, no items get added here
     item_names_to_add: list[str] = []
-
-    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
-    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
-    
-    # find the secondary rank 1 spell and add it to the pool
-    for spell_name in rank_1_spells:
-        if get_item_school(spell_name,world) == secondary_school:
-            item_names_to_add.append(spell_name)
 
     for item_name in item_names_to_add:
         item_pool.append(world.create_item(item_name))

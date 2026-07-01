@@ -40,10 +40,6 @@
       "_comment": "The wizard's primary school"
     },
     {
-      "item_categories": ["SpellCard-Rank 1"],
-      "_comment": "Primary level 1 spell"
-    },
-    {
       "items": ["Teleport-Friendly"],
       "yaml_option": ["friendly_teleport"]
     }
