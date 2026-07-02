@@ -56,6 +56,10 @@
             "default": 1,
             "group": "School"
         },
+
+        
+
+
         "mark_location":{
             "description": [
                 "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
@@ -114,6 +118,100 @@
             "default": 4,
             "group": "Special Item Locations"
         },
+
+
+
+
+
+        "start_vendor_library":{
+            "description": [
+                "Start with Vendor-Library, allowing you to purchase any Treasure Cards you receive as items. Recommended ON for a more fun experience."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_vendor_potions":{
+            "description": [
+                "Start with Vendor-Potions, recommended for beginners for ease of play."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_all_vendors":{
+            "description": [
+                "Start with all vendors. Use this option when there are too many items in the pool. This removes about 17 items."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_teleport_dungeon":{
+            "description": [
+                "Start with Teleport-Dungeon (dungeon recall), making retrying bosses and towers easier and allowing Flee Strats. All multi-floor towers expect you to find this item before attempting the higher floors."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_all_teleports":{
+            "description": [
+                "Start with all teleports. Use this option for a faster and more streamlined game. This removes about 7 items."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+
+
+        "start_thunder_snake":{
+            "description": [
+                "Start with ItemCard-Thunder Snake, making the earlygame easier and faster. Recommended for beginners."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_pixie":{
+            "description": [
+                "Start with SpellCard-Pixie, allowing a guaranteed safety net in fights. Recommended for beginners."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_primary_rank_1":{
+            "description": [
+                "Start with your primary school's rank 1 Spell Card. Highly recommended."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_primary_rank_2":{
+            "description": [
+                "Start with your primary school's rank 2 Spell Card. This option is mostly for future use with higher-level randomizers, as using it for Wizard City may result in a less interesting game."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_rank_1_item_cards":{
+            "description": [
+                "Start with the specified number of rank 1 item cards (not including Thunder Snake, if chosen above), for use with the default wand. Recommended 3."
+            ],
+            "type": "Range",
+            "range_start": 0,
+            "default": 3,
+            "range_end": 7,
+            "group": "Starting Inventory"
+        },
+
+
+
+
+
         "friendly_teleport":{
             "description": [
                 "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
@@ -124,12 +222,18 @@
         },
         "beginner": {
             "description": [
-                "Enable this setting to disable unintuitive logic and improve the starting inventory."
+                "Enable this setting to disable unintuitive logic."
             ],
             "type": "Toggle",
             "default": false,
             "group": "Logic"
         },
+
+
+
+
+
+
         "reagents": {
             "description": [
                 "Adds locations for collecting reagents in Wizard City. Select 'anywhere' to add one location per reagent type (6 locations). Select 'anywhere-ore' to only add the Ore location, which has the most interesting access logic. Select 'all' to add reagent locations per area: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town, Cyclops Lane, Triton Avenue, Haunted Cave, Firecat Alley, and Dark Cave. (Adds up to 26 locations)"
