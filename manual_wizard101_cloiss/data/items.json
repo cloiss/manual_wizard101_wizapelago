@@ -536,8 +536,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Balance",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 195,
@@ -547,8 +546,7 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0,
-            "_comment": "these are tagged PrimaryOnly due to a workaround for starting inventory",
+            "count": 0
             "sort-key": "000SpellCard-Scarab"
         },
         {
@@ -556,8 +554,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Storm",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 315,
@@ -575,8 +572,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Ice",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 195,
@@ -594,8 +590,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Fire",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 240,
@@ -613,8 +608,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Death",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 195,
@@ -632,8 +626,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Myth",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 210,
@@ -651,8 +644,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Life",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 195,
@@ -670,8 +662,7 @@
             "category": [
                 "05 SpellCard",
                 "School-Any",
-                "SpellCard-Rank 1",
-                "PrimaryOnly"
+                "SpellCard-Rank 1"
             ],
             "value": {
                 "damage": 195,
