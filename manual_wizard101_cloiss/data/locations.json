@@ -11,7 +11,7 @@
             "xp": 38,
             "_comment": "Tutorial: 33 xp, Quest: 5",
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/PrivateConnelly_001_04.mp3",
-            "sort-key": "aMAIN: Unicorn Way (Start)"
+            "sort-key": "000MAIN: Unicorn Way (Start)"
         },
         {
             "name": "MAIN: Ghost Hunters (Souls)",
@@ -24,7 +24,7 @@
             "xp": 51,
             "_comment": "Quest: 45, Additional Battle XP: 6",
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_02.mp3",
-            "sort-key": "bMAIN: Ghost Hunters (Souls)"
+            "sort-key": "001MAIN: Ghost Hunters (Souls)"
         },
         {
             "name": "MAIN: Skeleton Crew (Pirates)",
@@ -37,7 +37,7 @@
             "xp": 101,
             "_comment": "Quest: 95, Additional Battle XP: 6",
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_12.mp3",
-            "sort-key": "cMAIN: Skeleton Crew (Pirates)"
+            "sort-key": "002MAIN: Skeleton Crew (Pirates)"
         },
         {
             "name": "MAIN: Monsters and Mazes (To Oriel)",
@@ -49,7 +49,7 @@
             "requires": "{advDamage(80)}",
             "xp": 110,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/LadyOriel_001_04.mp3",
-            "sort-key": "dMAIN: Monsters and Mazes (To Oriel)"
+            "sort-key": "003MAIN: Monsters and Mazes (To Oriel)"
         },
         {
             "name": "MAIN: Finding Out Why (Cages/Fairies)",
@@ -62,7 +62,7 @@
             "xp": 126,
             "_comment": "Quest: 120, Additional Battle XP: 6",
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/LadyOriel_001_11.mp3",
-            "sort-key": "eMAIN: Finding Out Why (Cages/Fairies)"
+            "sort-key": "004MAIN: Finding Out Why (Cages/Fairies)"
         },
         {
             "name": "MAIN: Who Could It Be Now? (To Ceren)",
@@ -74,7 +74,7 @@
             "requires": "{advDamage(115)}",
             "xp": 45,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_17.mp3",
-            "sort-key": "fMAIN: Who Could It Be Now? (To Ceren)"
+            "sort-key": "005MAIN: Who Could It Be Now? (To Ceren)"
         },
         {
             "name": "MAIN: Sinister Skeleton (Rattlebones)",
@@ -86,7 +86,7 @@
             "requires": "{advDamage(250)} and |Building-Rattlebones| and {specialItemCheck(Rattlebones)}",
             "xp": 110,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/CerenNightchant_001_22.mp3",
-            "sort-key": "gMAIN: Sinister Skeleton (Rattlebones)"
+            "sort-key": "006MAIN: Sinister Skeleton (Rattlebones)"
         },
         {
             "name": "Olivia: Pesky Pirates",
@@ -98,7 +98,7 @@
             "requires": "{advDamage(80)}",
             "xp": 35,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/OliviaDawnwillow_001_05.mp3",
-            "sort-key": "hOlivia: Pesky Pirates"
+            "sort-key": "007Olivia: Pesky Pirates"
         },
         {
             "name": "Connelly: Yellow Brick Road (Dorothy)",
@@ -110,7 +110,7 @@
             "requires": "{advDamage(115)}",
             "xp": 5,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DorothyGale_QST_05.mp3",
-            "sort-key": "iConnelly: Yellow Brick Road (Dorothy)"
+            "sort-key": "008Connelly: Yellow Brick Road (Dorothy)"
         },
         {
             "name": "Dorothy: Not in Kansas Anymore",
@@ -122,7 +122,7 @@
             "requires": "{advDamage(115)}",
             "xp": 45,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateConnelly_QST_17.mp3",
-            "sort-key": "jDorothy: Not in Kansas Anymore"
+            "sort-key": "009Dorothy: Not in Kansas Anymore"
         },
         {
             "name": "Connelly: Saving Private O'Ryan (Blackhope)",
@@ -134,7 +134,7 @@
             "requires": "{advDamage(330)} and |Building-Blackhope|",
             "xp": 60,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/PrivateConnelly_001_13.mp3",
-            "sort-key": "kConnelly: Saving Private O'Ryan (Blackhope)"
+            "sort-key": "010Connelly: Saving Private O'Ryan (Blackhope)"
         },
         {
             "name": "Diego: Advanced Combat",
@@ -146,7 +146,7 @@
             "requires": "{advDamage(115)}",
             "xp": 150,
             "log_msg": "|Sound|WorldData|Sound/Dialogue_ADVTUT/Diego_ADVTUT_01.mp3",
-            "sort-key": "lDiego: Advanced Combat"
+            "sort-key": "011Diego: Advanced Combat"
         },
         {
             "name": "Diego: Unlocking the Truth (Roberto)",
@@ -159,7 +159,7 @@
             "module": "$Roberto$",
             "xp": 100,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/GMC/DiegoTheDuelmaster_GMC_16.mp3",
-            "sort-key": "mDiego: Unlocking the Truth (Roberto)"
+            "sort-key": "012Diego: Unlocking the Truth (Roberto)"
         },
         {
             "name": "MAIN: Grim Tales (To Merle)",
@@ -170,7 +170,7 @@
             "region": "PostUW",
             "xp": 150,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/MerleAmbrose_001_11.mp3",
-            "sort-key": "aMAIN: Grim Tales (To Merle)"
+            "sort-key": "000MAIN: Grim Tales (To Merle)"
         },
         {
             "name": "MAIN: To Ravenwood!",
@@ -182,7 +182,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 20,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/MerleAmbrose_001_20.mp3",
-            "sort-key": "bMAIN: To Ravenwood!"
+            "sort-key": "001MAIN: To Ravenwood!"
         },
         {
             "name": "Abby: City Tour",
@@ -195,7 +195,7 @@
             "requires": "|Area-Golem Court| and |Area-Shopping District|",
             "xp": 20,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/AbbyKDoodle_001_20.mp3",
-            "sort-key": "cAbby: City Tour"
+            "sort-key": "002Abby: City Tour"
         },
         {
             "name": "Merle: Diego the Duelmaster",
@@ -207,7 +207,7 @@
             "requires": "{wizReach(To Muldoon)}",
             "xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DiegoTheDuelmaster_QST_01.mp3",
-            "sort-key": "dMerle: Diego the Duelmaster"
+            "sort-key": "003Merle: Diego the Duelmaster"
         },
         {
             "name": "Merle: Pet Sounds",
@@ -218,7 +218,7 @@
             "region": "PetPavilion",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/MiloBarker_002_01.mp3",
-            "sort-key": "eMerle: Pet Sounds"
+            "sort-key": "004Merle: Pet Sounds"
         },
         {
             "name": "Penny: Hey, Penny (Commons)",
@@ -229,7 +229,7 @@
             "region": "Muldoon",
             "xp": 5,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_19.mp3",
-            "sort-key": "fPenny: Hey, Penny (Commons)"
+            "sort-key": "005Penny: Hey, Penny (Commons)"
         },
         {
             "name": "Penny: Dreadful Assignment (Defeats)",
@@ -243,7 +243,7 @@
             "xp": 35,
             "_comment": "Note that Haunted Cave is behind the FULL triton module",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_27.mp3",
-            "sort-key": "gPenny: Dreadful Assignment (Defeats)"
+            "sort-key": "006Penny: Dreadful Assignment (Defeats)"
         },
         {
             "name": "Penny: Penny For Your Thoughts (Dark Cave)",
@@ -256,7 +256,7 @@
             "requires": "{advDamage(395)} and |Area-Triton Avenue| and |Area-Haunted Cave| and |Area-Dark Cave| and (|Area-Firecat Alley| or |Area-Cyclops Lane|)",
             "xp": 5,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/PennyDreadful_002_35.mp3",
-            "sort-key": "hPenny: Penny For Your Thoughts (Dark Cave)"
+            "sort-key": "007Penny: Penny For Your Thoughts (Dark Cave)"
         },
         {
             "name": "Lucky: A River Runs Through It (Fishing 1)",
@@ -267,7 +267,7 @@
             "region": "PostOneStreet",
             "xp": 125,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_23.mp3",
-            "sort-key": "iLucky: A River Runs Through It (Fishing 1)"
+            "sort-key": "008Lucky: A River Runs Through It (Fishing 1)"
         },
         {
             "name": "Lucky: Fishful Thinking (Fishing 2)",
@@ -281,7 +281,7 @@
             "xp": 0,
             "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375.",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3",
-            "sort-key": "jLucky: Fishful Thinking (Fishing 2)"
+            "sort-key": "009Lucky: Fishful Thinking (Fishing 2)"
         },
         {
             "name": "Merle: Colossal Trouble",
@@ -292,7 +292,7 @@
             "region": "PostStreets",
             "xp": 35,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateODoyle_QST_01.mp3",
-            "sort-key": "kMerle: Colossal Trouble"
+            "sort-key": "010Merle: Colossal Trouble"
         },
         {
             "name": "Arthur: Introduction to Balance (Level 7)",
@@ -307,7 +307,7 @@
             "requires": "|Area-Golem Court| and |Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfArthurWethersfield_QST_10.mp3",
-            "sort-key": "aArthur: Introduction to Balance (Level 7)"
+            "sort-key": "000Arthur: Introduction to Balance (Level 7)"
         },
         {
             "name": "Halston: Leyden Lab (Level 7)",
@@ -321,7 +321,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/HaroldArgelston_QST_33.mp3",
-            "sort-key": "bHalston: Leyden Lab (Level 7)"
+            "sort-key": "001Halston: Leyden Lab (Level 7)"
         },
         {
             "name": "Harold: Charge It Up (Level 7)",
@@ -335,7 +335,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfHalstonBalestrom_QST_18.mp3",
-            "sort-key": "cHarold: Charge It Up (Level 7)"
+            "sort-key": "002Harold: Charge It Up (Level 7)"
         },
         {
             "name": "Lydia: Introduction to Ice (Level 7)",
@@ -349,7 +349,7 @@
             "requires": "|Area-Shopping District| and |Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfLydiaGreyrose_QST_11.mp3",
-            "sort-key": "dLydia: Introduction to Ice (Level 7)"
+            "sort-key": "003Lydia: Introduction to Ice (Level 7)"
         },
         {
             "name": "Dalia: Introduction to Fire (Level 7)",
@@ -364,7 +364,7 @@
             "module": "#GolemCourt#",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DaliaFalmea_QST_08.mp3",
-            "sort-key": "eDalia: Introduction to Fire (Level 7)"
+            "sort-key": "004Dalia: Introduction to Fire (Level 7)"
         },
         {
             "name": "Malorn: The Buried Truth (Level 7)",
@@ -379,7 +379,7 @@
             "module": "#Triton:2#",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_07.mp3",
-            "sort-key": "fMalorn: The Buried Truth (Level 7)"
+            "sort-key": "005Malorn: The Buried Truth (Level 7)"
         },
         {
             "name": "Cyrus: Not So Welcome to Myth (Level 7)",
@@ -393,7 +393,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_28.mp3",
-            "sort-key": "gCyrus: Not So Welcome to Myth (Level 7)"
+            "sort-key": "006Cyrus: Not So Welcome to Myth (Level 7)"
         },
         {
             "name": "Cyrus: Myth Adventure (Level 7)",
@@ -407,7 +407,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ProfCyrusDrake_QST_30.mp3",
-            "sort-key": "hCyrus: Myth Adventure (Level 7)"
+            "sort-key": "007Cyrus: Myth Adventure (Level 7)"
         },
         {
             "name": "Moolinda: Introduction to Life (Level 7)",
@@ -421,7 +421,7 @@
             "requires": "|Area-Ravenwood|",
             "xp": 190,
             "log_msg": "|Sound|WorldData|Sound/Dialogue_CIN/LadyOriel_CIN_23.mp3",
-            "sort-key": "iMoolinda: Introduction to Life (Level 7)"
+            "sort-key": "008Moolinda: Introduction to Life (Level 7)"
         },
         {
             "name": "X/10 Smiths for 'Find the Smiths'",
@@ -541,7 +541,7 @@
             "requires": "{wizReach(Golem Court)}",
             "xp": 30,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_15.mp3",
-            "sort-key": "aAnnie: Say Cheese! (Photomancy 1)"
+            "sort-key": "000Annie: Say Cheese! (Photomancy 1)"
         },
         {
             "name": "Annie: Ready, Aim, Shoot! (Photomancy 2)",
@@ -554,7 +554,7 @@
             "requires": "{wizReach(Golem Court)}",
             "xp": 35,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ANV/AnnieShutterbug_ANV_25.mp3",
-            "sort-key": "bAnnie: Ready, Aim, Shoot! (Photomancy 2)"
+            "sort-key": "001Annie: Ready, Aim, Shoot! (Photomancy 2)"
         },
         {
             "name": "Regina: Science Fair (Construct)",
@@ -566,7 +566,7 @@
             "requires": "{advDamage(95)}",
             "xp": 20,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_16.mp3",
-            "sort-key": "cRegina: Science Fair (Construct)"
+            "sort-key": "002Regina: Science Fair (Construct)"
         },
         {
             "name": "Regina: Second Gear (Clockwork)",
@@ -579,7 +579,7 @@
             "xp": 45,
             "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise.",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_20.mp3",
-            "sort-key": "dRegina: Second Gear (Clockwork)"
+            "sort-key": "003Regina: Second Gear (Clockwork)"
         },
         {
             "name": "Regina: The Final Piece (Iron Golem)",
@@ -592,7 +592,7 @@
             "xp": 100,
             "_comment": "Require level 7 and a rank 2 spell to avoid the frustration of having to do this early with very poor equipment.",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_25.mp3",
-            "sort-key": "eRegina: The Final Piece (Iron Golem)"
+            "sort-key": "004Regina: The Final Piece (Iron Golem)"
         },
         {
             "name": "Milo: A Wizard's Best Friend",
@@ -603,7 +603,7 @@
             "region": "PetPavilion",
             "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MiloBarker_QST_11.mp3",
-            "sort-key": "aMilo: A Wizard's Best Friend"
+            "sort-key": "000Milo: A Wizard's Best Friend"
         },
         {
             "name": "Milo: Wizzy 500",
@@ -614,7 +614,7 @@
             "region": "PetPavilion",
             "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MiloBarker_QST_21.mp3",
-            "sort-key": "bMilo: Wizzy 500"
+            "sort-key": "001Milo: Wizzy 500"
         },
         {
             "name": "Milo: Hoard of the Rings",
@@ -626,7 +626,7 @@
             "requires": "|Area-Shopping District|",
             "xp": 35,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/MiloBarker_002_10.mp3",
-            "sort-key": "cMilo: Hoard of the Rings"
+            "sort-key": "002Milo: Hoard of the Rings"
         },
         {
             "name": "MAIN: Panic in Three Streets! (To Muldoon)",
@@ -638,7 +638,7 @@
             "requires": "{wizReach(To Muldoon)}",
             "xp": 10,
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/SeargeantMuldoon_001_01.mp3",
-            "sort-key": "aMAIN: Panic in Three Streets! (To Muldoon)"
+            "sort-key": "000MAIN: Panic in Three Streets! (To Muldoon)"
         },
         {
             "name": "Eudora: Wizards in the Mist (Mist Wood)",
@@ -649,7 +649,7 @@
             "region": "EarlyOldeTown",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_07.mp3",
-            "sort-key": "bEudora: Wizards in the Mist (Mist Wood)"
+            "sort-key": "001Eudora: Wizards in the Mist (Mist Wood)"
         },
         {
             "name": "Eudora: The Razor's Edge (Craft Daggers)",
@@ -660,7 +660,7 @@
             "region": "EarlyOldeTown",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_14.mp3",
-            "sort-key": "cEudora: The Razor's Edge (Craft Daggers)"
+            "sort-key": "002Eudora: The Razor's Edge (Craft Daggers)"
         },
         {
             "name": "Guildenstern: Walkabout",
@@ -673,7 +673,7 @@
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_27.mp3",
-            "sort-key": "dGuildenstern: Walkabout"
+            "sort-key": "003Guildenstern: Walkabout"
         },
         {
             "name": "Gloria: Looking Sharp!",
@@ -687,7 +687,7 @@
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/GloriaKrendell_002_07.mp3",
-            "sort-key": "eGloria: Looking Sharp!"
+            "sort-key": "004Gloria: Looking Sharp!"
         },
         {
             "name": "Baldur: Bear Market",
@@ -698,7 +698,7 @@
             "region": "PostStreets",
             "xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/BaldurGoldpaws_QST_06.mp3",
-            "sort-key": "fBaldur: Bear Market"
+            "sort-key": "005Baldur: Bear Market"
         },
         {
             "name": "Baldur: Trade Voyage",
@@ -710,7 +710,7 @@
             "requires": "|Area-Northguard|",
             "xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/BaldurGoldpaws_QST_13.mp3",
-            "sort-key": "aBaldur: Trade Voyage"
+            "sort-key": "000Baldur: Trade Voyage"
         },
         {
             "name": "Talk to Nick Jonas (Not a Quest)",
@@ -721,7 +721,7 @@
             "requires": "|Area-Northguard|",
             "_comment": "This is the only default check that isn't a quest, it was added for the memes",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/NickJonas_GH2_01.mp3",
-            "sort-key": "bTalk to Nick Jonas (Not a Quest)"
+            "sort-key": "001Talk to Nick Jonas (Not a Quest)"
         },
         {
             "name": "MAIN: A Good Day to Cyclops (Start)",
@@ -732,7 +732,7 @@
             "region": "Cyclops",
             "xp": 15,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_02.mp3",
-            "sort-key": "aMAIN: A Good Day to Cyclops (Start)"
+            "sort-key": "000MAIN: A Good Day to Cyclops (Start)"
         },
         {
             "name": "MAIN: A Stroll with Trolls",
@@ -743,7 +743,7 @@
             "region": "Cyclops",
             "xp": 155,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_10.mp3",
-            "sort-key": "bMAIN: A Stroll with Trolls"
+            "sort-key": "001MAIN: A Stroll with Trolls"
         },
         {
             "name": "MAIN: Run and Done (Laundry)",
@@ -755,7 +755,7 @@
             "requires": "|Area-Shopping District|",
             "xp": 130,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/NolanStormgate_005_17.mp3",
-            "sort-key": "cMAIN: Run and Done (Laundry)"
+            "sort-key": "002MAIN: Run and Done (Laundry)"
         },
         {
             "name": "MAIN: The Cave Escape (Cyclops/Fodder/Bubbles)",
@@ -766,7 +766,7 @@
             "region": "Cyclops-DarkCave",
             "xp": 210,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_05.mp3",
-            "sort-key": "dMAIN: The Cave Escape (Cyclops/Fodder/Bubbles)"
+            "sort-key": "003MAIN: The Cave Escape (Cyclops/Fodder/Bubbles)"
         },
         {
             "name": "MAIN: Oh Me, Oh Minotaur (Warhorns)",
@@ -779,7 +779,7 @@
             "requires": "{advDamage(285)}",
             "xp": 155,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Romulus_005_02.mp3",
-            "sort-key": "eMAIN: Oh Me, Oh Minotaur (Warhorns)"
+            "sort-key": "004MAIN: Oh Me, Oh Minotaur (Warhorns)"
         },
         {
             "name": "MAIN: Akilles' Deal (Akilles/Muldoon)",
@@ -792,7 +792,7 @@
             "requires": "{advDamage(705)} and |Building-Akilles|",
             "xp": 220,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Muldoon_005_07.mp3",
-            "sort-key": "fMAIN: Akilles' Deal (Akilles/Muldoon)"
+            "sort-key": "005MAIN: Akilles' Deal (Akilles/Muldoon)"
         },
         {
             "name": "Emerson: Don't Need the Trolls",
@@ -803,7 +803,7 @@
             "region": "Cyclops",
             "xp": 95,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateEmerson_005_05.mp3",
-            "sort-key": "gEmerson: Don't Need the Trolls"
+            "sort-key": "006Emerson: Don't Need the Trolls"
         },
         {
             "name": "Sweeney: Mostly Armorless",
@@ -814,7 +814,7 @@
             "region": "Cyclops",
             "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateSweeney_005_06.mp3",
-            "sort-key": "hSweeney: Mostly Armorless"
+            "sort-key": "007Sweeney: Mostly Armorless"
         },
         {
             "name": "Emerson: Mad Maximus (Eyus)",
@@ -826,7 +826,7 @@
             "requires": "{advDamage(635)} and |Building-Eyus|",
             "xp": 225,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateEmerson_005_12.mp3",
-            "sort-key": "iEmerson: Mad Maximus (Eyus)"
+            "sort-key": "008Emerson: Mad Maximus (Eyus)"
         },
         {
             "name": "Rosie: Mazes and Minotaurs (Maze Books)",
@@ -839,7 +839,7 @@
             "requires": "{advDamage(285)}",
             "xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/RosieIronheart_005_09.mp3",
-            "sort-key": "jRosie: Mazes and Minotaurs (Maze Books)"
+            "sort-key": "009Rosie: Mazes and Minotaurs (Maze Books)"
         },
         {
             "name": "Garrick: You Can Dig It (Pet Dig)",
@@ -852,7 +852,7 @@
             "requires": "{wizReach(Pet Shop)} and |Slot-Pet|",
             "xp": 110,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GarrickGoldenhawk_005_12.mp3",
-            "sort-key": "kGarrick: You Can Dig It (Pet Dig)"
+            "sort-key": "010Garrick: You Can Dig It (Pet Dig)"
         },
         {
             "name": "Electra: Faire Thee Well (Pre-Fears)",
@@ -865,7 +865,7 @@
             "requires": "{advDamage(285)}",
             "xp": 80,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PierreGallantmane_005_01.mp3",
-            "sort-key": "lElectra: Faire Thee Well (Pre-Fears)"
+            "sort-key": "011Electra: Faire Thee Well (Pre-Fears)"
         },
         {
             "name": "Pierre: The Power is Ours (Fears)",
@@ -878,7 +878,7 @@
             "requires": "{advDamage(285)} and |Area-Triton Avenue| and |Building-Fears|",
             "xp": 345,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ElectraStormcloud_005_13.mp3",
-            "sort-key": "mPierre: The Power is Ours (Fears)"
+            "sort-key": "012Pierre: The Power is Ours (Fears)"
         },
         {
             "name": "MAIN: Trouble on Triton Avenue (Start)",
@@ -889,7 +889,7 @@
             "region": "Triton",
             "xp": 15,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_02.mp3",
-            "sort-key": "aMAIN: Trouble on Triton Avenue (Start)"
+            "sort-key": "000MAIN: Trouble on Triton Avenue (Start)"
         },
         {
             "name": "MAIN: Menacing Minions",
@@ -900,7 +900,7 @@
             "region": "Triton",
             "xp": 235,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_09.mp3",
-            "sort-key": "bMAIN: Menacing Minions"
+            "sort-key": "001MAIN: Menacing Minions"
         },
         {
             "name": "MAIN: The Shadow of Death Magic (Eel)",
@@ -911,7 +911,7 @@
             "region": "Triton",
             "xp": 240,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_08.mp3",
-            "sort-key": "cMAIN: The Shadow of Death Magic (Eel)"
+            "sort-key": "002MAIN: The Shadow of Death Magic (Eel)"
         },
         {
             "name": "MAIN: Quest for Clues (Fodders)",
@@ -923,7 +923,7 @@
             "module": "#Triton:2#",
             "xp": 230,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_14.mp3",
-            "sort-key": "dMAIN: Quest for Clues (Fodders)"
+            "sort-key": "003MAIN: Quest for Clues (Fodders)"
         },
         {
             "name": "MAIN: Catching a Glimpse (To Blad)",
@@ -935,7 +935,7 @@
             "module": "#Triton:2#",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_01.mp3",
-            "sort-key": "eMAIN: Catching a Glimpse (To Blad)"
+            "sort-key": "004MAIN: Catching a Glimpse (To Blad)"
         },
         {
             "name": "MAIN: Clear as Crystal (Cogs/Screamers)",
@@ -947,7 +947,7 @@
             "module": "#Triton:2#",
             "xp": 190,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BladRaveneye_002_10.mp3",
-            "sort-key": "fMAIN: Clear as Crystal (Cogs/Screamers)"
+            "sort-key": "005MAIN: Clear as Crystal (Cogs/Screamers)"
         },
         {
             "name": "MAIN: Luminate (To Duncan)",
@@ -959,7 +959,7 @@
             "module": "#Triton:2#",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_18.mp3",
-            "sort-key": "gMAIN: Luminate (To Duncan)"
+            "sort-key": "006MAIN: Luminate (To Duncan)"
         },
         {
             "name": "MAIN: The Enemy Revealed (Harvest Lord)",
@@ -970,7 +970,7 @@
             "region": "Triton-HarvestLord",
             "xp": 195,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_07.mp3",
-            "sort-key": "hMAIN: The Enemy Revealed (Harvest Lord)"
+            "sort-key": "007MAIN: The Enemy Revealed (Harvest Lord)"
         },
         {
             "name": "MAIN: To Tame a Tempest (To Artur)",
@@ -981,7 +981,7 @@
             "region": "Triton-HarvestLord",
             "xp": 85,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/ArturGryphonbane_002_18.mp3",
-            "sort-key": "iMAIN: To Tame a Tempest (To Artur)"
+            "sort-key": "008MAIN: To Tame a Tempest (To Artur)"
         },
         {
             "name": "MAIN: Triton Report (To Muldoon)",
@@ -992,7 +992,7 @@
             "region": "Triton-HarvestLord",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SeargeantMuldoon_002_14.mp3",
-            "sort-key": "jMAIN: Triton Report (To Muldoon)"
+            "sort-key": "009MAIN: Triton Report (To Muldoon)"
         },
         {
             "name": "Sohomer: All the Eels",
@@ -1004,7 +1004,7 @@
             "requires": "{advDamage(150)}",
             "xp": 75,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_07.mp3",
-            "sort-key": "kSohomer: All the Eels"
+            "sort-key": "010Sohomer: All the Eels"
         },
         {
             "name": "Sohomer: Wayward Barrels",
@@ -1016,7 +1016,7 @@
             "requires": "{advDamage(150)}",
             "xp": 50,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_12.mp3",
-            "sort-key": "lSohomer: Wayward Barrels"
+            "sort-key": "011Sohomer: Wayward Barrels"
         },
         {
             "name": "Sohomer: Better Get Kraken (Fodder)",
@@ -1028,7 +1028,7 @@
             "requires": "{advDamage(150)}",
             "xp": 95,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_16.mp3",
-            "sort-key": "mSohomer: Better Get Kraken (Fodder)"
+            "sort-key": "012Sohomer: Better Get Kraken (Fodder)"
         },
         {
             "name": "Sohomer: Decease the Kraken!",
@@ -1040,7 +1040,7 @@
             "requires": "{advDamage(510)} and |Building-Kraken|",
             "xp": 205,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SohomerSunblade_002_18.mp3",
-            "sort-key": "nSohomer: Decease the Kraken!"
+            "sort-key": "013Sohomer: Decease the Kraken!"
         },
         {
             "name": "Sandor: A Scrap of Trouble (Skullsplitter)",
@@ -1052,7 +1052,7 @@
             "requires": "{advDamage(705)} and |Building-Skullsplitter|",
             "xp": 130,
             "log_msg": "|Sound_Dialogue_LM|WorldData|Sound/Dialogue/LM/Sandor_Spitfire_WC-TRITON_005.mp3",
-            "sort-key": "oSandor: A Scrap of Trouble (Skullsplitter)"
+            "sort-key": "014Sandor: A Scrap of Trouble (Skullsplitter)"
         },
         {
             "name": "Suzie: Sniff 'em Out (Pet Dig)",
@@ -1064,7 +1064,7 @@
             "requires": "{wizReach(Pet Shop)} and |Slot-Pet|",
             "xp": 60,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/SuzieGryphonbane_002_21.mp3",
-            "sort-key": "pSuzie: Sniff 'em Out (Pet Dig)"
+            "sort-key": "015Suzie: Sniff 'em Out (Pet Dig)"
         },
         {
             "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
@@ -1078,7 +1078,7 @@
             "_comment": "Quest ends at the entrance to Haunted Cave.",
             "xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/DaisyWillowmancer_005_02.mp3",
-            "sort-key": "aMAIN: A Brief History of the Spiral (Foulgaze/Daisy)"
+            "sort-key": "000MAIN: A Brief History of the Spiral (Foulgaze/Daisy)"
         },
         {
             "name": "Duncan: Haunting Questions (Haunted Cave)",
@@ -1090,7 +1090,7 @@
             "requires": "|Area-Haunted Cave|",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_29.mp3",
-            "sort-key": "bDuncan: Haunting Questions (Haunted Cave)"
+            "sort-key": "001Duncan: Haunting Questions (Haunted Cave)"
         },
         {
             "name": "Duncan: Secret of the Cave (Field Guards)",
@@ -1102,7 +1102,7 @@
             "requires": "|Area-Haunted Cave|",
             "xp": 105,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_39.mp3",
-            "sort-key": "cDuncan: Secret of the Cave (Field Guards)"
+            "sort-key": "002Duncan: Secret of the Cave (Field Guards)"
         },
         {
             "name": "MAIN: Putting Out the Fire! (Minions)",
@@ -1113,7 +1113,7 @@
             "region": "Firecat",
             "xp": 15,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateQuinn_005_06.mp3",
-            "sort-key": "aMAIN: Putting Out the Fire! (Minions)"
+            "sort-key": "000MAIN: Putting Out the Fire! (Minions)"
         },
         {
             "name": "MAIN: She Ran Crying Wildfire (Hunters)",
@@ -1124,7 +1124,7 @@
             "region": "Firecat",
             "xp": 105,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_06.mp3",
-            "sort-key": "bMAIN: She Ran Crying Wildfire (Hunters)"
+            "sort-key": "001MAIN: She Ran Crying Wildfire (Hunters)"
         },
         {
             "name": "MAIN: Which Hunt? (Pathfinders/Magma Men)",
@@ -1135,7 +1135,7 @@
             "region": "Firecat",
             "xp": 150,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_08.mp3",
-            "sort-key": "cMAIN: Which Hunt? (Pathfinders/Magma Men)"
+            "sort-key": "002MAIN: Which Hunt? (Pathfinders/Magma Men)"
         },
         {
             "name": "MAIN: 100% Not That Witch (Fodder/Bastilla)",
@@ -1146,7 +1146,7 @@
             "region": "Firecat-Bastilla",
             "xp": 230,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_22.mp3",
-            "sort-key": "dMAIN: 100% Not That Witch (Fodder/Bastilla)"
+            "sort-key": "003MAIN: 100% Not That Witch (Fodder/Bastilla)"
         },
         {
             "name": "MAIN: Which Craft? (Gloria)",
@@ -1157,7 +1157,7 @@
             "region": "Firecat-Bastilla",
             "xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_29.mp3",
-            "sort-key": "eMAIN: Which Craft? (Gloria)"
+            "sort-key": "004MAIN: Which Craft? (Gloria)"
         },
         {
             "name": "MAIN: The Cure (Alicane)",
@@ -1168,7 +1168,7 @@
             "region": "Firecat-Alicane",
             "xp": 250,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GrettaDarkkettle_005_35.mp3",
-            "sort-key": "fMAIN: The Cure (Alicane)"
+            "sort-key": "005MAIN: The Cure (Alicane)"
         },
         {
             "name": "MAIN: Firecat's In The Bag (To Muldoon)",
@@ -1179,7 +1179,7 @@
             "region": "Firecat-Alicane",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/SeargeantMuldoon_005_04.mp3",
-            "sort-key": "gMAIN: Firecat's In The Bag (To Muldoon)"
+            "sort-key": "006MAIN: Firecat's In The Bag (To Muldoon)"
         },
         {
             "name": "Eleanor: What's In a Pet Name? (Larry)",
@@ -1191,7 +1191,7 @@
             "requires": "{advDamage(430)} and |Building-Larry|",
             "xp": 95,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/EleanorAbernathy_005_13.mp3",
-            "sort-key": "hEleanor: What's In a Pet Name? (Larry)"
+            "sort-key": "007Eleanor: What's In a Pet Name? (Larry)"
         },
         {
             "name": "Shelus: ReRecover the Ring (Minion)",
@@ -1202,7 +1202,7 @@
             "region": "Firecat",
             "xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_12.mp3",
-            "sort-key": "iShelus: ReRecover the Ring (Minion)"
+            "sort-key": "008Shelus: ReRecover the Ring (Minion)"
         },
         {
             "name": "Shelus: Cold Hard Steel (Warrior)",
@@ -1213,7 +1213,7 @@
             "region": "Firecat",
             "xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_17.mp3",
-            "sort-key": "jShelus: Cold Hard Steel (Warrior)"
+            "sort-key": "009Shelus: Cold Hard Steel (Warrior)"
         },
         {
             "name": "Shelus: Nightmare Time (Wormguts)",
@@ -1225,7 +1225,7 @@
             "requires": "{advDamage(550)} and |Building-Wormguts|",
             "xp": 295,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/ShelusGruffheart_005_25.mp3",
-            "sort-key": "kShelus: Nightmare Time (Wormguts)"
+            "sort-key": "010Shelus: Nightmare Time (Wormguts)"
         },
         {
             "name": "Lizzo: Problematic Casting (Melweena)",
@@ -1238,7 +1238,7 @@
             "module": "$Melweena$",
             "xp": 195,
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LizzoFireSpitter_005_20.mp3",
-            "sort-key": "lLizzo: Problematic Casting (Melweena)"
+            "sort-key": "011Lizzo: Problematic Casting (Melweena)"
         },
         {
             "name": "Defeat Lord Nightshade",
@@ -1249,7 +1249,7 @@
             "region": "PostStreets",
             "requires": "{advDamage(1085)} and |Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/LordNightshade_005_03.mp3",
-            "sort-key": "aDefeat Lord Nightshade"
+            "sort-key": "000Defeat Lord Nightshade"
         },
         {
             "name": "Defeat General Akilles",
@@ -1260,7 +1260,7 @@
             "region": "Cyclops-DarkCave",
             "requires": "{advDamage(705)} and |Building-Akilles|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/GreatOne_005_06.mp3",
-            "sort-key": "bDefeat General Akilles"
+            "sort-key": "001Defeat General Akilles"
         },
         {
             "name": "Defeat Harvest Lord",
@@ -1271,7 +1271,7 @@
             "region": "Triton",
             "requires": "{advDamage(660)} and |Building-Harvest Lord|",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/HarvestLord_002_03.mp3",
-            "sort-key": "cDefeat Harvest Lord"
+            "sort-key": "002Defeat Harvest Lord"
         },
         {
             "name": "Defeat Roberto",
@@ -1282,7 +1282,7 @@
             "region": "Triton-HarvestLord",
             "requires": "|Building-Roberto|",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/GMC/Roberto_GMC_03.mp3",
-            "sort-key": "dDefeat Roberto"
+            "sort-key": "003Defeat Roberto"
         },
         {
             "name": "Defeat Alicane Swiftarrow",
@@ -1293,7 +1293,7 @@
             "region": "Firecat-Bastilla",
             "requires": "{advDamage(715)} and |Building-Alicane|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/AlicaneSwiftarrow_005_02.mp3",
-            "sort-key": "eDefeat Alicane Swiftarrow"
+            "sort-key": "004Defeat Alicane Swiftarrow"
         },
         {
             "name": "Defeat Melweena Smite",
@@ -1304,7 +1304,7 @@
             "region": "Firecat-Alicane",
             "requires": "|Building-Melweena|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/MelweenaSmite_005_05.mp3",
-            "sort-key": "fDefeat Melweena Smite"
+            "sort-key": "005Defeat Melweena Smite"
         },
         {
             "name": "Defeat Foulgaze",
@@ -1315,7 +1315,7 @@
             "region": "Foulgaze",
             "requires": "{advDamage(685)} and |Building-Foulgaze|",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/Foulgaze_005_04.mp3",
-            "sort-key": "gDefeat Foulgaze"
+            "sort-key": "006Defeat Foulgaze"
         },
         {
             "name": "Reagent: Mist Wood (Anywhere)",
@@ -1651,7 +1651,7 @@
             "region": "Commons-Level5",
             "_comment": "Level 5 required, can be obtained from sphere 0 in UW",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_05.mp3",
-            "sort-key": "aHallow: Tricks and Treats (Commons Pumpkins)"
+            "sort-key": "000Hallow: Tricks and Treats (Commons Pumpkins)"
         },
         {
             "name": "Hallow: Ghostly Spires",
@@ -1663,7 +1663,7 @@
             "region": "Commons-Level5",
             "requires": "|Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/MalornAshthorn_QST_01.mp3",
-            "sort-key": "bHallow: Ghostly Spires"
+            "sort-key": "001Hallow: Ghostly Spires"
         },
         {
             "name": "Apprentice Tower - First Floor",
@@ -1714,7 +1714,7 @@
             ],
             "region": "Commons-Level5",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_04.mp3",
-            "sort-key": "cHallow: Straw Man (UW Jack)"
+            "sort-key": "002Hallow: Straw Man (UW Jack)"
         },
         {
             "name": "Straw: Unicorn Delight (UW Pumpkins)",
@@ -1725,7 +1725,7 @@
             ],
             "region": "Commons-Level5",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackStraw_QST_03.mp3",
-            "sort-key": "dStraw: Unicorn Delight (UW Pumpkins)"
+            "sort-key": "003Straw: Unicorn Delight (UW Pumpkins)"
         },
         {
             "name": "Hallow: Orange Lantern (TA Jack)",
@@ -1738,7 +1738,7 @@
             "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_05.mp3",
-            "sort-key": "eHallow: Orange Lantern (TA Jack)"
+            "sort-key": "004Hallow: Orange Lantern (TA Jack)"
         },
         {
             "name": "O'Lantern: Tricks and Sticks (TA Pumpkins)",
@@ -1751,7 +1751,7 @@
             "module": "#Triton#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackOLantern_QST_04.mp3",
-            "sort-key": "fO'Lantern: Tricks and Sticks (TA Pumpkins)"
+            "sort-key": "005O'Lantern: Tricks and Sticks (TA Pumpkins)"
         },
         {
             "name": "Hallow: Pumpkin Head (CL Jack)",
@@ -1764,7 +1764,7 @@
             "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_05.mp3",
-            "sort-key": "gHallow: Pumpkin Head (CL Jack)"
+            "sort-key": "006Hallow: Pumpkin Head (CL Jack)"
         },
         {
             "name": "Pumpkin: One-Eyed Snacks (CL Pumpkins)",
@@ -1777,7 +1777,7 @@
             "module": "#Triton# and #Cyclops#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/PumpkinJack_QST_04.mp3",
-            "sort-key": "hPumpkin: One-Eyed Snacks (CL Pumpkins)"
+            "sort-key": "007Pumpkin: One-Eyed Snacks (CL Pumpkins)"
         },
         {
             "name": "Hallow: Meeting Crow (FA Jack)",
@@ -1790,7 +1790,7 @@
             "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_05.mp3",
-            "sort-key": "iHallow: Meeting Crow (FA Jack)"
+            "sort-key": "008Hallow: Meeting Crow (FA Jack)"
         },
         {
             "name": "Crow: Firecat Strike (FA Pumpkins)",
@@ -1803,7 +1803,7 @@
             "module": "#Triton# and #Cyclops# and #Firecat#",
             "requires": "{hasLevel(5)} and |Area-Triton Avenue| and |Area-Cyclops Lane| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackCrow_QST_04.mp3",
-            "sort-key": "jCrow: Firecat Strike (FA Pumpkins)"
+            "sort-key": "009Crow: Firecat Strike (FA Pumpkins)"
         },
         {
             "name": "Hallow: Inky Blues (SD Ghosts)",
@@ -1815,7 +1815,7 @@
             "region": "ShoppingDistrict",
             "requires": "|Area-The Commons| and {hasLevel(5)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_20.mp3",
-            "sort-key": "kHallow: Inky Blues (SD Ghosts)"
+            "sort-key": "010Hallow: Inky Blues (SD Ghosts)"
         },
         {
             "name": "Hallow: Apple in Yer Eye (GC Apple)",
@@ -1828,7 +1828,7 @@
             "requires": "{wizReach(Apples)}",
             "_comment": "wizReach Apples covers all of the logic here, the region is for clarity",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_23.mp3",
-            "sort-key": "lHallow: Apple in Yer Eye (GC Apple)"
+            "sort-key": "011Hallow: Apple in Yer Eye (GC Apple)"
         },
         {
             "name": "Hallow: Blink and Yer Red (Commons Ghosts)",
@@ -1840,7 +1840,7 @@
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_28.mp3",
-            "sort-key": "mHallow: Blink and Yer Red (Commons Ghosts)"
+            "sort-key": "012Hallow: Blink and Yer Red (Commons Ghosts)"
         },
         {
             "name": "Hallow: Dunking Do-Nots (SD Apple)",
@@ -1852,7 +1852,7 @@
             "region": "GolemCourt",
             "requires": "{wizReach(Apples)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_32.mp3",
-            "sort-key": "nHallow: Dunking Do-Nots (SD Apple)"
+            "sort-key": "013Hallow: Dunking Do-Nots (SD Apple)"
         },
         {
             "name": "Hallow: Baron of Nightmares (Baron Mordecai)",
@@ -1865,7 +1865,7 @@
             "module": "#GolemCourt# and #Triton#",
             "requires": "{wizReach(Apples)} and |Area-Triton Avenue| and |Building-Mordecai| and {advDamage(2295)}",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_16.mp3",
-            "sort-key": "oHallow: Baron of Nightmares (Baron Mordecai)"
+            "sort-key": "014Hallow: Baron of Nightmares (Baron Mordecai)"
         },
         {
             "name": "Hallow: Orange Ye Scared? (CL Ghosts)",
@@ -1878,7 +1878,7 @@
             "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_37.mp3",
-            "sort-key": "pHallow: Orange Ye Scared? (CL Ghosts)"
+            "sort-key": "015Hallow: Orange Ye Scared? (CL Ghosts)"
         },
         {
             "name": "Hallow: Barreling Along (Ravenwood Apple)",
@@ -1891,7 +1891,7 @@
             "module": "#GolemCourt# and #Cyclops#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_40.mp3",
-            "sort-key": "qHallow: Barreling Along (Ravenwood Apple)"
+            "sort-key": "016Hallow: Barreling Along (Ravenwood Apple)"
         },
         {
             "name": "Hallow: Pinky Swear (FA Ghosts)",
@@ -1904,7 +1904,7 @@
             "module": "#GolemCourt# and #Cyclops# and #Firecat#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_46.mp3",
-            "sort-key": "rHallow: Pinky Swear (FA Ghosts)"
+            "sort-key": "017Hallow: Pinky Swear (FA Ghosts)"
         },
         {
             "name": "Hallow: A Sight for Core Eyes (HC Apple)",
@@ -1917,7 +1917,7 @@
             "module": "#GolemCourt# and #Cyclops# and #Firecat# and #Triton:2#",
             "requires": "{wizReach(Apples)} and |Area-Cyclops Lane| and |Area-Ravenwood| and |Area-Firecat Alley| and |Area-Triton Avenue| and |Area-Haunted Cave|",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/Holiday/JackHallow_QST_50.mp3",
-            "sort-key": "sHallow: A Sight for Core Eyes (HC Apple)"
+            "sort-key": "018Hallow: A Sight for Core Eyes (HC Apple)"
         },
         {
             "name": "Housing Item: Lynx Gazer (Myth School)",
@@ -2080,7 +2080,7 @@
             "region": "LostPages",
             "xp": 10,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_09.mp3",
-            "sort-key": "aHarold: The Carpe Diem Society"
+            "sort-key": "000Harold: The Carpe Diem Society"
         },
         {
             "name": "Simeon: Stormy Verse (Spellwrit Screamers)",
@@ -2092,7 +2092,7 @@
             "requires": "{advDamage(315)}",
             "xp": 15,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Simeon_EVE_06.mp3",
-            "sort-key": "bSimeon: Stormy Verse (Spellwrit Screamers)"
+            "sort-key": "001Simeon: Stormy Verse (Spellwrit Screamers)"
         },
         {
             "name": "Simeon: Quiet Storm",
@@ -2104,7 +2104,7 @@
             "requires": "{advDamage(315)}",
             "xp": 10,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_01.mp3",
-            "sort-key": "cSimeon: Quiet Storm"
+            "sort-key": "002Simeon: Quiet Storm"
         },
         {
             "name": "Arthur: Right As Rain (Kestrel)",
@@ -2116,7 +2116,7 @@
             "requires": "|Building-Dee's Storm Mirror| and {advDamage(955)} and |Teleport-Dungeon|",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/ProfArthurWethersfield_EVE_07.mp3",
-            "sort-key": "dArthur: Right As Rain (Kestrel)"
+            "sort-key": "003Arthur: Right As Rain (Kestrel)"
         },
         {
             "name": "Dee's Storm Mirror: A Line-Storm Song (Instance)",
@@ -2128,7 +2128,7 @@
             "requires": "|Building-Dee's Storm Mirror| and {advDamage(955)} and |Teleport-Dungeon|",
             "xp": 25,
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/KestrelBlackstorm_EVE_03.mp3",
-            "sort-key": "eDee's Storm Mirror: A Line-Storm Song (Instance)"
+            "sort-key": "004Dee's Storm Mirror: A Line-Storm Song (Instance)"
         }
     ]
 }
