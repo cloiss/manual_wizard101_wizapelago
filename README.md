@@ -23,6 +23,6 @@ Three yamls are provided in the repo in the `yamls` folder:
 This is a separate client we have developed that can automatically mark most of the locations in the game, but it is 100% optional to use. In order for it to work, you must open it before you open the game itself. It currently only has support for automatically marking quest locations, goal locations, and `Talk to Nick Jonas`. Reagents, wooden/silver chests, housing items, and partial quest locations still need to be marked manually.
 
 ## Read more
-- [Locations](https://github.com/cloiss/manual_wizard101_cloiss/blob/gray-readme-updates/docs/Locations.md)
-- [Modules](https://github.com/cloiss/manual_wizard101_cloiss/blob/gray-readme-updates/docs/Modules.md)
-- [Items](https://github.com/cloiss/manual_wizard101_cloiss/blob/gray-readme-updates/docs/Items.md)
+- [Locations](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Locations.md)
+- [Modules](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Modules.md)
+- [Items](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Items.md)
