@@ -487,20 +487,38 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
 
             world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
 
-    # Handle Books Locations Alias
-    books_id = world.location_name_to_id.get("Boris: The Lore You Know")
-    if books_id is not None and hasattr(world, "location_id_to_alias"):
-        num_books = 1
-        if world.options.module_poststreets.value > 0:
-            num_books += 1
-        if world.options.module_cyclops.value == 2:
-            num_books += 1
-        if world.options.module_triton.value == 2:
-            num_books += 1
-        if world.options.module_firecat.value == 2:
-            num_books += 1
-        
-        world.location_id_to_alias[books_id] = f"Boris: The Lore You Know ({num_books}/7 Books)"
+    # Handle Books Locations
+    # 0 = none, 1 = quest, 2 = quest-all, 3 = all
+    books_option = get_option_value(multiworld, player, "find_the_books")
+    boss_book_locations = world.location_name_groups.get("BooksBoss", [])
+
+    match books_option:
+        case 0:  # none: remove quest location and all book locations
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+            location_names_to_remove.extend(boss_book_locations)
+        case 1:  # quest: keep quest location only, remove all individual book locations
+            location_names_to_remove.extend(boss_book_locations)
+        case 2:  # quest-all: remove quest location, keep individual boss book locations
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+        case 3:  # all: remove quest location, keep boss books and area books
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+            # When adding area books (e.g. category "BooksScattered"), extend remove list in case 2 only
+
+    # Handle Books Locations Alias (only relevant when quest location is kept)
+    if books_option == 1:
+        books_id = world.location_name_to_id.get("Boris: The Lore You Know (X/7 Books)")
+        if books_id is not None and hasattr(world, "location_id_to_alias"):
+            num_books = 1
+            if world.options.module_poststreets.value > 0:
+                num_books += 1
+            if world.options.module_cyclops.value == 2:
+                num_books += 1
+            if world.options.module_triton.value == 2:
+                num_books += 1
+            if world.options.module_firecat.value == 2:
+                num_books += 1
+            
+            world.location_id_to_alias[books_id] = f"Boris: The Lore You Know ({num_books}/7 Books)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
