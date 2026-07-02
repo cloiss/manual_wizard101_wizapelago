@@ -488,18 +488,18 @@
             "sort-key": "_Boris: The Lore You Know (X/7 Books)"
         },
         {
-            "name": "Book: History of Life Magic (Blackhope)",
+            "name": "Book: The History of Life Magic (Blackhope)",
             "category": [
                 "101 Unicorn Way",
                 "BooksBoss"
             ],
             "region": "UnicornWay",
-            "requires": "|Building-Blackhope|",
+            "requires": "|Building-Blackhope| and {advDamage(115)}",
             "sort-key": "_Book: Blackhope",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_14.mp3"
         },
         {
-            "name": "Book: History of Balance Magic (Foulgaze)",
+            "name": "Book: The History of Balance Magic (Foulgaze)",
             "category": [
                 "135 Haunted Cave",
                 "BooksBoss"
@@ -511,19 +511,19 @@
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_28.mp3"
         },
         {
-            "name": "Book: History of Myth Magic (Akilles)",
+            "name": "Book: The History of Myth Magic (Akilles)",
             "category": [
                 "140 Cyclops Lane",
                 "BooksBoss"
             ],
             "region": "Cyclops-DarkCave",
-            "requires": "|Building-Akilles|",
+            "requires": "|Building-Akilles| and {advDamage(285)}",
             "module": "#Cyclops:2#",
             "sort-key": "_Book: Akilles",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_19.mp3"
         },
         {
-            "name": "Book: History of Storm Magic (Harvest Lord)",
+            "name": "Book: The History of Storm Magic (Harvest Lord)",
             "category": [
                 "130 Triton Avenue",
                 "BooksBoss"
@@ -535,7 +535,7 @@
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_10.mp3"
         },
         {
-            "name": "Book: History of Fire Magic (Alicane)",
+            "name": "Book: The History of Fire Magic (Alicane)",
             "category": [
                 "150 Firecat Alley",
                 "BooksBoss"
@@ -546,7 +546,7 @@
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_01.mp3"
         },
         {
-            "name": "Book: History of Death Magic (Nightshade)",
+            "name": "Book: The History of Death Magic (Nightshade)",
             "category": [
                 "135 Haunted Cave",
                 "BooksBoss"
@@ -558,7 +558,7 @@
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_23.mp3"
         },
         {
-            "name": "Book: Life School",
+            "name": "Book: Life is Spirit",
             "category": [
                 "103 Ravenwood",
                 "Books"
@@ -577,7 +577,7 @@
             "sort-key": "_Book: Monstromnibus"
         },
         {
-            "name": "Book: Myth School",
+            "name": "Book: Myth is Imagination",
             "category": [
                 "103 Ravenwood",
                 "Books"
@@ -587,7 +587,7 @@
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_530.mp3"
         },
         {
-            "name": "Book: Fire School",
+            "name": "Book: History of the Fire School",
             "category": [
                 "103 Ravenwood",
                 "Books"
@@ -597,7 +597,7 @@
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_514.mp3"
         },
         {
-            "name": "Book: Ice School",
+            "name": "Book: History of the Ice School",
             "category": [
                 "103 Ravenwood",
                 "Books"
@@ -607,7 +607,7 @@
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_520.mp3"
         },
         {
-            "name": "Book: Storm School",
+            "name": "Book: History of the School of Storm",
             "category": [
                 "103 Ravenwood",
                 "Books"
@@ -627,7 +627,7 @@
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_05.mp3"
         },
         {
-            "name": "Book: Library",
+            "name": "Book: History of the Universe (Library)",
             "category": [
                 "102 The Commons",
                 "Books"
@@ -655,7 +655,7 @@
             "sort-key": "_Book: Hatchmaking Tome"
         },
         {
-            "name": "Book: Hatchery Tome (Hatchery)",
+            "name": "Book: Hatchery Scroll (Hatchery)",
             "category": [
                 "120 Pet Pavilion",
                 "Books"
@@ -665,7 +665,7 @@
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DoctorPurreau_QST_03.mp3"
         },
         {
-            "name": "Book: Archmastery Tome",
+            "name": "Book: Archmastery Tome (Diego)",
             "category": [
                 "101 Unicorn Way",
                 "Books"
@@ -674,7 +674,7 @@
             "sort-key": "_Book: Archmastery Tome"
         },
         {
-            "name": "Book: Deckathelon Tome",
+            "name": "Book: Deckathalon Tome (Arena)",
             "category": [
                 "101 Unicorn Way",
                 "Books"
@@ -814,7 +814,7 @@
             "log_msg": "|Sound_Dialogue_001|WorldData|Sound/Dialogue/SeargeantMuldoon_001_01.mp3"
         },
         {
-            "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
+            "name": "MAIN: A Brief The History of the Spiral (Foulgaze/Daisy)",
             "category": [
                 "135 Haunted Cave",
                 "Quest"
@@ -2043,7 +2043,7 @@
             "sort-key": "_Housing Item: Pen and Ink (Falmea's House)"
         },
         {
-            "name": "Housing Item: Open Book (Galvanost Tower)",
+            "name": "Housing Item: Open Book (Harvest Lord)",
             "category": [
                 "130 Triton Avenue",
                 "HousingItems"
@@ -2054,7 +2054,7 @@
             "sort-key": "_Housing Item: Open Book (Galvanost Tower)"
         },
         {
-            "name": "Housing Item: Brain Jar (Stormdrain Tower)",
+            "name": "Housing Item: Brain Jar (Nightshade)",
             "category": [
                 "135 Haunted Cave",
                 "HousingItems"
