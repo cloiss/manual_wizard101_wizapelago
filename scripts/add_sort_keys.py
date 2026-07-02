@@ -26,19 +26,19 @@ def update_json(file_name: str):
     updated_count = 0
     last_category = None
     current_category = None
-    counter = "000"
+    counter = "001"
     for location in content.get("data", []):
         if ("log_msg" not in location) and file_name == "locations.json":
             # Prefixing with an underscore "_" sorts them before letters A-Z / a-z 
             # in both case-sensitive (Custom) and case-insensitive (Natural) sort orders.
-            location["sort-key"] = "_" + location["name"]
+            location["sort-key"] = "000 " + location["name"]
             updated_count += 1
         else:
             current_category = location["category"][0]
             if current_category != last_category:
-                counter = "000"
+                counter = "001"
                 last_category = current_category
-            location["sort-key"] = counter + location["name"]
+            location["sort-key"] = f"{counter} {location['name']}"
             counter = increment(counter)
             updated_count += 1
         print(f"{location['sort-key']}, {location['category']}")
