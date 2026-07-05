@@ -259,6 +259,42 @@
             "sort-key": "008 Penny: Penny For Your Thoughts (Dark Cave)"
         },
         {
+            "name": "Lucky: A River Runs Through It (Fishing 1)",
+            "category": [
+                "102 The Commons",
+                "Quest"
+            ],
+            "region": "PostOneStreet",
+            "xp": 125,
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_23.mp3",
+            "sort-key": "009 Lucky: A River Runs Through It (Fishing 1)"
+        },
+        {
+            "name": "Lucky: Fishful Thinking (Fishing 2)",
+            "category": [
+                "102 The Commons",
+                "Quest"
+            ],
+            "region": "PostOneStreet",
+            "requires": "|Area-Cyclops Lane|",
+            "module": "#Cyclops#",
+            "xp": 0,
+            "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375.",
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3",
+            "sort-key": "010 Lucky: Fishful Thinking (Fishing 2)"
+        },
+        {
+            "name": "Merle: Colossal Trouble",
+            "category": [
+                "102 The Commons",
+                "Quest"
+            ],
+            "region": "PostStreets",
+            "xp": 35,
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateODoyle_QST_01.mp3",
+            "sort-key": "011 Merle: Colossal Trouble"
+        },
+        {
             "name": "Arthur: Introduction to Balance (Level 7)",
             "category": [
                 "103 Ravenwood",
@@ -388,39 +424,14 @@
             "sort-key": "009 Moolinda: Introduction to Life (Level 7)"
         },
         {
-            "name": "Lucky: A River Runs Through It (Fishing 1)",
-            "category": [
-                "102 The Commons",
-                "Quest"
-            ],
-            "region": "PostOneStreet",
-            "xp": 125,
-            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_23.mp3",
-            "sort-key": "001 Lucky: A River Runs Through It (Fishing 1)"
-        },
-        {
-            "name": "Lucky: Fishful Thinking (Fishing 2)",
-            "category": [
-                "102 The Commons",
-                "Quest"
-            ],
-            "region": "PostOneStreet",
-            "requires": "|Area-Cyclops Lane|",
-            "module": "#Cyclops#",
-            "xp": 0,
-            "_comment": "Set as 0 xp due to its extreme length to avoid being in-logic for level-related checks. Actual XP gain is 375.",
-            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_34.mp3",
-            "sort-key": "002 Lucky: Fishful Thinking (Fishing 2)"
-        },
-        {
-            "name": "Zeke: Find the Smiths (X/10 Smiths)",
+            "name": "X/10 Smiths for 'Find the Smiths'",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town|",
             "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "000 Zeke: Find the Smiths (X/10 Smiths)"
+            "sort-key": "000 X/10 Smiths for 'Find the Smiths'"
         },
         {
             "name": "Smith: Unicorn Way",
@@ -510,14 +521,14 @@
             "sort-key": "000 Smith: Firecat Alley"
         },
         {
-            "name": "Boris: The Lore You Know (X/7 Books)",
+            "name": "X/7 Books for 'The Lore You Know'",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
             "_comment": "Need either Blackhope or Nightshade. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "000 Boris: The Lore You Know (X/7 Books)"
+            "sort-key": "000 X/7 Books for 'The Lore You Know'"
         },
         {
             "name": "Book: The History of Life Magic (Blackhope)",
@@ -856,20 +867,6 @@
             "sort-key": "001 MAIN: Panic in Three Streets! (To Muldoon)"
         },
         {
-            "name": "MAIN: A Brief The History of the Spiral (Foulgaze/Daisy)",
-            "category": [
-                "135 Haunted Cave",
-                "Quest"
-            ],
-            "region": "PostStreets",
-            "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
-            "module": "$Foulgaze$",
-            "_comment": "Quest ends at the entrance to Haunted Cave.",
-            "xp": 250,
-            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/DaisyWillowmancer_005_02.mp3",
-            "sort-key": "001 MAIN: A Brief The History of the Spiral (Foulgaze/Daisy)"
-        },
-        {
             "name": "Eudora: Wizards in the Mist (Mist Wood)",
             "category": [
                 "105 Olde Town",
@@ -878,7 +875,7 @@
             "region": "EarlyOldeTown",
             "xp": 30,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_07.mp3",
-            "sort-key": "001 Eudora: Wizards in the Mist (Mist Wood)"
+            "sort-key": "002 Eudora: Wizards in the Mist (Mist Wood)"
         },
         {
             "name": "Eudora: The Razor's Edge (Craft Daggers)",
@@ -889,7 +886,7 @@
             "region": "EarlyOldeTown",
             "requires": "|Vendor-Recipes/Reagents| and (|Area-Ravenwood| or |Teleport-Home|)",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/EudoraTangletree_QST_14.mp3",
-            "sort-key": "002 Eudora: The Razor's Edge (Craft Daggers)"
+            "sort-key": "003 Eudora: The Razor's Edge (Craft Daggers)"
         },
         {
             "name": "Guildenstern: Walkabout",
@@ -902,7 +899,7 @@
             "requires": "|Area-The Commons| and {wizReach(Golem Court)}",
             "xp": 25,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_27.mp3",
-            "sort-key": "003 Guildenstern: Walkabout"
+            "sort-key": "004 Guildenstern: Walkabout"
         },
         {
             "name": "Gloria: Looking Sharp!",
@@ -916,7 +913,7 @@
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/GloriaKrendell_002_07.mp3",
-            "sort-key": "004 Gloria: Looking Sharp!"
+            "sort-key": "005 Gloria: Looking Sharp!"
         },
         {
             "name": "Baldur: Bear Market",
@@ -927,7 +924,7 @@
             "region": "PostStreets",
             "xp": 15,
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/BaldurGoldpaws_QST_06.mp3",
-            "sort-key": "005 Baldur: Bear Market"
+            "sort-key": "006 Baldur: Bear Market"
         },
         {
             "name": "Baldur: Trade Voyage",
@@ -1296,6 +1293,20 @@
             "sort-key": "016 Suzie: Sniff 'em Out (Pet Dig)"
         },
         {
+            "name": "MAIN: A Brief History of the Spiral (Foulgaze/Daisy)",
+            "category": [
+                "135 Haunted Cave",
+                "Quest"
+            ],
+            "region": "PostStreets",
+            "requires": "{advDamage(685)} and |Building-Foulgaze| and |Area-Haunted Cave|",
+            "module": "$Foulgaze$",
+            "_comment": "Quest ends at the entrance to Haunted Cave.",
+            "xp": 250,
+            "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/DaisyWillowmancer_005_02.mp3",
+            "sort-key": "001 MAIN: A Brief History of the Spiral (Foulgaze/Daisy)"
+        },
+        {
             "name": "Duncan: Haunting Questions (Haunted Cave)",
             "category": [
                 "135 Haunted Cave",
@@ -1305,7 +1316,7 @@
             "requires": "|Area-Haunted Cave|",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_29.mp3",
-            "sort-key": "001 Duncan: Haunting Questions (Haunted Cave)"
+            "sort-key": "002 Duncan: Haunting Questions (Haunted Cave)"
         },
         {
             "name": "Duncan: Secret of the Cave (Field Guards)",
@@ -1317,7 +1328,7 @@
             "requires": "|Area-Haunted Cave|",
             "xp": 105,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/DuncanGrimwater_002_39.mp3",
-            "sort-key": "002 Duncan: Secret of the Cave (Field Guards)"
+            "sort-key": "003 Duncan: Secret of the Cave (Field Guards)"
         },
         {
             "name": "MAIN: Putting Out the Fire! (Minions)",
