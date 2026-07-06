@@ -303,7 +303,20 @@
             "default": 1,
             "group": "Check Locations"
         },
-      
+        "find_the_books": {
+            "description": [
+                "Adds locations for finding the Books for Boris. Select 'quest' for a single combined location, 'quest-all' to add individual locations for each boss area, or 'all' to add boss area books and additional books scattered around Wizard City. (Adds up to 5 boss book locations)"
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "quest": 1,
+                "quest-all": 2,
+                "all": 3
+            },
+            "default": 1,
+            "group": "Check Locations"
+        },
       
       
         "module_golemcourt": {

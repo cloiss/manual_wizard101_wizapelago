@@ -531,6 +531,232 @@
             "sort-key": "000 X/7 Books for 'The Lore You Know'"
         },
         {
+            "name": "Book: The History of Life Magic (Blackhope)",
+            "category": [
+                "101 Unicorn Way",
+                "BooksBoss"
+            ],
+            "region": "UnicornWay",
+            "requires": "|Building-Blackhope| and {advDamage(115)}",
+            "sort-key": "001 Book: The History of Life Magic (Blackhope)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_14.mp3"
+        },
+        {
+            "name": "Book: The History of Balance Magic (Foulgaze)",
+            "category": [
+                "135 Haunted Cave",
+                "BooksBoss"
+            ],
+            "region": "Foulgaze",
+            "requires": "|Building-Foulgaze|",
+            "module": "#PostStreets#",
+            "sort-key": "001 Book: The History of Balance Magic (Foulgaze)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_28.mp3"
+        },
+        {
+            "name": "Book: The History of Myth Magic (Akilles)",
+            "category": [
+                "140 Cyclops Lane",
+                "BooksBoss"
+            ],
+            "region": "Cyclops-DarkCave",
+            "requires": "|Building-Akilles| and {advDamage(285)}",
+            "module": "#Cyclops:2#",
+            "sort-key": "001 Book: The History of Myth Magic (Akilles)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_19.mp3"
+        },
+        {
+            "name": "Book: The History of Storm Magic (Harvest Lord)",
+            "category": [
+                "130 Triton Avenue",
+                "BooksBoss"
+            ],
+            "region": "Triton",
+            "requires": "|Building-Harvest Lord|",
+            "module": "#Triton:2#",
+            "sort-key": "001 Book: The History of Storm Magic (Harvest Lord)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_10.mp3"
+        },
+        {
+            "name": "Book: The History of Fire Magic (Alicane)",
+            "category": [
+                "150 Firecat Alley",
+                "BooksBoss"
+            ],
+            "region": "Firecat-Bastilla",
+            "requires": "|Building-Alicane|",
+            "sort-key": "001 Book: The History of Fire Magic (Alicane)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_01.mp3"
+        },
+        {
+            "name": "Book: The History of Death Magic (Nightshade)",
+            "category": [
+                "135 Haunted Cave",
+                "BooksBoss"
+            ],
+            "region": "PostStreets",
+            "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
+            "module": "$Foulgaze$",
+            "sort-key": "001 Book: The History of Death Magic (Nightshade)",
+            "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_23.mp3"
+        },
+        {
+            "name": "Book: Life is Spirit",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "001 Book: Life is Spirit",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_526.mp3"
+        },
+        {
+            "name": "Book: Monstromnibus",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "000 Book: Monstromnibus"
+        },
+        {
+            "name": "Book: Myth is Imagination",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "002 Book: Myth is Imagination",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_530.mp3"
+        },
+        {
+            "name": "Book: History of the Fire School",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "003 Book: History of the Fire School",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_514.mp3"
+        },
+        {
+            "name": "Book: History of the Ice School",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "004 Book: History of the Ice School",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_520.mp3"
+        },
+        {
+            "name": "Book: History of the School of Storm",
+            "category": [
+                "103 Ravenwood",
+                "Books"
+            ],
+            "region": "Ravenwood",
+            "sort-key": "005 Book: History of the School of Storm",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_534.mp3"
+        },
+        {
+            "name": "Book: Tome of Fishing",
+            "category": [
+                "102 The Commons",
+                "Books"
+            ],
+            "region": "Commons",
+            "sort-key": "001 Book: Tome of Fishing",
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_05.mp3"
+        },
+        {
+            "name": "Book: History of the Universe (Library)",
+            "category": [
+                "102 The Commons",
+                "Books"
+            ],
+            "region": "Commons",
+            "sort-key": "002 Book: History of the Universe (Library)",
+            "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_504.mp3"
+        },
+        {
+            "name": "Book: Photomancy Tome",
+            "category": [
+                "110 Golem Court",
+                "Books"
+            ],
+            "region": "GolemCourt",
+            "sort-key": "000 Book: Photomancy Tome"
+        },
+        {
+            "name": "Book: Hatchmaking Tome",
+            "category": [
+                "120 Pet Pavilion",
+                "Books"
+            ],
+            "region": "PetPavilion",
+            "sort-key": "000 Book: Hatchmaking Tome"
+        },
+        {
+            "name": "Book: Hatchery Scroll (Hatchery)",
+            "category": [
+                "120 Pet Pavilion",
+                "Books"
+            ],
+            "region": "PetPavilion",
+            "sort-key": "001 Book: Hatchery Scroll (Hatchery)",
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DoctorPurreau_QST_03.mp3"
+        },
+        {
+            "name": "Book: Archmastery Tome (Diego)",
+            "category": [
+                "101 Unicorn Way",
+                "Books"
+            ],
+            "region": "UnicornWay",
+            "sort-key": "000 Book: Archmastery Tome (Diego)"
+        },
+        {
+            "name": "Book: Deckathalon Tome (Arena)",
+            "category": [
+                "101 Unicorn Way",
+                "Books"
+            ],
+            "region": "UnicornWay",
+            "sort-key": "000 Book: Deckathalon Tome (Arena)"
+        },
+        {
+            "name": "Book: Rate My Stitch Tome (Leaderboard)",
+            "category": [
+                "104 Shopping District",
+                "Books"
+            ],
+            "region": "ShoppingDistrict",
+            "sort-key": "001 Book: Rate My Stitch Tome (Leaderboard)",
+            "log_msg": "|Music|WorldData|Misc/RateMyStitch/RateMyStitch_Runway.ogg"
+        },
+        {
+            "name": "Book: Tome of Socketing (Jewel Shop)",
+            "category": [
+                "104 Shopping District",
+                "Books"
+            ],
+            "region": "ShoppingDistrict",
+            "sort-key": "002 Book: Tome of Socketing (Jewel Shop)",
+            "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Narrator_EDN_14.mp3"
+        },
+        {
+            "name": "Merle: Colossal Trouble",
+            "category": [
+                "102 The Commons",
+                "Quest"
+            ],
+            "region": "PostStreets",
+            "xp": 35,
+            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateODoyle_QST_01.mp3",
+            "sort-key": "001 Merle: Colossal Trouble"
+        },
+        {
             "name": "Annie: Say Cheese! (Photomancy 1)",
             "category": [
                 "110 Golem Court",
@@ -1947,7 +2173,7 @@
             "sort-key": "000 Housing Item: Pen and Ink (Falmea's House)"
         },
         {
-            "name": "Housing Item: Open Book (Galvanost Tower)",
+            "name": "Housing Item: Open Book (Harvest Lord)",
             "category": [
                 "130 Triton Avenue",
                 "HousingItems"
@@ -1955,10 +2181,10 @@
             "region": "Triton",
             "module": "#Triton:2#",
             "requires": "|Building-Harvest Lord|",
-            "sort-key": "000 Housing Item: Open Book (Galvanost Tower)"
+            "sort-key": "000 Housing Item: Open Book (Harvest Lord)"
         },
         {
-            "name": "Housing Item: Brain Jar (Stormdrain Tower)",
+            "name": "Housing Item: Brain Jar (Nightshade)",
             "category": [
                 "135 Haunted Cave",
                 "HousingItems"
@@ -1966,7 +2192,7 @@
             "module": "$Foulgaze$",
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
-            "sort-key": "000 Housing Item: Brain Jar (Stormdrain Tower)"
+            "sort-key": "000 Housing Item: Brain Jar (Nightshade)"
         },
         {
             "name": "Wooden Chest: Anywhere",

@@ -48,6 +48,12 @@
     "Smiths": {
         "hidden": true
     },
+    "Books": {
+        "hidden": true
+    },
+    "BooksBoss": {
+        "hidden": true
+    },
     "School-Balance": {
         "hidden": true
     },
