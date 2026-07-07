@@ -424,14 +424,14 @@
             "sort-key": "009 Moolinda: Introduction to Life (Level 7)"
         },
         {
-            "name": "X/10 Smiths for 'Find the Smiths'",
+            "name": "Zeke: Find the Smiths (X/10 Smiths)",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Shopping District| and |Area-Olde Town|",
             "_comment": "Must be PostUW to get the quest which guarantees access to all areas. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "000 X/10 Smiths for 'Find the Smiths'"
+            "sort-key": "000 Zeke: Find the Smiths (X/10 Smiths)"
         },
         {
             "name": "Smith: Unicorn Way",
@@ -521,14 +521,14 @@
             "sort-key": "000 Smith: Firecat Alley"
         },
         {
-            "name": "X/7 Books for 'The Lore You Know'",
+            "name": "Boris: The Lore You Know (X/7 Books)",
             "category": [
                 "102 The Commons"
             ],
             "region": "EarlyStreets",
             "requires": "(|Building-Nightshade| and |Area-Haunted Cave|) or |Building-Blackhope|",
             "_comment": "Need either Blackhope or Nightshade. Requires String is set dynamically in rule to handle modules",
-            "sort-key": "000 X/7 Books for 'The Lore You Know'"
+            "sort-key": "000 Boris: The Lore You Know (X/7 Books)"
         },
         {
             "name": "Book: The History of Life Magic (Blackhope)",
@@ -538,7 +538,7 @@
             ],
             "region": "UnicornWay",
             "requires": "|Building-Blackhope| and {advDamage(115)}",
-            "sort-key": "001 Book: The History of Life Magic (Blackhope)",
+            "sort-key": "000 Book: The History of Life Magic (Blackhope)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_14.mp3"
         },
         {
@@ -550,7 +550,7 @@
             "region": "Foulgaze",
             "requires": "|Building-Foulgaze|",
             "module": "#PostStreets#",
-            "sort-key": "001 Book: The History of Balance Magic (Foulgaze)",
+            "sort-key": "000 Book: The History of Balance Magic (Foulgaze)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_28.mp3"
         },
         {
@@ -562,7 +562,7 @@
             "region": "Cyclops-DarkCave",
             "requires": "|Building-Akilles| and {advDamage(285)}",
             "module": "#Cyclops:2#",
-            "sort-key": "001 Book: The History of Myth Magic (Akilles)",
+            "sort-key": "000 Book: The History of Myth Magic (Akilles)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_19.mp3"
         },
         {
@@ -574,7 +574,7 @@
             "region": "Triton",
             "requires": "|Building-Harvest Lord|",
             "module": "#Triton:2#",
-            "sort-key": "001 Book: The History of Storm Magic (Harvest Lord)",
+            "sort-key": "000 Book: The History of Storm Magic (Harvest Lord)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_10.mp3"
         },
         {
@@ -585,7 +585,7 @@
             ],
             "region": "Firecat-Bastilla",
             "requires": "|Building-Alicane|",
-            "sort-key": "001 Book: The History of Fire Magic (Alicane)",
+            "sort-key": "000 Book: The History of Fire Magic (Alicane)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_01.mp3"
         },
         {
@@ -597,7 +597,7 @@
             "region": "PostStreets",
             "requires": "|Building-Foulgaze| and |Area-Haunted Cave| and |Building-Nightshade|",
             "module": "$Foulgaze$",
-            "sort-key": "001 Book: The History of Death Magic (Nightshade)",
+            "sort-key": "000 Book: The History of Death Magic (Nightshade)",
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/BookVoice_002_23.mp3"
         },
         {
@@ -607,7 +607,7 @@
                 "Books"
             ],
             "region": "Ravenwood",
-            "sort-key": "001 Book: Life is Spirit",
+            "sort-key": "000 Book: Life is Spirit",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_526.mp3"
         },
         {
@@ -626,7 +626,7 @@
                 "Books"
             ],
             "region": "Ravenwood",
-            "sort-key": "002 Book: Myth is Imagination",
+            "sort-key": "000 Book: Myth is Imagination",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_530.mp3"
         },
         {
@@ -636,7 +636,7 @@
                 "Books"
             ],
             "region": "Ravenwood",
-            "sort-key": "003 Book: History of the Fire School",
+            "sort-key": "000 Book: History of the Fire School",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_514.mp3"
         },
         {
@@ -646,7 +646,7 @@
                 "Books"
             ],
             "region": "Ravenwood",
-            "sort-key": "004 Book: History of the Ice School",
+            "sort-key": "000 Book: History of the Ice School",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_520.mp3"
         },
         {
@@ -656,7 +656,7 @@
                 "Books"
             ],
             "region": "Ravenwood",
-            "sort-key": "005 Book: History of the School of Storm",
+            "sort-key": "000 Book: History of the School of Storm",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_534.mp3"
         },
         {
@@ -666,7 +666,7 @@
                 "Books"
             ],
             "region": "Commons",
-            "sort-key": "001 Book: Tome of Fishing",
+            "sort-key": "000 Book: Tome of Fishing",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/LuckyHookline_FIS_05.mp3"
         },
         {
@@ -676,7 +676,7 @@
                 "Books"
             ],
             "region": "Commons",
-            "sort-key": "002 Book: History of the Universe (Library)",
+            "sort-key": "000 Book: History of the Universe (Library)",
             "log_msg": "|_Shared|WorldData|Sound/Dialogue/Narrator_NAR_504.mp3"
         },
         {
@@ -704,7 +704,7 @@
                 "Books"
             ],
             "region": "PetPavilion",
-            "sort-key": "001 Book: Hatchery Scroll (Hatchery)",
+            "sort-key": "000 Book: Hatchery Scroll (Hatchery)",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/DoctorPurreau_QST_03.mp3"
         },
         {
@@ -732,7 +732,7 @@
                 "Books"
             ],
             "region": "ShoppingDistrict",
-            "sort-key": "001 Book: Rate My Stitch Tome (Leaderboard)",
+            "sort-key": "000 Book: Rate My Stitch Tome (Leaderboard)",
             "log_msg": "|Music|WorldData|Misc/RateMyStitch/RateMyStitch_Runway.ogg"
         },
         {
@@ -742,19 +742,8 @@
                 "Books"
             ],
             "region": "ShoppingDistrict",
-            "sort-key": "002 Book: Tome of Socketing (Jewel Shop)",
+            "sort-key": "000 Book: Tome of Socketing (Jewel Shop)",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Narrator_EDN_14.mp3"
-        },
-        {
-            "name": "Merle: Colossal Trouble",
-            "category": [
-                "102 The Commons",
-                "Quest"
-            ],
-            "region": "PostStreets",
-            "xp": 35,
-            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateODoyle_QST_01.mp3",
-            "sort-key": "001 Merle: Colossal Trouble"
         },
         {
             "name": "Annie: Say Cheese! (Photomancy 1)",
@@ -801,7 +790,7 @@
                 "Quest"
             ],
             "region": "GolemCourt-GolemTower",
-            "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner)})",
+            "requires": "{advDamage(270)} and |Teleport-Dungeon| and ((|@SpellCard-Rank 2| and {wizReach(PostUW)}) or {YamlDisabled(beginner_logic)})",
             "xp": 45,
             "_comment": "Require a rank 2 spell for beginners, as getting this far in Golem Tower is annoying otherwise.",
             "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/ReginaFlametalon_QST_20.mp3",
@@ -908,8 +897,8 @@
                 "Quest"
             ],
             "region": "EarlyStreets",
-            "module": "#Cyclops# and #Firecat# and ((#Firecat:2# and {YamlDisabled(beginner)}) or #Triton#)",
-            "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({CanReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner)}))",
+            "module": "#Cyclops# and #Firecat# and ((#Firecat:2# and {YamlDisabled(beginner_logic)}) or #Triton#)",
+            "requires": "{advDamage(235)} and |Area-Olde Town| and |Area-Firecat Alley| and |Area-Cyclops Lane| and (|Area-Triton Avenue| or ({CanReachLocation(Lizzo: Problematic Casting (Melweena))} and {YamlDisabled(beginner_logic)}))",
             "_comment": "Melweena's minion counts as the Triton Avenue version that drops the shroud",
             "xp": 55,
             "log_msg": "|Sound_Dialogue_002|WorldData|Sound/Dialogue/GloriaKrendell_002_07.mp3",
@@ -1038,7 +1027,7 @@
                 "Quest"
             ],
             "region": "Cyclops",
-            "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner)})) and {wizReach(Fodder)}",
+            "requires": "(|Area-Dark Cave| or (|Area-Firecat Alley| and {YamlDisabled(beginner_logic)})) and {wizReach(Fodder)}",
             "log_msg": "|Sound_Dialogue_005|WorldData|Sound/Dialogue/PrivateSweeney_005_06.mp3",
             "sort-key": "008 Sweeney: Mostly Armorless"
         },
