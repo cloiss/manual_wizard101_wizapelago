@@ -28,9 +28,8 @@ def update_json(file_name: str):
     current_category = None
     counter = "001"
     for location in content.get("data", []):
-        if ("log_msg" not in location) and file_name == "locations.json":
-            # Prefixing with an underscore "_" sorts them before letters A-Z / a-z 
-            # in both case-sensitive (Custom) and case-insensitive (Natural) sort orders.
+        if ("log_msg" not in location or location["name"][0:5] == "Book:") and file_name == "locations.json" :
+            # Prefixing with 000 to sort all manual locations (and books) above quests which are automarked
             location["sort-key"] = "000 " + location["name"]
             updated_count += 1
         else:
