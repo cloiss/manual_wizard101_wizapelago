@@ -4,15 +4,15 @@ ARCHIPELAGO_PATH = D:\ProgramData\Archipelago
 WIZARD101_BIN = C:\Program Files (x86)\KingsIsle Entertainment\Wizard101\Bin
 
 package:
-	Compress-Archive -Path "manual_wizard101_cloiss" -DestinationPath "manual_wizard101_cloiss.apworld" -Force
+	Compress-Archive -Path "manual_wizard101_wizapelago" -DestinationPath "manual_wizard101_wizapelago.apworld" -Force
 
 install:
-	./manual_wizard101_cloiss.apworld
+	./manual_wizard101_wizapelago.apworld
 clean:
-	if (Test-Path "manual_wizard101_cloiss.apworld") { Remove-Item -Path "manual_wizard101_cloiss.apworld" -Force }
+	if (Test-Path "manual_wizard101_wizapelago.apworld") { Remove-Item -Path "manual_wizard101_wizapelago.apworld" -Force }
 
 package-automark:
-	Copy-Item -Path "manual_wizard101_cloiss\data\locations.json" -Destination "automark_client\locations.json" -Force; Compress-Archive -Path "automark_client" -DestinationPath "automark_client.apworld" -Force; Remove-Item -Path "automark_client\locations.json" -Force
+	Copy-Item -Path "manual_wizard101_wizapelago\data\locations.json" -Destination "auto_von_wizmark\locations.json" -Force; Compress-Archive -Path "auto_von_wizmark" -DestinationPath "auto_von_wizmark.apworld" -Force; Remove-Item -Path "auto_von_wizmark\locations.json" -Force
 
 generate:
 	$(ARCHIPELAGO_PATH)\ArchipelagoGenerate.exe

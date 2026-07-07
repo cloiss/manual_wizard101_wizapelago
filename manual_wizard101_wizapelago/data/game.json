@@ -1,7 +1,7 @@
 {
   "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.game.schema.json",
   "game": "Wizard101",
-  "creator": "Cloiss",
+  "creator": "Wizapelago",
   "filler_item_name": "Filler TC",
   "starting_items": [
     {

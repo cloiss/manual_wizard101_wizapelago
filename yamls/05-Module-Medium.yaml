@@ -30,11 +30,11 @@ name: Wizard{number}
 # Used to describe your yaml. Useful if you have multiple files.
 description: Recommended yaml for a medium-length game, with Melweena Smite as the goal. 
 
-game: Manual_Wizard101_Cloiss
+game: Manual_Wizard101_Wizapelago
 requires:
   version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
 
-Manual_Wizard101_Cloiss:
+Manual_Wizard101_Wizapelago:
   ################
   # Game Options #
   ################
@@ -257,7 +257,7 @@ Manual_Wizard101_Cloiss:
     none: 0
     half: 50
     full: 0
-    
+
   module_cyclops:
     # Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations.
     none: 0
