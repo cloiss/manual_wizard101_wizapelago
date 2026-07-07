@@ -257,12 +257,7 @@ Manual_Wizard101_Cloiss:
     none: 0
     half: 50
     full: 0
-
-  module_petpavilion:
-    # Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations. This is currently broken in live so is disabled until fixed.
-    none: 50
-    full: 0
-
+    
   module_cyclops:
     # Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations.
     none: 0
