@@ -21,7 +21,7 @@ There is also an additional `ore` setting within the `reagents` option that enab
 The `housing_items` option enables checks for collecting each interactable housing item that can be found out in the open in Wizard City. The naming and categorization of these checks will help inform you on where these are located.
 
 ## Wooden and Silver Chests
-The `wooden_chests` and `silver_chests` options enable checks for Wooden and Silver Chests respectively in Wizard City. Similar to Reagents, these can be area-specific area-specific (e.g. `Wooden Chest (Unicorn Way)`) or general (e.g. `Wooden Chest (Anywhere)`).
+The `wooden_chests` and `silver_chests` options enable checks for Wooden and Silver Chests respectively in Wizard City. Similar to Reagents, these can be area-specific (e.g. `Wooden Chest (Unicorn Way)`) or general (e.g. `Wooden Chest (Anywhere)`).
 
 ## Smiths
 The `find_the_smiths` option enables checks for reaching each of the hidden Smiths for Prospector Zeke's quest "Find the Smiths". Note that having access to the quest is required before you can begin collecting these checks. 
@@ -34,7 +34,7 @@ The `find_the_books` option enables checks for reading various books throughout 
 There is a secret option to have a single combined check for finding all accessible Books for "The Lore You Know", but this is currently hidden due to being unintuitive.
 
 ## Halloween
-During the Hallowe'en and Eerie April events, 19 additional quests are available from Jack Hallow in The Commons. This option adds a check for each of these quests, and is highly recommended to be enabled when the event is active to add some variety to the game. 
+During the Hallowe'en and Eerie April events, 19 additional quests are available from Jack Hallow in The Commons. This option adds a check for each of these quests, as well as some checks in Apprentice Tower. It is highly recommended to be enabled when the event is active to add some variety to the game. 
 
 ## Goal
 Currently, the default goal location is to defeat Lord Nightshade. Unlike other locations, this goal can be claimed as soon as the boss is defeated, so returning to Daisy Willowmancer to turn in the quest is not required. This also means that the two remaining main quests in Wizard City after the boss are not part of the randomizer. The goal can also be set to a number of other Wizard City bosses for a shorter game (see [Modules](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Modules.md)). In all cases, the goal is to defeat the boss, and all associated quests thereafter are not part of the randomizer.

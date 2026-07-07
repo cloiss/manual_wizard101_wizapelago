@@ -1,4 +1,4 @@
-# Wizard101 Randomizer
+# Wizapelago (Wizard101 Randomizer)
 This is a randomizer for Wizard101 developed by Fraxker, Cloiss, and ItzGray. It requires creating a fresh character on a free-to-play account and playing through the first world of the game, completing quests and other objectives to gain randomized abilities and items. A solo game can range from about 2-5 hours depending on settings and luck.
 
 ## Getting Started
@@ -27,7 +27,9 @@ Auto von Wizmark is a separate client we have developed that can automatically m
 
 It currently has support for automatically marking quest locations, goal locations, some books, and `Talk to Nick Jonas`. Reagents, chests, housing items, smiths, and books must be marked manually.
 
-## Read more
+## Read More
+For more specific information on the features of Wizapelago, please consult the documents below.
+
 - [Items](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Items.md)
 - [Locations](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Locations.md)
 - [Modules](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Modules.md)
