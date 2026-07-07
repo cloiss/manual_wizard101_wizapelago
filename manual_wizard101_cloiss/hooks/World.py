@@ -1,12 +1,19 @@
 from typing import TYPE_CHECKING
 
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+from typing import Any
 from worlds.AutoWorld import World
 from BaseClasses import ItemClassification, MultiWorld, CollectionState, Item
 
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
 from ..Items import ManualItem
 from ..Locations import ManualLocation
+
+# For evaluating functions within modules
+from .. import Rules as GlobalRules
+from . import Rules as HooksRules
+import inspect
+from ..Helpers import convert_string_to_type
 
 if TYPE_CHECKING:
     from .. import ManualWorld
@@ -17,7 +24,11 @@ if TYPE_CHECKING:
 from ..Data import game_table, item_table, location_table, region_table
 
 # These helper methods allow you to determine if an option has been set, or what its value is, for any player in the multiworld
-from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
+from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat, remove_specific_item
+
+# Used to parse the module requires strings
+from ..Rules import infix_to_postfix, evaluate_postfix
+import re
 
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
@@ -37,16 +48,12 @@ import random, math
 ## The fill_slot_data method will be used to send data to the Manual client for later use, like deathlink.
 ########################################################################################
 
-def get_option_value_regen(multiworld: MultiWorld, player: int, option_name: str):
-    if hasattr(multiworld, "re_gen_passthrough"):
-       return multiworld.re_gen_passthrough["Manual_Wizard101_Cloiss"][option_name]
-    else:
-       return get_option_value(multiworld, player, option_name)
-
 def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, player: int):
     # order is counterclockwise based on school position in Ravenwood
     school_names = ["Storm","Ice","Fire","Death","Myth","Life"] # balance not included because no Balance Shield or Balance Trap
     halloween_option = get_option_value(multiworld, player, "halloween")
+    golem_court_option = get_option_value(multiworld, player, "module_golemcourt")
+    triton_option = get_option_value(multiworld, player, "module_triton")
 
     # hits
     subpool_rank1 = ["Scarab","Thunder Snake","Ice Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
@@ -78,7 +85,13 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     pool_any = ["Any Rank 1","Any Rank 2","Any Rank 3","Any Rank 4+","Any Shield","Any Blade","Any Trap","Any TC"] * 3
 
     # in the spirit of the randomizer, any TCs you can get from a quest will always be there
-    pool_quest_rewards = ["Kraken","Ghoul","Blood Bat","Sprite"]
+    pool_quest_rewards = ["Sprite"]
+    # add rewards from Kraken quest
+    if triton_option > 0: # half or full triton module includes kraken
+        pool_quest_rewards += ["Kraken"]
+    # add rewards from Iron Golem quest
+    if golem_court_option == 2: # full golem court module
+        pool_quest_rewards += ["Ghoul", "Blood Bat"]
     # add black cats for halloween
     if halloween_option:
         pool_quest_rewards += ["Black Cat"] * 10
@@ -123,20 +136,189 @@ def get_item_school(item_name: str, world: World):
     return None
 
 def format_starting_item_block(item_name: str):
-    return {"items": [item_name]}
+    return {"items": [item_name], "_comment": "REMOVE"} # REMOVE instruction clears this starting item block when moving to the next player
+
+# copied from checkRequireStringForArea, parses the module logic strings for regions and locations (and items, which are not actually areas)
+def checkModuleStringForArea(world: World, multiworld: MultiWorld, player: int, area: dict):
+    # modified version of this function to handle modules (since this is an inner function and part of Manual, I can't import it)
+    def findAndRecursivelyExecuteFunctions(requires_list: str, recursionDepth: int = 0) -> str:
+            found_functions = re.findall(r'\{(\w+)\((.*?)\)\}', requires_list)
+            if found_functions:
+                if recursionDepth > world.rules_functions_maximum_recursion:
+                    raise RecursionError(f'One or more functions in a module looped too many time (maximum recursion is {world.rules_functions_maximum_recursion}) \
+                                         \n    As of this Exception the following function(s) are waiting to run: {[f[0] for f in found_functions]} \
+                                         \n    And the currently processed requires look like this: "{requires_list}"')
+                else:
+                    for item in found_functions:
+                        func_name = item[0]
+                        func_args = item[1].split(",")
+                        if func_args == ['']:
+                            func_args.pop()
+
+                        func = globals().get(func_name) # Look for the function in the global variables (not sure if this works)
+
+                        # Look for the function in Rules.py (for global functions like YamlEnabled)
+                        if func is None:
+                            func = getattr(GlobalRules, func_name, None)
+
+                        # Look for the function in hooks/Rules.py (for user-defined functions like wizReach)
+                        if func is None:
+                            func = getattr(HooksRules, func_name, None)
+
+                        if not callable(func):
+                            raise ValueError(f'Invalid function "{func_name}" in a module')
+
+                        convert_req_function_args(func, func_args, "a module")
+                        try:
+                            result = func(*func_args)
+                        except Exception as ex:
+                            raise RuntimeError(f'A call to the function "{func_name}" in a module"\'s requires raised an Exception. \
+                                                \nUnless it was called by another function, it should look something like "{{{func_name}({item[1]})}}" in a module. \
+                                                \nFull error message: \
+                                                \n\n{type(ex).__name__}: {ex}')
+                        if isinstance(result, bool):
+                            requires_list = requires_list.replace("{" + func_name + "(" + item[1] + ")}", "1" if result else "0")
+                        else:
+                            raise ValueError(f'Function {func_name} attempted to return a string within module logic, which is not supported')
+
+                requires_list = findAndRecursivelyExecuteFunctions(requires_list, recursionDepth + 1)
+            return requires_list
+
+    # copied from Manual, removed support for collection state (throws an error) because the state doesn't exist yet at this point in generation
+    def convert_req_function_args(func, args: list[str], areaName: str):
+        parameters = inspect.signature(func).parameters
+        knownParameters = [World, 'ManualWorld', MultiWorld, CollectionState]
+        index = -1
+        for parameter in parameters.values():
+            target_type = parameter.annotation
+            index += 1
+            if target_type in knownParameters:
+                if target_type in [World, 'ManualWorld']:
+                    args.insert(index, world)
+                elif target_type == MultiWorld:
+                    args.insert(index, multiworld)
+                elif target_type == CollectionState:
+                    raise ValueError(f'Function {func.__name__} uses information from the collection state, which is not supported for modules')
+                continue
+            if parameter.name.lower() == "player":
+                args.insert(index, player)
+                continue
+
+            if index < len(args) and args[index] != "":
+                value = args[index].strip()
+            else:
+                if parameter.default is not inspect.Parameter.empty:
+                    if index < len(args):
+                        args[index] = parameter.default
+                    else:
+                        args.insert(index, parameter.default)
+                    continue
+                else:
+                    if parameter.annotation is inspect.Parameter.empty:
+                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value for its argument \"{parameter.name}\" but it's missing.")
+                    else:
+                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type} for its argument \"{parameter.name}\" but it's missing.")
+
+            if target_type == str or parameter.annotation is inspect.Parameter.empty: #Don't convert since its already a string or if we don't know the type to convert to
+                args[index] = value
+                continue
+
+            try:
+                value = convert_string_to_type(value, target_type)
+
+            except Exception as e:
+                raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type}\nfor its argument \"{parameter.name}\" but its value \"{value}\" cannot be converted to {target_type} \nOriginal Error:'{e}'")
+
+            args[index] = value
+
+    # Actual module code starts here
+
+    # Define modules and goals that impact which quests are made available
+    module_values = {
+        "GolemCourt": get_option_value(multiworld,player,"module_golemcourt"),
+        "PetPavilion": get_option_value(multiworld,player,"module_petpavilion"),
+        "Cyclops": get_option_value(multiworld,player,"module_cyclops"),
+        "Triton": get_option_value(multiworld,player,"module_triton"),
+        "Firecat": get_option_value(multiworld,player,"module_firecat"),
+        "PostStreets": get_option_value(multiworld,player,"module_poststreets"),
+        "LostPages": get_option_value(multiworld,player,"module_lostpages")
+    }
+
+    goal_option = get_option_value(multiworld,player,"goal")
+    goal_values = {
+         "Nightshade": 0,
+         "Akilles": 1,
+         "HarvestLord": 2,
+         "Roberto": 3,
+         "Alicane": 4,
+         "Melweena": 5,
+         "Foulgaze": 6
+    }
+    
+    requires_list = area.get("module","1") # if no module is specified, return true (meaning the region/location will not be removed by modules)
+    requires_list = findAndRecursivelyExecuteFunctions(requires_list)
+
+    # For modules (surrounded in #), only include those that meet the module type and quantity
+    for module in re.findall(r'#[^#]+#', requires_list):
+
+        module_base = module
+        module = module.strip("#").strip()
+
+        module_parts = module.split(":")  # type: list[str]
+        module_name = module
+        module_count = 1
+
+        if len(module_parts) > 1:
+            module_name = module_parts[0].strip()
+            module_count = int(module_parts[1].strip())
+
+        value = module_values.get(module_name,0)
+
+        if value >= module_count:
+            requires_list = requires_list.replace(module_base, "1")
+        else:
+            requires_list = requires_list.replace(module_base, "0")
+
+    # For goals (surrounded in $), we want to remove quests that happen after that goal, so e.g. $Alicane$ means goal is NOT alicane
+    for goal in re.findall(r'\$[^\$]+\$', requires_list):
+        goal_base = goal
+        goal = goal.strip("$").strip()
+
+        value = goal_values.get(goal,-1) # if the goal is not on the list of goals, assume -1 which will not match anything 
+
+        # if we match the goal we want to REMOVE this area from the randomizer, so we return false
+        if value == goal_option:
+            requires_list = requires_list.replace(goal_base, "0")
+        else:
+            requires_list = requires_list.replace(goal_base, "1")
+        
+    requires_list = re.sub(r'\s?\bAND\b\s?', '&', requires_list, 0, re.IGNORECASE)
+    requires_list = re.sub(r'\s?\bOR\b\s?', '|', requires_list, 0, re.IGNORECASE)
+
+    requires_string = infix_to_postfix("".join(requires_list), area)
+    return (evaluate_postfix(requires_string, area))
+
+
 
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
     return False
 
+def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> None:
+    """
+    This is the earliest hook called during generation, before anything else is done.
+    Use it to check or modify incompatible options, or to set up variables for later use.
+    """
+    pass
+
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Before anything happens, edit the options for primary and secondary school
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
 
-    primary_school = schools[get_option_value_regen(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value_regen(multiworld, player, "secondary_school")]
+    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
 
     valid_schools = schools.copy()
     valid_schools.remove("Any")
@@ -157,37 +339,106 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     world.options.primary_school.value = schools.index(primary_school)
     world.options.secondary_school.value = schools.index(secondary_school)
 
+    # Also alter module settings to fit goal as needed
+    goals = ["Nightshade","Akilles","HarvestLord","Roberto","Alicane","Melweena","Foulgaze"]
+
+    goal = goals[get_option_value(multiworld, player, "goal")]
+
+    # use full version of each street for bosses on that street
+    if goal == "Akilles":
+        world.options.module_cyclops.value = 2
+    if goal in ["HarvestLord","Roberto"]:
+        world.options.module_triton.value = 2
+    if goal in ["Alicane","Melweena"]:
+        world.options.module_firecat.value = 2
+    
+    # turn off poststreets for mainline bosses
+    if goal in ["Akilles","HarvestLord","Alicane"]:
+        world.options.module_poststreets.value = 0
+    # turn on poststreets for nightshade
+    if goal == "Nightshade":
+        world.options.module_poststreets.value = 1
+    # set all streets to full if poststreets enabled or Foulgaze is the goal
+    if world.options.module_poststreets == 1 or goal == "Foulgaze":
+        world.options.module_cyclops.value = 2
+        world.options.module_triton.value = 2
+        world.options.module_firecat.value = 2
+
+def get_locations_total_xp(
+    multiworld: MultiWorld,
+    player: int,
+    location_name_to_location: dict,
+    include_level_xp: bool = False,
+) -> int | tuple[int, dict[int, int], dict[int, set[str]]]:
+    """Sum XP from all locations for this player. If include_level_xp is True, also return per-level XP and location names for level-gated locations."""
+    total_xp = 0
+    level_xp: dict[int, int] = {}
+    level_location_names: dict[int, set[str]] = {}
+    for region in multiworld.regions:
+        if region.player == player:
+            for location in region.locations:
+                location_dict = location_name_to_location.get(location.name, {})
+                xp = location_dict.get("xp", 0)
+                total_xp += xp
+                if include_level_xp:
+                    required_level = location_dict.get("required_level")
+                    if required_level is not None and required_level in HooksRules.level_xp_requirements:
+                        level_xp[required_level] = level_xp.get(required_level, 0) + xp
+                        if required_level not in level_location_names:
+                            level_location_names[required_level] = set()
+                        level_location_names[required_level].add(location.name)
+    if include_level_xp:
+        return total_xp, level_xp, level_location_names
+    return total_xp
+
+
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to remove locations from the world
     location_names_to_remove: list[str] = [] # List of location names
+    region_names_to_remove: list[str] = []
 
     # Handle Optional Locations from Yaml Options
-    # 0 = none, 1 = all, 2 = ore
+    # Handle Reagent Locations
+    # 0 = none, 1 = anywhere (6 location types), 2 = anywhere-ore only, 3 = all (per-area)
     reagents_option = get_option_value(multiworld, player, "reagents")
-    
-    # If option is none or ore, remove all items but ore
-    if reagents_option % 2 == 0:
-        reagent_locations = world.location_name_groups["Reagents"]
-        location_names_to_remove.extend(reagent_locations)
-    # add back ore for ore option
-    if reagents_option == 2:
-        location_names_to_remove.remove("Reagent: Ore")
+    reagent_locations = world.location_name_groups.get("Reagents", [])
+    reagent_anywhere_names = [
+        "Reagent: Mist Wood (Anywhere)",
+        "Reagent: Cat Tail (Anywhere)",
+        "Reagent: Deep Mushroom (Anywhere)",
+        "Reagent: Flax (Anywhere)",
+        "Reagent: Ore (Anywhere)",
+        "Reagent: Rare Reagent (Anywhere)",
+    ]
+    match reagents_option:
+        case 0: # none: remove all reagent locations
+            location_names_to_remove.extend(reagent_locations)
+        case 1: # anywhere: remove all but the anywhere ones
+            reagent_locations_to_remove = list(reagent_locations)
+            for name in reagent_anywhere_names:
+                reagent_locations_to_remove.remove(name)
+            location_names_to_remove.extend(reagent_locations_to_remove)
+        case 2: # anywhere-ore: remove all but the anywhere ore one
+            location_names_to_remove.extend(reagent_locations)
+            location_names_to_remove.remove("Reagent: Ore (Anywhere)")
+        case 3: # all: remove all but the rare reagent one
+            location_names_to_remove.extend(reagent_anywhere_names)
+            location_names_to_remove.remove("Reagent: Rare Reagent (Anywhere)")
 
     # Handle Wooden Chest Locations
     # 0 = none, 1 = anywhere, 2 = all
     wooden_chests_option = get_option_value(multiworld, player, "wooden_chests")
-
     wooden_chest_locations = world.location_name_groups.get("WoodenChests",[])
-    # If option is none, remove all wooden chest locations
-    if wooden_chests_option == 0:
+
+    match wooden_chests_option:
+        case 0:  # none: remove all wooden chest locations
             location_names_to_remove.extend(wooden_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif wooden_chests_option == 1:
-            location_names_to_remove.extend(wooden_chest_locations)
-            location_names_to_remove.remove("Wooden Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif wooden_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            wooden_chest_locations_to_remove = list(wooden_chest_locations)
+            wooden_chest_locations_to_remove.remove("Wooden Chest: Anywhere")
+            location_names_to_remove.extend(wooden_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Wooden Chest: Anywhere")
 
     # Handle Silver Chest Locations
@@ -195,16 +446,79 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     silver_chests_option = get_option_value(multiworld, player, "silver_chests")
 
     silver_chest_locations = world.location_name_groups.get("SilverChests",[])
-    # If option is none, remove all silver chest locations
-    if silver_chests_option == 0:
+    match silver_chests_option:
+        case 0:  # none: remove all silver chest locations
             location_names_to_remove.extend(silver_chest_locations)
-    # If option is anywhere, remove all but the anywhere one
-    elif silver_chests_option == 1:
-            location_names_to_remove.extend(silver_chest_locations)
-            location_names_to_remove.remove("Silver Chest: Anywhere")
-    # If option is all, only remove the anywhere one
-    elif silver_chests_option == 2:
+        case 1:  # anywhere: remove all but the anywhere one
+            silver_chest_locations_to_remove = list(silver_chest_locations)
+            silver_chest_locations_to_remove.remove("Silver Chest: Anywhere")
+            location_names_to_remove.extend(silver_chest_locations_to_remove)
+        case 2:  # all: only remove the anywhere one
             location_names_to_remove.append("Silver Chest: Anywhere")
+    
+    # Handle Smiths Locations
+    # 0 = none, 1 = quest (current behavior), 2 = all (per-area)
+    smiths_option = get_option_value(multiworld, player, "find_the_smiths")
+    smiths_locations = world.location_name_groups.get("Smiths", [])
+
+    match smiths_option:
+        case 0:  # none: remove quest location and all per-area smith locations
+            location_names_to_remove.append("Zeke: Find the Smiths (X/10 Smiths)")
+            location_names_to_remove.extend(smiths_locations)
+        case 1:  # quest: remove per-area smith locations, keep quest location
+            location_names_to_remove.extend(smiths_locations)
+        case 2:  # all: remove quest location, keep per-area smith locations
+            location_names_to_remove.append("Zeke: Find the Smiths (X/10 Smiths)")
+
+    # Handle Smiths Locations Alias (only relevant when quest location is kept)
+    if smiths_option == 1:
+        smiths_id = world.location_name_to_id.get("Zeke: Find the Smiths (X/10 Smiths)")
+        if smiths_id is not None and hasattr(world, "location_id_to_alias"):
+            # 5 smiths by default: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town
+            num_smiths = 5
+            if world.options.module_golemcourt.value > 0:
+                num_smiths += 1
+            if world.options.module_cyclops.value > 0:
+                num_smiths += 1
+            if world.options.module_triton.value > 0:
+                num_smiths += 1
+            if world.options.module_firecat.value > 0:
+                num_smiths += 1
+
+            world.location_id_to_alias[smiths_id] = f"Zeke: Find the Smiths ({num_smiths}/10 Smiths)"
+
+    # Handle Books Locations
+    # 0 = none, 1 = quest, 2 = quest-all, 3 = all
+    books_option = get_option_value(multiworld, player, "find_the_books")
+    boss_book_locations = world.location_name_groups.get("BooksBoss", [])
+
+    match books_option:
+        case 0:  # none: remove quest location and all book locations
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+            location_names_to_remove.extend(boss_book_locations)
+        case 1:  # quest: keep quest location only, remove all individual book locations
+            location_names_to_remove.extend(boss_book_locations)
+        case 2:  # quest-all: remove quest location, keep individual boss book locations
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+        case 3:  # all: remove quest location, keep boss books and area books
+            location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+            # When adding area books (e.g. category "BooksScattered"), extend remove list in case 2 only
+
+    # Handle Books Locations Alias (only relevant when quest location is kept)
+    if books_option == 1:
+        books_id = world.location_name_to_id.get("Boris: The Lore You Know (X/7 Books)")
+        if books_id is not None and hasattr(world, "location_id_to_alias"):
+            num_books = 1
+            if world.options.module_poststreets.value > 0:
+                num_books += 1
+            if world.options.module_cyclops.value == 2:
+                num_books += 1
+            if world.options.module_triton.value == 2:
+                num_books += 1
+            if world.options.module_firecat.value == 2:
+                num_books += 1
+            
+            world.location_id_to_alias[books_id] = f"Boris: The Lore You Know ({num_books}/7 Books)"
 
     # Handle School-Based Locations
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life"]
@@ -217,11 +531,53 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                 school_locations = list(world.location_name_groups[school_key])
                 location_names_to_remove.extend(school_locations)
 
+    # Handle Modules for regions and locations
+    for region_name in region_table:
+        region_data = region_table[region_name]
+        module_result = checkModuleStringForArea(world,multiworld,player,region_data)
+        if not module_result:
+            region_names_to_remove.append(region_name)
+
+    for location in location_table:
+        module_result = checkModuleStringForArea(world,multiworld,player,location)
+        if not module_result:
+            location_names_to_remove.append(location['name'])
+
     # Actual Remove Code
     for region in multiworld.regions:
         if region.player == player:
+            if region.name in region_names_to_remove:
+                region.locations.clear()
+            else:
+                for location in list(region.locations):
+                    if location.name in location_names_to_remove:
+                        region.locations.remove(location)
+
+    # Total XP still in locations (after removals), and per-level XP/location names for level-gated locations
+    total_xp, level_xp, level_location_names = get_locations_total_xp(
+        multiworld, player, world.location_name_to_location, include_level_xp=True
+    )
+
+    # For each level with gated locations: if player cannot reach that level (XP without that level's locations < requirement), remove those locations.
+    # Level 5 is assumed always reachable; only check level 6 and above.
+    # Process levels in descending order; only subtract XP from running total when we remove a level's locations.
+    to_remove: set[str] = set()
+    running_total = total_xp
+    levels_to_check = [lvl for lvl in sorted(level_xp.keys(), reverse=True) if lvl >= 6]
+    for level in levels_to_check:
+        xp_at_level = level_xp[level]
+        req = HooksRules.level_xp_requirements[level]
+        if running_total - xp_at_level < req:
+            # Bitwaise OR operation on the set, adding all location names for the level to the set
+            to_remove |= level_location_names[level]
+            running_total -= xp_at_level
+        else:
+            break
+
+    for region in multiworld.regions:
+        if region.player == player:
             for location in list(region.locations):
-                if location.name in location_names_to_remove:
+                if location.name in to_remove:
                     region.locations.remove(location)
 
     # Fake Events system
@@ -229,7 +585,13 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
-                location_dict = world.location_name_to_location[location.name]
+                try:
+                    location_dict = world.location_name_to_location[location.name]
+                except KeyError:
+                    # If location is not found, check if it's actually an event
+                    if location.name in world.event_name_to_event:
+                        continue  # It's a valid event, skip it
+                    raise  # Not found in either table, this is an error
                 try:
                     categories: list[str] = location_dict["category"]
                     if "Quest" in categories:
@@ -275,6 +637,17 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         item_pool.append(world.create_item(item_name))
 
     ### Handle Modifications to the Starting Inventory
+    # Clear out any modifications made by previous players' yamls
+    item_blocks_to_remove = []
+    for item_block in world.starting_items:
+        if item_block.get("_comment",None) == "REMOVE":
+            item_blocks_to_remove.append(item_block)
+    for item_block in item_blocks_to_remove:
+        world.starting_items.remove(item_block)
+    
+    item_blocks_to_add = []
+
+    # Handle starting items from non-binary options
     # for x_location, a value of 0 means starting inventory, hence the "not"
     option_item_pairs = [
         (not(get_option_value(multiworld, player, "mark_location")),"Teleport-Mark"),
@@ -284,40 +657,77 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     for option, item in option_item_pairs:
         starting_item_block = format_starting_item_block(item)
         if option: # add to starting item if option enabled
-            world.starting_items.append(starting_item_block)
-        elif starting_item_block in world.starting_items: # remove if option not enabled (prevents issues with multiple worlds overlapping)
-            world.starting_items.remove(starting_item_block)
+            item_blocks_to_add.append(starting_item_block)
+
+    # Handle starting inventory options
+
+    # Rank 1 Item Cards
+    option_rank_1_item_cards = get_option_value(multiworld, player, "start_rank_1_item_cards")
+    
+    item_blocks_to_add.append({"item_categories": ["ItemCard-Rank 1"],"random": option_rank_1_item_cards, "_comment": "REMOVE"})
+
+    # Ranks 1 & 2 Primary Spell Cards
+    start_primary_rank_1 = get_option_value(multiworld, player, "start_primary_rank_1")
+    start_primary_rank_2 = get_option_value(multiworld, player, "start_primary_rank_2")
+    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
+    rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
+    
+    # include the appropriate spells based on the settings and primary school
+    if start_primary_rank_1:
+        for spell_name in rank_1_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
+    if start_primary_rank_2:
+        for spell_name in rank_2_spells:
+            if get_item_school(spell_name,world) == primary_school:
+                item_blocks_to_add.append(format_starting_item_block(spell_name))
+    
+    if start_primary_rank_1 + option_rank_1_item_cards == 0:
+        logging.warning(f"WARNING: Player {player} has no damage in the starting inventory. The seed may fail to generate.")
+
+    for item_block in item_blocks_to_add:
+        world.starting_items.append(item_block)
     
     return item_pool
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
 def before_create_items_filler(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
     # Use this hook to remove items from the item pool
-    itemNamesToRemove: list[str] = [] # List of item names
+    item_names_to_remove: list[str] = [] # List of item names
 
     # Add your code here to calculate which items to remove.
     #
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
+    for item in item_table:
+        module_result = checkModuleStringForArea(world,multiworld,player,item)
+        if not module_result:
+            item_names_to_remove.append(item['name'])
 
-    for itemName in itemNamesToRemove:
-        item = next(i for i in item_pool if i.name == itemName)
-        item_pool.remove(item)
+    # Total XP still in locations (after removals)
+    total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
 
-    item_names_to_add: list[str] = []
+    # Convert total XP to level (largest level whose requirement <= total_xp)
+    reqs = HooksRules.level_xp_requirements
+    #sort the level requirements in descending order and takes the first (highest) level whose requirement is met.
+    max_level = next(
+        (level for level in sorted(reqs, reverse=True) if total_xp >= reqs[level]),
+        1,
+    )
 
-    # weird workaround: this "deduces" what your secondary school is and adds the corresponding rank 1 spell to the pool. if it was added before, it would get put in the starting inventory accidentally.
-    schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
-    rank_1_spells = list(world.item_name_groups["SpellCard-Rank 1"])
-    
-    # find the secondary rank 1 spell and add it to the pool
-    for spell_name in rank_1_spells:
-        if get_item_school(spell_name,world) == secondary_school:
-            item_names_to_add.append(spell_name)
+    # Remove all items that are ranked higher than the player's current level
+    for item in item_table:
+        if item.get("value", {}).get("level", 0) > max_level:
+            item_names_to_remove.append(item["name"])
 
-    for item_name in item_names_to_add:
-        item_pool.append(world.create_item(item_name))
+    for item_name in item_names_to_remove:
+        # try-except here accounts for trying to remove items that don't exist (e.g. Fire Prism when Golem Court is disabled and you are not a Fire wizard)
+        try:
+            # next clause accounts for removing the correct number of copies of an item, rather than all copies
+            item = next(i for i in item_pool if i.name == item_name)
+            remove_specific_item(item_pool, item)
+        except:
+            pass
 
     return item_pool
 
@@ -327,7 +737,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == "Location Name")
     # item_to_place = next(i for i in item_pool if i.name == "Item Name")
     # location.place_locked_item(item_to_place)
-    # item_pool.remove(item_to_place)
+    # remove_specific_item(item_pool, item_to_place)
 
 # The complete item pool prior to being set for generation is provided here, in case you want to make changes to it
 def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
@@ -386,18 +796,75 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    pass
+    world.final_total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):
     # Use this hook to modify the access rules for a given location
-    
+
+    # Finish setting fake event system's xp items
     for region in multiworld.regions:
         if region.player == player:
             for location in list(region.locations):
                 if location.name.startswith("[QL]"):
                     m_loc = multiworld.get_location(location.name[4:], player)
                     location.access_rule = m_loc.access_rule
+
+    # Pre-compute the list of required smiths areas based on modules enabled
+    smiths_module_areas = []
+    if world.options.module_golemcourt.value > 0:
+        smiths_module_areas.append("Area-Golem Court")
+    if world.options.module_firecat.value > 0:
+        smiths_module_areas.append("Area-Firecat Alley")
+    if world.options.module_triton.value > 0:
+        smiths_module_areas.append("Area-Triton Avenue")
+    if world.options.module_cyclops.value > 0:
+        smiths_module_areas.append("Area-Cyclops Lane")
+    
+    try:
+        smiths = world.get_location("Zeke: Find the Smiths (X/10 Smiths)")
+        # Prevent recursion issue
+        smiths_access = smiths.access_rule
+        smiths.access_rule = lambda state, sa=smiths_access, areas=smiths_module_areas, p=player: \
+            sa(state) and state.has_all(areas, p)
+    except KeyError:
+        # Prevent panic if "Zeke: Find the Smiths" is not a registered location (e.g. if smiths are disabled or excluded)
+        pass
+    # Handle Books Access Rules
+    # Each book is located in a boss area. To collect a book, the player needs to
+    # reach that area (region access) and have the building item for the boss's lair,
+    # but does NOT need the damage to defeat the boss.
+    # We encode these directly instead of pulling from defeat locations, which may
+    # be removed when they aren't the chosen goal.
+    books_module_requirements = []
+    if world.options.module_poststreets.value > 0:
+        # Foulgaze book: need to reach the Foulgaze region + have Building-Foulgaze
+        books_module_requirements.append(("Foulgaze", "Building-Foulgaze"))
+    if world.options.module_cyclops.value == 2:
+        # Akilles book: need to reach Cyclops-DarkCave region + have Building-Akilles
+        books_module_requirements.append(("Cyclops-DarkCave", "Building-Akilles"))
+    if world.options.module_triton.value == 2:
+        # Harvest Lord book: need to reach Triton region + have Building-Harvest Lord
+        books_module_requirements.append(("Triton", "Building-Harvest Lord"))
+    if world.options.module_firecat.value == 2:
+        # Alicane book: need to reach Firecat-Bastilla region + have Building-Alicane
+        books_module_requirements.append(("Firecat-Bastilla", "Building-Alicane"))
+
+    boss_rules = []
+    for region_name, building_item in books_module_requirements:
+        boss_rules.append(
+            lambda state, rn=region_name, bi=building_item, p=player:
+                state.can_reach_region(rn, p) and state.has(bi, p)
+        )
+
+    try:
+        books = world.get_location("Boris: The Lore You Know (X/7 Books)")
+        books_access = books.access_rule
+        books.access_rule = lambda state, ba=books_access, rules=boss_rules: \
+            ba(state) and all(rule(state) for rule in rules)
+    except KeyError:
+        # Prevent panic if "Boris: The Lore You Know" is not a registered location (e.g. if books are disabled or excluded)
+        pass
 
 # The item name to create is provided before the item is created, in case you want to make changes to it
 def before_create_item(item_name: str, world: World, multiworld: MultiWorld, player: int) -> str:
@@ -480,3 +947,10 @@ def before_extend_hint_information(hint_data: dict[int, dict[int, str]], world: 
 
 def after_extend_hint_information(hint_data: dict[int, dict[int, str]], world: World, multiworld: MultiWorld, player: int) -> None:
     pass
+
+def hook_interpret_slot_data(world: World, player: int, slot_data: dict[str, Any]) -> dict[str, Any]:
+    """
+        Called when Universal Tracker wants to perform a fake generation
+        Use this if you want to use or modify the slot_data for passed into re_gen_passthrough
+    """
+    return slot_data

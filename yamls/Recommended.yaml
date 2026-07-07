@@ -128,11 +128,6 @@ Manual_Wizard101_Cloiss:
     'false': 0
     'true': 50
 
-  gate_skip:
-    # Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled.
-    'false': 0
-    'true': 50
-
   beginner:
     # Enable this setting to disable unintuitive logic and improve the starting inventory.
     'false': 50
@@ -194,7 +189,7 @@ Manual_Wizard101_Cloiss:
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Reagent: Any Rare Reagent","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    ["Reagent: Rare Reagent (Anywhere)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
 
   priority_locations:
     # Prevent these locations from having an unimportant item.

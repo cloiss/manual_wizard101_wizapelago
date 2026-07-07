@@ -12,10 +12,10 @@ def wizReach(location: str):
         # "x OR y OR z" will return true if any of "x", "y", or "z" are true (can be used with any number of args)
         # Note this list is incomplete; it only has the locations that are necessary for the randomizer to work
         "PostUW": "|Area-Unicorn Way| and |Building-Rattlebones| and |Area-The Commons| and {advDamage(250)} and {specialItemCheck(Rattlebones)}",
-        "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|)",
-        "Judd": "{wizReach(To Muldoon)} and |Building-Judd| and |Slot-Pet| and {specialItemCheck(Judd)}",
+        "To Muldoon": "{wizReach(PostUW)} and |Area-Ravenwood| and |Area-Olde Town| and (|Area-Shopping District| or |Teleport-Friendly|) and {specialItemCheck(Muldoon)}",
         "Golem Court": "|Area-Golem Court| and ({wizReach(PostUW)} or |Teleport-Friendly|)",
         "Shopping District": "|Area-Shopping District| and ({wizReach(PostUW)} or (|Teleport-Majid| and {hasLevel(5)}) or (|Area-Olde Town| and |Teleport-Friendly|))",
+        "Pet Shop": "{wizReach(Shopping District)} and |Vendor-Pet Shops|",
         "Apples": "{hasLevel(5)} and |Area-The Commons| and {wizReach(Golem Court)} and {wizReach(Shopping District)}", # to collapse the very lengthy logic for the second half of the Ghosts/Apple questline
         "Fodder": "|Area-Dark Cave| or ((|Area-Triton Avenue| or |Building-Apprentice Tower|) and {YamlDisabled(beginner)})", # used for armorless and bastilla
         "Ravenwood": "|Area-Ravenwood| and (|Area-The Commons| or |Teleport-Home| or |Teleport-Friendly|)"
@@ -31,7 +31,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     # integer value for each location in the options
     locations_dict = {
         "Rattlebones": 1,
-        "Judd": 2,
+        "Muldoon": 2,
         "Mid-Streets": 3
     }
 
@@ -39,7 +39,7 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
     option_item_pairs = [
         (get_option_value(multiworld, player, "mark_location"),"|Teleport-Mark|"),
         (get_option_value(multiworld, player, "mount_location"),"|Slot-Mount|"),
-        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|")
+        (get_option_value(multiworld, player, "rank_2_spell_location"),"|@SpellCard-Rank 2|"),
         (get_option_value(multiworld, player, "teleport_button_location"), "|@Teleport-Button|")
     ]
 
@@ -63,18 +63,19 @@ def specialItemCheck(multiworld: MultiWorld, player: int, location: str):
 
 def hasXP(state: CollectionState, player: int, xp: str | int) -> bool:
     if not isinstance(xp, int):
-        xp: int = int(xp)
+        xp = int(xp)
 
     player_xp = state.prog_items[player].get(format_state_prog_items_key(ProgItemsCat.VALUE, "xp"), 0)
+    if player_xp >= xp:
+        return True
+    # Requirement not met yet; if total XP in the world is below the threshold, it's unreachable so treat as satisfied
+    world = state.multiworld.worlds[player]
+    total_xp = getattr(world, "final_total_xp", None)
+    if total_xp is not None and total_xp < xp:
+        return True
+    return False
 
-    return player_xp >= xp
-
-def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
-    if not isinstance(level, int):
-        level: int = int(level)
-
-    """Check if player has reached the specified level based on total XP."""
-    level_xp_requirements = {
+level_xp_requirements = {
         1: 0,
         2: 45,
         3: 160,
@@ -91,9 +92,13 @@ def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
         14: 13755,
         15: 16680
     }
-    
+
+def hasLevel(state: CollectionState, player: int, level: str | int) -> bool:
+    if not isinstance(level, int):
+        level: int = int(level)
+
+    """Check if player has reached the specified level based on total XP."""
     required_xp = level_xp_requirements.get(level, 999999999)
-    
     return hasXP(state, player, required_xp)
 
 # Custom function to do a more advanced damage check to properly screen how much damage a player has

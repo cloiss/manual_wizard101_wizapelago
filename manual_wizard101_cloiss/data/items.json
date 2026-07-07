@@ -3,324 +3,550 @@
     "data": [
         {
             "name": "School-Balance",
-            "category": ["00 School","School-Balance","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Balance",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "001 School-Balance"
         },
         {
             "name": "School-Storm",
-            "category": ["00 School","School-Storm","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Storm",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "002 School-Storm"
         },
         {
             "name": "School-Ice",
-            "category": ["00 School","School-Ice","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Ice",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "003 School-Ice"
         },
         {
             "name": "School-Fire",
-            "category": ["00 School","School-Fire","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Fire",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "004 School-Fire"
         },
         {
             "name": "School-Death",
-            "category": ["00 School","School-Death","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Death",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "005 School-Death"
         },
         {
             "name": "School-Myth",
-            "category": ["00 School","School-Myth","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Myth",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "006 School-Myth"
         },
         {
             "name": "School-Life",
-            "category": ["00 School","School-Life","PrimaryOnly"],
+            "category": [
+                "00 School",
+                "School-Life",
+                "PrimaryOnly"
+            ],
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "007 School-Life"
         },
         {
             "name": "Area-Unicorn Way",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "early": true,
-            "progression": true
+            "progression": true,
+            "sort-key": "001 Area-Unicorn Way"
         },
         {
             "name": "Area-The Commons",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "early": true,
-            "progression": true
+            "progression": true,
+            "sort-key": "002 Area-The Commons"
         },
         {
             "name": "Area-Ravenwood",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "early": true,
-            "progression": true
+            "progression": true,
+            "sort-key": "003 Area-Ravenwood"
         },
         {
             "name": "Area-Shopping District",
-            "category": ["01 Area"],
-            "progression": true
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "sort-key": "004 Area-Shopping District"
         },
         {
             "name": "Area-Olde Town",
-            "category": ["01 Area"],
-            "progression": true
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "sort-key": "005 Area-Olde Town"
         },
         {
             "name": "Area-Golem Court",
-            "category": ["01 Area"],
-            "progression": true
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "module": "#GolemCourt#",
+            "sort-key": "006 Area-Golem Court"
         },
         {
-            "name": "Area-Pet Pavillion",
-            "category": ["01 Area"],
-            "progression": true
+            "name": "Area-Pet Pavilion",
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "module": "#PetPavilion#",
+            "sort-key": "007 Area-Pet Pavilion"
         },
         {
             "name": "Area-Cyclops Lane",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Cyclops#",
+            "sort-key": "008 Area-Cyclops Lane"
         },
         {
             "name": "Area-Triton Avenue",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Triton#",
+            "sort-key": "009 Area-Triton Avenue"
         },
         {
             "name": "Area-Firecat Alley",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "progression": true,
-            "useful": true
+            "useful": true,
+            "module": "#Firecat#",
+            "sort-key": "010 Area-Firecat Alley"
         },
         {
             "name": "Area-Dark Cave",
-            "category": ["01 Area"],
-            "progression": true
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "module": "#Cyclops# or #Firecat:2#",
+            "sort-key": "011 Area-Dark Cave"
         },
         {
             "name": "Area-Haunted Cave",
-            "category": ["01 Area"],
-            "progression": true
+            "category": [
+                "01 Area"
+            ],
+            "progression": true,
+            "module": "#Triton:2#",
+            "sort-key": "012 Area-Haunted Cave"
         },
         {
             "name": "Area-Northguard",
-            "category": ["01 Area"],
+            "category": [
+                "01 Area"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#PostStreets#",
+            "progression_skip_balancing": true,
+            "sort-key": "013 Area-Northguard"
         },
         {
             "name": "Building-Rattlebones",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
-        },
-        {
-            "name": "Building-Judd",
-            "category": ["02 Building"],
-            "useful": true,
-            "progression": true
+            "progression": true,
+            "sort-key": "001 Building-Rattlebones"
         },
         {
             "name": "Building-Akilles",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Cyclops:2#",
+            "sort-key": "002 Building-Akilles"
         },
         {
             "name": "Building-Harvest Lord",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Triton:2#",
+            "sort-key": "003 Building-Harvest Lord"
         },
         {
             "name": "Building-Bastilla",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#",
+            "sort-key": "004 Building-Bastilla"
         },
         {
             "name": "Building-Alicane",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#Firecat:2#",
+            "sort-key": "005 Building-Alicane"
         },
         {
             "name": "Building-Foulgaze",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#PostStreets# or !$Foulgaze$",
+            "_comment": "Force include this if Foulgaze is the goal, allowing for Foulgaze ending with PostStreets disabled.",
+            "sort-key": "006 Building-Foulgaze"
         },
         {
             "name": "Building-Nightshade",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "useful": true,
-            "progression": true
+            "progression": true,
+            "module": "#PostStreets# and $Foulgaze$",
+            "sort-key": "007 Building-Nightshade"
         },
         {
             "name": "Building-Blackhope",
-            "category": ["02 Building"],
-            "progression": true
+            "category": [
+                "02 Building"
+            ],
+            "progression": true,
+            "sort-key": "008 Building-Blackhope"
         },
         {
             "name": "Building-Eyus",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Cyclops#",
+            "progression_skip_balancing": true,
+            "sort-key": "009 Building-Eyus"
         },
         {
             "name": "Building-Fears",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Cyclops:2# and #Triton#",
+            "progression_skip_balancing": true,
+            "sort-key": "010 Building-Fears"
         },
         {
             "name": "Building-Kraken",
-            "category": ["02 Building"],
-            "progression": true
+            "category": [
+                "02 Building"
+            ],
+            "progression": true,
+            "module": "#Triton#",
+            "sort-key": "011 Building-Kraken"
         },
         {
             "name": "Building-Skullsplitter",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Triton#",
+            "progression_skip_balancing": true,
+            "sort-key": "012 Building-Skullsplitter"
         },
         {
             "name": "Building-Roberto",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Triton:2# and $HarvestLord$",
+            "progression_skip_balancing": true,
+            "sort-key": "013 Building-Roberto"
         },
         {
             "name": "Building-Larry",
-            "category": ["02 Building"],
-            "progression": true
+            "category": [
+                "02 Building"
+            ],
+            "progression": true,
+            "module": "#Firecat#",
+            "sort-key": "014 Building-Larry"
         },
         {
             "name": "Building-Wormguts",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Firecat#",
+            "progression_skip_balancing": true,
+            "sort-key": "015 Building-Wormguts"
         },
         {
             "name": "Building-Melweena",
-            "category": ["02 Building"],
+            "category": [
+                "02 Building"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#Firecat:2# and $Alicane$",
+            "progression_skip_balancing": true,
+            "sort-key": "016 Building-Melweena"
+        },
+        {
+            "name": "Building-Dee's Storm Mirror",
+            "category": [
+                "02 Building"
+            ],
+            "progression": true,
+            "module": "#LostPages#",
+            "sort-key": "017 Building-Dee's Storm Mirror"
         },
         {
             "name": "Building-Mordecai",
-            "category": ["02 Building","Halloween"],
+            "category": [
+                "02 Building",
+                "Halloween"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "module": "#GolemCourt# and #Triton#",
+            "progression_skip_balancing": true,
+            "sort-key": "018 Building-Mordecai"
         },
         {
             "name": "Building-Apprentice Tower",
-            "category": ["02 Building","Halloween"],
-            "progression": true
+            "category": [
+                "02 Building",
+                "Halloween"
+            ],
+            "progression": true,
+            "sort-key": "019 Building-Apprentice Tower"
         },
         {
             "name": "Building-Adept Tower",
-            "category": ["02 Building","Halloween"],
+            "category": [
+                "02 Building",
+                "Halloween"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "progression_skip_balancing": true,
+            "sort-key": "020 Building-Adept Tower"
         },
         {
             "name": "Building-Master Tower",
-            "category": ["02 Building","Halloween"]
+            "category": [
+                "02 Building",
+                "Halloween"
+            ],
+            "sort-key": "021 Building-Master Tower"
         },
         {
             "name": "Slot-Hat",
-            "category": ["03 Slot"]
+            "category": [
+                "03 Slot"
+            ],
+            "sort-key": "001 Slot-Hat"
         },
         {
             "name": "Slot-Robe",
-            "category": ["03 Slot"]
+            "category": [
+                "03 Slot"
+            ],
+            "sort-key": "002 Slot-Robe"
         },
         {
             "name": "Slot-Boots",
-            "category": ["03 Slot"]
+            "category": [
+                "03 Slot"
+            ],
+            "sort-key": "003 Slot-Boots"
         },
         {
             "name": "Slot-Wand",
-            "category": ["03 Slot"],
-            "useful": true
+            "category": [
+                "03 Slot"
+            ],
+            "useful": true,
+            "local": true,
+            "sort-key": "004 Slot-Wand"
         },
         {
             "name": "Slot-Athame",
-            "category": ["03 Slot"],
-            "filler": true
+            "category": [
+                "03 Slot"
+            ],
+            "filler": true,
+            "sort-key": "005 Slot-Athame"
         },
         {
             "name": "Slot-Amulet",
-            "category": ["03 Slot"]
+            "category": [
+                "03 Slot"
+            ],
+            "sort-key": "006 Slot-Amulet"
         },
         {
             "name": "Slot-Ring",
-            "category": ["03 Slot"],
-            "filler": true
+            "category": [
+                "03 Slot"
+            ],
+            "filler": true,
+            "sort-key": "007 Slot-Ring"
         },
         {
             "name": "Slot-Pet",
-            "category": ["03 Slot"],
-            "progression": true
+            "category": [
+                "03 Slot"
+            ],
+            "progression": true,
+            "sort-key": "008 Slot-Pet"
         },
         {
             "name": "Slot-Mount",
-            "category": ["03 Slot"],
+            "category": [
+                "03 Slot"
+            ],
             "progression": true,
-            "local": true
+            "local": true,
+            "sort-key": "009 Slot-Mount"
         },
         {
             "name": "Slot-Deck",
-            "category": ["03 Slot"],
-            "early": true
+            "category": [
+                "03 Slot"
+            ],
+            "early": true,
+            "local": true,
+            "sort-key": "010 Slot-Deck"
         },
         {
             "name": "Teleport-Commons",
-            "category": ["04 Teleport","Teleport-Button"]
+            "category": [
+                "04 Teleport",
+                "Teleport-Button"
+            ],
+            "sort-key": "001 Teleport-Commons"
         },
         {
             "name": "Teleport-Home",
-            "category": ["04 Teleport","Teleport-Button"],
+            "category": [
+                "04 Teleport",
+                "Teleport-Button"
+            ],
             "progression": true,
-            "progression_skip_balancing": true
+            "progression_skip_balancing": true,
+            "sort-key": "002 Teleport-Home"
         },
         {
             "name": "Teleport-Mark",
-            "category": ["04 Teleport"],
+            "category": [
+                "04 Teleport"
+            ],
             "useful": true,
             "progression": true,
-            "local": true
+            "local": true,
+            "sort-key": "003 Teleport-Mark"
         },
         {
             "name": "Teleport-Dungeon",
-            "category": ["04 Teleport"],
-            "progression": true
+            "category": [
+                "04 Teleport"
+            ],
+            "progression": true,
+            "sort-key": "004 Teleport-Dungeon"
         },
         {
             "name": "Teleport-World",
-            "category": ["04 Teleport","Teleport-Button"]
+            "category": [
+                "04 Teleport",
+                "Teleport-Button"
+            ],
+            "sort-key": "005 Teleport-World"
         },
         {
             "name": "Teleport-Majid",
-            "category": ["04 Teleport"],
-            "progression": true
+            "category": [
+                "04 Teleport"
+            ],
+            "progression": true,
+            "sort-key": "006 Teleport-Majid"
         },
         {
             "name": "Teleport-Friendly",
-            "category": ["04 Teleport","FriendlyTeleport"],
-            "progression": true
+            "category": [
+                "04 Teleport",
+                "FriendlyTeleport"
+            ],
+            "progression": true,
+            "sort-key": "007 Teleport-Friendly"
         },
         {
             "name": "SpellCard-Scarab",
-            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -330,11 +556,15 @@
             "useful": true,
             "progression": true,
             "count": 0,
-            "_comment": "these are tagged PrimaryOnly due to a workaround for starting inventory"
-        },          
+            "sort-key": "001 SpellCard-Scarab"
+        },
         {
             "name": "SpellCard-Thunder Snake",
-            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 315,
                 "rank": 1,
@@ -343,11 +573,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "002 SpellCard-Thunder Snake"
+        },
         {
             "name": "SpellCard-Ice Beetle",
-            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -356,11 +591,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "003 SpellCard-Ice Beetle"
+        },
         {
             "name": "SpellCard-Fire Cat",
-            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 240,
                 "rank": 1,
@@ -369,11 +609,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "004 SpellCard-Fire Cat"
+        },
         {
             "name": "SpellCard-Dark Sprite",
-            "category": ["05 SpellCard","School-Death","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -382,11 +627,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "005 SpellCard-Dark Sprite"
+        },
         {
             "name": "SpellCard-Blood Bat",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 210,
                 "rank": 1,
@@ -395,11 +645,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "006 SpellCard-Blood Bat"
+        },
         {
             "name": "SpellCard-Imp",
-            "category": ["05 SpellCard","School-Life","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -408,11 +663,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
-        },          
+            "count": 0,
+            "sort-key": "007 SpellCard-Imp"
+        },
         {
             "name": "SpellCard-Secondary L1",
-            "category": ["05 SpellCard","School-Any","SpellCard-Rank 1","PrimaryOnly"],
+            "category": [
+                "05 SpellCard",
+                "School-Any",
+                "SpellCard-Rank 1"
+            ],
             "value": {
                 "damage": 195,
                 "rank": 1,
@@ -421,11 +681,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "008 SpellCard-Secondary L1"
         },
         {
             "name": "SpellCard-Scorpion",
-            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 480,
                 "rank": 2,
@@ -434,11 +699,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "009 SpellCard-Scorpion"
         },
         {
             "name": "SpellCard-Lightning Bats",
-            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 735,
                 "rank": 2,
@@ -447,11 +717,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "010 SpellCard-Lightning Bats"
         },
         {
             "name": "SpellCard-Snow Serpent",
-            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 465,
                 "rank": 2,
@@ -460,11 +735,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "011 SpellCard-Snow Serpent"
         },
         {
             "name": "SpellCard-Fire Elf",
-            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 930,
                 "rank": 2,
@@ -473,11 +753,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "012 SpellCard-Fire Elf"
         },
         {
             "name": "SpellCard-Ghoul",
-            "category": ["05 SpellCard","School-Death","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 480,
                 "rank": 2,
@@ -486,11 +771,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "013 SpellCard-Ghoul"
         },
         {
             "name": "SpellCard-Troll",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 510,
                 "rank": 2,
@@ -499,11 +789,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "014 SpellCard-Troll"
         },
         {
             "name": "SpellCard-Leprechaun",
-            "category": ["05 SpellCard","School-Life","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 465,
                 "rank": 2,
@@ -512,11 +807,16 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "015 SpellCard-Leprechaun"
         },
         {
             "name": "SpellCard-Secondary L5",
-            "category": ["05 SpellCard","School-Any","SpellCard-Rank 2"],
+            "category": [
+                "05 SpellCard",
+                "School-Any",
+                "SpellCard-Rank 2"
+            ],
             "value": {
                 "damage": 465,
                 "rank": 2,
@@ -525,51 +825,112 @@
             },
             "useful": true,
             "progression": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "016 SpellCard-Secondary L5"
         },
         {
             "name": "SpellCard-Weakness",
-            "category": ["05 SpellCard","School-Balance"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Balance"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "017 SpellCard-Weakness"
         },
         {
             "name": "SpellCard-Thermic Shield",
-            "category": ["05 SpellCard","School-Storm"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Storm"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "018 SpellCard-Thermic Shield"
         },
         {
             "name": "SpellCard-Volcanic Shield",
-            "category": ["05 SpellCard","School-Ice"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Ice"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "019 SpellCard-Volcanic Shield"
         },
         {
             "name": "SpellCard-Glacial Shield",
-            "category": ["05 SpellCard","School-Fire"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Fire"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "020 SpellCard-Glacial Shield"
         },
         {
             "name": "SpellCard-Dream Shield",
-            "category": ["05 SpellCard","School-Death"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Death"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "021 SpellCard-Dream Shield"
         },
         {
             "name": "SpellCard-Myth Trap",
-            "category": ["05 SpellCard","School-Myth"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Myth"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "022 SpellCard-Myth Trap"
         },
         {
             "name": "SpellCard-Legend Shield",
-            "category": ["05 SpellCard","School-Life"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Life"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "023 SpellCard-Legend Shield"
         },
         {
             "name": "SpellCard-Secondary L8",
-            "category": ["05 SpellCard","School-Any"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Any"
+            ],
+            "value": {
+                "level": 8
+            },
+            "count": 0,
+            "sort-key": "024 SpellCard-Secondary L8"
         },
         {
             "name": "SpellCard-Locust Swarm",
-            "category": ["05 SpellCard","School-Balance","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 735,
                 "rank": 3,
@@ -579,11 +940,16 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "025 SpellCard-Locust Swarm"
         },
         {
             "name": "SpellCard-Storm Shark",
-            "category": ["05 SpellCard","School-Storm","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 1125,
                 "rank": 3,
@@ -593,11 +959,16 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "026 SpellCard-Storm Shark"
         },
         {
             "name": "SpellCard-Evil Snowman",
-            "category": ["05 SpellCard","School-Ice","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 720,
                 "rank": 3,
@@ -607,11 +978,16 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "027 SpellCard-Evil Snowman"
         },
         {
             "name": "SpellCard-Sunbird",
-            "category": ["05 SpellCard","School-Fire","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 885,
                 "rank": 3,
@@ -621,11 +997,16 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "028 SpellCard-Sunbird"
         },
         {
             "name": "SpellCard-Banshee",
-            "category": ["05 SpellCard","School-Death","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 735,
                 "rank": 3,
@@ -635,11 +1016,16 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "029 SpellCard-Banshee"
         },
         {
             "name": "SpellCard-Cyclops",
-            "category": ["05 SpellCard","School-Myth","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 795,
                 "rank": 3,
@@ -649,16 +1035,29 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "030 SpellCard-Cyclops"
         },
         {
             "name": "SpellCard-Sprite",
-            "category": ["05 SpellCard","School-Life","SpellCard-Rank 3"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "SpellCard-Rank 3"
+            ],
+            "value": {
+                "level": 10
+            },
+            "count": 0,
+            "sort-key": "031 SpellCard-Sprite"
         },
         {
             "name": "SpellCard-Secondary L10",
-            "category": ["05 SpellCard","School-Any","SpellCard-Rank 3"],
+            "category": [
+                "05 SpellCard",
+                "School-Any",
+                "SpellCard-Rank 3"
+            ],
             "value": {
                 "damage": 720,
                 "rank": 3,
@@ -668,1042 +1067,1756 @@
             "useful": true,
             "progression": true,
             "progression_skip_balancing": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "032 SpellCard-Secondary L10"
         },
         {
             "name": "SpellCard-Pixie",
-            "category": ["05 SpellCard","School-Balance","School-Storm","School-Ice","School-Fire","School-Death","School-Myth","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "School-Storm",
+                "School-Ice",
+                "School-Fire",
+                "School-Death",
+                "School-Myth",
+                "PrimaryOnly"
+            ],
+            "count": 0,
+            "sort-key": "033 SpellCard-Pixie"
         },
         {
             "name": "SpellCard-Fairy",
-            "category": ["05 SpellCard","School-Life","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "PrimaryOnly"
+            ],
+            "count": 0,
+            "sort-key": "034 SpellCard-Fairy"
         },
         {
             "name": "SpellCard-Elemental Shield",
-            "category": ["05 SpellCard","School-Balance","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "035 SpellCard-Elemental Shield"
         },
         {
             "name": "SpellCard-Spirit Shield",
-            "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "PrimaryOnly"
+            ],
+            "count": 0,
+            "sort-key": "036 SpellCard-Spirit Shield"
         },
         {
             "name": "SpellCard-Lightning Strike",
-            "category": ["05 SpellCard","School-Storm","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "037 SpellCard-Lightning Strike"
         },
         {
             "name": "SpellCard-Freeze",
-            "category": ["05 SpellCard","School-Ice","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "038 SpellCard-Freeze"
         },
         {
             "name": "SpellCard-Fireblade",
-            "category": ["05 SpellCard","School-Fire","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "039 SpellCard-Fireblade"
         },
         {
             "name": "SpellCard-Death Trap",
-            "category": ["05 SpellCard","School-Death","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "040 SpellCard-Death Trap"
         },
         {
             "name": "SpellCard-Golem Minion",
-            "category": ["05 SpellCard","School-Myth","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "041 SpellCard-Golem Minion"
         },
         {
             "name": "SpellCard-Minor Blessing",
-            "category": ["05 SpellCard","School-Life","PrimaryOnly","SpellCard-Enrollment"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "PrimaryOnly",
+                "SpellCard-Enrollment"
+            ],
+            "count": 0,
+            "sort-key": "042 SpellCard-Minor Blessing"
         },
         {
             "name": "SpellCard-Precision",
-            "category": ["05 SpellCard","School-Balance","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Balance",
+                "PrimaryOnly"
+            ],
+            "module": "#GolemCourt#",
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "043 SpellCard-Precision"
         },
         {
             "name": "SpellCard-Storm Prism",
-            "category": ["05 SpellCard","School-Storm","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "PrimaryOnly"
+            ],
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "044 SpellCard-Storm Prism"
         },
         {
             "name": "SpellCard-Ice Trap",
-            "category": ["05 SpellCard","School-Ice","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "PrimaryOnly"
+            ],
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "045 SpellCard-Ice Trap"
         },
         {
             "name": "SpellCard-Fire Prism",
-            "category": ["05 SpellCard","School-Fire","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "PrimaryOnly"
+            ],
+            "module": "#GolemCourt#",
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "046 SpellCard-Fire Prism"
         },
         {
             "name": "SpellCard-Deathblade",
-            "category": ["05 SpellCard","School-Death","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "PrimaryOnly"
+            ],
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "047 SpellCard-Deathblade"
         },
         {
             "name": "SpellCard-Troll Minion",
-            "category": ["05 SpellCard","School-Myth","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Myth"
+            ],
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "048 SpellCard-Troll Minion"
         },
         {
             "name": "SpellCard-Unicorn",
-            "category": ["05 SpellCard","School-Life","PrimaryOnly"],
-            "count": 0
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "PrimaryOnly"
+            ],
+            "value": {
+                "level": 7
+            },
+            "count": 0,
+            "sort-key": "049 SpellCard-Unicorn"
         },
         {
             "name": "SpellCard-Storm Shield",
-            "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "050 SpellCard-Storm Shield"
         },
         {
             "name": "SpellCard-Snow Shield",
-            "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "051 SpellCard-Snow Shield"
         },
         {
             "name": "SpellCard-Fire Shield",
-            "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "052 SpellCard-Fire Shield"
         },
         {
             "name": "SpellCard-Death Shield",
-            "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "053 SpellCard-Death Shield"
         },
         {
             "name": "SpellCard-Myth Shield",
-            "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "054 SpellCard-Myth Shield"
         },
         {
             "name": "SpellCard-Life Shield",
-            "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "055 SpellCard-Life Shield"
         },
         {
             "name": "SpellCard-Storm Weakness",
-            "category": ["05 SpellCard","School-Storm","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Storm",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "056 SpellCard-Storm Weakness"
         },
         {
             "name": "SpellCard-Ice Weakness",
-            "category": ["05 SpellCard","School-Ice","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Ice",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "057 SpellCard-Ice Weakness"
         },
         {
             "name": "SpellCard-Fire Weakness",
-            "category": ["05 SpellCard","School-Fire","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Fire",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "058 SpellCard-Fire Weakness"
         },
         {
             "name": "SpellCard-Death Weakness",
-            "category": ["05 SpellCard","School-Death","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Death",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "059 SpellCard-Death Weakness"
         },
         {
             "name": "SpellCard-Myth Weakness",
-            "category": ["05 SpellCard","School-Myth","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Myth",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "060 SpellCard-Myth Weakness"
         },
         {
             "name": "SpellCard-Life Weakness",
-            "category": ["05 SpellCard","School-Life","PrimaryOnly","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "School-Life",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
+            "value": {
+                "level": 10
+            },
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "061 SpellCard-Life Weakness"
         },
         {
             "name": "SpellCard-Stun Block",
-            "category": ["05 SpellCard","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "062 SpellCard-Stun Block"
         },
         {
             "name": "SpellCard-Conviction",
-            "category": ["05 SpellCard","FillerItem"],
+            "category": [
+                "05 SpellCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "063 SpellCard-Conviction"
         },
         {
             "name": "ItemCard-Scarab",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 55, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 55,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "001 ItemCard-Scarab"
         },
         {
             "name": "ItemCard-Thunder Snake",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 95, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 95,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "002 ItemCard-Thunder Snake"
         },
         {
             "name": "ItemCard-Ice Beetle",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 55, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 55,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "003 ItemCard-Ice Beetle"
         },
         {
             "name": "ItemCard-Fire Cat",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 70, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 70,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "004 ItemCard-Fire Cat"
         },
         {
             "name": "ItemCard-Dark Sprite",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 55, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 55,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "005 ItemCard-Dark Sprite"
         },
         {
             "name": "ItemCard-Blood Bat",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 60, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 60,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "006 ItemCard-Blood Bat"
         },
         {
             "name": "ItemCard-Imp",
-            "category": ["06 ItemCard","ItemCard-Rank 1"],
-            "value": {"damage": 55, "rank": 1},
-            "progression": true
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 1"
+            ],
+            "value": {
+                "damage": 55,
+                "rank": 1
+            },
+            "progression": true,
+            "sort-key": "007 ItemCard-Imp"
         },
         {
             "name": "ItemCard-Heartbeat",
-            "category": ["06 ItemCard"]
+            "category": [
+                "06 ItemCard"
+            ],
+            "sort-key": "008 ItemCard-Heartbeat"
         },
         {
             "name": "ItemCard-Scorpion",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Balance","PrimaryOnly","UsefulFiller"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Balance",
+                "PrimaryOnly",
+                "UsefulFiller"
+            ],
             "useful": true,
             "filler": true,
             "count": 0,
-            "_comment": "Tagged useful due to dropping from Bastilla"
+            "_comment": "Tagged useful due to dropping from Bastilla",
+            "sort-key": "009 ItemCard-Scorpion"
         },
         {
             "name": "ItemCard-Lightning Bats",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Storm","PrimaryOnly","UsefulFiller"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Storm",
+                "PrimaryOnly",
+                "UsefulFiller"
+            ],
             "useful": true,
             "filler": true,
             "count": 0,
-            "_comment": "Guarantee access to your powered-up primary rank 2 spell in the item pool"
+            "_comment": "Guarantee access to your powered-up primary rank 2 spell in the item pool",
+            "sort-key": "010 ItemCard-Lightning Bats"
         },
         {
             "name": "ItemCard-Snow Serpent",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Ice","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Ice",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "011 ItemCard-Snow Serpent"
         },
         {
             "name": "ItemCard-Fire Elf",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Fire","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Fire",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "012 ItemCard-Fire Elf"
         },
         {
             "name": "ItemCard-Ice Elf",
-            "category": ["06 ItemCard","ItemCard-Rank 2","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "013 ItemCard-Ice Elf"
         },
         {
             "name": "ItemCard-Storm Elf",
-            "category": ["06 ItemCard","ItemCard-Rank 2","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "014 ItemCard-Storm Elf"
         },
         {
             "name": "ItemCard-Ghoul",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Death","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Death",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "015 ItemCard-Ghoul"
         },
         {
             "name": "ItemCard-Troll",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Myth","PrimaryOnly","UsefulFiller"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Myth",
+                "PrimaryOnly",
+                "UsefulFiller"
+            ],
             "useful": true,
             "filler": true,
             "count": 0,
-            "_comment": "Tagged useful due to dropping from Bastilla"
-        },        
+            "_comment": "Tagged useful due to dropping from Bastilla",
+            "sort-key": "016 ItemCard-Troll"
+        },
         {
             "name": "ItemCard-Leprechaun",
-            "category": ["06 ItemCard","ItemCard-Rank 2","School-Life","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "ItemCard-Rank 2",
+                "School-Life",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "017 ItemCard-Leprechaun"
         },
         {
             "name": "ItemCard-Weakness",
-            "category": ["06 ItemCard","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "018 ItemCard-Weakness"
         },
         {
             "name": "ItemCard-Storm Shield",
-            "category": ["06 ItemCard","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "019 ItemCard-Storm Shield"
         },
         {
             "name": "ItemCard-Snow Shield",
-            "category": ["06 ItemCard","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "020 ItemCard-Snow Shield"
         },
         {
             "name": "ItemCard-Fire Shield",
-            "category": ["06 ItemCard","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "021 ItemCard-Fire Shield"
         },
         {
             "name": "ItemCard-Death Trap",
-            "category": ["06 ItemCard","School-Death","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Death",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "022 ItemCard-Death Trap"
         },
         {
             "name": "ItemCard-Myth Trap",
-            "category": ["06 ItemCard","School-Myth","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Myth",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "023 ItemCard-Myth Trap"
         },
         {
             "name": "ItemCard-Guiding Light",
-            "category": ["06 ItemCard","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "024 ItemCard-Guiding Light"
         },
         {
             "name": "ItemCard-Minor Flash",
-            "category": ["06 ItemCard","School-Balance","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Balance",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "025 ItemCard-Minor Flash"
         },
         {
             "name": "ItemCard-Minor Spark",
-            "category": ["06 ItemCard","School-Storm","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Storm",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "026 ItemCard-Minor Spark"
         },
         {
             "name": "ItemCard-Minor Ice Shard",
-            "category": ["06 ItemCard","School-Ice","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Ice",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "027 ItemCard-Minor Ice Shard"
         },
         {
             "name": "ItemCard-Minor Fire Flare",
-            "category": ["06 ItemCard","School-Fire","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Fire",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "028 ItemCard-Minor Fire Flare"
         },
         {
             "name": "ItemCard-Minor Death Tap",
-            "category": ["06 ItemCard","School-Death","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Death",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "029 ItemCard-Minor Death Tap"
         },
         {
             "name": "ItemCard-Minor Strike",
-            "category": ["06 ItemCard","School-Myth","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Myth",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "030 ItemCard-Minor Strike"
         },
         {
             "name": "ItemCard-Minor Life Ire",
-            "category": ["06 ItemCard","School-Life","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Life",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "031 ItemCard-Minor Life Ire"
         },
         {
             "name": "ItemCard-Flash",
-            "category": ["06 ItemCard","School-Balance","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Balance",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "032 ItemCard-Flash"
         },
         {
             "name": "ItemCard-Spark",
-            "category": ["06 ItemCard","School-Storm","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Storm",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "033 ItemCard-Spark"
         },
         {
             "name": "ItemCard-Ice Shard",
-            "category": ["06 ItemCard","School-Ice","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Ice",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "034 ItemCard-Ice Shard"
         },
         {
             "name": "ItemCard-Flare",
-            "category": ["06 ItemCard","School-Fire","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Fire",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "035 ItemCard-Flare"
         },
         {
             "name": "ItemCard-Death Touch",
-            "category": ["06 ItemCard","School-Death","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Death",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "036 ItemCard-Death Touch"
         },
         {
             "name": "ItemCard-Strike",
-            "category": ["06 ItemCard","School-Myth","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Myth",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "037 ItemCard-Strike"
         },
         {
             "name": "ItemCard-Life Ire",
-            "category": ["06 ItemCard","School-Life","PrimaryOnly","FillerItem"],
+            "category": [
+                "06 ItemCard",
+                "School-Life",
+                "PrimaryOnly",
+                "FillerItem"
+            ],
             "filler": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Balance Assist",
-            "category": ["06 ItemCard","School-Balance","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Storm Assist",
-            "category": ["06 ItemCard","School-Storm","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Ice Assist",
-            "category": ["06 ItemCard","School-Ice","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Fire Assist",
-            "category": ["06 ItemCard","School-Fire","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Death Assist",
-            "category": ["06 ItemCard","School-Death","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Myth Assist",
-            "category": ["06 ItemCard","School-Myth","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-            "name": "ItemCard-Life Assist",
-            "category": ["06 ItemCard","School-Life","PrimaryOnly"],
-            "value": {"damage": 135, "rank": 0},
-            "progression": true,
-            "count": 0
-        },
-        {
-        "name": "TreasureCard-Scarab",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Thunder Snake",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ice Beetle",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fire Cat",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Dark Sprite",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Blood Bat",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Imp",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Scorpion",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Lightning Bats",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Snow Serpent",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fire Elf",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ghoul",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Troll",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Leprechaun",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Locust Swarm",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Storm Shark",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Evil Snowman",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Sunbird",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Banshee",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Cyclops",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Nature's Wrath",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Sandstorm",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Kraken",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ice Wyvern",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Meteor Strike",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Vampire",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Humongofrog",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Seraph",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Spectral Blast",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Stormzilla",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Phoenix",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Skeletal Pirate",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Minotaur",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Storm Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Snow Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fire Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Death Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Myth Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Life Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Thermic Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Volcanic Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Glacial Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Legend Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ether Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Dream Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Stun Block",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Tower Shield",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Weakness",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Sprite",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fairy",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Spirit Armor",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Stormblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Iceblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fireblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Deathblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Mythblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Lifeblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Elemental Blade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Spirit Blade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Balanceblade",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Storm Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ice Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Fire Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Death Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Myth Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Life Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Elemental Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Spirit Trap",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Hex",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Ghost Touch",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Black Cat",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Harvest Lord",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Tempest",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Tough",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Keen Eyes",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
-        },
-        {
-        "name": "TreasureCard-Reshuffle",
-        "category": ["07 TreasureCard"],
-        "filler": true,
-        "count": 0
+            "count": 0,
+            "sort-key": "038 ItemCard-Life Ire"
+        },
+        {
+            "name": "TreasureCard-Scarab",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "001 TreasureCard-Scarab"
+        },
+        {
+            "name": "TreasureCard-Thunder Snake",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "002 TreasureCard-Thunder Snake"
+        },
+        {
+            "name": "TreasureCard-Ice Beetle",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "003 TreasureCard-Ice Beetle"
+        },
+        {
+            "name": "TreasureCard-Fire Cat",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "004 TreasureCard-Fire Cat"
+        },
+        {
+            "name": "TreasureCard-Dark Sprite",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "005 TreasureCard-Dark Sprite"
+        },
+        {
+            "name": "TreasureCard-Blood Bat",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "006 TreasureCard-Blood Bat"
+        },
+        {
+            "name": "TreasureCard-Imp",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "007 TreasureCard-Imp"
+        },
+        {
+            "name": "TreasureCard-Scorpion",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "008 TreasureCard-Scorpion"
+        },
+        {
+            "name": "TreasureCard-Lightning Bats",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "009 TreasureCard-Lightning Bats"
+        },
+        {
+            "name": "TreasureCard-Snow Serpent",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "010 TreasureCard-Snow Serpent"
+        },
+        {
+            "name": "TreasureCard-Fire Elf",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "011 TreasureCard-Fire Elf"
+        },
+        {
+            "name": "TreasureCard-Ghoul",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "012 TreasureCard-Ghoul"
+        },
+        {
+            "name": "TreasureCard-Troll",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "013 TreasureCard-Troll"
+        },
+        {
+            "name": "TreasureCard-Leprechaun",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "014 TreasureCard-Leprechaun"
+        },
+        {
+            "name": "TreasureCard-Locust Swarm",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "015 TreasureCard-Locust Swarm"
+        },
+        {
+            "name": "TreasureCard-Storm Shark",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "016 TreasureCard-Storm Shark"
+        },
+        {
+            "name": "TreasureCard-Evil Snowman",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "017 TreasureCard-Evil Snowman"
+        },
+        {
+            "name": "TreasureCard-Sunbird",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "018 TreasureCard-Sunbird"
+        },
+        {
+            "name": "TreasureCard-Banshee",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "019 TreasureCard-Banshee"
+        },
+        {
+            "name": "TreasureCard-Cyclops",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "020 TreasureCard-Cyclops"
+        },
+        {
+            "name": "TreasureCard-Nature's Wrath",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "021 TreasureCard-Nature's Wrath"
+        },
+        {
+            "name": "TreasureCard-Sandstorm",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "022 TreasureCard-Sandstorm"
+        },
+        {
+            "name": "TreasureCard-Kraken",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "023 TreasureCard-Kraken"
+        },
+        {
+            "name": "TreasureCard-Ice Wyvern",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "024 TreasureCard-Ice Wyvern"
+        },
+        {
+            "name": "TreasureCard-Meteor Strike",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "025 TreasureCard-Meteor Strike"
+        },
+        {
+            "name": "TreasureCard-Vampire",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "026 TreasureCard-Vampire"
+        },
+        {
+            "name": "TreasureCard-Humongofrog",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "027 TreasureCard-Humongofrog"
+        },
+        {
+            "name": "TreasureCard-Seraph",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "028 TreasureCard-Seraph"
+        },
+        {
+            "name": "TreasureCard-Spectral Blast",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "029 TreasureCard-Spectral Blast"
+        },
+        {
+            "name": "TreasureCard-Stormzilla",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "030 TreasureCard-Stormzilla"
+        },
+        {
+            "name": "TreasureCard-Phoenix",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "031 TreasureCard-Phoenix"
+        },
+        {
+            "name": "TreasureCard-Skeletal Pirate",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "032 TreasureCard-Skeletal Pirate"
+        },
+        {
+            "name": "TreasureCard-Minotaur",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "033 TreasureCard-Minotaur"
+        },
+        {
+            "name": "TreasureCard-Storm Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "034 TreasureCard-Storm Shield"
+        },
+        {
+            "name": "TreasureCard-Snow Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "035 TreasureCard-Snow Shield"
+        },
+        {
+            "name": "TreasureCard-Fire Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "036 TreasureCard-Fire Shield"
+        },
+        {
+            "name": "TreasureCard-Death Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "037 TreasureCard-Death Shield"
+        },
+        {
+            "name": "TreasureCard-Myth Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "038 TreasureCard-Myth Shield"
+        },
+        {
+            "name": "TreasureCard-Life Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "039 TreasureCard-Life Shield"
+        },
+        {
+            "name": "TreasureCard-Thermic Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "040 TreasureCard-Thermic Shield"
+        },
+        {
+            "name": "TreasureCard-Volcanic Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "041 TreasureCard-Volcanic Shield"
+        },
+        {
+            "name": "TreasureCard-Glacial Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "042 TreasureCard-Glacial Shield"
+        },
+        {
+            "name": "TreasureCard-Legend Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "043 TreasureCard-Legend Shield"
+        },
+        {
+            "name": "TreasureCard-Ether Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "044 TreasureCard-Ether Shield"
+        },
+        {
+            "name": "TreasureCard-Dream Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "045 TreasureCard-Dream Shield"
+        },
+        {
+            "name": "TreasureCard-Stun Block",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "046 TreasureCard-Stun Block"
+        },
+        {
+            "name": "TreasureCard-Tower Shield",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "047 TreasureCard-Tower Shield"
+        },
+        {
+            "name": "TreasureCard-Weakness",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "048 TreasureCard-Weakness"
+        },
+        {
+            "name": "TreasureCard-Sprite",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "049 TreasureCard-Sprite"
+        },
+        {
+            "name": "TreasureCard-Fairy",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "050 TreasureCard-Fairy"
+        },
+        {
+            "name": "TreasureCard-Spirit Armor",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "051 TreasureCard-Spirit Armor"
+        },
+        {
+            "name": "TreasureCard-Stormblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "052 TreasureCard-Stormblade"
+        },
+        {
+            "name": "TreasureCard-Iceblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "053 TreasureCard-Iceblade"
+        },
+        {
+            "name": "TreasureCard-Fireblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "054 TreasureCard-Fireblade"
+        },
+        {
+            "name": "TreasureCard-Deathblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "055 TreasureCard-Deathblade"
+        },
+        {
+            "name": "TreasureCard-Mythblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "056 TreasureCard-Mythblade"
+        },
+        {
+            "name": "TreasureCard-Lifeblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "057 TreasureCard-Lifeblade"
+        },
+        {
+            "name": "TreasureCard-Elemental Blade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "058 TreasureCard-Elemental Blade"
+        },
+        {
+            "name": "TreasureCard-Spirit Blade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "059 TreasureCard-Spirit Blade"
+        },
+        {
+            "name": "TreasureCard-Balanceblade",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "060 TreasureCard-Balanceblade"
+        },
+        {
+            "name": "TreasureCard-Storm Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "061 TreasureCard-Storm Trap"
+        },
+        {
+            "name": "TreasureCard-Ice Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "062 TreasureCard-Ice Trap"
+        },
+        {
+            "name": "TreasureCard-Fire Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "063 TreasureCard-Fire Trap"
+        },
+        {
+            "name": "TreasureCard-Death Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "064 TreasureCard-Death Trap"
+        },
+        {
+            "name": "TreasureCard-Myth Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "065 TreasureCard-Myth Trap"
+        },
+        {
+            "name": "TreasureCard-Life Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "066 TreasureCard-Life Trap"
+        },
+        {
+            "name": "TreasureCard-Elemental Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "067 TreasureCard-Elemental Trap"
+        },
+        {
+            "name": "TreasureCard-Spirit Trap",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "068 TreasureCard-Spirit Trap"
+        },
+        {
+            "name": "TreasureCard-Hex",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "069 TreasureCard-Hex"
+        },
+        {
+            "name": "TreasureCard-Ghost Touch",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "070 TreasureCard-Ghost Touch"
+        },
+        {
+            "name": "TreasureCard-Black Cat",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "071 TreasureCard-Black Cat"
+        },
+        {
+            "name": "TreasureCard-Harvest Lord",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "072 TreasureCard-Harvest Lord"
+        },
+        {
+            "name": "TreasureCard-Tempest",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "073 TreasureCard-Tempest"
+        },
+        {
+            "name": "TreasureCard-Tough",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "074 TreasureCard-Tough"
+        },
+        {
+            "name": "TreasureCard-Keen Eyes",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "075 TreasureCard-Keen Eyes"
+        },
+        {
+            "name": "TreasureCard-Reshuffle",
+            "category": [
+                "07 TreasureCard"
+            ],
+            "filler": true,
+            "count": 0,
+            "sort-key": "076 TreasureCard-Reshuffle"
         },
         {
             "name": "TreasureCard-Any Rank 1",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "077 TreasureCard-Any Rank 1"
         },
         {
             "name": "TreasureCard-Any Rank 2",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "078 TreasureCard-Any Rank 2"
         },
         {
             "name": "TreasureCard-Any Rank 3",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "079 TreasureCard-Any Rank 3"
         },
         {
             "name": "TreasureCard-Any Rank 4+",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "080 TreasureCard-Any Rank 4+"
         },
         {
             "name": "TreasureCard-Any Shield",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "081 TreasureCard-Any Shield"
         },
         {
             "name": "TreasureCard-Any Blade",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "082 TreasureCard-Any Blade"
         },
         {
             "name": "TreasureCard-Any Trap",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "083 TreasureCard-Any Trap"
         },
         {
             "name": "TreasureCard-Any TC",
-            "category": ["07 TreasureCard"],
+            "category": [
+                "07 TreasureCard"
+            ],
             "filler": true,
-            "count": 0
+            "count": 0,
+            "sort-key": "084 TreasureCard-Any TC"
         },
         {
             "name": "Vendor-Unicorn Way",
-            "category": ["08 Vendor"]
+            "category": [
+                "08 Vendor"
+            ],
+            "sort-key": "001 Vendor-Unicorn Way"
         },
         {
             "name": "Vendor-Hat Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "002 Vendor-Hat Shop"
         },
         {
             "name": "Vendor-Robe Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "003 Vendor-Robe Shop"
         },
         {
             "name": "Vendor-Boots Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "004 Vendor-Boots Shop"
         },
         {
             "name": "Vendor-Wand Shop",
-            "category": ["08 Vendor"]
+            "category": [
+                "08 Vendor"
+            ],
+            "sort-key": "005 Vendor-Wand Shop"
         },
         {
             "name": "Vendor-Athame Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "006 Vendor-Athame Shop"
         },
         {
             "name": "Vendor-Amulet Shop",
-            "category": ["08 Vendor"],
-            "useful": true
+            "category": [
+                "08 Vendor"
+            ],
+            "useful": true,
+            "sort-key": "007 Vendor-Amulet Shop"
         },
         {
             "name": "Vendor-Ring Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "008 Vendor-Ring Shop"
         },
         {
             "name": "Vendor-Pet Shops",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "progression": true,
+            "sort-key": "009 Vendor-Pet Shops"
         },
         {
             "name": "Vendor-Mount Shop",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "010 Vendor-Mount Shop"
         },
         {
-            "name": "Vendor-Deck Shop",   
-            "category": ["08 Vendor"],
-            "filler": true
+            "name": "Vendor-Deck Shop",
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "011 Vendor-Deck Shop"
         },
         {
             "name": "Vendor-Housing Shops",
-            "category": ["08 Vendor"],
-            "filler": true
+            "category": [
+                "08 Vendor"
+            ],
+            "filler": true,
+            "sort-key": "012 Vendor-Housing Shops"
         },
         {
             "name": "Vendor-Potions",
-            "category": ["08 Vendor"]
+            "category": [
+                "08 Vendor"
+            ],
+            "sort-key": "013 Vendor-Potions"
         },
         {
             "name": "Vendor-Recipes/Reagents",
-            "category": ["08 Vendor"],
-            "progression": true
+            "category": [
+                "08 Vendor"
+            ],
+            "progression": true,
+            "sort-key": "014 Vendor-Recipes/Reagents"
         },
         {
             "name": "Vendor-Library",
-            "category": ["08 Vendor"],
-            "useful": true
+            "category": [
+                "08 Vendor"
+            ],
+            "useful": true,
+            "sort-key": "015 Vendor-Library"
         },
         {
             "name": "Vendor-Bazaar",
-            "category": ["08 Vendor"],
-            "useful": true
+            "category": [
+                "08 Vendor"
+            ],
+            "useful": true,
+            "sort-key": "016 Vendor-Bazaar"
         },
         {
             "name": "Vendor-Sell Fish",
-            "category": ["08 Vendor"]
+            "category": [
+                "08 Vendor"
+            ],
+            "sort-key": "017 Vendor-Sell Fish"
         }
     ]
 }

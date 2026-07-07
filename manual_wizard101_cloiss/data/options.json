@@ -3,11 +3,8 @@
     "_comment": "Add a _ before an option name to comment it out and it wont be added to the apworld",
     "core": {
         "goal":{
-            "_comment": [
-                "Using 'goal' as the name of an option let you override some of the generated goal parameters"
-            ],
-            "display_name": "The End Objective",
-            "description": "How to End your Randomized playthrough.",
+            "_comment": "Using 'goal' as the name of an option let you override some of the generated goal parameters",
+            "description": "Set which boss must be defeated to complete the randomizer. If an unreachable boss is chosen, generation will fail.",
             "aliases": {"easiest": 0},
             "hidden": false
         },
@@ -59,6 +56,10 @@
             "default": 1,
             "group": "School"
         },
+
+        
+
+
         "mark_location":{
             "description": [
                 "Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests."
@@ -67,7 +68,7 @@
             "values": {
                 "start": 0,
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -82,7 +83,7 @@
             "values": {
                 "start": 0,
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -96,7 +97,7 @@
             "type": "Choice",
             "values": {
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
@@ -110,13 +111,107 @@
             "type": "Choice",
             "values": {
                 "rattlebones": 1,
-                "judd": 2,
+                "muldoon": 2,
                 "mid-streets": 3,
                 "anywhere": 4
             },
             "default": 4,
             "group": "Special Item Locations"
         },
+
+
+
+
+
+        "start_vendor_library":{
+            "description": [
+                "Start with Vendor-Library, allowing you to purchase any Treasure Cards you receive as items. Recommended ON for a more fun experience."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_vendor_potions":{
+            "description": [
+                "Start with Vendor-Potions, recommended for beginners for ease of play."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_all_vendors":{
+            "description": [
+                "Start with all vendors. Use this option when there are too many items in the pool. This removes about 17 items."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_teleport_dungeon":{
+            "description": [
+                "Start with Teleport-Dungeon (dungeon recall), making retrying bosses and towers easier and allowing Flee Strats. All multi-floor towers expect you to find this item before attempting the higher floors."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_all_teleports":{
+            "description": [
+                "Start with all teleports. Use this option for a faster and more streamlined game. This removes about 7 items."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+
+
+        "start_thunder_snake":{
+            "description": [
+                "Start with ItemCard-Thunder Snake, making the earlygame easier and faster. Recommended for beginners."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_pixie":{
+            "description": [
+                "Start with SpellCard-Pixie, allowing a guaranteed safety net in fights. Recommended for beginners."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_primary_rank_1":{
+            "description": [
+                "Start with your primary school's rank 1 Spell Card. Highly recommended."
+            ],
+            "type": "Toggle",
+            "default": true,
+            "group": "Starting Inventory"
+        },
+        "start_primary_rank_2":{
+            "description": [
+                "Start with your primary school's rank 2 Spell Card. This option is mostly for future use with higher-level randomizers, as using it for Wizard City may result in a less interesting game."
+            ],
+            "type": "Toggle",
+            "default": false,
+            "group": "Starting Inventory"
+        },
+        "start_rank_1_item_cards":{
+            "description": [
+                "Start with the specified number of rank 1 item cards (not including Thunder Snake, if chosen above), for use with the default wand. Recommended 3."
+            ],
+            "type": "Range",
+            "range_start": 0,
+            "default": 3,
+            "range_end": 7,
+            "group": "Starting Inventory"
+        },
+
+
+
+
+
         "friendly_teleport":{
             "description": [
                 "Enables Friendly Teleports in logic and grants access to them in the starting inventory. Enabling this creates a more varied earlygame (pre-Rattlebones)."
@@ -125,39 +220,30 @@
             "default": false,
             "group": "Logic"
         },
-        "akilles_skip":{
-            "description": [
-                "Allows Akilles Skip in logic. This skip is patched, leave this setting as false."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Logic"
-        },
-        "gate_skip":{
-            "description": [
-                "Allows entering the Three Streets pre-Judd in logic. Default false to prevent confusing the uninitiated, but recommended to be enabled. Only relevant with Friendly Teleports disabled."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Logic"
-        },
         "beginner": {
             "description": [
-                "Enable this setting to disable unintuitive logic and improve the starting inventory."
+                "Enable this setting to disable unintuitive logic."
             ],
             "type": "Toggle",
             "default": false,
             "group": "Logic"
         },
+
+
+
+
+
+
         "reagents": {
             "description": [
-                "Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic."
+                "Adds locations for collecting reagents in Wizard City. Select 'anywhere' to add one location per reagent type (6 locations). Select 'anywhere-ore' to only add the Ore location, which has the most interesting access logic. Select 'all' to add reagent locations per area: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town, Cyclops Lane, Triton Avenue, Haunted Cave, Firecat Alley, and Dark Cave. (Adds up to 26 locations)"
             ],
             "type": "Choice",
             "values": {
                 "none": 0,
-                "all": 1,
-                "ore": 2
+                "anywhere": 1,
+                "anywhere-ore": 2,
+                "all": 3
             },
             "default": 0,
             "group": "Check Locations"
@@ -194,19 +280,135 @@
         "silver_chests": {
             "description": [
                 "Adds locations for silver chests in Wizard City. Select 'anywhere' to add one silver chest location, or 'all' to add silver chest locations for Triton Avenue, Firecat Alley, and Cyclops Lane."
-            ],
+              ],
             "type": "Choice",
             "values": {
-                "none": 0,
+                "none": 0,             
                 "anywhere": 1,
                 "all": 2
             },
             "default": 0,
             "group": "Check Locations"
         },
+        "find_the_smiths": {
+            "description": [
+                "Adds locations for finding the Smiths for Zeke. Select 'quest' for a single combined location, or 'all' to add individual locations for each area. (Adds up to 9 locations)"
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "quest": 1,
+                "all": 2
+            },
+            "default": 1,
+            "group": "Check Locations"
+        },
+        "find_the_books": {
+            "description": [
+                "Adds locations for finding the Books for Boris. Select 'quest' for a single combined location, 'quest-all' to add individual locations for each boss area, or 'all' to add boss area books and additional books scattered around Wizard City. (Adds up to 5 boss book locations)"
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "quest": 1,
+                "quest-all": 2,
+                "all": 3
+            },
+            "default": 1,
+            "group": "Check Locations"
+        },
+      
+      
+        "module_golemcourt": {
+            "description": [
+                "Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default full, adds about 1-2 items and 4-8 locations."
+                  ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_petpavilion": {
+            "description": [
+                "Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations. This is currently broken in live so is disabled until fixed."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 0,
+            "group": "Modules"
+        },
+        "module_cyclops": {
+            "description": [
+                "Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations."],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_triton": {
+            "description": [
+                "Half module includes Kraken and Skullsplitter, full module includes everything in Triton. Default full, adds about 3-6 items and 8-19 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_firecat": {
+            "description": [
+                "Half module includes Larry and Wormguts, full module includes everything in Firecat. Default full, adds about 3-7 items and 9-14 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "half": 1,
+                "full": 2
+            },
+            "default": 2,
+            "group": "Modules"
+        },
+        "module_poststreets": {
+            "description": [
+                "Includes everything made available after either one or all three streets are completed, adding about 1-3 items and 12-14 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 1,
+            "group": "Modules"
+        },
+        "module_lostpages": {
+            "description": [
+                "Includes quests that are part of the Lost Pages event, adding about 1 item and 5 locations."
+            ],
+            "type": "Choice",
+            "values": {
+                "none": 0,
+                "full": 1
+            },
+            "default": 0,
+            "group": "Modules"
+        },
 
-
-
+      
+      
         "_Example_Toggle":{
             "description": [
                 "This is a Toggle",
@@ -242,7 +444,7 @@
             ],
             "range_start": 0,
             "default": 1,
-            "range_end": 10,
+            "range_end": 5,
             "values": {"example": 2},
             "group": "Example Options"
         }
