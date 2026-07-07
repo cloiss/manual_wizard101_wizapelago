@@ -28,11 +28,11 @@
 name: Wizard{number}
 
 # Used to describe your yaml. Useful if you have multiple files.
-description: Example yaml for a beginner player, with no skips and favorable items and logic. 
+description: Example yaml for a beginner player, with favorable starting inventory, item locations, and logic. Recommended for a first playthrough.
 
 game: Manual_Wizard101_Cloiss
 requires:
-  version: 0.6.3 # Version of Archipelago required for this yaml to work as expected.
+  version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
 
 Manual_Wizard101_Cloiss:
   ################
@@ -47,12 +47,13 @@ Manual_Wizard101_Cloiss:
     # Minimum value is 0
     # Maximum value is 99
     random: 0
-    random-low: 0
-    random-high: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-99: 0 # random value between 0 and 99
     disabled: 0 # equivalent to 0
     normal: 0 # equivalent to 50
     extreme: 0 # equivalent to 99
-    80: 50
+    75: 50
 
   accessibility:
     # Set rules for reachability of your items/locations.
@@ -62,6 +63,16 @@ Manual_Wizard101_Cloiss:
     # **Minimal:** ensure what is needed to reach your goal can be acquired.
     full: 50
     minimal: 0
+
+  goal:
+    # Set which boss must be defeated to complete the randomizer. If an unreachable boss is chosen, generation will fail.
+    defeat lord nightshade: 50
+    defeat general akilles: 0
+    defeat harvest lord: 0
+    defeat roberto: 0
+    defeat alicane swiftarrow: 0
+    defeat melweena smite: 0
+    defeat foulgaze: 0
 
   ##########
   # School #
@@ -96,7 +107,7 @@ Manual_Wizard101_Cloiss:
     # Ensures the Teleport-Mark ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests.
     start: 50
     rattlebones: 0
-    judd: 0
+    muldoon: 0
     mid-streets: 0
     anywhere: 0
 
@@ -104,16 +115,83 @@ Manual_Wizard101_Cloiss:
     # Ensures the Slot-Mount ability is given at the start or prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests. Placing this at Mid-Streets or Anywhere is extremely not recommended.
     start: 50
     rattlebones: 0
-    judd: 0
+    muldoon: 0
     mid-streets: 0
     anywhere: 0
 
   rank_2_spell_location:
     # Guarantee at least one rank 2 spell prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests.
     rattlebones: 0
-    judd: 50
+    muldoon: 50
     mid-streets: 0
     anywhere: 0
+
+  teleport_button_location:
+    # Guarantee at least one World/Commons/Home teleport buttons prior to various checkpoints. Mid-streets refers to the Cyclops/Fodder/Bubbles, Harvest Lord/Nexus, and Fodder/Bastilla quests.
+    rattlebones: 0
+    muldoon: 50
+    mid-streets: 0
+    anywhere: 0
+
+  ######################
+  # Starting Inventory #
+  ######################
+  start_vendor_library:
+    # Start with Vendor-Library, allowing you to purchase any Treasure Cards you receive as items. Recommended ON for a more fun experience.
+    'false': 0
+    'true': 50
+
+  start_vendor_potions:
+    # Start with Vendor-Potions, recommended for beginners for ease of play.
+    'false': 0
+    'true': 50
+
+  start_all_vendors:
+    # Start with all vendors. Use this option when there are too many items in the pool. This removes about 17 items.
+    'false': 50
+    'true': 0
+
+  start_teleport_dungeon:
+    # Start with Teleport-Dungeon (dungeon recall), making retrying bosses and towers easier and allowing Flee Strats. All multi-floor towers expect you to find this item before attempting the higher floors.
+    'false': 0
+    'true': 50
+
+  start_all_teleports:
+    # Start with all teleports. Use this option for a faster and more streamlined game. This removes about 7 items.
+    'false': 50
+    'true': 0
+
+  start_thunder_snake:
+    # Start with ItemCard-Thunder Snake, making the earlygame easier and faster. Recommended for beginners.
+    'false': 0
+    'true': 50
+
+  start_pixie:
+    # Start with SpellCard-Pixie, allowing a guaranteed safety net in fights. Recommended for beginners.
+    'false': 0
+    'true': 50
+
+  start_primary_rank_1:
+    # Start with your primary school's rank 1 Spell Card. Highly recommended.
+    'false': 0
+    'true': 50
+
+  start_primary_rank_2:
+    # Start with your primary school's rank 2 Spell Card. This option is mostly for future use with higher-level randomizers, as using it for Wizard City may result in a less interesting game.
+    'false': 50
+    'true': 0
+
+  start_rank_1_item_cards:
+    # Start with the specified number of rank 1 item cards (not including Thunder Snake, if chosen above), for use with the default wand. Recommended 3.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 7
+    3: 50
+    random: 0
+    random-low: 0 # random value weighted towards lower values
+    random-high: 0 # random value weighted towards higher values
+    random-range-0-7: 0 # random value between 0 and 7
 
   #########
   # Logic #
@@ -123,13 +201,8 @@ Manual_Wizard101_Cloiss:
     'false': 50
     'true': 0
 
-  akilles_skip:
-    # Allows Akilles Skip in logic. This skip is patched, leave this setting as false.
-    'false': 50
-    'true': 0
-
   beginner:
-    # Enable this setting to disable unintuitive logic and improve the starting inventory.
+    # Enable this setting to disable unintuitive logic.
     'false': 0
     'true': 50
 
@@ -137,10 +210,16 @@ Manual_Wizard101_Cloiss:
   # Check Locations #
   ###################
   reagents:
-    # Adds a location for collecting each reagent in Wizard City, adding 6 locations. Select 'ore' to only add the Ore location, which has the most interesting access logic.
+    # Adds locations for collecting reagents in Wizard City. Select 'anywhere' to add one location per reagent type (6 locations). Select 'anywhere-ore' to only add the Ore location, which has the most interesting access logic. Select 'all' to add reagent locations per area: Unicorn Way, Commons, Ravenwood, Shopping District, Olde Town, Cyclops Lane, Triton Avenue, Haunted Cave, Firecat Alley, and Dark Cave. (Adds up to 26 locations)
     none: 50
+    anywhere: 0
+    anywhere-ore: 0
     all: 0
-    ore: 0
+
+  halloween:
+    # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
+    'false': 50
+    'true': 0
 
   housing_items:
     # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
@@ -148,15 +227,71 @@ Manual_Wizard101_Cloiss:
     'true': 0
 
   wooden_chests:
-    # Adds a location for each Wooden Chest you can pick up in Wizard City, adding up to 6 locations.
-    "none": 50
-    "anywhere": 0
-    "all": 0
+    # Adds locations for wooden chests in Wizard City. Select 'anywhere' to add one wooden chest location, or 'all' to add wooden chest locations for Unicorn Way, Triton Avenue, Firecat Alley, Cyclops Lane, Haunted Cave, and Dark Cave.
+    none: 50
+    anywhere: 0
+    all: 0
 
-  halloween:
-    # Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items.
-    'false': 50
-    'true': 0
+  silver_chests:
+    # Adds locations for silver chests in Wizard City. Select 'anywhere' to add one silver chest location, or 'all' to add silver chest locations for Triton Avenue, Firecat Alley, and Cyclops Lane.
+    none: 50
+    anywhere: 0
+    all: 0
+
+  find_the_smiths:
+    # Adds locations for finding the Smiths for Zeke. Select 'quest' for a single combined location, or 'all' to add individual locations for each area. (Adds up to 9 locations)
+    none: 0
+    quest: 50
+    all: 0
+
+  find_the_books:
+    # Adds locations for finding the Books for Boris. Select 'quest' for a single combined location, 'quest-all' to add individual locations for each boss area, or 'all' to add boss area books and additional books scattered around Wizard City. (Adds up to 5 boss book locations)
+    none: 0
+    quest: 50
+    quest-all: 0
+    all: 0
+
+  ###########
+  # Modules #
+  ###########
+  module_golemcourt:
+    # Half module includes Golem Court, full module includes Golem Court and Golem Tower. Default full, adds about 1-2 items and 4-8 locations.
+    none: 0
+    half: 0
+    full: 50
+
+  module_petpavilion:
+    # Include all quests that visit the Pet Pavilion. Default on, adds about 1 item and 4 locations. This is currently broken in live so is disabled until fixed.
+    none: 50
+    full: 0
+
+  module_cyclops:
+    # Half module includes everything up to Eyus, full module includes everything in Cyclops. Default full, adds about 2-5 items and 8-15 locations.
+    none: 0
+    half: 0
+    full: 50
+
+  module_triton:
+    # Half module includes Kraken and Skullsplitter, full module includes everything in Triton. Default full, adds about 3-6 items and 8-19 locations.
+    none: 0
+    half: 0
+    full: 50
+
+  module_firecat:
+    # Half module includes Larry and Wormguts, full module includes everything in Firecat. Default full, adds about 3-7 items and 9-14 locations.
+    none: 0
+    half: 0
+    full: 50
+
+  module_poststreets:
+    # Includes everything made available after either one or all three streets are completed, adding about 1-3 items and 12-14 locations.
+    none: 0
+    full: 50
+
+  module_lostpages:
+    # Includes quests that are part of the Lost Pages event, adding about 1 item and 5 locations.
+    none: 50
+    full: 0
 
   ###########################
   # Item & Location Options #
@@ -170,11 +305,11 @@ Manual_Wizard101_Cloiss:
     []
 
   start_inventory:
-    # Start with these items.
+    # Start with the specified amount of these items. Example: "Bomb: 1"
     {}
 
   start_inventory_from_pool:
-    # Start with these items and don't place them in the world.
+    # Start with the specified amount of these items and don't place them in the world. Example: "Bomb: 1"
     # 
     # The game decides what the replacement items will be.
     {}
@@ -185,16 +320,15 @@ Manual_Wizard101_Cloiss:
 
   start_location_hints:
     # Start with these locations and their item prefilled into the ``!hint`` command.
-    ["Regina: The Final Piece (Iron Golem)","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    []
 
   exclude_locations:
     # Prevent these locations from having an important item.
-    ["Regina: The Final Piece (Iron Golem)","Reagent: Rare Reagent (Anywhere)","Milo: Hoard of the Rings","Pierre: The Power is Ours (Fears)","Duncan: Secret of the Cave (Field Guards)","Lucky: Fishful Thinking (Fishing 2)","Hallow: Baron of Nightmares (Baron Mordecai)"]
+    []
 
   priority_locations:
     # Prevent these locations from having an unimportant item.
-    # Put a lot of useful items on early main quests for beginners.
-    ["MAIN: Sinister Skeleton (Rattlebones)","MAIN: Grim Tales (To Merle)","MAIN: To Ravenwood!","MAIN: Panic in Three Streets! (To Muldoon)","MAIN: Secret Strife of Pets (Judd)"]
+    []
 
   item_links:
     # Share part of your item pool with other players.
