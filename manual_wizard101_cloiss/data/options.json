@@ -248,14 +248,6 @@
             "default": 0,
             "group": "Check Locations"
         },
-        "halloween": {
-            "description": [
-                "Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items."
-            ],
-            "type": "Toggle",
-            "default": false,
-            "group": "Check Locations"
-        },
         "housing_items": {
             "description": [
                 "Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations."
@@ -315,6 +307,14 @@
                 "all": 3
             },
             "default": 1,
+            "group": "Check Locations"
+        },
+        "halloween": {
+            "description": [
+                "Adds a location for each Halloween-exclusive quest, adding about 20 locations and 13 items."
+            ],
+            "type": "Toggle",
+            "default": false,
             "group": "Check Locations"
         },
       

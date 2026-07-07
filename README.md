@@ -1,5 +1,5 @@
 # Wizard101 Randomizer
-This is a randomizer for Wizard101 developed by Fraxker, Cloiss, and ItzGray. It requires creating a fresh character on a free-to-play account and playing through the first world of the game, completing quests to gain randomized abilities and items. A solo game can range from about 2-5 hours depending on settings and luck.
+This is a randomizer for Wizard101 developed by Fraxker, Cloiss, and ItzGray. It requires creating a fresh character on a free-to-play account and playing through the first world of the game, completing quests and other objectives to gain randomized abilities and items. A solo game can range from about 2-5 hours depending on settings and luck.
 
 ## Getting Started
 
@@ -11,18 +11,24 @@ You will need the following software:
 
 Follow the getting started instructions for Archipelago and Manual to learn how to generate, host, and use the Manual client. Universal Tracker is an apworld that you can install to improve the Manual client's functionality.
 
-### Yaml
-Three yamls are provided in the repo in the `yamls` folder:
-- **Beginner:** Good for first-time players, avoids skips and is generous with useful items
-- **Recommended:** Default settings optimized for a good experience
-- **Evil:** Especially annoying and difficult settings for those who want to suffer
+### Yamls
+Six yamls are provided in the repo in the `yamls` folder:
+- **Beginner:** Favorable starting inventory, item locations, and logic. Good for a first playthrough.
+- **Recommended:** For general play with standard settings. 
+- **Insane:** For those looking for a longer or more challenging game with a lot more checks and very limited starting items.
+- **Module-Short:** For a short, introductory game, with Harvest Lord as the goal. 
+- **Module-Medium:** For a medium-length game, with Melweena Smite as the goal.
+- **Module-Long:** For a longer module-based game, ending at Foulgaze. This is perfect if the typical Nightshade ending is just a litle too long.
 
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
-### Auto-Marking Client
-This is a separate client we have developed that can automatically mark most of the locations in the game, but it is 100% optional to use. In order for it to work, you must open it before you open the game itself. It currently only has support for automatically marking quest locations, goal locations, and `Talk to Nick Jonas`. Reagents, wooden/silver chests, housing items, and partial quest locations still need to be marked manually.
+### Auto von Wizmark
+Auto von Wizmark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von Wizmark.** 
+
+It currently has support for automatically marking quest locations, goal locations, some books, and `Talk to Nick Jonas`. Reagents, chests, housing items, smiths, and books must be marked manually.
 
 ## Read more
+- [Items](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Items.md)
 - [Locations](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Locations.md)
 - [Modules](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Modules.md)
-- [Items](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Items.md)
+- [Options](https://github.com/cloiss/manual_wizard101_cloiss/blob/main/docs/Items.md)
