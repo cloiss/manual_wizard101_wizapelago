@@ -14,7 +14,7 @@ def launch_client(*args):
     from .WizClient import launch as Main
 
     if CommonClient.gui_enabled:
-        launch_subprocess(Main, name="Wizard101 Auto-Marking Client")
+        launch_subprocess(Main, name="Auto von WizMark (Wizard101 Auto-Marker)")
     else:
         Main()
 
@@ -26,7 +26,7 @@ def add_client_to_launcher() -> None:
         icon_paths["w101"] = Utils.user_path('data', 'wiz.png')
 
     for c in components:
-        if c.display_name == "Wizard101 Auto-Marking Client":
+        if c.display_name == "Auto von WizMark (Wizard101 Auto-Marker)":
             found = True
             if getattr(c, "version", 0) < version:
                 c.version = version
@@ -34,6 +34,6 @@ def add_client_to_launcher() -> None:
                 c.icon = "w101"
 
     if not found:
-        components.append(VersionedComponent("Wizard101 Auto-Marking Client", "WizClient", func=launch_client, version=version, icon="w101"))
+        components.append(VersionedComponent("Auto von WizMark (Wizard101 Auto-Marker)", "WizClient", func=launch_client, version=version, icon="w101"))
 
 add_client_to_launcher()
