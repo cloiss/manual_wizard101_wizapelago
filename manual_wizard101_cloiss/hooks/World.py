@@ -56,7 +56,7 @@ def generate_tc_pool(pool_size: int, world: World, multiworld: MultiWorld, playe
     triton_option = get_option_value(multiworld, player, "module_triton")
 
     # hits
-    subpool_rank1 = ["Scarab","Thunder Snake","Ice Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
+    subpool_rank1 = ["Scarab","Thunder Snake","Frost Beetle","Fire Cat","Dark Sprite","Blood Bat","Imp"]
     subpool_rank2 = ["Scorpion","Lightning Bats","Snow Serpent","Fire Elf","Ghoul","Troll","Leprechaun"]
     subpool_rank3 = ["Locust Swarm","Storm Shark","Evil Snowman","Sunbird","Banshee","Cyclops","Nature's Wrath"]
     subpool_rank4 = ["Sandstorm","Kraken","Ice Wyvern","Meteor Strike","Vampire","Humongofrog","Seraph"]

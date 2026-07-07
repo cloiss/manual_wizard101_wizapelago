@@ -577,7 +577,7 @@
             "sort-key": "002 SpellCard-Thunder Snake"
         },
         {
-            "name": "SpellCard-Ice Beetle",
+            "name": "SpellCard-Frost Beetle",
             "category": [
                 "05 SpellCard",
                 "School-Ice",
@@ -592,7 +592,7 @@
             "useful": true,
             "progression": true,
             "count": 0,
-            "sort-key": "003 SpellCard-Ice Beetle"
+            "sort-key": "003 SpellCard-Frost Beetle"
         },
         {
             "name": "SpellCard-Fire Cat",
@@ -1500,7 +1500,7 @@
             "sort-key": "002 ItemCard-Thunder Snake"
         },
         {
-            "name": "ItemCard-Ice Beetle",
+            "name": "ItemCard-Frost Beetle",
             "category": [
                 "06 ItemCard",
                 "ItemCard-Rank 1"
@@ -1510,7 +1510,7 @@
                 "rank": 1
             },
             "progression": true,
-            "sort-key": "003 ItemCard-Ice Beetle"
+            "sort-key": "003 ItemCard-Frost Beetle"
         },
         {
             "name": "ItemCard-Fire Cat",
@@ -1949,13 +1949,13 @@
             "sort-key": "002 TreasureCard-Thunder Snake"
         },
         {
-            "name": "TreasureCard-Ice Beetle",
+            "name": "TreasureCard-Frost Beetle",
             "category": [
                 "07 TreasureCard"
             ],
             "filler": true,
             "count": 0,
-            "sort-key": "003 TreasureCard-Ice Beetle"
+            "sort-key": "003 TreasureCard-Frost Beetle"
         },
         {
             "name": "TreasureCard-Fire Cat",
