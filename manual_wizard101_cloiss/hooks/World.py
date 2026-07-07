@@ -622,11 +622,11 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     item_names_to_add: list[str] = []
 
     schools = ["Balance","Storm","Ice","Fire","Death","Myth","Life","Any","Random"]
-    primary_school = schools[get_option_value(multiworld, player, "primary_school")]
-    secondary_school = schools[get_option_value(multiworld, player, "secondary_school")]
+    primary_school = "School-" + schools[get_option_value(multiworld, player, "primary_school")]
+    secondary_school = "School-" + schools[get_option_value(multiworld, player, "secondary_school")]
 
-    primary_school_spells = list(world.item_name_groups["School-" + primary_school])
-    secondary_school_spells = list(world.item_name_groups["School-" + secondary_school])
+    primary_school_spells = list(world.item_name_groups[primary_school])
+    secondary_school_spells = list(world.item_name_groups[secondary_school])
     primary_only_spells = world.item_name_groups["PrimaryOnly"]
 
     for spell in primary_only_spells:
@@ -676,6 +676,7 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
     rank_2_spells = list(world.item_name_groups["SpellCard-Rank 2"])
     
     # include the appropriate spells based on the settings and primary school
+    
     if start_primary_rank_1:
         for spell_name in rank_1_spells:
             if get_item_school(spell_name,world) == primary_school:

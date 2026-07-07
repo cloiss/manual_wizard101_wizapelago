@@ -218,8 +218,8 @@ Manual_Wizard101_Cloiss:
 
   housing_items:
     # Adds a location for each Housing Item you can pick up in Wizard City, adding up to 5 locations.
-    'false': 0
-    'true': 50
+    'false': 50
+    'true': 0
 
   wooden_chests:
     # Adds locations for wooden chests in Wizard City. Select 'anywhere' to add one wooden chest location, or 'all' to add wooden chest locations for Unicorn Way, Triton Avenue, Firecat Alley, Cyclops Lane, Haunted Cave, and Dark Cave.
@@ -240,8 +240,8 @@ Manual_Wizard101_Cloiss:
 
   find_the_books:
     # Adds locations for reading books. Select 'bosses' to include only books from Boris Tallstaff's quest 'The Lore You Know' (2-6 locations) or 'all' to add ALL books (up to 21 locations).
-    none: 50
-    bosses: 0
+    none: 0
+    bosses: 50
     all: 0
 
   halloween:
