@@ -491,18 +491,21 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     # 0 = none, 1 = quest, 2 = quest-all, 3 = all
     books_option = get_option_value(multiworld, player, "find_the_books")
     boss_book_locations = world.location_name_groups.get("BooksBoss", [])
+    other_book_locations = world.location_name_groups.get("Books", [])
 
     match books_option:
         case 0:  # none: remove quest location and all book locations
             location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
             location_names_to_remove.extend(boss_book_locations)
+            location_names_to_remove.extend(other_book_locations)
         case 1:  # quest: keep quest location only, remove all individual book locations
             location_names_to_remove.extend(boss_book_locations)
-        case 2:  # quest-all: remove quest location, keep individual boss book locations
+            location_names_to_remove.extend(other_book_locations)
+        case 2:  # bosses: remove quest location, keep individual boss book locations
             location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
+            location_names_to_remove.extend(other_book_locations)
         case 3:  # all: remove quest location, keep boss books and area books
             location_names_to_remove.append("Boris: The Lore You Know (X/7 Books)")
-            # When adding area books (e.g. category "BooksScattered"), extend remove list in case 2 only
 
     # Handle Books Locations Alias (only relevant when quest location is kept)
     if books_option == 1:

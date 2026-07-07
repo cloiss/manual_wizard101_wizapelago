@@ -424,7 +424,7 @@
             "sort-key": "009 Moolinda: Introduction to Life (Level 7)"
         },
         {
-            "name": "X/10 Smiths for 'Find the Smiths'",
+            "name": "Zeke: Find the Smiths (X/10 Smiths)",
             "category": [
                 "102 The Commons"
             ],
@@ -521,7 +521,7 @@
             "sort-key": "000 Smith: Firecat Alley"
         },
         {
-            "name": "X/7 Books for 'The Lore You Know'",
+            "name": "Boris: The Lore You Know (X/7 Books)",
             "category": [
                 "102 The Commons"
             ],
@@ -744,17 +744,6 @@
             "region": "ShoppingDistrict",
             "sort-key": "002 Book: Tome of Socketing (Jewel Shop)",
             "log_msg": "|Sound_Dialogue_GEN|WorldData|Sound/Dialogue/Narrator_EDN_14.mp3"
-        },
-        {
-            "name": "Merle: Colossal Trouble",
-            "category": [
-                "102 The Commons",
-                "Quest"
-            ],
-            "region": "PostStreets",
-            "xp": 35,
-            "log_msg": "|Sound_Dialogue|WorldData|Sound/Dialogue/PrivateODoyle_QST_01.mp3",
-            "sort-key": "001 Merle: Colossal Trouble"
         },
         {
             "name": "Annie: Say Cheese! (Photomancy 1)",
