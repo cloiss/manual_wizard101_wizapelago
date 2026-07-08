@@ -54,7 +54,7 @@ To set up and generate a game of Wizapelago for the first time, follow these ste
    - Start **Wizard101** first and log in with your fresh character.
    - (Optional) Launch **Auto von WizMark** if you are using auto-tracking. **Crucial:** You must open Wizard101 *before* launching Auto von WizMark so it can hook into the game correctly.
    - In the **Archipelago Launcher**, launch the **Manual Client**.
-   - Enter your server address (e.g., `archipelago.gg:38241`), your slot name (the name from your YAML file), and click **Connect** to link your game to the Archipelago server.
+   - Enter your server address (e.g., `archipelago.gg:12345`), your slot name (the name from your YAML file), and click **Connect** to link your game to the Archipelago server.
 
 ## Read More
 For more specific information on the features of Wizapelago, please consult the documents below.
