@@ -38,7 +38,7 @@ To set up and generate a game of Wizapelago for the first time, follow these ste
 
 2. **Choose and Position your YAML**:
    - Go to the [yamls](yamls) folder and choose a starting template (e.g., `02-Recommended.yaml`).
-   - Open the **Archipelago Launcher**, click **Open Players Folder**, and paste your chosen YAML file there.
+   - Open the **Archipelago Launcher**, click **Browse Files**, and paste your chosen YAML file there.
    - Open the YAML file in a text editor and change the `name:` field to your desired player name. You can also customize any other options if you wish (see [docs/Options.md](docs/Options.md)).
 
 3. **Generate the Game**:
