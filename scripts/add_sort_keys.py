@@ -5,15 +5,15 @@ from pathlib import Path
 def update_json(file_name: str):
     # Path to locations.json relative to the script location
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, "manual_wizard101_cloiss", "data", file_name)
+    file_path = os.path.join(script_dir, "manual_wizard101_wizapelago", "data", file_name)
     
     if not os.path.exists(file_path):
-        # Fallback if run from inside the manual_wizard101_cloiss folder
+        # Fallback if run from inside the manual_wizard101_wizapelago folder
         file_path = os.path.join(script_dir, "data", file_name)
     
     if not os.path.exists(file_path):
         # Fallback if run from inside the scripts folder
-        file_path = os.path.join(Path(script_dir).parent, "manual_wizard101_cloiss", "data", file_name)
+        file_path = os.path.join(Path(script_dir).parent, "manual_wizard101_wizapelago", "data", file_name)
         
     if not os.path.exists(file_path):
         print("Error: Could not locate locations.json.")

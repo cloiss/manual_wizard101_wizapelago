@@ -30,11 +30,11 @@ name: Wizard{number}
 # Used to describe your yaml. Useful if you have multiple files.
 description: Recommended yaml for general play with standard settings. 
 
-game: Manual_Wizard101_Cloiss
+game: Manual_Wizard101_Wizapelago
 requires:
   version: 0.6.7 # Version of Archipelago required for this yaml to work as expected.
 
-Manual_Wizard101_Cloiss:
+Manual_Wizard101_Wizapelago:
   ################
   # Game Options #
   ################

@@ -24,7 +24,7 @@ class WizContext(CommonContext):
         if password_requested and not self.password:
             await super().server_auth(password_requested)
         await self.get_username()
-        await self.send_connect(game="Manual_Wizard101_Cloiss")
+        await self.send_connect(game="Manual_Wizard101_Wizapelago")
 
 # blatantly copied from Manual, which coincidentally also blatantly copies this from the Minecraft apworld. What a cycle
 def load_data_file(fname: str) -> dict:
@@ -118,7 +118,7 @@ async def main(args):
 def launch() -> None:
     import colorama
 
-    parser = get_base_parser(description="Manual Wizard101 Auto-Marker Client")
+    parser = get_base_parser(description="Auto von WizMark (Wizard101 Auto-Marker)")
 
     args = sys.argv[1:]
     args, rest = parser.parse_known_args(args=args)
@@ -127,7 +127,7 @@ def launch() -> None:
     colorama.deinit()
 
     if not os.path.exists(icon_paths["w101"]):
-        # Use the wiz.ico file from the automark_client directory
+        # Use the wiz.ico file from the auto_von_wizmark directory
         wiz_ico_path = os.path.join(os.path.dirname(__file__), "wiz.png")
         if os.path.exists(wiz_ico_path):
             shutil.copy(wiz_ico_path, icon_paths["w101"])
