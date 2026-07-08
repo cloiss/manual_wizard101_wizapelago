@@ -33,8 +33,8 @@ It currently has support for automatically marking quest locations, goal locatio
 To set up and generate a game of Wizapelago for the first time, follow these steps:
 
 1. **Install the Game apworld**:
-   - Download the `manual_wizard101_wizapelago.apworld` file from the [Latest Release on GitHub](https://github.com/cloiss/manual_wizard101_wizapelago/releases/latest) (or copy the [manual_wizard101_wizapelago.apworld](manual_wizard101_wizapelago.apworld) file from the root of this repository).
-   - Open the **Archipelago Launcher** and click **Open Players Folder**. Navigate up one level to the main Archipelago directory, open the `custom_worlds` folder, and paste the `.apworld` file there.
+   - Download the `manual_wizard101_wizapelago.apworld` file from the [Latest Release on GitHub](https://github.com/cloiss/manual_wizard101_wizapelago/releases/latest) (or locate the [manual_wizard101_wizapelago.apworld](manual_wizard101_wizapelago.apworld) file in the root of this repository).
+   - Double-click the downloaded `.apworld` file to automatically install it to Archipelago.
 
 2. **Choose and Position your YAML**:
    - Go to the [yamls](yamls) folder and choose a starting template (e.g., `02-Recommended.yaml`).
