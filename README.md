@@ -23,8 +23,12 @@ Six yamls are provided in the repo in the `yamls` folder:
 
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
+### Manual Client 
+
+The Manual client organizes location categories by area and world, indicated by a three-digit number (e.g. Wizard City areas start with 1, Krokotopia with 2, etc.). To mark a location, click on the category to expand it, then click the item you want to check off. Non-automated locations appear at the top of each category. To scroll between categories, hover over a non-scrollable item or the location header area.
+
 ### Auto von WizMark
-Auto von WizMark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von WizMark.** 
+Auto von WizMark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von WizMark and have your sound turned on.** 
 
 It currently has support for automatically marking quest locations, goal locations, some books, and `Talk to Nick Jonas`. Reagents, chests, housing items, smiths, and books must be marked manually.
 
