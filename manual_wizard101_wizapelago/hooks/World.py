@@ -561,6 +561,17 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
         multiworld, player, world.location_name_to_location, include_level_xp=True
     )
 
+    # Guard: raise an error if the world's total XP would push the player beyond the highest level
+    # defined in level_xp_requirements. This means the table needs to be extended to cover that level.
+    max_defined_level = max(HooksRules.level_xp_requirements.keys())
+    max_defined_xp = HooksRules.level_xp_requirements[max_defined_level]
+    if total_xp >= max_defined_xp:
+        raise ValueError(
+            f"Player {player}'s world has {total_xp} total XP, which meets or exceeds the XP required for "
+            f"level {max_defined_level} ({max_defined_xp} XP) — the highest level defined in "
+            f"level_xp_requirements. Add higher levels to level_xp_requirements in hooks/Rules.py to support this."
+        )
+
     # For each level with gated locations: if player cannot reach that level (XP without that level's locations < requirement), remove those locations.
     # Level 5 is assumed always reachable; only check level 6 and above.
     # Process levels in descending order; only subtract XP from running total when we remove a level's locations.
@@ -713,7 +724,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
 
     # Convert total XP to level (largest level whose requirement <= total_xp)
     reqs = HooksRules.level_xp_requirements
-    #sort the level requirements in descending order and takes the first (highest) level whose requirement is met.
+    # Sort the level requirements in descending order and takes the first (highest) level whose requirement is met.
     max_level = next(
         (level for level in sorted(reqs, reverse=True) if total_xp >= reqs[level]),
         1,
