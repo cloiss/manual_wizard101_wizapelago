@@ -1,3 +1,4 @@
+import itertools
 from worlds.AutoWorld import World
 from ..Helpers import get_option_value, format_state_prog_items_key, ProgItemsCat
 from BaseClasses import MultiWorld, CollectionState
@@ -143,7 +144,7 @@ def canTrainSpell(categories: list[str], item_values: dict[str], multiworld: Mul
         return False
 
     # Check if the player can physically train the spells via ravenwood
-    # Primiary School Rank 1 spells are exempt from this
+    # Primary School Rank 1 spells are exempt from this
     # TODO we will need to handle other trainers (Dworgyn, Niles, Alhazred etc.) for initiate
     if (spell_level > 1 or "School-" + primary_school not in categories) and not state.has("Area-Ravenwood", player):
         return False
@@ -160,16 +161,17 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
 
     playerTP = 0
 
+    world = state.multiworld.worlds[player]
+    # Cap max_level to the highest level reachable given the world's total XP pool,
+    # so we don't count TP levels that are impossible to reach in this seed.
+    # Pre-computed in before_set_rules; defaults to 170 if not yet available.
+    max_level = getattr(world, "final_max_level", 170)
+
     # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
-    for level in range(4, 21, 4):
-        if hasLevel(state, player, level):
-            playerTP += 1
-        else:
-            break
-    
     # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
-    # Start at 25 since level 20 was already counted above
-    for level in range(25, 171, 5):
+    for level in itertools.chain(range(4, 21, 4), range(25, 171, 5)):
+        if level > max_level:
+            break
         if hasLevel(state, player, level):
             playerTP += 1
         else:
