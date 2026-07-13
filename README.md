@@ -23,8 +23,18 @@ Six yamls are provided in the repo in the `yamls` folder:
 
 **It is highly recommended to start from one of these as a baseline when creating your yaml, as playing without the recommended excluded locations is a very bad idea.**
 
+### Manual Client 
+
+The Manual client contains Items on the left, sorted by type, and Locations on the right, sorted by area. To mark a location, click on the category to expand it, then click the item you want to check off. Locations without auto-marking appear at the top of each category. To scroll between categories, **click and drag** on a category header: scrolling with the scroll wheel is not very effective.
+
+### Universal Tracker
+
+With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave.**
+
+Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, level, or utilities like Dungeon Recall. These will sometimes still appear as green in Universal Tracker, even if they are not technically in logic.
+
 ### Auto von WizMark
-Auto von WizMark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von WizMark.** 
+Auto von WizMark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von WizMark and have your sound turned on.** 
 
 It currently has support for automatically marking quest locations, goal locations, some books, and `Talk to Nick Jonas`. Reagents, chests, housing items, smiths, and books must be marked manually.
 
