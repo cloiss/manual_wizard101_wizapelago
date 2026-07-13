@@ -25,7 +25,13 @@ Six yamls are provided in the repo in the `yamls` folder:
 
 ### Manual Client 
 
-The Manual client organizes location categories by area and world, indicated by a three-digit number (e.g. Wizard City areas start with 1, Krokotopia with 2, etc.). To mark a location, click on the category to expand it, then click the item you want to check off. Non-automated locations appear at the top of each category. To scroll between categories, hover over a non-scrollable item or the location header area.
+The Manual client contains Items on the left, sorted by type, and Locations on the right, sorted by area. To mark a location, click on the category to expand it, then click the item you want to check off. Locations without auto-marking appear at the top of each category. To scroll between categories, **click and drag** on a category header: scrolling with the scroll wheel is not very effective.
+
+### Universal Tracker
+
+With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave.**
+
+Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, level, or utilities like Dungeon Recall. These will sometimes still appear as green in Universal Tracker, even if they are not technically in logic.
 
 ### Auto von WizMark
 Auto von WizMark is a separate client we have developed that can automatically mark most of the locations in the game. This is recommended for a more streamlined experience, but not required. **In order for it to work, you must open Wizard101 BEFORE opening Auto von WizMark and have your sound turned on.** 

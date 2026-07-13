@@ -3,14 +3,10 @@ Every default location (except `Talk to Nick Jonas`) is a Wizard City quest whic
 
 Quests are named as follows in the randomizer:
 **Questgiver: Quest Name (Clarifier)**
-
+ 
 - `Questgiver`: The name of the person who gives the quest, or MAIN for main quests.
 - `Quest Name`: The exact name of the quest in-game for reference.
 - `Clarifier`: A shorthand for what the quest expects from you if the quest name is unclear.
-
-With Universal Tracker enabled, all locations will be highlighted in green when they can be accessed in logic. **Note that some quests may have unintuitive requirements or end points that you are not aware of, such as the Foulgaze quest ending in Haunted Cave.**
-
-Additionally, some quests (e.g. Iron Golem) may be technically reachable but deemed too difficult due to a lack of spells, health, level, or utilities like Dungeon Recall. These will typically still appear as green in Universal Tracker, even if they are not technically in logic.
 
 ## Reagents
 The `reagents` option enables checks for collecting specific reagents, as well as an additional check for getting any rare reagent. These checks can be area-specific (e.g. `Cat Tail (Unicorn Way)`) or general (e.g. `Cat Tail (Anywhere)`). This refers to any reagent found in the "Rare Harvest" category of the reagent menu in-game.
