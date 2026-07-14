@@ -730,6 +730,10 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
         1,
     )
 
+    # Save the pre-computed the xp and max level reachable with this seed's total XP pool, so rule checks don't need to recalculate it
+    world.final_total_xp = total_xp
+    world.final_max_level = max_level
+
     # Remove all items that are ranked higher than the player's current level
     for item in item_table:
         if item.get("value", {}).get("level", 0) > max_level:
@@ -811,13 +815,7 @@ def after_create_items(item_pool: list, world: World, multiworld: MultiWorld, pl
 
 # Called before rules for accessing regions and locations are created. Not clear why you'd want this, but it's here.
 def before_set_rules(world: World, multiworld: MultiWorld, player: int):
-    world.final_total_xp = get_locations_total_xp(multiworld, player, world.location_name_to_location)
-    # Pre-compute the max level reachable with this seed's total XP pool, so rule checks don't need to recalculate it
-    reqs = HooksRules.level_xp_requirements
-    world.final_max_level = max(
-        (lvl for lvl, req_xp in reqs.items() if world.final_total_xp >= req_xp),
-        default=1
-    )
+    pass
 
 # Called after rules for accessing regions and locations are created, in case you want to see or modify that information.
 def after_set_rules(world: World, multiworld: MultiWorld, player: int):

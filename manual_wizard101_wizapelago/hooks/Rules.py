@@ -170,6 +170,7 @@ def hasTrainingPoints(state: CollectionState, player: int, tp: int | str) -> boo
     # Levels 1-20: 1 Training Point every 4 levels (4, 8, 12, 16, 20)
     # Levels 20-170: 1 Training Point every 5 levels (25, 30, 35, ..., 170)
     for level in itertools.chain(range(4, 21, 4), range(25, 171, 5)):
+        # Stop checking levels once we pass the max possible level for this seed TODO: Remove once hasLevel isn't fail open
         if level > max_level:
             break
         if hasLevel(state, player, level):
