@@ -1,0 +1,55 @@
+{
+    "data":
+    {
+        "Wand": 
+        [
+            {
+                "name": "Wand of the Novice",
+                "source": "Vendor-Sven Stonebreaker",
+                "spells": {
+                    "ItemCard-Thunder Snake": {"count": 1},
+                    "ItemCard-Blood Bat": {"count": 1}
+                }
+            },
+            {
+                "name": "Runed Wand",
+                "source": "Vendor-Sven Stonebreaker",
+                "spells": {
+                    "ItemCard-Flare": {"count": 7}
+                }
+            },
+            {
+                "name": "Antiquated Wand",
+                "source": "[QI]Electra: Faire Thee Well (Pre-Fears)",
+                "spells": {
+                    "ItemCard-Thunder Snake": {"count": 1},
+                    "ItemCard-Blood Bat": {"count": 1}
+                }
+            },
+            {
+                "name": "Wand of the Seven Schools",
+                "source": "Start",
+                "spells": {
+                    "ItemCard-Thunder Snake": {"count": 1, "damage_override": 95},
+                    "ItemCard-Blood Bat": {"count": 1, "damage_override": 60}
+                }
+            }
+        ],
+        "Amulet": [
+            {
+                "name": "Storm Slitherer Gem",
+                "source": ["Vendor-Pierre Gallantmane","Vendor-Elik Silverfist"],
+                "spells": {
+                    "ItemCard-Thunder Snake": 1
+                }
+            },
+            {
+                "name": "Swooping Necklace",
+                "source": "Vendor-Elik Silverfist",
+                "spells": {
+                    "ItemCard-Lightning Bats": 1
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "data":
+    {
+        "Rotting Fodder":{
+            "school": "Storm",
+            "health": 150,
+            "boost": {
+                "Myth": 10,
+                "Storm": -10
+            }
+        },
+        "Dark Fairy":{
+            "school": "Life",
+            "health": 115
+        },
+        "Rattlebones":{
+            "school": "Death",
+            "health": 135
+        }
+    }
+}
