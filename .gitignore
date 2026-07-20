@@ -2,4 +2,4 @@
 .vscode
 poptracker
 scripts/*.wad
-scripts/*.json
+scripts/types.json
