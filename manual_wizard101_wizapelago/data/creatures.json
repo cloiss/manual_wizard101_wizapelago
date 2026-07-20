@@ -7168,7 +7168,7 @@
             "health": 48880,
             "boosts": {
                 "All": -300,
-                "Shadow": -219
+                "Shadow": -19
             }
         },
         "BR_KT_Krokopatra_A_100": {
@@ -7736,7 +7736,7 @@
             "health": 140000,
             "boosts": {
                 "All": -300,
-                "Shadow": -210
+                "Shadow": -10
             }
         },
         "STRD_BR_KT_Krokopatra_A_50": {
@@ -16910,7 +16910,7 @@
             "boosts": {
                 "Storm": -50,
                 "Myth": 10,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Alphoi_Caster_A_01": {
@@ -17237,7 +17237,7 @@
                 "Life": -30,
                 "Death": -30,
                 "Balance": -75,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "EM_Beastman_Warrior_B_01": {
@@ -17288,7 +17288,7 @@
                 "Life": 10,
                 "Death": -75,
                 "Balance": -25,
-                "Shadow": -226
+                "Shadow": -25
             }
         },
         "EM_Beastman_Warrior_B_Boss_02": {
@@ -17321,7 +17321,7 @@
                 "Life": -25,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -226
+                "Shadow": -25
             }
         },
         "EM_Beastman_Warrior_C_Boss_01_Minion": {
@@ -17336,7 +17336,7 @@
                 "Life": -50,
                 "Death": -50,
                 "Balance": -50,
-                "Shadow": -276
+                "Shadow": -75
             }
         },
         "EM_Beastman_Warrior_D_01": {
@@ -17393,7 +17393,7 @@
                 "Life": -20,
                 "Death": -20,
                 "Balance": -20,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Brain_Master_A_Boss_01_Hard": {
@@ -17408,7 +17408,7 @@
                 "Life": -20,
                 "Death": -20,
                 "Balance": -20,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Bramble_Death_A_01": {
@@ -17436,7 +17436,7 @@
             "boosts": {
                 "Death": -50,
                 "Life": 30,
-                "Shadow": -251,
+                "Shadow": -50,
                 "Balance": 15
             }
         },
@@ -17855,7 +17855,7 @@
                 "Myth": 5,
                 "Life": 10,
                 "Death": 5,
-                "Shadow": -271
+                "Shadow": -70
             }
         },
         "EM_Elephant_Belloq_B_01_Minion_Fire": {
@@ -17928,7 +17928,7 @@
             "boosts": {
                 "Ice": -50,
                 "Fire": 15,
-                "Shadow": -251,
+                "Shadow": -50,
                 "Balance": 15,
                 "Life": 15
             }
@@ -18088,7 +18088,7 @@
                 "Life": 5,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_GoldSkeletonKey_Elementals_BallAethyr_A_01_Medium": {
@@ -18103,7 +18103,7 @@
                 "Life": 5,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_GoldSkeletonKey_Elementals_BallAethyr_A_01_Small": {
@@ -18118,7 +18118,7 @@
                 "Life": 5,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Greenman_Cabalist_A_01": {
@@ -18456,7 +18456,7 @@
                 "Life": 5,
                 "Death": 5,
                 "Balance": -50,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Nimbari_Crewman_A_Hard": {
@@ -18471,7 +18471,7 @@
                 "Life": 5,
                 "Death": 5,
                 "Balance": -50,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Nimbari_ExemplarF_A_01": {
@@ -18715,7 +18715,7 @@
                 "Life": -25,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Pig_Captain_A_Hard": {
@@ -18730,7 +18730,7 @@
                 "Life": -25,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Pig_Crewman_A": {
@@ -18745,7 +18745,7 @@
                 "Life": -50,
                 "Death": 10,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Pig_Crewman_A_Hard": {
@@ -18760,7 +18760,7 @@
                 "Life": -50,
                 "Death": 10,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Pig_Singer_A_01": {
@@ -19350,7 +19350,7 @@
             "boosts": {
                 "Fire": 5,
                 "Ice": -50,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Snipe_Base_A_01": {
@@ -19549,7 +19549,7 @@
                 "Life": 5,
                 "Death": -20,
                 "Balance": -20,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "EM_Titan_Storm_A_01_Hard": {
@@ -19564,7 +19564,7 @@
                 "Life": -80,
                 "Death": 25,
                 "Balance": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "EM_Titan_Storm_A_01_Minion_DeathIce": {
@@ -19664,7 +19664,7 @@
             "boosts": {
                 "Storm": 15,
                 "Myth": -35,
-                "Shadow": -236
+                "Shadow": -35
             }
         },
         "EM_Werewolf_Warrior_B_01": {
@@ -20048,7 +20048,7 @@
                 "Life": -25,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -226
+                "Shadow": -25
             }
         },
         "G14-DM-Nosferabbit_SKR": {
@@ -22964,7 +22964,7 @@
             "health": 3590,
             "boosts": {
                 "Life": 10,
-                "Shadow": -251,
+                "Shadow": -50,
                 "Balance": 10
             }
         },
@@ -23281,7 +23281,7 @@
             "health": 3325,
             "boosts": {
                 "Life": 10,
-                "Shadow": -251,
+                "Shadow": -50,
                 "Balance": 10
             }
         },
@@ -39821,7 +39821,7 @@
             "health": 4080,
             "boosts": {
                 "All": -4,
-                "Shadow": -220
+                "Shadow": -19
             }
         },
         "KT_SE_Spider_WarriorMage_B_01": {
@@ -44460,7 +44460,7 @@
                 "Life": -30,
                 "Death": -30,
                 "Balance": -75,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MB_Treant_Grav_01": {
@@ -45743,7 +45743,7 @@
             "boosts": {
                 "Storm": 15,
                 "Myth": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_GoldSkeletonKey_Mimic_GhostDog": {
@@ -45753,7 +45753,7 @@
             "boosts": {
                 "Life": 15,
                 "Death": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_GoldSkeletonKey_Mimic_LuskaCharmbeak": {
@@ -45765,7 +45765,7 @@
                 "Life": 5,
                 "Death": 5,
                 "Balance": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_GoldSkeletonKey_Mimic_Minion_HagakureBlade": {
@@ -45808,7 +45808,7 @@
                 "Myth": 15,
                 "Life": -40,
                 "Death": 15,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_GoldSkeletonKey_Mimic_PrinceGobblestone": {
@@ -45823,7 +45823,7 @@
                 "Life": -35,
                 "Death": 20,
                 "Balance": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_Human_GrettaDK_A_Boss_01": {
@@ -46504,7 +46504,7 @@
                 "Life": -20,
                 "Death": -20,
                 "Balance": -20,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "MR_Spirit_Ignorance_A_Boss_01": {
@@ -48721,7 +48721,7 @@
                 "Myth": 5,
                 "Life": 10,
                 "Death": 5,
-                "Shadow": -271
+                "Shadow": -70
             }
         },
         "G14_DM_Malistaire_Boss_MM": {
@@ -52181,7 +52181,7 @@
                 "Life": 15,
                 "Death": -30,
                 "Balance": 15,
-                "Shadow": -231
+                "Shadow": -30
             }
         },
         "PL-GoldSkeletonKey-Healer": {
@@ -52196,7 +52196,7 @@
                 "Life": 20,
                 "Death": -25,
                 "Balance": 40,
-                "Shadow": -206
+                "Shadow": -5
             }
         },
         "PL-GoldSkeletonKey-Omen-Stribog": {
@@ -52211,7 +52211,7 @@
                 "Life": 15,
                 "Death": -30,
                 "Balance": 15,
-                "Shadow": -231
+                "Shadow": -30
             }
         },
         "PL-GoldSkeletonKey-Tank": {
@@ -52226,7 +52226,7 @@
                 "Life": 15,
                 "Death": -30,
                 "Balance": 15,
-                "Shadow": -231
+                "Shadow": -30
             }
         },
         "PL_BabaYaga_A": {
@@ -52358,7 +52358,7 @@
                 "Life": 10,
                 "Fire": -40,
                 "Death": -40,
-                "Shadow": -241
+                "Shadow": -40
             }
         },
         "PL_Elemental_A": {
@@ -56857,7 +56857,7 @@
             "health": 10000,
             "boosts": {
                 "All": -100,
-                "Shadow": -401
+                "Shadow": -200
             }
         },
         "SKB_AV_SkirkerMinion_A_100": {
@@ -56989,7 +56989,7 @@
                 "Life": -25,
                 "Death": 5,
                 "Balance": 5,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "CC_GoldSkeletonKey_Lice_DeepSpawn_B": {
@@ -57004,7 +57004,7 @@
                 "Life": 5,
                 "Death": -25,
                 "Balance": -25,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "CC_GoldSkeletonKey_Lice_DeepSpawn_Unhelpful": {
@@ -57016,7 +57016,7 @@
                 "Myth": 5,
                 "Life": 5,
                 "Death": 5,
-                "Shadow": -251
+                "Shadow": -50
             }
         },
         "CC_GoldSkeletonKey_Squid_Tentacle_A_01": {
@@ -57090,7 +57090,7 @@
             "health": 6650,
             "boosts": {
                 "Life": 10,
-                "Shadow": -251,
+                "Shadow": -50,
                 "Balance": 10
             }
         },
@@ -57368,7 +57368,7 @@
             "boosts": {
                 "Ice": 5,
                 "Fire": -70,
-                "Shadow": -271,
+                "Shadow": -70,
                 "Balance": 5
             }
         },
@@ -58616,7 +58616,7 @@
             "boosts": {
                 "Myth": 10,
                 "Balance": 10,
-                "Shadow": -231
+                "Shadow": -30
             }
         },
         "Heroic_WC_Nightshade": {
@@ -58651,7 +58651,7 @@
                 "Ice": -20,
                 "Life": 10,
                 "Death": -20,
-                "Shadow": -221
+                "Shadow": -20
             }
         },
         "Scarecrow-Elite-L29": {
