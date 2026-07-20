@@ -21,9 +21,12 @@ SCHOOL_RESIST_EFFECT_NAMES = {
 }
 
 # Need to install the katsuba and wiztype libraries for this script to work
-# Put Root.wad from the game in the scripts folder
 # This script will only work if the game is open or if a previously obtained types.json from wiztype is placed in the scripts folder
-def make_creatures(root_wad_path: str, type_list_path: str):
+def make_creatures(
+    root_wad_path: str = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Wizard101\\Data\\GameData\\Root.wad", 
+    type_list_path: str = "types.json", 
+    output_path: str = f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json"
+):
     root_wad = Archive.mmap(root_wad_path)
     print("Obtaining types...")
     try:
@@ -161,10 +164,13 @@ def make_creatures(root_wad_path: str, type_list_path: str):
         final_json["data"][obj_name]["boosts"] = boosts
     
     print("Processed mobs")
-    with open(f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json", "w") as creatures_json:
+    with open(output_path, "w") as creatures_json:
         json.dump(final_json, creatures_json, indent=4)
 
 if __name__ == "__main__":
     start = time.time()
-    make_creatures("Root.wad", "types.json")
+    root_wad_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Wizard101\\Data\\GameData\\Root.wad"
+    type_list_path = "types.json"
+    output_path = f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json"
+    make_creatures(root_wad_path=root_wad_path, type_list_path=type_list_path, output_path=output_path)
     print(f"Done in {round(time.time() - start, 2)} seconds!")
