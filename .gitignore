@@ -1,3 +1,5 @@
 *apworld
 .vscode
 poptracker
+scripts/*.wad
+scripts/*.json
