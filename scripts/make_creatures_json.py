@@ -56,6 +56,7 @@ def make_creatures(root_wad_path: str, type_list_path: str):
         manifest_dict[entry["m_id"]] = entry["m_filename"].decode("utf-8")
 
     final_json = {}
+    final_json["data"] = {}
     print("Processing mobs...")
     for file in root_wad.iter_glob("ObjectData/**/*.xml"):
         deserialized_file = root_wad.deserialize(file, serializer)
@@ -82,7 +83,7 @@ def make_creatures(root_wad_path: str, type_list_path: str):
         if not duelist_behavior: # not mob
             continue
 
-        final_json[obj_name] = {}
+        final_json["data"][obj_name] = {}
 
         name_lookup = deserialized_file["m_displayName"].decode("utf-8")
         name_lookup_split = name_lookup.split("_")
@@ -98,10 +99,10 @@ def make_creatures(root_wad_path: str, type_list_path: str):
         except Exception as e:
             pass
         
-        final_json[obj_name]["name"] = name
+        final_json["data"][obj_name]["name"] = name
         
-        final_json[obj_name]["school"] = npc_behavior["m_schoolOfFocus"].decode("utf-8")
-        final_json[obj_name]["health"] = npc_behavior["m_nStartingHealth"]
+        final_json["data"][obj_name]["school"] = npc_behavior["m_schoolOfFocus"].decode("utf-8")
+        final_json["data"][obj_name]["health"] = npc_behavior["m_nStartingHealth"]
 
         mob_stats = npc_behavior["m_baseEffects"]
         resists = {}
@@ -128,7 +129,7 @@ def make_creatures(root_wad_path: str, type_list_path: str):
             for effect in equip_effects:
                 effect_name = effect["m_effectName"]
                 if effect_name == b"CanonicalMaxHealth":
-                    final_json[obj_name]["health"] += effect["m_lookupIndex"] + 1
+                    final_json["data"][obj_name]["health"] += effect["m_lookupIndex"] + 1
                 if effect_name in SCHOOL_RESIST_EFFECT_NAMES.keys():
                     if SCHOOL_RESIST_EFFECT_NAMES[effect_name] not in resists.keys():
                         resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] = 0
@@ -151,7 +152,7 @@ def make_creatures(root_wad_path: str, type_list_path: str):
         for resist in resists.keys():
             boosts[resist] = resists[resist] * -1
         
-        final_json[obj_name]["boosts"] = boosts
+        final_json["data"][obj_name]["boosts"] = boosts
     
     print("Processed mobs")
     with open(f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json", "w") as creatures_json:
