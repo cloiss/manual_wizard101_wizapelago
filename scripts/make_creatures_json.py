@@ -27,7 +27,7 @@ SCHOOL_RESIST_EFFECT_NAMES = {
 # Usage: Provide root_wad_path, type_list_path and output_path as command line arguments. 
 # root_wad_path will default to C:\ProgramData\KingsIsle Entertainment\Wizard101\Data\GameData\Root.wad
 # type_list_path will default to "types.json" in the same folder as this script.
-# output_path will default to within the data folder in this repository.
+# output_path will default to "creatures.json" within the data folder in this repository.
 def make_creatures(
     root_wad_path: str = "C:\\ProgramData\\KingsIsle Entertainment\\Wizard101\\Data\\GameData\\Root.wad", 
     type_list_path: str = "types.json", 
