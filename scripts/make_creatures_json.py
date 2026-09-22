@@ -2,6 +2,8 @@ from katsuba.op import * # type: ignore
 from katsuba.wad import Archive # type: ignore
 import json
 import time
+import os
+import sys
 from pathlib import Path
 
 SCHOOL_RESIST_EFFECT_NAMES = {
@@ -21,9 +23,13 @@ SCHOOL_RESIST_EFFECT_NAMES = {
 }
 
 # Need to install the katsuba and wiztype libraries for this script to work
-# This script will only work if the game is open or if a previously obtained types.json from wiztype is placed in the scripts folder
+# This script will only work if the game is open or if a previously obtained types.json from wiztype is placed at the types path
+# Usage: Provide root_wad_path, type_list_path and output_path as command line arguments. 
+# root_wad_path will default to C:\ProgramData\KingsIsle Entertainment\Wizard101\Data\GameData\Root.wad
+# type_list_path will default to "types.json" in the same folder as this script.
+# output_path will default to within the data folder in this repository.
 def make_creatures(
-    root_wad_path: str = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Wizard101\\Data\\GameData\\Root.wad", 
+    root_wad_path: str = "C:\\ProgramData\\KingsIsle Entertainment\\Wizard101\\Data\\GameData\\Root.wad", 
     type_list_path: str = "types.json", 
     output_path: str = f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json"
 ):
@@ -62,7 +68,10 @@ def make_creatures(
     final_json["data"] = {}
     print("Processing mobs...")
     for file in root_wad.iter_glob("ObjectData/**/*.xml"):
-        deserialized_file = root_wad.deserialize(file, serializer)
+        try:
+            deserialized_file = root_wad.deserialize(file, serializer)
+        except:
+            continue
         if not deserialized_file.type_hash == 701229577: # not GameObjectTemplate
             continue
         obj_name = deserialized_file["m_objectName"].decode("utf-8")
@@ -169,8 +178,14 @@ def make_creatures(
 
 if __name__ == "__main__":
     start = time.time()
-    root_wad_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Wizard101\\Data\\GameData\\Root.wad"
+    root_wad_path = "C:\\ProgramData\\KingsIsle Entertainment\\Wizard101\\Data\\GameData\\Root.wad"
     type_list_path = "types.json"
     output_path = f"{Path(__file__).parent.parent}\\manual_wizard101_wizapelago\\data\\creatures.json"
+    if len(sys.argv) >= 2:
+        root_wad_path = sys.argv[1]
+    if len(sys.argv) >= 3:
+        type_list_path = sys.argv[2]
+    if len(sys.argv) >= 4:
+        output_path = sys.argv[3]
     make_creatures(root_wad_path=root_wad_path, type_list_path=type_list_path, output_path=output_path)
     print(f"Done in {round(time.time() - start, 2)} seconds!")
