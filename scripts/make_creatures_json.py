@@ -127,7 +127,6 @@ def make_creatures(
         
         final_json["data"][obj_name]["name"] = name
 
-        final_json["data"][obj_name]["school"] = npc_behavior["m_schoolOfFocus"].decode("utf-8")
         final_json["data"][obj_name]["health"] = npc_behavior["m_nStartingHealth"]
 
         mob_stats = npc_behavior["m_baseEffects"]
