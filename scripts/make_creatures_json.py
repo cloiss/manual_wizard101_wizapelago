@@ -22,6 +22,20 @@ SCHOOL_RESIST_EFFECT_NAMES = {
     b"ReduceDamageInvunerable": "Invulnerable",
 }
 
+ALL_RESISTS = [
+    "Fire",
+    "Ice",
+    "Storm",
+    "Life",
+    "Myth",
+    "Death",
+    "Balance",
+    "Star",
+    "Moon",
+    "Sun",
+    "Shadow"
+]
+
 # Need to install the katsuba and wiztype libraries for this script to work
 # This script will only work if the game is open or if a previously obtained types.json from wiztype is placed at the types path
 # Usage: Provide root_wad_path, type_list_path and output_path as command line arguments. 
@@ -112,30 +126,33 @@ def make_creatures(
             pass
         
         final_json["data"][obj_name]["name"] = name
-        
+
         final_json["data"][obj_name]["school"] = npc_behavior["m_schoolOfFocus"].decode("utf-8")
         final_json["data"][obj_name]["health"] = npc_behavior["m_nStartingHealth"]
 
         mob_stats = npc_behavior["m_baseEffects"]
         resists = {}
-        all_resist = 0
         for effect in mob_stats:
             effect_name = effect["m_effectName"]
             if effect_name in SCHOOL_RESIST_EFFECT_NAMES.keys():
-                if SCHOOL_RESIST_EFFECT_NAMES[effect_name] not in resists.keys():
-                    resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] = 0
                 lookup_index = effect["m_lookupIndex"]
-                if effect_name == b"CanonicalShadowReduceDamage":
-                    lookup_index -= 201
-                if lookup_index >= 100 or effect_name == b"CanonicalShadowReduceDamage":
-                    resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 99
-                else:
-                    resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 100
                 if effect_name == b"CanonicalAllReduceDamage":
-                    if lookup_index >= 100:
-                        all_resist += lookup_index - 99
+                    for resist in ALL_RESISTS:
+                        if resist not in resists.keys():
+                            resists[resist] = 0
+                        if lookup_index >= 100:
+                            resists[resist] += lookup_index - 99
+                        else:
+                            resists[resist] += lookup_index - 100
+                else:
+                    if SCHOOL_RESIST_EFFECT_NAMES[effect_name] not in resists.keys():
+                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] = 0
+                    if effect_name == b"CanonicalShadowReduceDamage":
+                        lookup_index -= 201
+                    if lookup_index >= 100 or effect_name == b"CanonicalShadowReduceDamage":
+                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 99
                     else:
-                        all_resist += lookup_index - 100
+                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 100
 
         item_list = wizard_equipment_behavior["m_itemList"]
         for item in item_list:
@@ -146,25 +163,24 @@ def make_creatures(
                 if effect_name == b"CanonicalMaxHealth":
                     final_json["data"][obj_name]["health"] += effect["m_lookupIndex"] + 1
                 if effect_name in SCHOOL_RESIST_EFFECT_NAMES.keys():
-                    if SCHOOL_RESIST_EFFECT_NAMES[effect_name] not in resists.keys():
-                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] = 0
                     lookup_index = effect["m_lookupIndex"]
-                    if effect_name == b"CanonicalShadowReduceDamage":
-                        lookup_index -= 201
-                    if lookup_index >= 100 or effect_name == b"CanonicalShadowReduceDamage":
-                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 99
-                    else:
-                        resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 100
                     if effect_name == b"CanonicalAllReduceDamage":
-                        if lookup_index >= 100:
-                            all_resist += lookup_index - 99
+                        for resist in ALL_RESISTS:
+                            if resist not in resists.keys():
+                                resists[resist] = 0
+                            if lookup_index >= 100:
+                                resists[resist] += lookup_index - 99
+                            else:
+                                resists[resist] += lookup_index - 100
+                    else:
+                        if SCHOOL_RESIST_EFFECT_NAMES[effect_name] not in resists.keys():
+                            resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] = 0
+                        if effect_name == b"CanonicalShadowReduceDamage":
+                            lookup_index -= 201
+                        if lookup_index >= 100 or effect_name == b"CanonicalShadowReduceDamage":
+                            resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 99
                         else:
-                            all_resist += lookup_index - 100
-        
-        if all_resist:
-            for resist in resists.keys():
-                if resist != "All":
-                    resists[resist] = all_resist + resists[resist]
+                            resists[SCHOOL_RESIST_EFFECT_NAMES[effect_name]] += lookup_index - 100
         
         boosts = {}
         for resist in resists.keys():
