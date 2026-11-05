@@ -2,7 +2,6 @@ from katsuba.op import * # type: ignore
 from katsuba.wad import Archive # type: ignore
 import json
 import time
-import os
 import sys
 from pathlib import Path
 
